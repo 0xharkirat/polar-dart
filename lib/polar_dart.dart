@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
+/// Polar Dart SDK
+/// Provides support for interacting with the Polar API.
+library ;
 
-export 'src/polar_dart_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/polar_client.dart'; // Export the main client
+// Add more exports as necessary in the future
