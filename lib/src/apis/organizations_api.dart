@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:polar_dart/src/models/organization.dart';
 import 'package:polar_dart/src/models/organization_create.dart';
+import 'package:polar_dart/src/models/resource_not_found_error.dart';
 import '../models/list_resource_organization.dart';
 import '../models/http_validation_error.dart';
 
@@ -78,6 +79,45 @@ class OrganizationsApi {
         throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
       }
       // Throw a generic error for unexpected cases.
+      throw Exception('Unexpected Error: $e');
+    }
+  }
+
+
+  /// Fetches an organization by its ID.
+  /// if [id] is not provided, it will return a list of organizations.
+  /// Returns an [Organization] object on success.
+  /// Throws an [Exception] on failure.
+  /// Id must be a valid UUID string
+  Future<dynamic> getOrganization({
+    String? id,
+  }) async {
+    try {
+      if (id == null) {
+        return listOrganizations();
+      }
+
+      final response = await _dio.get('/v1/organizations/$id');
+
+      
+      return Organization.fromJson(response.data);
+    } catch (e) {
+      if (e is DioException) {
+        if (e.response != null) {
+          final statusCode = e.response?.statusCode;
+
+          if (statusCode == 404) {
+            // Handle resource not found
+           throw ResourceNotFound.fromJson(e.response!.data);
+          } else if (statusCode == 422) {
+            // Handle validation error
+            throw HTTPValidationError.fromJson(e.response!.data);
+          }
+
+          throw Exception('HTTP Error: $statusCode - ${e.message}');
+        }
+      }
+
       throw Exception('Unexpected Error: $e');
     }
   }

@@ -25,4 +25,9 @@ class OrganizationSubscribePromoteSettings {
       'count_free': countFree,
     };
   }
+
+  @override
+  String toString() {
+    return 'OrganizationSubscribePromoteSettings{promote: $promote, showCount: $showCount, countFree: $countFree}';
+  }
 }

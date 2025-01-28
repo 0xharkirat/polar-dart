@@ -25,4 +25,11 @@ class ListResourceOrganization {
       'pagination': pagination.toJson(),
     };
   }
+
+
+  // overide to string method
+  @override
+  String toString() {
+    return 'ListResourceOrganization{items: $items, pagination: $pagination}';
+  }
 }

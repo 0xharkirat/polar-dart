@@ -19,4 +19,9 @@ class OrganizationCreate {
         if (avatarUrl != null) 'avatar_url': avatarUrl,
         if (featureSettings != null) 'feature_settings': featureSettings!.toJson(),
       };
+
+  @override
+  String toString() {
+    return 'OrganizationCreate{name: $name, slug: $slug, avatarUrl: $avatarUrl, featureSettings: $featureSettings}';
+  }
 }

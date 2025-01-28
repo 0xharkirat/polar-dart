@@ -1,6 +1,4 @@
 import 'package:polar_dart/polar_dart.dart';
-import 'package:polar_dart/src/models/organization_create.dart';
-import 'package:polar_dart/src/models/organization_feature_settings.dart';
 import 'package:polar_dart/src/polar_environment.dart';
 import 'package:dotenv/dotenv.dart';
 
@@ -16,33 +14,17 @@ void main() async {
 
   try {
     // List Organizations without specifying sorting
-    final organizations = await polarClient.organizations.listOrganizations();
+    // final organizations = await polarClient.organizations.listOrganizations();
 
-    print('Organizations: ${organizations.items.length} items found.');
+    // print('Organizations: ${organizations.items.length} items found.');
 
-    for (var org in organizations.items) {
-      print('Organization: ${org.name}, Slug: ${org.slug}');
-    }
+    // for (var org in organizations.items) {
+    //   print('Organization: ${org.name}, Slug: ${org.slug}');
+    // }
 
-    // Create a new organization with additional settings
-    final organizationCreate = OrganizationCreate(
-      name: "HarksThirdOrg",
-      slug: "harksthirdorg",
-   
-      featureSettings: OrganizationFeatureSettings(
-        issueFundingEnabled: true,
-      ),
-    );
-
-    final newOrganization =
-        await polarClient.organizations.createOrganization(organizationCreate);
-
-    print(
-        'Organization Created: ${newOrganization.name}, ID: ${newOrganization.id}');
-
-
-
-      
+    final organization = await polarClient.organizations.getOrganization();
+    print("organization: ${organization}");
+    
   } catch (e) {
     print('Error occurred: $e');
   }

@@ -20,4 +20,9 @@ class Pagination {
       'max_page': maxPage,
     };
   }
+
+  @override
+  String toString() {
+    return 'Pagination{totalCount: $totalCount, maxPage: $maxPage}';
+  }
 }

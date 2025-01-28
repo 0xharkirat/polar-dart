@@ -16,4 +16,9 @@ class OrganizationFeatureSettings {
       'issue_funding_enabled': issueFundingEnabled,
     };
   }
+
+  @override
+  String toString() {
+    return 'OrganizationFeatureSettings{issueFundingEnabled: $issueFundingEnabled}';
+  }
 }

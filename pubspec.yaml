@@ -10,6 +10,7 @@ environment:
 dependencies:
   dio: ^5.7.0
   dotenv: ^4.2.0
+  json_annotation: ^4.9.0
   # openapi_generator_annotations: ^6.1.0
   
   # path: ^1.8.0

@@ -87,4 +87,9 @@ class Organization {
       'feature_settings': featureSettings?.toJson(),
     };
   }
+
+  @override
+  String toString() {
+    return 'Organization{createdAt: $createdAt, modifiedAt: $modifiedAt, id: $id, name: $name, slug: $slug, avatarUrl: $avatarUrl, bio: $bio, company: $company, blog: $blog, location: $location, email: $email, twitterUsername: $twitterUsername, pledgeMinimumAmount: $pledgeMinimumAmount, pledgeBadgeShowAmount: $pledgeBadgeShowAmount, defaultUpfrontSplitToContributors: $defaultUpfrontSplitToContributors, profileSettings: $profileSettings, featureSettings: $featureSettings}';
+  }
 }

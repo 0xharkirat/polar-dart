@@ -48,4 +48,9 @@ class OrganizationProfileSettings {
       'accent_color': accentColor,
     };
   }
+
+  @override
+  String toString() {
+    return 'OrganizationProfileSettings{enabled: $enabled, description: $description, featuredProjects: $featuredProjects, featuredOrganizations: $featuredOrganizations, links: $links, subscribe: $subscribe, accentColor: $accentColor}';
+  }
 }
