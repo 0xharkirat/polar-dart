@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:polar_dart/src/models/organization.dart';
 import 'package:polar_dart/src/models/organization_create.dart';
-import 'package:polar_dart/src/models/resource_not_found_error.dart';
-import '../models/list_resource_organization.dart';
-import '../models/http_validation_error.dart';
+import 'package:polar_dart/src/models/resource_not_found.dart';
+
 
 /// A class to handle operations related to organizations in the Polar API.
 class OrganizationsApi {
@@ -122,3 +121,4 @@ class OrganizationsApi {
     }
   }
 }
+
