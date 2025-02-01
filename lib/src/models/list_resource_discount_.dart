@@ -1,11 +1,11 @@
 import 'discount.dart';
 import 'pagination.dart';
 
-class ListResource_Discount_ {
+class ListResourceDiscount {
   final List<Discount> items;
   final Pagination pagination;
 
-  ListResource_Discount_({
+  ListResourceDiscount({
     required this.items,
     required this.pagination,
   });

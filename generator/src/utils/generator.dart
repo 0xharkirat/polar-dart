@@ -51,7 +51,7 @@ class Generator {
     }
     if (imports.isNotEmpty) buffer.writeln();
 
-    buffer.writeln('class $className {');
+    buffer.writeln('class ${toUpperCamelCase(className)} {');
     properties.forEach((name, value) {
       final dartType = value['dart_type'];
       final isRequired = requiredFields.contains(name);
@@ -64,7 +64,7 @@ class Generator {
       buffer.writeln('  final $finalType $name;');
     });
 
-    buffer.writeln('\n  $className({');
+    buffer.writeln('\n  ${toUpperCamelCase(className)}({');
     properties.forEach((name, value) {
       if (requiredFields.contains(name)) {
         buffer.writeln('    required this.$name,');
@@ -80,10 +80,10 @@ class Generator {
 
   String generateDartEnum(String enumName, List<dynamic> values) {
     final buffer = StringBuffer();
-    buffer.writeln('enum $enumName {');
+    buffer.writeln('enum ${toUpperCamelCase(enumName)} {');
     for (final value in values) {
       buffer.writeln(
-          '${value.toString().replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_')},');
+          '  ${value.toString().replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_')},');
     }
     buffer.writeln('}');
     return buffer.toString();
@@ -99,9 +99,9 @@ class Generator {
     }
     if (references.isNotEmpty) buffer.writeln();
 
-    buffer.writeln('class $className {');
+    buffer.writeln('class ${toUpperCamelCase(className)} {');
     buffer.writeln('  final dynamic value;');
-    buffer.writeln('  $className(this.value);');
+    buffer.writeln('  ${toUpperCamelCase(className)}(this.value);');
     buffer.writeln('}');
 
     return buffer.toString();
@@ -275,8 +275,18 @@ class Generator {
     return input
         .replaceAll(regex, '_')
         .replaceAll(RegExp(r'__+'), '_')
+        .replaceAll(RegExp(r'_+\$'), '') // remove trailing underscores
         .toLowerCase();
   }
+
+ String toUpperCamelCase(String input) {
+  return input
+      .split('_')
+      .where((word) => word.isNotEmpty) // Filter out empty strings
+      .map((word) => word[0].toUpperCase() + word.substring(1))
+      .join('');
+}
+
 
   Future<void> writeDartFile(
       String directory, String className, String content) async {
@@ -284,7 +294,5 @@ class Generator {
     final file = File('$directory/$fileName.dart');
     await file.writeAsString(content);
   }
-} 
-
-// Run dart fix after modifications
+}
 

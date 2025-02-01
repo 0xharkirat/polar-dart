@@ -1,5 +1,5 @@
 enum FileServiceTypes {
-downloadable,
-product_media,
-organization_avatar,
+  downloadable,
+  product_media,
+  organization_avatar,
 }

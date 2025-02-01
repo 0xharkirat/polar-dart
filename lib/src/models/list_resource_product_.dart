@@ -1,11 +1,11 @@
 import 'product.dart';
 import 'pagination.dart';
 
-class ListResource_Product_ {
+class ListResourceProduct {
   final List<Product> items;
   final Pagination pagination;
 
-  ListResource_Product_({
+  ListResourceProduct({
     required this.items,
     required this.pagination,
   });

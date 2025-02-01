@@ -1,11 +1,11 @@
 import 'custom_field.dart';
 import 'pagination.dart';
 
-class ListResource_CustomField_ {
+class ListResourceCustomField {
   final List<CustomField> items;
   final Pagination pagination;
 
-  ListResource_CustomField_({
+  ListResourceCustomField({
     required this.items,
     required this.pagination,
   });

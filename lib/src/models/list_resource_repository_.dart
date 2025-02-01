@@ -1,11 +1,11 @@
 import 'repository.dart';
 import 'pagination.dart';
 
-class ListResource_Repository_ {
+class ListResourceRepository {
   final List<Repository> items;
   final Pagination pagination;
 
-  ListResource_Repository_({
+  ListResourceRepository({
     required this.items,
     required this.pagination,
   });

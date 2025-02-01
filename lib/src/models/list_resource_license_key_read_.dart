@@ -1,11 +1,11 @@
 import 'license_key_read.dart';
 import 'pagination.dart';
 
-class ListResource_LicenseKeyRead_ {
+class ListResourceLicenseKeyRead {
   final List<LicenseKeyRead> items;
   final Pagination pagination;
 
-  ListResource_LicenseKeyRead_({
+  ListResourceLicenseKeyRead({
     required this.items,
     required this.pagination,
   });

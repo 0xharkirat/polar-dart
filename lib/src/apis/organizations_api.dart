@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:polar_dart/src/models/h_t_t_p_validation_error.dart';
+import 'package:polar_dart/src/models/list_resource_organization_.dart';
 import 'package:polar_dart/src/models/organization.dart';
 import 'package:polar_dart/src/models/organization_create.dart';
 import 'package:polar_dart/src/models/resource_not_found.dart';
-import 'package:polar_dart/src/models/http_validation_error.dart';
+
 
 
 /// A class to handle operations related to organizations in the Polar API.

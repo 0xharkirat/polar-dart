@@ -1,4 +1,4 @@
 enum DiscountType {
-fixed,
-percentage,
+  fixed,
+  percentage,
 }

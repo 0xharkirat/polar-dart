@@ -1,6 +1,6 @@
 enum RefundStatus {
-pending,
-succeeded,
-failed,
-canceled,
+  pending,
+  succeeded,
+  failed,
+  canceled,
 }

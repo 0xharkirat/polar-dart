@@ -1,11 +1,11 @@
 import 'downloadable_read.dart';
 import 'pagination.dart';
 
-class ListResource_DownloadableRead_ {
+class ListResourceDownloadableRead {
   final List<DownloadableRead> items;
   final Pagination pagination;
 
-  ListResource_DownloadableRead_({
+  ListResourceDownloadableRead({
     required this.items,
     required this.pagination,
   });

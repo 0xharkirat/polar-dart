@@ -1,10 +1,10 @@
 import 'pagination.dart';
 
-class ListResource_FileRead_ {
+class ListResourceFileRead {
   final List<dynamic> items;
   final Pagination pagination;
 
-  ListResource_FileRead_({
+  ListResourceFileRead({
     required this.items,
     required this.pagination,
   });

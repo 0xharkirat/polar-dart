@@ -1,7 +1,7 @@
 enum CheckoutStatus {
-open,
-expired,
-confirmed,
-succeeded,
-failed,
+  open,
+  expired,
+  confirmed,
+  succeeded,
+  failed,
 }

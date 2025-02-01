@@ -1,11 +1,11 @@
 import 'order.dart';
 import 'pagination.dart';
 
-class ListResource_Order_ {
+class ListResourceOrder {
   final List<Order> items;
   final Pagination pagination;
 
-  ListResource_Order_({
+  ListResourceOrder({
     required this.items,
     required this.pagination,
   });

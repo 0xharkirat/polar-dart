@@ -1,11 +1,11 @@
 import 'checkout_link.dart';
 import 'pagination.dart';
 
-class ListResource_CheckoutLink_ {
+class ListResourceCheckoutLink {
   final List<CheckoutLink> items;
   final Pagination pagination;
 
-  ListResource_CheckoutLink_({
+  ListResourceCheckoutLink({
     required this.items,
     required this.pagination,
   });

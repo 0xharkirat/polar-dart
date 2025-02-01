@@ -1,5 +1,5 @@
 enum LicenseKeyStatus {
-granted,
-revoked,
-disabled,
+  granted,
+  revoked,
+  disabled,
 }

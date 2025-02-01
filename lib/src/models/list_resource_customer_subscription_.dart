@@ -1,11 +1,11 @@
 import 'customer_subscription.dart';
 import 'pagination.dart';
 
-class ListResource_CustomerSubscription_ {
+class ListResourceCustomerSubscription {
   final List<CustomerSubscription> items;
   final Pagination pagination;
 
-  ListResource_CustomerSubscription_({
+  ListResourceCustomerSubscription({
     required this.items,
     required this.pagination,
   });

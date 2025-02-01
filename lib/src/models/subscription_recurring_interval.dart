@@ -1,4 +1,4 @@
 enum SubscriptionRecurringInterval {
-month,
-year,
+  month,
+  year,
 }

@@ -1,4 +1,4 @@
 enum ProductPriceType {
-one_time,
-recurring,
+  one_time,
+  recurring,
 }

@@ -1,11 +1,11 @@
 import 'customer_benefit_grant.dart';
 import 'pagination.dart';
 
-class ListResource_CustomerBenefitGrant_ {
+class ListResourceCustomerBenefitGrant {
   final List<CustomerBenefitGrant> items;
   final Pagination pagination;
 
-  ListResource_CustomerBenefitGrant_({
+  ListResourceCustomerBenefitGrant({
     required this.items,
     required this.pagination,
   });

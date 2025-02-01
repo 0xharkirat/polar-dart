@@ -1,7 +1,7 @@
 enum CustomFieldType {
-text,
-number,
-date,
-checkbox,
-select,
+  text,
+  number,
+  date,
+  checkbox,
+  select,
 }

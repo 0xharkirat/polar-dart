@@ -1,8 +1,8 @@
 enum RepositorySortProperty {
-created_at,
-_created_at,
-name,
-_name,
-stars,
-_stars,
+  created_at,
+  _created_at,
+  name,
+  _name,
+  stars,
+  _stars,
 }

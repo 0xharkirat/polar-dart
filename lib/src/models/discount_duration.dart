@@ -1,5 +1,5 @@
 enum DiscountDuration {
-once,
-forever,
-repeating,
+  once,
+  forever,
+  repeating,
 }

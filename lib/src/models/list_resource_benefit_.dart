@@ -1,11 +1,11 @@
 import 'benefit.dart';
 import 'pagination.dart';
 
-class ListResource_Benefit_ {
+class ListResourceBenefit {
   final List<Benefit> items;
   final Pagination pagination;
 
-  ListResource_Benefit_({
+  ListResourceBenefit({
     required this.items,
     required this.pagination,
   });

@@ -1,4 +1,4 @@
 enum CheckoutLinkSortProperty {
-created_at,
-_created_at,
+  created_at,
+  _created_at,
 }

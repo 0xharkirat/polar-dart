@@ -1,11 +1,11 @@
 import 'organization.dart';
 import 'pagination.dart';
 
-class ListResource_Organization_ {
+class ListResourceOrganization {
   final List<Organization> items;
   final Pagination pagination;
 
-  ListResource_Organization_({
+  ListResourceOrganization({
     required this.items,
     required this.pagination,
   });

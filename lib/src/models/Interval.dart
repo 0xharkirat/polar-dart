@@ -1,7 +1,7 @@
 enum Interval {
-year,
-month,
-week,
-day,
-hour,
+  year,
+  month,
+  week,
+  day,
+  hour,
 }

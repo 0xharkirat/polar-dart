@@ -1,4 +1,4 @@
 enum SubscriptionProrationBehavior {
-invoice,
-prorate,
+  invoice,
+  prorate,
 }

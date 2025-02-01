@@ -1,4 +1,4 @@
 enum MetricType {
-scalar,
-currency,
+  scalar,
+  currency,
 }
