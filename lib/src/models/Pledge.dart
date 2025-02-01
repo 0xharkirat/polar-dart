@@ -1,6 +1,6 @@
-import 'PledgeState.dart';
-import 'PledgeType.dart';
-import 'Issue.dart';
+import 'pledge_state.dart';
+import 'pledge_type.dart';
+import 'issue.dart';
 
 class Pledge {
   final String created_at;

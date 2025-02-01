@@ -1,3 +1,3 @@
 enum Platforms {
-  github,
+github,
 }

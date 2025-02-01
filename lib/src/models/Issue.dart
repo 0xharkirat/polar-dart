@@ -1,8 +1,8 @@
-import 'Platforms.dart';
-import 'Label.dart';
-import 'State.dart';
-import 'Funding.dart';
-import 'Repository.dart';
+import 'platforms.dart';
+import 'label.dart';
+import 'state.dart';
+import 'funding.dart';
+import 'repository.dart';
 
 class Issue {
   final String id;

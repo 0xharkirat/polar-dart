@@ -1,9 +1,9 @@
-import 'SubscriptionRecurringInterval.dart';
-import 'SubscriptionStatus.dart';
-import 'SubscriptionCustomer.dart';
-import 'SubscriptionUser.dart';
-import 'Product.dart';
-import 'ProductPriceRecurring.dart';
+import 'subscription_recurring_interval.dart';
+import 'subscription_status.dart';
+import 'subscription_customer.dart';
+import 'subscription_user.dart';
+import 'product.dart';
+import 'product_price_recurring.dart';
 
 class Subscription {
   final String created_at;

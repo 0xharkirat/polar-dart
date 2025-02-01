@@ -1,8 +1,8 @@
-import 'PaymentProcessor.dart';
-import 'CheckoutStatus.dart';
-import 'CheckoutProduct.dart';
-import 'ProductPrice.dart';
-import 'AttachedCustomField.dart';
+import 'payment_processor.dart';
+import 'checkout_status.dart';
+import 'checkout_product.dart';
+import 'product_price.dart';
+import 'attached_custom_field.dart';
 
 class Checkout {
   final String created_at;

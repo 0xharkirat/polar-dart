@@ -1,0 +1,4 @@
+enum SubType {
+user,
+organization,
+}

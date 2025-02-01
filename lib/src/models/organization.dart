@@ -1,4 +1,4 @@
-import 'OrganizationSubscriptionSettings.dart';
+import 'organization_subscription_settings.dart';
 
 class Organization {
   final String created_at;

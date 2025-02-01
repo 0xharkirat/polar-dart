@@ -1,7 +1,7 @@
-import 'ProductPrice.dart';
-import 'Benefit.dart';
-import 'ProductMediaFileRead.dart';
-import 'AttachedCustomField.dart';
+import 'product_price.dart';
+import 'benefit.dart';
+import 'product_media_file_read.dart';
+import 'attached_custom_field.dart';
 
 class Product {
   final String created_at;

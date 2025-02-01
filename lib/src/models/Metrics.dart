@@ -1,4 +1,4 @@
-import 'Metric.dart';
+import 'metric.dart';
 
 class Metrics {
   final Metric orders;

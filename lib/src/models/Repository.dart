@@ -1,5 +1,5 @@
-import 'Platforms.dart';
-import 'ExternalOrganization.dart';
+import 'platforms.dart';
+import 'external_organization.dart';
 
 class Repository {
   final String id;

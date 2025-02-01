@@ -1,4 +1,4 @@
-import 'MetricType.dart';
+import 'metric_type.dart';
 
 class Metric {
   final String slug;

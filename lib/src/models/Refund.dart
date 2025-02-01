@@ -1,5 +1,5 @@
-import 'RefundStatus.dart';
-import 'RefundReason.dart';
+import 'refund_status.dart';
+import 'refund_reason.dart';
 
 class Refund {
   final String created_at;

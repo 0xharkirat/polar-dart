@@ -1,8 +1,8 @@
-import 'OrderBillingReason.dart';
-import 'OrderCustomer.dart';
-import 'OrderUser.dart';
-import 'OrderProduct.dart';
-import 'ProductPrice.dart';
+import 'order_billing_reason.dart';
+import 'order_customer.dart';
+import 'order_user.dart';
+import 'order_product.dart';
+import 'product_price.dart';
 
 class Order {
   final String created_at;
