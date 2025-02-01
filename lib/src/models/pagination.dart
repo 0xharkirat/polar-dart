@@ -1,28 +1,9 @@
 class Pagination {
-  final int totalCount;
-  final int maxPage;
+  final int total_count;
+  final int max_page;
 
   Pagination({
-    required this.totalCount,
-    required this.maxPage,
+    required this.total_count,
+    required this.max_page,
   });
-
-  factory Pagination.fromJson(Map<String, dynamic> json) {
-    return Pagination(
-      totalCount: json['total_count'],
-      maxPage: json['max_page'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'total_count': totalCount,
-      'max_page': maxPage,
-    };
-  }
-
-  @override
-  String toString() {
-    return 'Pagination{totalCount: $totalCount, maxPage: $maxPage}';
-  }
 }
