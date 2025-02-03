@@ -1,5 +1,5 @@
-
 class MetadataQuery {
-  final dynamic value;
-  MetadataQuery(this.value);
+  final Map<String, dynamic> additionalProperties;
+
+  MetadataQuery({this.additionalProperties = const {}});
 }

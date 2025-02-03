@@ -1,7 +1,5 @@
-import 'product_price_recurring.dart';
-import 'product_price_one_time.dart';
-
 class ProductPrice {
-  final dynamic value;
-  ProductPrice(this.value);
+  final Map<String, dynamic> additionalProperties;
+
+  ProductPrice({this.additionalProperties = const {}});
 }

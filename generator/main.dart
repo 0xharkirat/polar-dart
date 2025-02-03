@@ -1,43 +1,17 @@
-import 'dart:io';
 
-import 'src/utils/generator.dart';
 
-Future<void> main() async {
-  final generator = Generator();
-  final spec = await generator.loadOpenApiSpec('polar-api.json');
-  if (spec == null) return;
+import 'src/utils/dart_class_generator.dart';
+import 'src/utils/json_parser.dart';
 
-  final schemas = generator.extractSchemas(spec);
-  final relevantSchemas = generator.filterRelevantSchemas(schemas);
-  final modelsDir = Directory('lib/src/models');
+void main() async {
+  const specPath = 'polar-api.json';
+  const jsonOutputDir = 'lib';
+  const dartOutputDir = 'lib/src/models';
+  const jsonFilePath = '$jsonOutputDir/dart.json';
 
-  if (!await modelsDir.exists()) {
-    await modelsDir.create();
-  }
+  // Generate dart.json from OpenAPI spec
+  await JsonParser.generateDartJson(specPath, jsonOutputDir);
 
-  for (final schemaName in relevantSchemas.keys) {
-    final schema = relevantSchemas[schemaName] as Map<String, dynamic>;
-    if (schema.containsKey('enum')) {
-      final dartEnum = generator.generateDartEnum(schemaName, schema['enum']);
-      await generator.writeDartFile(modelsDir.path, schemaName, dartEnum);
-    } else if (schema.containsKey('anyOf') || schema.containsKey('oneOf')) {
-      final references = generator.extractReferences(schema);
-      final dartClass = generator.generateUnionClass(schemaName, references);
-      await generator.writeDartFile(modelsDir.path, schemaName, dartClass);
-    } else if (schema['type'] == 'object' &&
-        schema['properties']?.isEmpty != true) {
-      final properties =
-          generator.getPropertiesWithTypesAndDartMapping(schema, schemas);
-      final imports = generator.collectImports(properties);
-      final requiredFields = (schema['required'] as List<dynamic>?)
-              ?.whereType<String>()
-              .toList() ??
-          [];
-      final dartClass = generator.generateDartClass(
-          schemaName, properties, imports, requiredFields);
-      await generator.writeDartFile(modelsDir.path, schemaName, dartClass);
-    }
-  }
-
-  print('Dart models have been generated in the models/ folder.');
+  // Generate Dart files from dart.json
+  await DartClassGenerator.generateFilesFromJson(jsonFilePath, dartOutputDir);
 }

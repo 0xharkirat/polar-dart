@@ -23,7 +23,7 @@ void main() async {
     // }
 
     final organization = await polarClient.organizations.getOrganization();
-    print("organization: ${organization}");
+    print("organization: $organization");
     
   } catch (e) {
     print('Error occurred: $e');
