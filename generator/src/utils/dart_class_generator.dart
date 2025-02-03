@@ -1,11 +1,12 @@
- import 'dart:convert';
+import 'dart:convert';
 import 'dart:io';
 
 import 'common.dart';
 
 //dart_class_generator.dart
 class DartClassGenerator {
-  static Future<void> generateFilesFromJson(String jsonFilePath, String outputDir) async {
+  static Future<void> generateFilesFromJson(
+      String jsonFilePath, String outputDir) async {
     final file = File(jsonFilePath);
     if (!await file.exists()) {
       print('dart.json file not found!');
@@ -29,9 +30,8 @@ class DartClassGenerator {
 
   static Future<void> _generateDartClassFromJson(
       Map<String, dynamic> classData, String directory) async {
+    await _ensureDirectoryExists(directory);
 
- 
-    
     final buffer = StringBuffer();
 
     for (final import in classData['imports']) {
@@ -39,32 +39,38 @@ class DartClassGenerator {
     }
     if (classData['imports'].isNotEmpty) buffer.writeln();
 
+    buffer.writeln(
+        "import 'package:freezed_annotation/freezed_annotation.dart';\n");
+
+    String gPart =
+        "part '${classData['fileName'].replaceAll('.dart', '.g.dart')}';";
+    String fPart =
+        "part '${classData['fileName'].replaceAll('.dart', '.freezed.dart')}';";
+
+    buffer.writeln(gPart);
+    buffer.writeln(fPart);
+
     final className = Common.toUpperCamelCase(classData['className']);
-    buffer.writeln('class $className {');
+    buffer.writeln('\n@freezed');
+    buffer.writeln('class $className with _\$$className {');
 
     if (classData['fields'].isEmpty) {
-      buffer.writeln('  final Map<String, dynamic> additionalProperties;\n');
-      buffer.writeln('  $className({this.additionalProperties = const {}});');
+      buffer.writeln(
+          '  const factory $className({@Default({}) Map<String, dynamic> additionalProperties}) = _$className;');
     } else {
+      buffer.writeln('  const factory $className({');
       classData['fields'].forEach((name, type) {
-        final isRequired = classData['requiredFields'].contains(name);
-        final finalType = isRequired || type == 'dynamic' || type.endsWith('?')
-            ? type
-            : '$type?';
-        buffer.writeln('  final $finalType $name;');
-      });
-
-      buffer.writeln('\n  $className({');
-      classData['fields'].forEach((name, _) {
         if (classData['requiredFields'].contains(name)) {
-          buffer.writeln('    required this.$name,');
+          buffer.writeln('    required $type $name,');
         } else {
-          buffer.writeln('    this.$name,');
+          buffer.writeln('    $type $name,');
         }
       });
-      buffer.writeln('  });');
+      buffer.writeln('  }) = _$className;');
     }
 
+    buffer.writeln(
+        '\n  factory $className.fromJson(Map<String, dynamic> json) => _\$${className}FromJson(json);');
     buffer.writeln('}');
 
     final file = File('$directory/${classData['fileName']}');
@@ -87,7 +93,7 @@ class DartClassGenerator {
     await file.writeAsString(buffer.toString());
   }
 
-   static Future<void> _ensureDirectoryExists(String directoryPath) async {
+  static Future<void> _ensureDirectoryExists(String directoryPath) async {
     final directory = Directory(directoryPath);
     if (!await directory.exists()) {
       await directory.create(recursive: true);
