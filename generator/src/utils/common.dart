@@ -16,7 +16,8 @@ class Common {
     return spec['components']?['schemas'] as Map<String, dynamic>? ?? {};
   }
 
-  static Map<String, dynamic> filterRelevantSchemas(Map<String, dynamic> schemas) {
+  static Map<String, dynamic> filterRelevantSchemas(
+      Map<String, dynamic> schemas) {
     return Map.fromEntries(
       schemas.entries.where((entry) =>
           (entry.value['type'] == 'object' &&
@@ -38,9 +39,10 @@ class Common {
       final dartType = typeDetails['dart_type'];
 
       // Make non-required fields nullable if they aren't already
-      final finalType = requiredFields.contains(propertyName) || dartType.endsWith('?')
-          ? dartType
-          : '$dartType?';
+      final finalType =
+          requiredFields.contains(propertyName) || dartType.endsWith('?')
+              ? dartType
+              : '$dartType?';
 
       propertyDetails[propertyName] = {
         'openapi_type': typeDetails['openapi_type'],
@@ -97,7 +99,9 @@ class Common {
       final dartType = value['dart_type'];
       if (dartType != null && !isPrimitiveType(dartType)) {
         final cleanType = dartType.replaceAll(RegExp(r'List<|>|\?'), '');
-        if (!isPrimitiveType(cleanType)) {
+
+        // Exclude generic types like Map<String, dynamic>
+        if (!isPrimitiveType(cleanType) && !cleanType.contains('<')) {
           imports.add("import '${toSnakeCase(cleanType)}.dart';");
         }
       }
@@ -180,7 +184,7 @@ class Common {
     return {'openapi_type': types.join(' | '), 'dart_type': 'dynamic'};
   }
 
-   static Map<String, String> handleArrayType(
+  static Map<String, String> handleArrayType(
       Map<String, dynamic> property, Map<String, dynamic> allSchemas) {
     final items = property['items'] as Map<String, dynamic>?;
     if (items != null) {
@@ -233,6 +237,12 @@ class Common {
       'List',
       'Map<String, dynamic>'
     };
+
+    // Debugging primitive check
+    if (primitiveTypes.contains(type)) {
+      print('Primitive type detected: $type');
+    }
+
     return primitiveTypes.contains(type) ||
         primitiveTypes.any((t) => type.startsWith('List<$t>'));
   }
