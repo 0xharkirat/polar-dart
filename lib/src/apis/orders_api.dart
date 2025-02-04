@@ -10,7 +10,7 @@ class OrdersApi {
   OrdersApi(this._dio);
 
 
-  Future<ListResourceOrder> list({dynamic? organization_id, dynamic? product_id, dynamic? product_price_type, dynamic? discount_id, dynamic? customer_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceOrder> orders_list({dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic discount_id, dynamic customer_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/orders/',
@@ -19,14 +19,14 @@ class OrdersApi {
       return ListResourceOrder.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Order> get({required String id}) async {
+  Future<Order> orders_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/orders/${id}',
@@ -34,14 +34,14 @@ class OrdersApi {
       return Order.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<OrderInvoice> invoice({required String id}) async {
+  Future<OrderInvoice> orders_invoice({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/orders/${id}/invoice',
@@ -49,7 +49,7 @@ class OrdersApi {
       return OrderInvoice.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

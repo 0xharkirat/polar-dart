@@ -8,7 +8,7 @@ class ExternalOrganizationsApi {
   ExternalOrganizationsApi(this._dio);
 
 
-  Future<ListResourceExternalOrganization> list({dynamic? platform, dynamic? name, dynamic? organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceExternalOrganization> external_organizations_list({dynamic platform, dynamic name, dynamic organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/external_organizations/',
@@ -17,7 +17,7 @@ class ExternalOrganizationsApi {
       return ListResourceExternalOrganization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

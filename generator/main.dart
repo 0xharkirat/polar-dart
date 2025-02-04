@@ -14,11 +14,11 @@ void main() async {
   const apisJsonOutputPath = '$jsonOutputDir/apis.dart.json';
   
 
-  // // Generate models.dart.json from OpenAPI spec
-  // await ModelsParser.generateDartJson(specPath, jsonOutputDir);
+  // Generate models.dart.json from OpenAPI spec
+  await ModelsParser.generateDartJson(specPath, jsonOutputDir);
 
-  // // Generate Dart files from models.dart.json
-  // await DartClassGenerator.generateFilesFromJson(modelsJsonOutputPath, modelsOutputDir);
+  // Generate Dart files from models.dart.json
+  await DartClassGenerator.generateFilesFromJson(modelsJsonOutputPath, modelsOutputDir);
 
   // Generate APIs.dart.json from OpenAPI spec
   await PathParser.generateApisJson(specPath, jsonOutputDir);

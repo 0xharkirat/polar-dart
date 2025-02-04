@@ -17,7 +17,7 @@ class CheckoutsApi {
   CheckoutsApi(this._dio);
 
 
-  Future<ListResourceCheckout> list({dynamic? organization_id, dynamic? product_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceCheckout> checkouts_custom_list({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/',
@@ -26,14 +26,14 @@ class CheckoutsApi {
       return ListResourceCheckout.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Checkout> create({required CheckoutCreate body, }) async {
+  Future<Checkout> checkouts_custom_create({required CheckoutCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/custom/',
@@ -42,14 +42,14 @@ class CheckoutsApi {
       return Checkout.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Checkout> get({required String id}) async {
+  Future<Checkout> checkouts_custom_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/${id}',
@@ -57,14 +57,14 @@ class CheckoutsApi {
       return Checkout.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Checkout> update({required CheckoutUpdate body, required String id}) async {
+  Future<Checkout> checkouts_custom_update({required CheckoutUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkouts/custom/${id}',
@@ -73,14 +73,14 @@ class CheckoutsApi {
       return Checkout.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutPublic> clientGet({required String client_secret}) async {
+  Future<CheckoutPublic> checkouts_custom_client_get({required String client_secret}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/client/${client_secret}',
@@ -88,14 +88,14 @@ class CheckoutsApi {
       return CheckoutPublic.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutPublic> clientUpdate({required CheckoutUpdatePublic body, required String client_secret}) async {
+  Future<CheckoutPublic> checkouts_custom_client_update({required CheckoutUpdatePublic body, required String client_secret}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkouts/custom/client/${client_secret}',
@@ -104,14 +104,14 @@ class CheckoutsApi {
       return CheckoutPublic.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutPublicConfirmed> clientConfirm({required CheckoutConfirmStripe body, required String client_secret}) async {
+  Future<CheckoutPublicConfirmed> checkouts_custom_client_confirm({required CheckoutConfirmStripe body, required String client_secret}) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/custom/client/${client_secret}/confirm',
@@ -120,14 +120,14 @@ class CheckoutsApi {
       return CheckoutPublicConfirmed.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutLegacy> create({required CheckoutLegacyCreate body, }) async {
+  Future<CheckoutLegacy> checkouts_create({required CheckoutLegacyCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/',
@@ -136,14 +136,14 @@ class CheckoutsApi {
       return CheckoutLegacy.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutLegacy> get({required String id}) async {
+  Future<CheckoutLegacy> checkouts_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/${id}',
@@ -151,7 +151,7 @@ class CheckoutsApi {
       return CheckoutLegacy.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

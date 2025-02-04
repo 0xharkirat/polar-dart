@@ -12,7 +12,7 @@ class FilesApi {
   FilesApi(this._dio);
 
 
-  Future<ListResourceFileRead> list({String? organization_id, dynamic? ids, int page = 1, int limit = 10}) async {
+  Future<ListResourceFileRead> files_list({String? organization_id, dynamic ids, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/files/',
@@ -21,14 +21,14 @@ class FilesApi {
       return ListResourceFileRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<FileUpload> create({required FileCreate body, }) async {
+  Future<FileUpload> files_create({required FileCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/files/',
@@ -37,54 +37,54 @@ class FilesApi {
       return FileUpload.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> uploaded({required FileUploadCompleted body, required String id}) async {
+  Future<dynamic> files_uploaded({required FileUploadCompleted body, required String id}) async {
     try {
       final response = await _dio.post(
         '/v1/files/${id}/uploaded',
         data: body.toJson(),
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> update({required FilePatch body, required String id}) async {
+  Future<dynamic> files_update({required FilePatch body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/files/${id}',
         data: body.toJson(),
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> delete({required String id}) async {
+  Future<dynamic> files_delete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/files/${id}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

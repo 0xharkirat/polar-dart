@@ -136,22 +136,27 @@ class Common {
     return refParts.isNotEmpty ? refParts.last : 'dynamic';
   }
 
-  static String toSnakeCase(String input) {
-    final regex = RegExp(r'(?<!^)(?=[A-Z])');
-    return input
-        .replaceAll(regex, '_')
-        .replaceAll(RegExp(r'__+'), '_')
-        .replaceAll(RegExp(r'_+$'), '')
-        .toLowerCase();
-  }
+static String toSnakeCase(String input) {
+  final regex = RegExp(r'(?<!^)(?=[A-Z])');
+  return input
+      .replaceAll('-', '_')  // Replace hyphens with underscores
+      .replaceAll(regex, '_')
+      .replaceAll(RegExp(r'__+'), '_')
+      .replaceAll(RegExp(r'_+$'), '')
+      .toLowerCase();
+}
 
-  static String toUpperCamelCase(String input) {
-    return input
-        .split('_')
-        .where((word) => word.isNotEmpty)
-        .map((word) => word[0].toUpperCase() + word.substring(1))
-        .join('');
-  }
+
+static String toUpperCamelCase(String input) {
+  return input
+      
+      .replaceAll('-', '_')  // Replace hyphens with underscores for consistency
+      .split('_')
+      .where((word) => word.isNotEmpty)
+      .map((word) => word[0].toUpperCase() + word.substring(1))
+      .join('');
+}
+
 
   static Future<void> writeJsonFile(String directory,
       List<Map<String, dynamic>> jsonData, String fileName) async {

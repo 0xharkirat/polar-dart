@@ -9,7 +9,7 @@ class MetricsApi {
   MetricsApi(this._dio);
 
 
-  Future<MetricsResponse> get({required String start_date, required String end_date, required dynamic interval, dynamic? organization_id, dynamic? product_id, dynamic? product_price_type, dynamic? customer_id}) async {
+  Future<MetricsResponse> metrics_get({required String start_date, required String end_date, required dynamic interval, dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic customer_id}) async {
     try {
       final response = await _dio.get(
         '/v1/metrics/',
@@ -18,14 +18,14 @@ class MetricsApi {
       return MetricsResponse.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<MetricsLimits> limits({}) async {
+  Future<MetricsLimits> metrics_limits({}) async {
     try {
       final response = await _dio.get(
         '/v1/metrics/limits',
@@ -33,7 +33,7 @@ class MetricsApi {
       return MetricsLimits.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

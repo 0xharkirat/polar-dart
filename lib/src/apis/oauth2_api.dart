@@ -13,7 +13,7 @@ class Oauth2Api {
   Oauth2Api(this._dio);
 
 
-  Future<ListResourceOAuth2Client> list({int page = 1, int limit = 10}) async {
+  Future<ListResourceOAuth2Client> oauth2_clients_list({int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/',
@@ -22,91 +22,91 @@ class Oauth2Api {
       return ListResourceOAuth2Client.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> createClient({required OAuth2ClientConfiguration body, }) async {
+  Future<dynamic> oauth2_clients_oauth2_create_client({required OAuth2ClientConfiguration body, }) async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/register',
         data: body.toJson(),
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> getClient({required String client_id}) async {
+  Future<dynamic> oauth2_clients_oauth2_get_client({required String client_id}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/register/${client_id}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> updateClient({required OAuth2ClientConfigurationUpdate body, required String client_id}) async {
+  Future<dynamic> oauth2_clients_oauth2_update_client({required OAuth2ClientConfigurationUpdate body, required String client_id}) async {
     try {
       final response = await _dio.put(
         '/v1/oauth2/register/${client_id}',
         data: body.toJson(),
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> deleteClient({required String client_id}) async {
+  Future<dynamic> oauth2_clients_oauth2_delete_client({required String client_id}) async {
     try {
       final response = await _dio.delete(
         '/v1/oauth2/register/${client_id}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> authorize({}) async {
+  Future<dynamic> oauth2_authorize({}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/authorize',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<TokenResponse> requestToken({}) async {
+  Future<TokenResponse> oauth2_request_token({}) async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/token',
@@ -114,14 +114,14 @@ class Oauth2Api {
       return TokenResponse.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<RevokeTokenResponse> revokeToken({}) async {
+  Future<RevokeTokenResponse> oauth2_revoke_token({}) async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/revoke',
@@ -129,14 +129,14 @@ class Oauth2Api {
       return RevokeTokenResponse.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<IntrospectTokenResponse> introspectToken({}) async {
+  Future<IntrospectTokenResponse> oauth2_introspect_token({}) async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/introspect',
@@ -144,22 +144,22 @@ class Oauth2Api {
       return IntrospectTokenResponse.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> userinfo({}) async {
+  Future<dynamic> oauth2_userinfo({}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/userinfo',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

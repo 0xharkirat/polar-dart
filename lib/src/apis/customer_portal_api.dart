@@ -26,7 +26,7 @@ class CustomerPortalApi {
   CustomerPortalApi(this._dio);
 
 
-  Future<ListResourceCustomerBenefitGrant> list({dynamic? type, dynamic? benefit_id, dynamic? organization_id, dynamic? checkout_id, dynamic? order_id, dynamic? subscription_id, int page = 1, int limit = 10, dynamic sorting = const ["-granted_at"]}) async {
+  Future<ListResourceCustomerBenefitGrant> customer_portal_benefit_grants_list({dynamic type, dynamic benefit_id, dynamic organization_id, dynamic checkout_id, dynamic order_id, dynamic subscription_id, int page = 1, int limit = 10, dynamic sorting = const ["-granted_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/benefit-grants/',
@@ -35,14 +35,14 @@ class CustomerPortalApi {
       return ListResourceCustomerBenefitGrant.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerBenefitGrant> get({required String id}) async {
+  Future<CustomerBenefitGrant> customer_portal_benefit_grants_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/benefit-grants/${id}',
@@ -50,14 +50,14 @@ class CustomerPortalApi {
       return CustomerBenefitGrant.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerBenefitGrant> update({required CustomerBenefitGrantUpdate body, required String id}) async {
+  Future<CustomerBenefitGrant> customer_portal_benefit_grants_update({required CustomerBenefitGrantUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/customer-portal/benefit-grants/${id}',
@@ -66,14 +66,14 @@ class CustomerPortalApi {
       return CustomerBenefitGrant.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerPortalCustomer> get({required String id}) async {
+  Future<CustomerPortalCustomer> customer_portal_customers_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/customers/${id}',
@@ -81,14 +81,14 @@ class CustomerPortalApi {
       return CustomerPortalCustomer.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ListResourceDownloadableRead> list({dynamic? organization_id, dynamic? benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceDownloadableRead> customer_portal_downloadables_list({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/downloadables/',
@@ -97,29 +97,29 @@ class CustomerPortalApi {
       return ListResourceDownloadableRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> customerPortal.downloadables.get({required String token}) async {
+  Future<dynamic> customer_portal_downloadables_customer_portal_downloadables_get({required String token}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/downloadables/${token}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ListResourceLicenseKeyRead> list({dynamic? organization_id, String? benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceLicenseKeyRead> customer_portal_license_keys_list({dynamic organization_id, String? benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/license-keys/',
@@ -128,14 +128,14 @@ class CustomerPortalApi {
       return ListResourceLicenseKeyRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<LicenseKeyWithActivations> get({required String id}) async {
+  Future<LicenseKeyWithActivations> customer_portal_license_keys_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/license-keys/${id}',
@@ -143,14 +143,14 @@ class CustomerPortalApi {
       return LicenseKeyWithActivations.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ValidatedLicenseKey> validate({required LicenseKeyValidate body, }) async {
+  Future<ValidatedLicenseKey> customer_portal_license_keys_validate({required LicenseKeyValidate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/validate',
@@ -159,14 +159,14 @@ class CustomerPortalApi {
       return ValidatedLicenseKey.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<LicenseKeyActivationRead> activate({required LicenseKeyActivate body, }) async {
+  Future<LicenseKeyActivationRead> customer_portal_license_keys_activate({required LicenseKeyActivate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/activate',
@@ -175,30 +175,30 @@ class CustomerPortalApi {
       return LicenseKeyActivationRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> deactivate({required LicenseKeyDeactivate body, }) async {
+  Future<dynamic> customer_portal_license_keys_deactivate({required LicenseKeyDeactivate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/deactivate',
         data: body.toJson(),
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ListResourceCustomerOrder> list({dynamic? organization_id, dynamic? product_id, dynamic? product_price_type, dynamic? subscription_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceCustomerOrder> customer_portal_orders_list({dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic subscription_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/',
@@ -207,14 +207,14 @@ class CustomerPortalApi {
       return ListResourceCustomerOrder.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerOrder> get({required String id}) async {
+  Future<CustomerOrder> customer_portal_orders_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/${id}',
@@ -222,14 +222,14 @@ class CustomerPortalApi {
       return CustomerOrder.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerOrderInvoice> invoice({required String id}) async {
+  Future<CustomerOrderInvoice> customer_portal_orders_invoice({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/${id}/invoice',
@@ -237,14 +237,14 @@ class CustomerPortalApi {
       return CustomerOrderInvoice.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Organization> get({required String slug}) async {
+  Future<Organization> customer_portal_organizations_get({required String slug}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/organizations/${slug}',
@@ -252,14 +252,14 @@ class CustomerPortalApi {
       return Organization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ListResourceCustomerSubscription> list({dynamic? organization_id, dynamic? product_id, dynamic? active, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
+  Future<ListResourceCustomerSubscription> customer_portal_subscriptions_list({dynamic organization_id, dynamic product_id, dynamic active, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/subscriptions/',
@@ -268,14 +268,14 @@ class CustomerPortalApi {
       return ListResourceCustomerSubscription.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerSubscription> get({required String id}) async {
+  Future<CustomerSubscription> customer_portal_subscriptions_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/subscriptions/${id}',
@@ -283,14 +283,14 @@ class CustomerPortalApi {
       return CustomerSubscription.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerSubscription> update({required CustomerSubscriptionUpdate body, required String id}) async {
+  Future<CustomerSubscription> customer_portal_subscriptions_update({required CustomerSubscriptionUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/customer-portal/subscriptions/${id}',
@@ -299,14 +299,14 @@ class CustomerPortalApi {
       return CustomerSubscription.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CustomerSubscription> cancel({required String id}) async {
+  Future<CustomerSubscription> customer_portal_subscriptions_cancel({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/customer-portal/subscriptions/${id}',
@@ -314,7 +314,7 @@ class CustomerPortalApi {
       return CustomerSubscription.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

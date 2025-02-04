@@ -11,7 +11,7 @@ class OrganizationsApi {
   OrganizationsApi(this._dio);
 
 
-  Future<ListResourceOrganization> list({String? slug, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
+  Future<ListResourceOrganization> organizations_list({String? slug, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/organizations/',
@@ -20,14 +20,14 @@ class OrganizationsApi {
       return ListResourceOrganization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Organization> create({required OrganizationCreate body, }) async {
+  Future<Organization> organizations_create({required OrganizationCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/organizations/',
@@ -36,14 +36,14 @@ class OrganizationsApi {
       return Organization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Organization> get({required String id}) async {
+  Future<Organization> organizations_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/organizations/${id}',
@@ -51,14 +51,14 @@ class OrganizationsApi {
       return Organization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Organization> update({required OrganizationUpdate body, required String id}) async {
+  Future<Organization> organizations_update({required OrganizationUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/organizations/${id}',
@@ -67,7 +67,7 @@ class OrganizationsApi {
       return Organization.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

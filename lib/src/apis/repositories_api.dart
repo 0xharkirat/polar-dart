@@ -10,7 +10,7 @@ class RepositoriesApi {
   RepositoriesApi(this._dio);
 
 
-  Future<ListResourceRepository> list({dynamic? platform, dynamic? name, dynamic? external_organization_name, dynamic? is_private, dynamic? organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceRepository> repositories_list({dynamic platform, dynamic name, dynamic external_organization_name, dynamic is_private, dynamic organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/repositories/',
@@ -19,14 +19,14 @@ class RepositoriesApi {
       return ListResourceRepository.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Repository> get({required String id}) async {
+  Future<Repository> repositories_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/repositories/${id}',
@@ -34,14 +34,14 @@ class RepositoriesApi {
       return Repository.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Repository> update({required RepositoryUpdate body, required String id}) async {
+  Future<Repository> repositories_update({required RepositoryUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/repositories/${id}',
@@ -50,7 +50,7 @@ class RepositoriesApi {
       return Repository.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

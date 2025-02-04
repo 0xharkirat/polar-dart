@@ -5,13 +5,13 @@ import '../models/checkout_link_create.dart';
 import '../models/checkout_link_update.dart';
 
 /// A class to handle operations related to checkout-links in the Polar API.
-class Checkout-linksApi {
+class CheckoutLinksApi {
   final Dio _dio;
 
-  Checkout-linksApi(this._dio);
+  CheckoutLinksApi(this._dio);
 
 
-  Future<ListResourceCheckoutLink> list({dynamic? organization_id, dynamic? product_id, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
+  Future<ListResourceCheckoutLink> checkout_links_list({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/checkout-links/',
@@ -20,14 +20,14 @@ class Checkout-linksApi {
       return ListResourceCheckoutLink.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutLink> create({required CheckoutLinkCreate body, }) async {
+  Future<CheckoutLink> checkout_links_create({required CheckoutLinkCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkout-links/',
@@ -36,14 +36,14 @@ class Checkout-linksApi {
       return CheckoutLink.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutLink> get({required String id}) async {
+  Future<CheckoutLink> checkout_links_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkout-links/${id}',
@@ -51,14 +51,14 @@ class Checkout-linksApi {
       return CheckoutLink.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<CheckoutLink> update({required CheckoutLinkUpdate body, required String id}) async {
+  Future<CheckoutLink> checkout_links_update({required CheckoutLinkUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkout-links/${id}',
@@ -67,22 +67,22 @@ class Checkout-linksApi {
       return CheckoutLink.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> delete({required String id}) async {
+  Future<dynamic> checkout_links_delete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/checkout-links/${id}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

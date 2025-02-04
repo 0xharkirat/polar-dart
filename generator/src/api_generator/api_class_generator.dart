@@ -46,7 +46,7 @@ class $className {
       // Generate methods for endpoints
       for (final endpoint in endpoints) {
         final method = endpoint['method'];
-        final operationId = _formatOperationId(endpoint['operationId']);
+        final operationId = endpoint['operationId'].replaceAll(':', '_');
         final path = endpoint['path'];
         final responseSchema = endpoint['responseSchema'] ?? 'dynamic';
         final parameters = endpoint['parameters'] as List<dynamic>;
@@ -57,8 +57,10 @@ class $className {
           String paramType = param['type'];
           final isRequired = param['required'] ? 'required ' : '';
 
-          // Adjust nullable types
-          if (param['nullable'] == true && !paramType.endsWith('?')) {
+          // Adjust nullable types, but skip if type is dynamic
+          if (param['nullable'] == true &&
+              paramType != 'dynamic' &&
+              !paramType.endsWith('?')) {
             paramType = '$paramType?';
           }
 
@@ -109,7 +111,13 @@ class $className {
         }
 
         buffer.writeln('      );');
-        buffer.writeln('      return $responseSchema.fromJson(response.data);');
+        print(responseSchema);
+        if (responseSchema != 'dynamic') {
+
+          buffer.writeln('      return $responseSchema.fromJson(response.data);');
+        } else {
+          buffer.writeln('      return response.data;');
+        }
         buffer.writeln('    } catch (e) {');
         buffer.writeln('      if (e is DioException) {');
         buffer.writeln(_generateErrorHandling(endpoint));
@@ -130,13 +138,6 @@ class $className {
     print('API classes generated successfully in $outputDir');
   }
 
-  static String _formatOperationId(String operationId) {
-    return operationId.split(':').last.replaceAllMapped(
-          RegExp(r'(_[a-z])'),
-          (match) => match.group(0)!.substring(1).toUpperCase(),
-        );
-  }
-
   static String _generateErrorHandling(Map<String, dynamic> endpoint) {
     final responses = endpoint['responses'] as Map<String, dynamic>? ?? {};
     final buffer = StringBuffer();
@@ -153,7 +154,7 @@ class $className {
     });
 
     buffer.writeln(
-        "        throw Exception('HTTP Error: \${e.response?.statusCode} - \${e.message}');");
+        "       throw Exception('HTTP Error: \${e.response?.statusCode} - \${e.message}');");
     return buffer.toString();
   }
 }

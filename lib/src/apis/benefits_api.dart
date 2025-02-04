@@ -11,7 +11,7 @@ class BenefitsApi {
   BenefitsApi(this._dio);
 
 
-  Future<ListResourceBenefit> list({dynamic? organization_id, dynamic? type, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefit> benefits_list({dynamic organization_id, dynamic type, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/',
@@ -20,14 +20,14 @@ class BenefitsApi {
       return ListResourceBenefit.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Benefit> create({required BenefitCreate body, }) async {
+  Future<Benefit> benefits_create({required BenefitCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/benefits/',
@@ -36,14 +36,14 @@ class BenefitsApi {
       return Benefit.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Benefit> get({required String id}) async {
+  Future<Benefit> benefits_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/${id}',
@@ -51,14 +51,14 @@ class BenefitsApi {
       return Benefit.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Benefit> update({required String id}) async {
+  Future<Benefit> benefits_update({required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/benefits/${id}',
@@ -66,29 +66,29 @@ class BenefitsApi {
       return Benefit.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<dynamic> delete({required String id}) async {
+  Future<dynamic> benefits_delete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/benefits/${id}',
       );
-      return dynamic.fromJson(response.data);
+      return response.data;
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<ListResourceBenefitGrant> grants({required String id, dynamic? is_granted, dynamic? customer_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefitGrant> benefits_grants({required String id, dynamic is_granted, dynamic customer_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/${id}/grants',
@@ -97,7 +97,7 @@ class BenefitsApi {
       return ListResourceBenefitGrant.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

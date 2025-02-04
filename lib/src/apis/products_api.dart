@@ -12,7 +12,7 @@ class ProductsApi {
   ProductsApi(this._dio);
 
 
-  Future<ListResourceProduct> list({dynamic? id, dynamic? organization_id, String? query, dynamic? is_archived, dynamic? is_recurring, dynamic? benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceProduct> products_list({dynamic id, dynamic organization_id, String? query, dynamic is_archived, dynamic is_recurring, dynamic benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/products/',
@@ -21,14 +21,14 @@ class ProductsApi {
       return ListResourceProduct.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Product> create({required ProductCreate body, }) async {
+  Future<Product> products_create({required ProductCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/products/',
@@ -37,14 +37,14 @@ class ProductsApi {
       return Product.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Product> get({required String id}) async {
+  Future<Product> products_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/products/${id}',
@@ -52,14 +52,14 @@ class ProductsApi {
       return Product.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Product> update({required ProductUpdate body, required String id}) async {
+  Future<Product> products_update({required ProductUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/products/${id}',
@@ -68,14 +68,14 @@ class ProductsApi {
       return Product.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Product> updateBenefits({required ProductBenefitsUpdate body, required String id}) async {
+  Future<Product> products_update_benefits({required ProductBenefitsUpdate body, required String id}) async {
     try {
       final response = await _dio.post(
         '/v1/products/${id}/benefits',
@@ -84,7 +84,7 @@ class ProductsApi {
       return Product.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

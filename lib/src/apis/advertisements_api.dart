@@ -9,7 +9,7 @@ class AdvertisementsApi {
   AdvertisementsApi(this._dio);
 
 
-  Future<AdvertisementCampaignListResource> list({required String benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["granted_at"]}) async {
+  Future<AdvertisementCampaignListResource> advertisements_list({required String benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["granted_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/advertisements/',
@@ -18,14 +18,14 @@ class AdvertisementsApi {
       return AdvertisementCampaignListResource.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<AdvertisementCampaign> get({required String id}) async {
+  Future<AdvertisementCampaign> advertisements_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/advertisements/${id}',
@@ -33,7 +33,7 @@ class AdvertisementsApi {
       return AdvertisementCampaign.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

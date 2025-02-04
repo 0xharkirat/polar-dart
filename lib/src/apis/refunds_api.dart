@@ -10,7 +10,7 @@ class RefundsApi {
   RefundsApi(this._dio);
 
 
-  Future<ListResourceRefund> list({dynamic? id, dynamic? organization_id, dynamic? order_id, dynamic? subscription_id, dynamic? customer_id, dynamic? succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceRefund> refunds_list({dynamic id, dynamic organization_id, dynamic order_id, dynamic subscription_id, dynamic customer_id, dynamic succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/refunds/',
@@ -19,14 +19,14 @@ class RefundsApi {
       return ListResourceRefund.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<Refund> create({required RefundCreate body, }) async {
+  Future<Refund> refunds_create({required RefundCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/refunds/',
@@ -35,7 +35,7 @@ class RefundsApi {
       return Refund.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

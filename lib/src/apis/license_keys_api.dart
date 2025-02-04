@@ -12,7 +12,7 @@ class LicenseKeysApi {
   LicenseKeysApi(this._dio);
 
 
-  Future<ListResourceLicenseKeyRead> list({dynamic? organization_id, dynamic? benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceLicenseKeyRead> license_keys_list({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys',
@@ -21,14 +21,14 @@ class LicenseKeysApi {
       return ListResourceLicenseKeyRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<LicenseKeyWithActivations> get({required String id}) async {
+  Future<LicenseKeyWithActivations> license_keys_get({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys/${id}',
@@ -36,14 +36,14 @@ class LicenseKeysApi {
       return LicenseKeyWithActivations.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<LicenseKeyRead> update({required LicenseKeyUpdate body, required String id}) async {
+  Future<LicenseKeyRead> license_keys_update({required LicenseKeyUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/license-keys/${id}',
@@ -52,14 +52,14 @@ class LicenseKeysApi {
       return LicenseKeyRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');
     }
   }
 
-  Future<LicenseKeyActivationRead> getActivation({required String id, required String activation_id}) async {
+  Future<LicenseKeyActivationRead> license_keys_get_activation({required String id, required String activation_id}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys/${id}/activations/${activation_id}',
@@ -67,7 +67,7 @@ class LicenseKeysApi {
       return LicenseKeyActivationRead.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
-        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
 
       }
       throw Exception('Unexpected Error: $e');

@@ -72,7 +72,7 @@ class PathParser {
         final endpoint = {
           'method': method.toUpperCase(),
           'path': path,
-          'operationId': operationId,
+          'operationId': Common.toSnakeCase(operationId).replaceAll('.', '_'),
           'parameters': parameters,
           'requestSchema': requestSchema,
           'responseSchema': resolvedResponseSchema,
