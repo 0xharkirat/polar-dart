@@ -30,11 +30,22 @@ class Common {
   static Map<String, dynamic> getPropertiesWithTypesAndDartMapping(
       Map<String, dynamic> schema, Map<String, dynamic> allSchemas) {
     final properties = schema['properties'] as Map<String, dynamic>? ?? {};
+    final requiredFields = List<String>.from(schema['required'] ?? []);
     final Map<String, dynamic> propertyDetails = {};
 
     properties.forEach((propertyName, propertyValue) {
-      propertyDetails[propertyName] =
-          getTypeWithDartMapping(propertyValue, allSchemas);
+      final typeDetails = getTypeWithDartMapping(propertyValue, allSchemas);
+      final dartType = typeDetails['dart_type'];
+
+      // Make non-required fields nullable if they aren't already
+      final finalType = requiredFields.contains(propertyName) || dartType.endsWith('?')
+          ? dartType
+          : '$dartType?';
+
+      propertyDetails[propertyName] = {
+        'openapi_type': typeDetails['openapi_type'],
+        'dart_type': finalType,
+      };
     });
 
     return propertyDetails;
