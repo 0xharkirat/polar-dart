@@ -11,7 +11,7 @@ class CustomFieldsApi {
   CustomFieldsApi(this._dio);
 
 
-  Future<ListResourceCustomField> custom_fields_list({dynamic organization_id, String? query, dynamic type, int page = 1, int limit = 10, dynamic sorting = const ["slug"]}) async {
+  Future<ListResourceCustomField> customFieldsList({dynamic organization_id, String? query, dynamic type, int page = 1, int limit = 10, dynamic sorting = const ["slug"]}) async {
     try {
       final response = await _dio.get(
         '/v1/custom-fields/',
@@ -27,7 +27,7 @@ class CustomFieldsApi {
     }
   }
 
-  Future<CustomField> custom_fields_create({required CustomFieldCreate body, }) async {
+  Future<CustomField> customFieldsCreate({required CustomFieldCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/custom-fields/',
@@ -43,7 +43,7 @@ class CustomFieldsApi {
     }
   }
 
-  Future<CustomField> custom_fields_get({required String id}) async {
+  Future<CustomField> customFieldsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/custom-fields/${id}',
@@ -58,7 +58,7 @@ class CustomFieldsApi {
     }
   }
 
-  Future<CustomField> custom_fields_update({required CustomFieldUpdate body, required String id}) async {
+  Future<CustomField> customFieldsUpdate({required CustomFieldUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/custom-fields/${id}',
@@ -74,7 +74,7 @@ class CustomFieldsApi {
     }
   }
 
-  Future<dynamic> custom_fields_delete({required String id}) async {
+  Future<dynamic> customFieldsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/custom-fields/${id}',

@@ -13,7 +13,7 @@ class Oauth2Api {
   Oauth2Api(this._dio);
 
 
-  Future<ListResourceOAuth2Client> oauth2_clients_list({int page = 1, int limit = 10}) async {
+  Future<ListResourceOAuth2Client> oauth2ClientsList({int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/',
@@ -29,7 +29,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_clients_oauth2_create_client({required OAuth2ClientConfiguration body, }) async {
+  Future<dynamic> oauth2ClientsOauth2CreateClient({required OAuth2ClientConfiguration body, }) async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/register',
@@ -45,7 +45,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_clients_oauth2_get_client({required String client_id}) async {
+  Future<dynamic> oauth2ClientsOauth2GetClient({required String client_id}) async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/register/${client_id}',
@@ -60,7 +60,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_clients_oauth2_update_client({required OAuth2ClientConfigurationUpdate body, required String client_id}) async {
+  Future<dynamic> oauth2ClientsOauth2UpdateClient({required OAuth2ClientConfigurationUpdate body, required String client_id}) async {
     try {
       final response = await _dio.put(
         '/v1/oauth2/register/${client_id}',
@@ -76,7 +76,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_clients_oauth2_delete_client({required String client_id}) async {
+  Future<dynamic> oauth2ClientsOauth2DeleteClient({required String client_id}) async {
     try {
       final response = await _dio.delete(
         '/v1/oauth2/register/${client_id}',
@@ -91,7 +91,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_authorize({}) async {
+  Future<dynamic> oauth2Authorize() async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/authorize',
@@ -106,7 +106,7 @@ class Oauth2Api {
     }
   }
 
-  Future<TokenResponse> oauth2_request_token({}) async {
+  Future<TokenResponse> oauth2RequestToken() async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/token',
@@ -121,7 +121,7 @@ class Oauth2Api {
     }
   }
 
-  Future<RevokeTokenResponse> oauth2_revoke_token({}) async {
+  Future<RevokeTokenResponse> oauth2RevokeToken() async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/revoke',
@@ -136,7 +136,7 @@ class Oauth2Api {
     }
   }
 
-  Future<IntrospectTokenResponse> oauth2_introspect_token({}) async {
+  Future<IntrospectTokenResponse> oauth2IntrospectToken() async {
     try {
       final response = await _dio.post(
         '/v1/oauth2/introspect',
@@ -151,7 +151,7 @@ class Oauth2Api {
     }
   }
 
-  Future<dynamic> oauth2_userinfo({}) async {
+  Future<dynamic> oauth2Userinfo() async {
     try {
       final response = await _dio.get(
         '/v1/oauth2/userinfo',

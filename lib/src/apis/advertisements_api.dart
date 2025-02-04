@@ -9,7 +9,7 @@ class AdvertisementsApi {
   AdvertisementsApi(this._dio);
 
 
-  Future<AdvertisementCampaignListResource> advertisements_list({required String benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["granted_at"]}) async {
+  Future<AdvertisementCampaignListResource> advertisementsList({required String benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["granted_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/advertisements/',
@@ -25,7 +25,7 @@ class AdvertisementsApi {
     }
   }
 
-  Future<AdvertisementCampaign> advertisements_get({required String id}) async {
+  Future<AdvertisementCampaign> advertisementsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/advertisements/${id}',

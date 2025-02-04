@@ -38,7 +38,7 @@ class OrganizationsApi {
         'sorting': sorting, // Include only if sorting is not null
       };
 
-      print('Query Parameters: $queryParameters'); // Debug log
+      // print('Query Parameters: $queryParameters'); // Debug log
 
       final response = await _dio.get(
         '/v1/organizations/',

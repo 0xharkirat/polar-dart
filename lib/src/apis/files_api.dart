@@ -12,7 +12,7 @@ class FilesApi {
   FilesApi(this._dio);
 
 
-  Future<ListResourceFileRead> files_list({String? organization_id, dynamic ids, int page = 1, int limit = 10}) async {
+  Future<ListResourceFileRead> filesList({String? organization_id, dynamic ids, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/files/',
@@ -28,7 +28,7 @@ class FilesApi {
     }
   }
 
-  Future<FileUpload> files_create({required FileCreate body, }) async {
+  Future<FileUpload> filesCreate({required FileCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/files/',
@@ -44,7 +44,7 @@ class FilesApi {
     }
   }
 
-  Future<dynamic> files_uploaded({required FileUploadCompleted body, required String id}) async {
+  Future<dynamic> filesUploaded({required FileUploadCompleted body, required String id}) async {
     try {
       final response = await _dio.post(
         '/v1/files/${id}/uploaded',
@@ -60,7 +60,7 @@ class FilesApi {
     }
   }
 
-  Future<dynamic> files_update({required FilePatch body, required String id}) async {
+  Future<dynamic> filesUpdate({required FilePatch body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/files/${id}',
@@ -76,7 +76,7 @@ class FilesApi {
     }
   }
 
-  Future<dynamic> files_delete({required String id}) async {
+  Future<dynamic> filesDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/files/${id}',

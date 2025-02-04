@@ -11,7 +11,7 @@ class BenefitsApi {
   BenefitsApi(this._dio);
 
 
-  Future<ListResourceBenefit> benefits_list({dynamic organization_id, dynamic type, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefit> benefitsList({dynamic organization_id, dynamic type, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/',
@@ -27,7 +27,7 @@ class BenefitsApi {
     }
   }
 
-  Future<Benefit> benefits_create({required BenefitCreate body, }) async {
+  Future<Benefit> benefitsCreate({required BenefitCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/benefits/',
@@ -43,7 +43,7 @@ class BenefitsApi {
     }
   }
 
-  Future<Benefit> benefits_get({required String id}) async {
+  Future<Benefit> benefitsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/${id}',
@@ -58,7 +58,7 @@ class BenefitsApi {
     }
   }
 
-  Future<Benefit> benefits_update({required String id}) async {
+  Future<Benefit> benefitsUpdate({required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/benefits/${id}',
@@ -73,7 +73,7 @@ class BenefitsApi {
     }
   }
 
-  Future<dynamic> benefits_delete({required String id}) async {
+  Future<dynamic> benefitsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/benefits/${id}',
@@ -88,7 +88,7 @@ class BenefitsApi {
     }
   }
 
-  Future<ListResourceBenefitGrant> benefits_grants({required String id, dynamic is_granted, dynamic customer_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefitGrant> benefitsGrants({required String id, dynamic is_granted, dynamic customer_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/${id}/grants',

@@ -17,7 +17,7 @@ class CheckoutsApi {
   CheckoutsApi(this._dio);
 
 
-  Future<ListResourceCheckout> checkouts_custom_list({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceCheckout> checkoutsCustomList({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/',
@@ -33,7 +33,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<Checkout> checkouts_custom_create({required CheckoutCreate body, }) async {
+  Future<Checkout> checkoutsCustomCreate({required CheckoutCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/custom/',
@@ -49,7 +49,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<Checkout> checkouts_custom_get({required String id}) async {
+  Future<Checkout> checkoutsCustomGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/${id}',
@@ -64,7 +64,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<Checkout> checkouts_custom_update({required CheckoutUpdate body, required String id}) async {
+  Future<Checkout> checkoutsCustomUpdate({required CheckoutUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkouts/custom/${id}',
@@ -80,7 +80,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<CheckoutPublic> checkouts_custom_client_get({required String client_secret}) async {
+  Future<CheckoutPublic> checkoutsCustomClientGet({required String client_secret}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/custom/client/${client_secret}',
@@ -95,7 +95,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<CheckoutPublic> checkouts_custom_client_update({required CheckoutUpdatePublic body, required String client_secret}) async {
+  Future<CheckoutPublic> checkoutsCustomClientUpdate({required CheckoutUpdatePublic body, required String client_secret}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkouts/custom/client/${client_secret}',
@@ -111,7 +111,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<CheckoutPublicConfirmed> checkouts_custom_client_confirm({required CheckoutConfirmStripe body, required String client_secret}) async {
+  Future<CheckoutPublicConfirmed> checkoutsCustomClientConfirm({required CheckoutConfirmStripe body, required String client_secret}) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/custom/client/${client_secret}/confirm',
@@ -127,7 +127,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<CheckoutLegacy> checkouts_create({required CheckoutLegacyCreate body, }) async {
+  Future<CheckoutLegacy> checkoutsCreate({required CheckoutLegacyCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkouts/',
@@ -143,7 +143,7 @@ class CheckoutsApi {
     }
   }
 
-  Future<CheckoutLegacy> checkouts_get({required String id}) async {
+  Future<CheckoutLegacy> checkoutsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkouts/${id}',

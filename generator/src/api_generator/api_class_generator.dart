@@ -79,10 +79,12 @@ class $className {
           return '$isRequired$paramType ${param['name']}$defaultValue';
         }).join(', ');
 
+        final hasParams = requestSchema != null || paramList.isNotEmpty;
         final requestBodyParam =
             requestSchema != null ? 'required $requestSchema body, ' : '';
-        final methodSignature =
-            '''Future<$responseSchema> $operationId({$requestBodyParam$paramList}) async {''';
+        final methodSignature = hasParams
+            ? '''Future<${responseSchema ?? 'dynamic'}> ${Common.toLowerCamelCase(operationId)}({$requestBodyParam$paramList}) async {'''
+            : '''Future<${responseSchema ?? 'dynamic'}> ${Common.toLowerCamelCase(operationId)}() async {''';
 
         // Replace path parameters like {id} with actual values
         final resolvedPath = path.replaceAllMapped(
@@ -111,10 +113,10 @@ class $className {
         }
 
         buffer.writeln('      );');
-        print(responseSchema);
+        // print(responseSchema);
         if (responseSchema != 'dynamic') {
-
-          buffer.writeln('      return $responseSchema.fromJson(response.data);');
+          buffer
+              .writeln('      return $responseSchema.fromJson(response.data);');
         } else {
           buffer.writeln('      return response.data;');
         }

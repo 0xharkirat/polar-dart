@@ -15,7 +15,7 @@ void main() async {
 
   try {
     // List Organizations without specifying sorting
-    final organizations = await polarClient.organizations.list();
+    final organizations = await polarClient.organizations.organizationsList();
 
     print('Organizations: ${organizations.items.length} items found.');
 

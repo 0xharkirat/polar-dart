@@ -9,7 +9,7 @@ class CustomerSessionsApi {
   CustomerSessionsApi(this._dio);
 
 
-  Future<CustomerSession> customer_sessions_create({required CustomerSessionCreate body, }) async {
+  Future<CustomerSession> customerSessionsCreate({required CustomerSessionCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-sessions/',

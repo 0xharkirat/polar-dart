@@ -12,7 +12,7 @@ class LicenseKeysApi {
   LicenseKeysApi(this._dio);
 
 
-  Future<ListResourceLicenseKeyRead> license_keys_list({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceLicenseKeyRead> licenseKeysList({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys',
@@ -28,7 +28,7 @@ class LicenseKeysApi {
     }
   }
 
-  Future<LicenseKeyWithActivations> license_keys_get({required String id}) async {
+  Future<LicenseKeyWithActivations> licenseKeysGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys/${id}',
@@ -43,7 +43,7 @@ class LicenseKeysApi {
     }
   }
 
-  Future<LicenseKeyRead> license_keys_update({required LicenseKeyUpdate body, required String id}) async {
+  Future<LicenseKeyRead> licenseKeysUpdate({required LicenseKeyUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/license-keys/${id}',
@@ -59,7 +59,7 @@ class LicenseKeysApi {
     }
   }
 
-  Future<LicenseKeyActivationRead> license_keys_get_activation({required String id, required String activation_id}) async {
+  Future<LicenseKeyActivationRead> licenseKeysGetActivation({required String id, required String activation_id}) async {
     try {
       final response = await _dio.get(
         '/v1/license-keys/${id}/activations/${activation_id}',

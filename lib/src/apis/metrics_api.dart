@@ -9,7 +9,7 @@ class MetricsApi {
   MetricsApi(this._dio);
 
 
-  Future<MetricsResponse> metrics_get({required String start_date, required String end_date, required dynamic interval, dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic customer_id}) async {
+  Future<MetricsResponse> metricsGet({required String start_date, required String end_date, required dynamic interval, dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic customer_id}) async {
     try {
       final response = await _dio.get(
         '/v1/metrics/',
@@ -25,7 +25,7 @@ class MetricsApi {
     }
   }
 
-  Future<MetricsLimits> metrics_limits({}) async {
+  Future<MetricsLimits> metricsLimits() async {
     try {
       final response = await _dio.get(
         '/v1/metrics/limits',

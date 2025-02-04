@@ -26,7 +26,7 @@ class CustomerPortalApi {
   CustomerPortalApi(this._dio);
 
 
-  Future<ListResourceCustomerBenefitGrant> customer_portal_benefit_grants_list({dynamic type, dynamic benefit_id, dynamic organization_id, dynamic checkout_id, dynamic order_id, dynamic subscription_id, int page = 1, int limit = 10, dynamic sorting = const ["-granted_at"]}) async {
+  Future<ListResourceCustomerBenefitGrant> customerPortalBenefitGrantsList({dynamic type, dynamic benefit_id, dynamic organization_id, dynamic checkout_id, dynamic order_id, dynamic subscription_id, int page = 1, int limit = 10, dynamic sorting = const ["-granted_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/benefit-grants/',
@@ -42,7 +42,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerBenefitGrant> customer_portal_benefit_grants_get({required String id}) async {
+  Future<CustomerBenefitGrant> customerPortalBenefitGrantsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/benefit-grants/${id}',
@@ -57,7 +57,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerBenefitGrant> customer_portal_benefit_grants_update({required CustomerBenefitGrantUpdate body, required String id}) async {
+  Future<CustomerBenefitGrant> customerPortalBenefitGrantsUpdate({required CustomerBenefitGrantUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/customer-portal/benefit-grants/${id}',
@@ -73,7 +73,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerPortalCustomer> customer_portal_customers_get({required String id}) async {
+  Future<CustomerPortalCustomer> customerPortalCustomersGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/customers/${id}',
@@ -88,7 +88,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<ListResourceDownloadableRead> customer_portal_downloadables_list({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceDownloadableRead> customerPortalDownloadablesList({dynamic organization_id, dynamic benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/downloadables/',
@@ -104,7 +104,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<dynamic> customer_portal_downloadables_customer_portal_downloadables_get({required String token}) async {
+  Future<dynamic> customerPortalDownloadablesCustomerPortalDownloadablesGet({required String token}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/downloadables/${token}',
@@ -119,7 +119,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<ListResourceLicenseKeyRead> customer_portal_license_keys_list({dynamic organization_id, String? benefit_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceLicenseKeyRead> customerPortalLicenseKeysList({dynamic organization_id, String? benefit_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/license-keys/',
@@ -135,7 +135,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<LicenseKeyWithActivations> customer_portal_license_keys_get({required String id}) async {
+  Future<LicenseKeyWithActivations> customerPortalLicenseKeysGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/license-keys/${id}',
@@ -150,7 +150,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<ValidatedLicenseKey> customer_portal_license_keys_validate({required LicenseKeyValidate body, }) async {
+  Future<ValidatedLicenseKey> customerPortalLicenseKeysValidate({required LicenseKeyValidate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/validate',
@@ -166,7 +166,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<LicenseKeyActivationRead> customer_portal_license_keys_activate({required LicenseKeyActivate body, }) async {
+  Future<LicenseKeyActivationRead> customerPortalLicenseKeysActivate({required LicenseKeyActivate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/activate',
@@ -182,7 +182,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<dynamic> customer_portal_license_keys_deactivate({required LicenseKeyDeactivate body, }) async {
+  Future<dynamic> customerPortalLicenseKeysDeactivate({required LicenseKeyDeactivate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customer-portal/license-keys/deactivate',
@@ -198,7 +198,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<ListResourceCustomerOrder> customer_portal_orders_list({dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic subscription_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceCustomerOrder> customerPortalOrdersList({dynamic organization_id, dynamic product_id, dynamic product_price_type, dynamic subscription_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/',
@@ -214,7 +214,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerOrder> customer_portal_orders_get({required String id}) async {
+  Future<CustomerOrder> customerPortalOrdersGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/${id}',
@@ -229,7 +229,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerOrderInvoice> customer_portal_orders_invoice({required String id}) async {
+  Future<CustomerOrderInvoice> customerPortalOrdersInvoice({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/${id}/invoice',
@@ -244,7 +244,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<Organization> customer_portal_organizations_get({required String slug}) async {
+  Future<Organization> customerPortalOrganizationsGet({required String slug}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/organizations/${slug}',
@@ -259,7 +259,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<ListResourceCustomerSubscription> customer_portal_subscriptions_list({dynamic organization_id, dynamic product_id, dynamic active, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
+  Future<ListResourceCustomerSubscription> customerPortalSubscriptionsList({dynamic organization_id, dynamic product_id, dynamic active, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/subscriptions/',
@@ -275,7 +275,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerSubscription> customer_portal_subscriptions_get({required String id}) async {
+  Future<CustomerSubscription> customerPortalSubscriptionsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/subscriptions/${id}',
@@ -290,7 +290,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerSubscription> customer_portal_subscriptions_update({required CustomerSubscriptionUpdate body, required String id}) async {
+  Future<CustomerSubscription> customerPortalSubscriptionsUpdate({required CustomerSubscriptionUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/customer-portal/subscriptions/${id}',
@@ -306,7 +306,7 @@ class CustomerPortalApi {
     }
   }
 
-  Future<CustomerSubscription> customer_portal_subscriptions_cancel({required String id}) async {
+  Future<CustomerSubscription> customerPortalSubscriptionsCancel({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/customer-portal/subscriptions/${id}',

@@ -10,7 +10,7 @@ class SubscriptionsApi {
   SubscriptionsApi(this._dio);
 
 
-  Future<ListResourceSubscription> subscriptions_list({dynamic organization_id, dynamic product_id, dynamic customer_id, dynamic discount_id, dynamic active, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
+  Future<ListResourceSubscription> subscriptionsList({dynamic organization_id, dynamic product_id, dynamic customer_id, dynamic discount_id, dynamic active, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/subscriptions/',
@@ -26,7 +26,7 @@ class SubscriptionsApi {
     }
   }
 
-  Future<dynamic> subscriptions_export({dynamic organization_id}) async {
+  Future<dynamic> subscriptionsExport({dynamic organization_id}) async {
     try {
       final response = await _dio.get(
         '/v1/subscriptions/export',
@@ -42,7 +42,7 @@ class SubscriptionsApi {
     }
   }
 
-  Future<Subscription> subscriptions_get({required String id}) async {
+  Future<Subscription> subscriptionsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/subscriptions/${id}',
@@ -57,7 +57,7 @@ class SubscriptionsApi {
     }
   }
 
-  Future<Subscription> subscriptions_update({required SubscriptionUpdate body, required String id}) async {
+  Future<Subscription> subscriptionsUpdate({required SubscriptionUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/subscriptions/${id}',
@@ -73,7 +73,7 @@ class SubscriptionsApi {
     }
   }
 
-  Future<Subscription> subscriptions_revoke({required String id}) async {
+  Future<Subscription> subscriptionsRevoke({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/subscriptions/${id}',

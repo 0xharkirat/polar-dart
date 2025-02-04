@@ -11,7 +11,7 @@ class CheckoutLinksApi {
   CheckoutLinksApi(this._dio);
 
 
-  Future<ListResourceCheckoutLink> checkout_links_list({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
+  Future<ListResourceCheckoutLink> checkoutLinksList({dynamic organization_id, dynamic product_id, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/checkout-links/',
@@ -27,7 +27,7 @@ class CheckoutLinksApi {
     }
   }
 
-  Future<CheckoutLink> checkout_links_create({required CheckoutLinkCreate body, }) async {
+  Future<CheckoutLink> checkoutLinksCreate({required CheckoutLinkCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/checkout-links/',
@@ -43,7 +43,7 @@ class CheckoutLinksApi {
     }
   }
 
-  Future<CheckoutLink> checkout_links_get({required String id}) async {
+  Future<CheckoutLink> checkoutLinksGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/checkout-links/${id}',
@@ -58,7 +58,7 @@ class CheckoutLinksApi {
     }
   }
 
-  Future<CheckoutLink> checkout_links_update({required CheckoutLinkUpdate body, required String id}) async {
+  Future<CheckoutLink> checkoutLinksUpdate({required CheckoutLinkUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/checkout-links/${id}',
@@ -74,7 +74,7 @@ class CheckoutLinksApi {
     }
   }
 
-  Future<dynamic> checkout_links_delete({required String id}) async {
+  Future<dynamic> checkoutLinksDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/checkout-links/${id}',

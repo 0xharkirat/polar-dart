@@ -11,7 +11,7 @@ class DiscountsApi {
   DiscountsApi(this._dio);
 
 
-  Future<ListResourceDiscount> discounts_list({dynamic organization_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceDiscount> discountsList({dynamic organization_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/discounts/',
@@ -27,7 +27,7 @@ class DiscountsApi {
     }
   }
 
-  Future<Discount> discounts_create({required DiscountCreate body, }) async {
+  Future<Discount> discountsCreate({required DiscountCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/discounts/',
@@ -43,7 +43,7 @@ class DiscountsApi {
     }
   }
 
-  Future<Discount> discounts_get({required String id}) async {
+  Future<Discount> discountsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/discounts/${id}',
@@ -58,7 +58,7 @@ class DiscountsApi {
     }
   }
 
-  Future<Discount> discounts_update({required DiscountUpdate body, required String id}) async {
+  Future<Discount> discountsUpdate({required DiscountUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/discounts/${id}',
@@ -74,7 +74,7 @@ class DiscountsApi {
     }
   }
 
-  Future<dynamic> discounts_delete({required String id}) async {
+  Future<dynamic> discountsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/discounts/${id}',

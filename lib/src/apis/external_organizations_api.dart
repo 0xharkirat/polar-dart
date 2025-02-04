@@ -8,7 +8,7 @@ class ExternalOrganizationsApi {
   ExternalOrganizationsApi(this._dio);
 
 
-  Future<ListResourceExternalOrganization> external_organizations_list({dynamic platform, dynamic name, dynamic organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceExternalOrganization> externalOrganizationsList({dynamic platform, dynamic name, dynamic organization_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/external_organizations/',

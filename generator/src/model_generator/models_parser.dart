@@ -7,11 +7,11 @@ class ModelsParser {
     if (spec == null) return;
 
     final schemas = Common.extractSchemas(spec);
-    final filteredSchemas = Common.filterRelevantSchemas(schemas);
+    // final filteredSchemas = Common.filterRelevantSchemas(schemas);
 
     final List<Map<String, dynamic>> classMetadata = [];
 
-    for (final entry in filteredSchemas.entries) {
+    for (final entry in schemas.entries) {
       final className = entry.key;
       final schema = entry.value;
 

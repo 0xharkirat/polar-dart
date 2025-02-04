@@ -11,7 +11,7 @@ class CustomersApi {
   CustomersApi(this._dio);
 
 
-  Future<ListResourceCustomer> customers_list({dynamic organization_id, String? email, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"], dynamic metadata}) async {
+  Future<ListResourceCustomer> customersList({dynamic organization_id, String? email, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"], dynamic metadata}) async {
     try {
       final response = await _dio.get(
         '/v1/customers/',
@@ -27,7 +27,7 @@ class CustomersApi {
     }
   }
 
-  Future<Customer> customers_create({required CustomerCreate body, }) async {
+  Future<Customer> customersCreate({required CustomerCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/customers/',
@@ -43,7 +43,7 @@ class CustomersApi {
     }
   }
 
-  Future<Customer> customers_get({required String id}) async {
+  Future<Customer> customersGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/customers/${id}',
@@ -58,7 +58,7 @@ class CustomersApi {
     }
   }
 
-  Future<Customer> customers_update({required CustomerUpdate body, required String id}) async {
+  Future<Customer> customersUpdate({required CustomerUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/customers/${id}',
@@ -74,7 +74,7 @@ class CustomersApi {
     }
   }
 
-  Future<dynamic> customers_delete({required String id}) async {
+  Future<dynamic> customersDelete({required String id}) async {
     try {
       final response = await _dio.delete(
         '/v1/customers/${id}',

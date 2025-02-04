@@ -10,7 +10,7 @@ class RefundsApi {
   RefundsApi(this._dio);
 
 
-  Future<ListResourceRefund> refunds_list({dynamic id, dynamic organization_id, dynamic order_id, dynamic subscription_id, dynamic customer_id, dynamic succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceRefund> refundsList({dynamic id, dynamic organization_id, dynamic order_id, dynamic subscription_id, dynamic customer_id, dynamic succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/refunds/',
@@ -26,7 +26,7 @@ class RefundsApi {
     }
   }
 
-  Future<Refund> refunds_create({required RefundCreate body, }) async {
+  Future<Refund> refundsCreate({required RefundCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/refunds/',

@@ -11,7 +11,7 @@ class OrganizationsApi {
   OrganizationsApi(this._dio);
 
 
-  Future<ListResourceOrganization> organizations_list({String? slug, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
+  Future<ListResourceOrganization> organizationsList({String? slug, int page = 1, int limit = 10, dynamic sorting = const ["created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/organizations/',
@@ -27,7 +27,7 @@ class OrganizationsApi {
     }
   }
 
-  Future<Organization> organizations_create({required OrganizationCreate body, }) async {
+  Future<Organization> organizationsCreate({required OrganizationCreate body, }) async {
     try {
       final response = await _dio.post(
         '/v1/organizations/',
@@ -43,7 +43,7 @@ class OrganizationsApi {
     }
   }
 
-  Future<Organization> organizations_get({required String id}) async {
+  Future<Organization> organizationsGet({required String id}) async {
     try {
       final response = await _dio.get(
         '/v1/organizations/${id}',
@@ -58,7 +58,7 @@ class OrganizationsApi {
     }
   }
 
-  Future<Organization> organizations_update({required OrganizationUpdate body, required String id}) async {
+  Future<Organization> organizationsUpdate({required OrganizationUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
         '/v1/organizations/${id}',

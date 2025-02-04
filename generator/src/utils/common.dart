@@ -13,6 +13,7 @@ class Common {
   }
 
   static Map<String, dynamic> extractSchemas(Map<String, dynamic> spec) {
+    // print lengtsh
     return spec['components']?['schemas'] as Map<String, dynamic>? ?? {};
   }
 
@@ -136,27 +137,25 @@ class Common {
     return refParts.isNotEmpty ? refParts.last : 'dynamic';
   }
 
-static String toSnakeCase(String input) {
-  final regex = RegExp(r'(?<!^)(?=[A-Z])');
-  return input
-      .replaceAll('-', '_')  // Replace hyphens with underscores
-      .replaceAll(regex, '_')
-      .replaceAll(RegExp(r'__+'), '_')
-      .replaceAll(RegExp(r'_+$'), '')
-      .toLowerCase();
-}
+  static String toSnakeCase(String input) {
+    final regex = RegExp(r'(?<!^)(?=[A-Z])');
+    return input
+        .replaceAll('-', '_') // Replace hyphens with underscores
+        .replaceAll(regex, '_')
+        .replaceAll(RegExp(r'__+'), '_')
+        .replaceAll(RegExp(r'_+$'), '')
+        .toLowerCase();
+  }
 
-
-static String toUpperCamelCase(String input) {
-  return input
-      
-      .replaceAll('-', '_')  // Replace hyphens with underscores for consistency
-      .split('_')
-      .where((word) => word.isNotEmpty)
-      .map((word) => word[0].toUpperCase() + word.substring(1))
-      .join('');
-}
-
+  static String toUpperCamelCase(String input) {
+    return input
+        .replaceAll(
+            '-', '_') // Replace hyphens with underscores for consistency
+        .split('_')
+        .where((word) => word.isNotEmpty)
+        .map((word) => word[0].toUpperCase() + word.substring(1))
+        .join('');
+  }
 
   static Future<void> writeJsonFile(String directory,
       List<Map<String, dynamic>> jsonData, String fileName) async {
@@ -243,18 +242,27 @@ static String toUpperCamelCase(String input) {
 
     // Debugging primitive check
     if (primitiveTypes.contains(type)) {
-      print('Primitive type detected: $type');
+      // print('Primitive type detected: $type');
     }
 
     return primitiveTypes.contains(type) ||
         primitiveTypes.any((t) => type.startsWith('List<$t>'));
   }
 
-
   static Future<void> ensureDirectoryExists(String directoryPath) async {
     final directory = Directory(directoryPath);
     if (!await directory.exists()) {
       await directory.create(recursive: true);
     }
+  }
+
+  static String toLowerFirst(String input) {
+    if (input.isEmpty) return input;
+    return input[0].toLowerCase() + input.substring(1);
+  }
+
+  // combine to lowerFirst and toUpperCamelCase to create tolowerCamelCase
+  static String toLowerCamelCase(String input) {
+    return toLowerFirst(toUpperCamelCase(input));
   }
 }
