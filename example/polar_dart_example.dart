@@ -4,6 +4,7 @@ import 'package:dotenv/dotenv.dart';
 
 void main() async {
   // Load the .env file
+
   var env = DotEnv()..load();
 
   // Initialize the PolarClient
@@ -14,16 +15,16 @@ void main() async {
 
   try {
     // List Organizations without specifying sorting
-    // final organizations = await polarClient.organizations.listOrganizations();
+    final organizations = await polarClient.organizations.list();
 
-    // print('Organizations: ${organizations.items.length} items found.');
+    print('Organizations: ${organizations.items.length} items found.');
 
-    // for (var org in organizations.items) {
-    //   print('Organization: ${org.name}, Slug: ${org.slug}');
-    // }
+    for (var org in organizations.items) {
+      print('Organization: ${org.name}, Slug: ${org.slug}');
+    }
 
-    final organization = await polarClient.organizations.getOrganization();
-    print("organization: $organization");
+    // final organization = await polarClient.organizations.getOrganization();
+    // print("organization: $organization");
     
   } catch (e) {
     print('Error occurred: $e');

@@ -141,7 +141,7 @@ class Common {
     return input
         .replaceAll(regex, '_')
         .replaceAll(RegExp(r'__+'), '_')
-        .replaceAll(RegExp(r'_+\$'), '')
+        .replaceAll(RegExp(r'_+$'), '')
         .toLowerCase();
   }
 
@@ -153,17 +153,15 @@ class Common {
         .join('');
   }
 
-  static Future<void> writeJsonFile(
-      String directory, List<Map<String, dynamic>> classMetadata) async {
-    final fileName = 'dart.json';
+  static Future<void> writeJsonFile(String directory,
+      List<Map<String, dynamic>> jsonData, String fileName) async {
     final dir = Directory(directory);
-
     if (!await dir.exists()) {
       await dir.create(recursive: true);
     }
 
     final file = File('$directory/$fileName');
-    final jsonContent = jsonEncode(classMetadata);
+    final jsonContent = jsonEncode(jsonData);
 
     await file.writeAsString(jsonContent);
   }
@@ -245,5 +243,13 @@ class Common {
 
     return primitiveTypes.contains(type) ||
         primitiveTypes.any((t) => type.startsWith('List<$t>'));
+  }
+
+
+  static Future<void> ensureDirectoryExists(String directoryPath) async {
+    final directory = Directory(directoryPath);
+    if (!await directory.exists()) {
+      await directory.create(recursive: true);
+    }
   }
 }
