@@ -5,7 +5,7 @@ import '../utils/common.dart';
 
 class ApiClassGenerator {
   static Future<void> generateApiClasses(
-      String apisJsonPath, String outputDir) async {
+      String apisJsonPath, String outputDir, String jsonOutputDir) async {
     final file = File(apisJsonPath);
     if (!await file.exists()) {
       print('apis.dart.json not found!');
@@ -18,11 +18,20 @@ class ApiClassGenerator {
     final content = await file.readAsString();
     final List<dynamic> apisData = jsonDecode(content);
 
+    //Track Api classes for PolarClient Update
+    final List<Map<String, String>> apiRegistry = [];
+
     for (final apiGroup in apisData) {
       final fileName = apiGroup['fileName'];
       final className = '${Common.toUpperCamelCase(apiGroup['apiGroup'])}Api';
       final imports = apiGroup['imports'] as List<dynamic>;
       final endpoints = apiGroup['endpoints'] as List<dynamic>;
+
+      // Add Api class info to registry
+      apiRegistry.add({
+        'fileName': fileName,
+        'className': className,
+      });
 
       final buffer = StringBuffer();
 
@@ -131,6 +140,11 @@ class $className {
       }
 
       buffer.writeln('}');
+
+      final registryFile = File('$jsonOutputDir/api.registry.json');
+      await registryFile.writeAsString(jsonEncode(apiRegistry));
+
+      print("API Registry generated successfully in $jsonOutputDir");
 
       // Write to file
       final apiFile = File('$outputDir/$fileName');

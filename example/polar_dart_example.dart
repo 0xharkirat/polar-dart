@@ -15,7 +15,7 @@ void main() async {
 
   try {
     // List Organizations without specifying sorting
-    final organizations = await polarClient.organizations.organizationsList();
+    final organizations = await polarClient.organizationsApi.organizationsList();
 
     print('Organizations: ${organizations.items.length} items found.');
 
@@ -23,9 +23,9 @@ void main() async {
       print('Organization: ${org.name}, Slug: ${org.slug}');
     }
 
-    // final organization = await polarClient.organizations.getOrganization();
-    // print("organization: $organization");
-    
+    final organization = await polarClient.organizationsApi
+        .organizationsGet(id: organizations.items.first.id);
+    print("organization: $organization");
   } catch (e) {
     print('Error occurred: $e');
   }
