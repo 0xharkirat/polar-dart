@@ -1,0 +1,4 @@
+enum SubscriptionProrationBehavior {
+  invoice,
+  prorate,
+}

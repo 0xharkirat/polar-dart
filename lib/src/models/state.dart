@@ -1,0 +1,4 @@
+enum State {
+  open,
+  closed,
+}
