@@ -1,5 +1,5 @@
 import 'package:polar_dart/polar_dart.dart';
-import 'package:polar_dart/src/polar_environment.dart';
+
 import 'package:dotenv/dotenv.dart';
 
 void main() async {
