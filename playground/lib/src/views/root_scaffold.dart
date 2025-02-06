@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:playground/src/core/router.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class RootScaffold extends ConsumerWidget {
@@ -9,44 +10,41 @@ class RootScaffold extends ConsumerWidget {
   final StatefulNavigationShell navigationShell;
 
   void _goToBranch(int index) {
-    navigationShell.goBranch(index); // Navigates to the selected branch
+    navigationShell.goBranch(index);
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedIndex = navigationShell.currentIndex;
+
     return Scaffold(
       body: Row(
         children: [
-          // Sidebar with navigation buttons
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ShadButton.link(
-                foregroundColor: selectedIndex == 0 ? Colors.blue : null,
-                onPressed: () => _goToBranch(0), // Navigates to Branch A
-                child: const Text('Branch A'),
-              ),
-              const SizedBox(height: 10),
-              ShadButton.link(
-                foregroundColor: selectedIndex == 1 ? Colors.blue : null,
-                onPressed: () => _goToBranch(1), // Navigates to Branch B
-                child: const Text('Branch B'),
-              ),
-            ],
+          // Sidebar with dynamic ListView
+          Container(
+            width: 200,
+            color: ShadTheme.of(context).colorScheme.muted,
+            child: ListView.builder(
+              itemCount: branches.length,
+              itemBuilder: (context, index) {
+                final branch = branches[index];
+
+                return ShadButton.link(
+                  foregroundColor: selectedIndex == index ? Colors.blue : null,
+                  hoverForegroundColor: Colors.blue,
+          
+                  onPressed: () => _goToBranch(index),
+                  child: Text(branch.name),
+                );
+              },
+            ),
           ),
 
           // Divider between Sidebar and Content
-          const VerticalDivider(
-            width: 1,
-            thickness: 1,
-            color: Colors.grey,
-          ),
+          const VerticalDivider(width: 1, thickness: 1, color: Colors.grey),
 
           // Main Content Area
-          Expanded(
-            child: navigationShell, // Displays routed content
-          ),
+          Expanded(child: navigationShell),
         ],
       ),
     );
