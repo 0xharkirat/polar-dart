@@ -1,67 +1,29 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:polar_dart/polar_dart.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:playground/src/core/router.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 Future<void> main() async {
 
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final goRouter = ref.watch(appRouter);
+    return ShadApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Polar Dart Playground',
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final _polarClient = PolarClient(
-      apiKey: '',
-      environment: PolarEnvironment.sandbox);
-
-  String _response = 'No data yet';
-
-  void _fetchOrganizations() async {
-    try {
-      final organizations =
-          await _polarClient.organizationsApi.organizationsList();
-      setState(() {
-        _response = organizations.toString();
-      });
-    } catch (e) {
-      setState(() {
-        _response = 'Error: $e';
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Polar Dart Playground')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: _fetchOrganizations,
-              child: const Text('Fetch Organizations'),
-            ),
-            const SizedBox(height: 20),
-            Text(_response),
-          ],
-        ),
+      routerConfig: goRouter,
+      themeMode: ThemeMode.dark,
+      theme: ShadThemeData(
+        colorScheme: ShadNeutralColorScheme.dark(),
+        brightness: Brightness.dark,
       ),
     );
   }

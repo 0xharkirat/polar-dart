@@ -38,6 +38,10 @@ dependencies:
   polar_dart:
     path: ../
   flutter_dotenv: ^5.2.1
+  shadcn_ui: ^0.18.7
+  go_router: ^14.7.2
+  flutter_riverpod: ^2.6.1
+  shared_preferences: ^2.5.1
 
 
 
