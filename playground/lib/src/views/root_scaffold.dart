@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:playground/src/core/router.dart';
+import 'package:playground/src/views/dialogs/polar_api_token_dialog.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class RootScaffold extends ConsumerWidget {
@@ -18,6 +19,27 @@ class RootScaffold extends ConsumerWidget {
     final selectedIndex = navigationShell.currentIndex;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('polar.sh Dart Playground'),
+        backgroundColor: ShadTheme.of(context).colorScheme.secondary,
+        shape: const Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 1,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(LucideIcons.settings2),
+            onPressed: () async {
+              await showDialog(
+                context: context,
+                builder: (context) => const PolarApiTokenDialog(),
+              );
+            },
+          ),
+        ],
+      ),
       body: Row(
         children: [
           // Sidebar with dynamic ListView
@@ -32,9 +54,11 @@ class RootScaffold extends ConsumerWidget {
                 return ShadButton.link(
                   foregroundColor: selectedIndex == index ? Colors.blue : null,
                   hoverForegroundColor: Colors.blue,
-          
                   onPressed: () => _goToBranch(index),
-                  child: Text(branch.name),
+                  child: Text(
+                    branch.name,
+                    textAlign: TextAlign.start,
+                  ),
                 );
               },
             ),

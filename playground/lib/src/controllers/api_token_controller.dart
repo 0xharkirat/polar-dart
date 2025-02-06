@@ -11,18 +11,20 @@ class ApiTokenController extends AsyncNotifier<String?> {
   }
 
   Future<void> saveToken(String token) async {
+    state = const AsyncLoading();  // Set state to loading before saving
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(tokenKey, token);
-    state = AsyncData(token);
+    state = AsyncData(token);  // Set state to loaded with the token
   }
 
-  // delete the token
   Future<void> deleteToken() async {
+    state = const AsyncLoading();  // Set state to loading before deleting
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(tokenKey);
-    state = const AsyncData(null);
+    state = const AsyncData(null);  // Set state to loaded with null (token deleted)
   }
-
 }
 
-final apiTokenController = AsyncNotifierProvider<ApiTokenController, String?>(() => ApiTokenController());
+final apiTokenController = AsyncNotifierProvider<ApiTokenController, String?>(
+  () => ApiTokenController(),
+);

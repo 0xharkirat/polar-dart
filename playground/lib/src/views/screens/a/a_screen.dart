@@ -7,7 +7,7 @@ class AScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('A Screen'),
+        child: Text('Work in progress...'),
       ),
     );
   }

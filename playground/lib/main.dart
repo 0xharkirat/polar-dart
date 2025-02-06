@@ -20,11 +20,11 @@ class MyApp extends ConsumerWidget {
     final goRouter = ref.watch(appRouter);
     return ShadApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Polar Dart Playground',
+      title: 'polar.sh Dart Playground',
       routerConfig: goRouter,
       themeMode: ThemeMode.dark,
       theme: ShadThemeData(
-        colorScheme: ShadNeutralColorScheme.dark(),
+        colorScheme: ShadZincColorScheme.dark(),
         brightness: Brightness.dark,
       ),
     );

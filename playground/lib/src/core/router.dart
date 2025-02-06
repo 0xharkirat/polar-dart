@@ -4,22 +4,24 @@ import 'package:go_router/go_router.dart';
 import 'package:playground/src/models/branch.dart';
 import 'package:playground/src/views/root_scaffold.dart';
 import 'package:playground/src/views/screens/a/a_screen.dart';
-import 'package:playground/src/views/screens/b/b_screen.dart';
+
 import 'package:playground/src/views/screens/home_screen.dart';
+import 'package:playground/src/views/screens/organizations_api_screen.dart';
 
 /// RootNavigator key
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'RootNavigator');
 
 final branches = <Branch>[
-  Branch(name: 'A Branch', path: '/a', builder: (context) => AScreen()),
-  Branch(name: 'B Branch', path: '/b', builder: (context) => BScreen()),
+  Branch(name: 'organizations', path: '/organizations', builder: (context) => OrganizationApiScreen()),
+  Branch(name: 'other apis...', path: '/others', builder: (context) => AScreen()),
+ 
 ];
 
 final appRouter = Provider((ref) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
     debugLogDiagnostics: true,
-    initialLocation: '/a',
+    initialLocation: '/organizations',
     routes: [
       GoRoute(
         path: '/',

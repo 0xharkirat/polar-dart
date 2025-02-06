@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:playground/src/controllers/api_token_controller.dart';
-import 'package:playground/src/views/widgets/polar_api_token_dialog.dart';
+import 'package:playground/src/views/dialogs/polar_api_token_dialog.dart';
 import 'package:polar_dart/polar_dart.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -16,7 +16,7 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Polar Dart Playground'),
+        title: const Text('polar.sh Dart Playground'),
         actions: [
           IconButton(
             icon: const Icon(LucideIcons.settings),
