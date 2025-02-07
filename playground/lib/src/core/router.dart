@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:playground/src/models/branch.dart';
 import 'package:playground/src/views/root_scaffold.dart';
 import 'package:playground/src/views/screens/a/a_screen.dart';
-
-import 'package:playground/src/views/screens/home_screen.dart';
 import 'package:playground/src/views/screens/organizations_api_screen.dart';
 
 /// RootNavigator key
@@ -23,10 +21,7 @@ final appRouter = Provider((ref) {
     debugLogDiagnostics: true,
     initialLocation: '/organizations',
     routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) => HomeScreen(),
-      ),
+     
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) =>
             RootScaffold(navigationShell: navigationShell),

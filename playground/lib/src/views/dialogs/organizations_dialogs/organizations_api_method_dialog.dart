@@ -176,8 +176,8 @@ class _OrganizationApiMethodDialogState
           _loading
               ? const CircularProgressIndicator()
               : _errorMessage != null
-                  ? Text(_errorMessage!, style: TextStyle(color: Colors.red))
-                  : Text(_response),
+                  ? SelectableText(_errorMessage!, style: TextStyle(color: Colors.red))
+                  : SelectableText(_response),
         ],
       ),
     );

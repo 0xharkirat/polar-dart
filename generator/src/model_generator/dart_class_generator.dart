@@ -19,13 +19,20 @@ class DartClassGenerator {
     final jsonContent = await file.readAsString();
     final List<dynamic> classMetadata = jsonDecode(jsonContent);
 
+    final List<String> exports = [];
+
     for (final item in classMetadata) {
+      exports.add("'${item['fileName']}'");
       if (item['type'] == 'class') {
         await _generateDartClassFromJson(item, outputDir);
       } else if (item['type'] == 'enum') {
         await _generateDartEnumFromJson(item, outputDir);
       }
     }
+
+    await _generateExports(exports, outputDir);
+
+
   }
 
   static Future<void> _generateDartClassFromJson(
@@ -90,6 +97,16 @@ class DartClassGenerator {
     buffer.writeln('}');
 
     final file = File('$directory/${enumData['fileName']}');
+    await file.writeAsString(buffer.toString());
+  }
+
+  static Future<void> _generateExports(List<String> exports, String outputDir) async {
+    final buffer = StringBuffer();
+    for (final export in exports) {
+      buffer.writeln('export $export;');
+    }
+
+    final file = File('$outputDir/models.dart');
     await file.writeAsString(buffer.toString());
   }
 
