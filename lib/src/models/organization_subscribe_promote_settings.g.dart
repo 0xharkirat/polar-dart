@@ -18,7 +18,7 @@ _$OrganizationSubscribePromoteSettingsImpl
 Map<String, dynamic> _$$OrganizationSubscribePromoteSettingsImplToJson(
         _$OrganizationSubscribePromoteSettingsImpl instance) =>
     <String, dynamic>{
-      'promote': instance.promote,
-      'show_count': instance.show_count,
-      'count_free': instance.count_free,
+      if (instance.promote case final value?) 'promote': value,
+      if (instance.show_count case final value?) 'show_count': value,
+      if (instance.count_free case final value?) 'count_free': value,
     };

@@ -16,6 +16,6 @@ _$PledgerImpl _$$PledgerImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$PledgerImplToJson(_$PledgerImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'github_username': instance.github_username,
-      'avatar_url': instance.avatar_url,
+      if (instance.github_username case final value?) 'github_username': value,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
     };

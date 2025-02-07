@@ -23,9 +23,9 @@ Map<String, dynamic> _$$LicenseKeyValidateImplToJson(
     <String, dynamic>{
       'key': instance.key,
       'organization_id': instance.organization_id,
-      'activation_id': instance.activation_id,
-      'benefit_id': instance.benefit_id,
-      'customer_id': instance.customer_id,
-      'increment_usage': instance.increment_usage,
-      'conditions': instance.conditions,
+      if (instance.activation_id case final value?) 'activation_id': value,
+      if (instance.benefit_id case final value?) 'benefit_id': value,
+      if (instance.customer_id case final value?) 'customer_id': value,
+      if (instance.increment_usage case final value?) 'increment_usage': value,
+      if (instance.conditions case final value?) 'conditions': value,
     };

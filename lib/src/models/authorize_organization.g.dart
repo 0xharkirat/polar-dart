@@ -19,5 +19,5 @@ Map<String, dynamic> _$$AuthorizeOrganizationImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'slug': instance.slug,
-      'avatar_url': instance.avatar_url,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
     };

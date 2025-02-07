@@ -31,13 +31,14 @@ Map<String, dynamic> _$$OAuth2ClientConfigurationImplToJson(
         _$OAuth2ClientConfigurationImpl instance) =>
     <String, dynamic>{
       'redirect_uris': instance.redirect_uris,
-      'token_endpoint_auth_method': instance.token_endpoint_auth_method,
-      'grant_types': instance.grant_types,
-      'response_types': instance.response_types,
-      'scope': instance.scope,
+      if (instance.token_endpoint_auth_method case final value?)
+        'token_endpoint_auth_method': value,
+      if (instance.grant_types case final value?) 'grant_types': value,
+      if (instance.response_types case final value?) 'response_types': value,
+      if (instance.scope case final value?) 'scope': value,
       'client_name': instance.client_name,
-      'client_uri': instance.client_uri,
-      'logo_uri': instance.logo_uri,
-      'tos_uri': instance.tos_uri,
-      'policy_uri': instance.policy_uri,
+      if (instance.client_uri case final value?) 'client_uri': value,
+      if (instance.logo_uri case final value?) 'logo_uri': value,
+      if (instance.tos_uri case final value?) 'tos_uri': value,
+      if (instance.policy_uri case final value?) 'policy_uri': value,
     };

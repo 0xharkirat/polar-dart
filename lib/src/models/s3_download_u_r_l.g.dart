@@ -16,6 +16,6 @@ _$S3DownloadURLImpl _$$S3DownloadURLImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$S3DownloadURLImplToJson(_$S3DownloadURLImpl instance) =>
     <String, dynamic>{
       'url': instance.url,
-      'headers': instance.headers,
+      if (instance.headers case final value?) 'headers': value,
       'expires_at': instance.expires_at,
     };

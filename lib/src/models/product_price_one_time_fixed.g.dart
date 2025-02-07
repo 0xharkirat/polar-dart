@@ -24,7 +24,7 @@ Map<String, dynamic> _$$ProductPriceOneTimeFixedImplToJson(
         _$ProductPriceOneTimeFixedImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'amount_type': instance.amount_type,
       'is_archived': instance.is_archived,

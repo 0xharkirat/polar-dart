@@ -24,12 +24,12 @@ Map<String, dynamic> _$$CustomerPortalCustomerImplToJson(
         _$CustomerPortalCustomerImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'email': instance.email,
       'email_verified': instance.email_verified,
-      'name': instance.name,
-      'billing_address': instance.billing_address,
-      'tax_id': instance.tax_id,
+      if (instance.name case final value?) 'name': value,
+      if (instance.billing_address case final value?) 'billing_address': value,
+      if (instance.tax_id case final value?) 'tax_id': value,
       'oauth_accounts': instance.oauth_accounts,
     };

@@ -17,7 +17,7 @@ _$BenefitDiscordUpdateImpl _$$BenefitDiscordUpdateImplFromJson(
 Map<String, dynamic> _$$BenefitDiscordUpdateImplToJson(
         _$BenefitDiscordUpdateImpl instance) =>
     <String, dynamic>{
-      'description': instance.description,
+      if (instance.description case final value?) 'description': value,
       'type': instance.type,
-      'properties': instance.properties,
+      if (instance.properties case final value?) 'properties': value,
     };

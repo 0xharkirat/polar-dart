@@ -31,21 +31,22 @@ _$CheckoutLinkImpl _$$CheckoutLinkImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CheckoutLinkImplToJson(_$CheckoutLinkImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'metadata': instance.metadata,
       'payment_processor':
           _$PaymentProcessorEnumMap[instance.payment_processor]!,
       'client_secret': instance.client_secret,
-      'success_url': instance.success_url,
-      'label': instance.label,
+      if (instance.success_url case final value?) 'success_url': value,
+      if (instance.label case final value?) 'label': value,
       'allow_discount_codes': instance.allow_discount_codes,
       'product_id': instance.product_id,
-      'product_price_id': instance.product_price_id,
-      'discount_id': instance.discount_id,
+      if (instance.product_price_id case final value?)
+        'product_price_id': value,
+      if (instance.discount_id case final value?) 'discount_id': value,
       'product': instance.product,
-      'product_price': instance.product_price,
-      'discount': instance.discount,
+      if (instance.product_price case final value?) 'product_price': value,
+      if (instance.discount case final value?) 'discount': value,
       'url': instance.url,
     };
 

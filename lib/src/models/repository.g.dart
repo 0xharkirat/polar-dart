@@ -28,13 +28,15 @@ Map<String, dynamic> _$$RepositoryImplToJson(_$RepositoryImpl instance) =>
       'platform': _$PlatformsEnumMap[instance.platform]!,
       'is_private': instance.is_private,
       'name': instance.name,
-      'description': instance.description,
-      'stars': instance.stars,
-      'license': instance.license,
-      'homepage': instance.homepage,
-      'profile_settings': instance.profile_settings,
+      if (instance.description case final value?) 'description': value,
+      if (instance.stars case final value?) 'stars': value,
+      if (instance.license case final value?) 'license': value,
+      if (instance.homepage case final value?) 'homepage': value,
+      if (instance.profile_settings case final value?)
+        'profile_settings': value,
       'organization': instance.organization,
-      'internal_organization': instance.internal_organization,
+      if (instance.internal_organization case final value?)
+        'internal_organization': value,
     };
 
 const _$PlatformsEnumMap = {

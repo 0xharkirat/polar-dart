@@ -21,10 +21,10 @@ _$CustomFieldCreateSelectImpl _$$CustomFieldCreateSelectImplFromJson(
 Map<String, dynamic> _$$CustomFieldCreateSelectImplToJson(
         _$CustomFieldCreateSelectImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'type': instance.type,
       'slug': instance.slug,
       'name': instance.name,
-      'organization_id': instance.organization_id,
+      if (instance.organization_id case final value?) 'organization_id': value,
       'properties': instance.properties,
     };

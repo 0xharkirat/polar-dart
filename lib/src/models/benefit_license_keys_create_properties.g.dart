@@ -19,8 +19,8 @@ _$BenefitLicenseKeysCreatePropertiesImpl
 Map<String, dynamic> _$$BenefitLicenseKeysCreatePropertiesImplToJson(
         _$BenefitLicenseKeysCreatePropertiesImpl instance) =>
     <String, dynamic>{
-      'prefix': instance.prefix,
-      'expires': instance.expires,
-      'activations': instance.activations,
-      'limit_usage': instance.limit_usage,
+      if (instance.prefix case final value?) 'prefix': value,
+      if (instance.expires case final value?) 'expires': value,
+      if (instance.activations case final value?) 'activations': value,
+      if (instance.limit_usage case final value?) 'limit_usage': value,
     };

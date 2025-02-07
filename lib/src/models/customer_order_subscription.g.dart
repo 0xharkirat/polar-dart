@@ -38,27 +38,30 @@ Map<String, dynamic> _$$CustomerOrderSubscriptionImplToJson(
         _$CustomerOrderSubscriptionImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
-      'amount': instance.amount,
-      'currency': instance.currency,
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.currency case final value?) 'currency': value,
       'recurring_interval':
           _$SubscriptionRecurringIntervalEnumMap[instance.recurring_interval]!,
       'status': _$SubscriptionStatusEnumMap[instance.status]!,
       'current_period_start': instance.current_period_start,
-      'current_period_end': instance.current_period_end,
+      if (instance.current_period_end case final value?)
+        'current_period_end': value,
       'cancel_at_period_end': instance.cancel_at_period_end,
-      'canceled_at': instance.canceled_at,
-      'started_at': instance.started_at,
-      'ends_at': instance.ends_at,
-      'ended_at': instance.ended_at,
+      if (instance.canceled_at case final value?) 'canceled_at': value,
+      if (instance.started_at case final value?) 'started_at': value,
+      if (instance.ends_at case final value?) 'ends_at': value,
+      if (instance.ended_at case final value?) 'ended_at': value,
       'customer_id': instance.customer_id,
       'product_id': instance.product_id,
       'price_id': instance.price_id,
-      'discount_id': instance.discount_id,
-      'checkout_id': instance.checkout_id,
-      'customer_cancellation_reason': instance.customer_cancellation_reason,
-      'customer_cancellation_comment': instance.customer_cancellation_comment,
+      if (instance.discount_id case final value?) 'discount_id': value,
+      if (instance.checkout_id case final value?) 'checkout_id': value,
+      if (instance.customer_cancellation_reason case final value?)
+        'customer_cancellation_reason': value,
+      if (instance.customer_cancellation_comment case final value?)
+        'customer_cancellation_comment': value,
     };
 
 const _$SubscriptionRecurringIntervalEnumMap = {

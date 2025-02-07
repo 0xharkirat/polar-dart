@@ -26,7 +26,7 @@ _$RefundImpl _$$RefundImplFromJson(Map<String, dynamic> json) => _$RefundImpl(
 Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'metadata': instance.metadata,
       'status': _$RefundStatusEnumMap[instance.status]!,
@@ -36,7 +36,7 @@ Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) =>
       'currency': instance.currency,
       'organization_id': instance.organization_id,
       'order_id': instance.order_id,
-      'subscription_id': instance.subscription_id,
+      if (instance.subscription_id case final value?) 'subscription_id': value,
       'customer_id': instance.customer_id,
       'revoke_benefits': instance.revoke_benefits,
     };

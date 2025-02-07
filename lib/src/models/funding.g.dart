@@ -14,6 +14,6 @@ _$FundingImpl _$$FundingImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FundingImplToJson(_$FundingImpl instance) =>
     <String, dynamic>{
-      'funding_goal': instance.funding_goal,
-      'pledges_sum': instance.pledges_sum,
+      if (instance.funding_goal case final value?) 'funding_goal': value,
+      if (instance.pledges_sum case final value?) 'pledges_sum': value,
     };

@@ -17,7 +17,7 @@ _$BenefitDownloadablesUpdateImpl _$$BenefitDownloadablesUpdateImplFromJson(
 Map<String, dynamic> _$$BenefitDownloadablesUpdateImplToJson(
         _$BenefitDownloadablesUpdateImpl instance) =>
     <String, dynamic>{
-      'description': instance.description,
+      if (instance.description case final value?) 'description': value,
       'type': instance.type,
-      'properties': instance.properties,
+      if (instance.properties case final value?) 'properties': value,
     };

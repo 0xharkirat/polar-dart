@@ -18,12 +18,12 @@ _$RefundCreateImpl _$$RefundCreateImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RefundCreateImplToJson(_$RefundCreateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'order_id': instance.order_id,
       'reason': _$RefundReasonEnumMap[instance.reason]!,
       'amount': instance.amount,
-      'comment': instance.comment,
-      'revoke_benefits': instance.revoke_benefits,
+      if (instance.comment case final value?) 'comment': value,
+      if (instance.revoke_benefits case final value?) 'revoke_benefits': value,
     };
 
 const _$RefundReasonEnumMap = {

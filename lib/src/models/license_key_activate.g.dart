@@ -22,6 +22,6 @@ Map<String, dynamic> _$$LicenseKeyActivateImplToJson(
       'key': instance.key,
       'organization_id': instance.organization_id,
       'label': instance.label,
-      'conditions': instance.conditions,
-      'meta': instance.meta,
+      if (instance.conditions case final value?) 'conditions': value,
+      if (instance.meta case final value?) 'meta': value,
     };

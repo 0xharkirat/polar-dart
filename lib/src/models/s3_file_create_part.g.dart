@@ -21,5 +21,6 @@ Map<String, dynamic> _$$S3FileCreatePartImplToJson(
       'number': instance.number,
       'chunk_start': instance.chunk_start,
       'chunk_end': instance.chunk_end,
-      'checksum_sha256_base64': instance.checksum_sha256_base64,
+      if (instance.checksum_sha256_base64 case final value?)
+        'checksum_sha256_base64': value,
     };

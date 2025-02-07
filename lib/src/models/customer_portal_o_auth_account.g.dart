@@ -17,5 +17,6 @@ Map<String, dynamic> _$$CustomerPortalOAuthAccountImplToJson(
         _$CustomerPortalOAuthAccountImpl instance) =>
     <String, dynamic>{
       'account_id': instance.account_id,
-      'account_username': instance.account_username,
+      if (instance.account_username case final value?)
+        'account_username': value,
     };

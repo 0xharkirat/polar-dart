@@ -17,5 +17,5 @@ Map<String, dynamic> _$$AuthorizeUserImplToJson(_$AuthorizeUserImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
-      'avatar_url': instance.avatar_url,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
     };

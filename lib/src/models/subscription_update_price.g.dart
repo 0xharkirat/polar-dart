@@ -17,5 +17,6 @@ Map<String, dynamic> _$$SubscriptionUpdatePriceImplToJson(
         _$SubscriptionUpdatePriceImpl instance) =>
     <String, dynamic>{
       'product_price_id': instance.product_price_id,
-      'proration_behavior': instance.proration_behavior,
+      if (instance.proration_behavior case final value?)
+        'proration_behavior': value,
     };

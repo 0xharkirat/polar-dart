@@ -25,7 +25,7 @@ Map<String, dynamic> _$$CustomFieldDateImplToJson(
         _$CustomFieldDateImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'metadata': instance.metadata,
       'type': instance.type,

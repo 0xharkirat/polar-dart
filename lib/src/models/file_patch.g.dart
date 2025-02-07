@@ -14,6 +14,6 @@ _$FilePatchImpl _$$FilePatchImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FilePatchImplToJson(_$FilePatchImpl instance) =>
     <String, dynamic>{
-      'name': instance.name,
-      'version': instance.version,
+      if (instance.name case final value?) 'name': value,
+      if (instance.version case final value?) 'version': value,
     };

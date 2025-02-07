@@ -22,10 +22,10 @@ Map<String, dynamic> _$$AdvertisementCampaignImplToJson(
         _$AdvertisementCampaignImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'image_url': instance.image_url,
-      'image_url_dark': instance.image_url_dark,
+      if (instance.image_url_dark case final value?) 'image_url_dark': value,
       'text': instance.text,
       'link_url': instance.link_url,
     };

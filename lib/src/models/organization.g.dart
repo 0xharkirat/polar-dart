@@ -33,22 +33,25 @@ _$OrganizationImpl _$$OrganizationImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$OrganizationImplToJson(_$OrganizationImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'name': instance.name,
       'slug': instance.slug,
-      'avatar_url': instance.avatar_url,
-      'bio': instance.bio,
-      'company': instance.company,
-      'blog': instance.blog,
-      'location': instance.location,
-      'email': instance.email,
-      'twitter_username': instance.twitter_username,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
+      if (instance.bio case final value?) 'bio': value,
+      if (instance.company case final value?) 'company': value,
+      if (instance.blog case final value?) 'blog': value,
+      if (instance.location case final value?) 'location': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.twitter_username case final value?)
+        'twitter_username': value,
       'pledge_minimum_amount': instance.pledge_minimum_amount,
       'pledge_badge_show_amount': instance.pledge_badge_show_amount,
-      'default_upfront_split_to_contributors':
-          instance.default_upfront_split_to_contributors,
-      'profile_settings': instance.profile_settings,
-      'feature_settings': instance.feature_settings,
+      if (instance.default_upfront_split_to_contributors case final value?)
+        'default_upfront_split_to_contributors': value,
+      if (instance.profile_settings case final value?)
+        'profile_settings': value,
+      if (instance.feature_settings case final value?)
+        'feature_settings': value,
       'subscription_settings': instance.subscription_settings,
     };

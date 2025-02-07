@@ -23,12 +23,13 @@ _$DownloadableFileCreateImpl _$$DownloadableFileCreateImplFromJson(
 Map<String, dynamic> _$$DownloadableFileCreateImplToJson(
         _$DownloadableFileCreateImpl instance) =>
     <String, dynamic>{
-      'organization_id': instance.organization_id,
+      if (instance.organization_id case final value?) 'organization_id': value,
       'name': instance.name,
       'mime_type': instance.mime_type,
       'size': instance.size,
-      'checksum_sha256_base64': instance.checksum_sha256_base64,
+      if (instance.checksum_sha256_base64 case final value?)
+        'checksum_sha256_base64': value,
       'upload': instance.upload,
       'service': instance.service,
-      'version': instance.version,
+      if (instance.version case final value?) 'version': value,
     };

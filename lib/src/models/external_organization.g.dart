@@ -32,14 +32,15 @@ Map<String, dynamic> _$$ExternalOrganizationImplToJson(
       'name': instance.name,
       'avatar_url': instance.avatar_url,
       'is_personal': instance.is_personal,
-      'bio': instance.bio,
-      'pretty_name': instance.pretty_name,
-      'company': instance.company,
-      'blog': instance.blog,
-      'location': instance.location,
-      'email': instance.email,
-      'twitter_username': instance.twitter_username,
-      'organization_id': instance.organization_id,
+      if (instance.bio case final value?) 'bio': value,
+      if (instance.pretty_name case final value?) 'pretty_name': value,
+      if (instance.company case final value?) 'company': value,
+      if (instance.blog case final value?) 'blog': value,
+      if (instance.location case final value?) 'location': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.twitter_username case final value?)
+        'twitter_username': value,
+      if (instance.organization_id case final value?) 'organization_id': value,
     };
 
 const _$PlatformsEnumMap = {

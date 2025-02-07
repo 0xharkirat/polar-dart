@@ -22,11 +22,14 @@ _$RepositoryProfileSettingsUpdateImpl
 Map<String, dynamic> _$$RepositoryProfileSettingsUpdateImplToJson(
         _$RepositoryProfileSettingsUpdateImpl instance) =>
     <String, dynamic>{
-      'set_description': instance.set_description,
-      'description': instance.description,
-      'set_cover_image_url': instance.set_cover_image_url,
-      'cover_image_url': instance.cover_image_url,
-      'featured_organizations': instance.featured_organizations,
-      'highlighted_subscription_tiers': instance.highlighted_subscription_tiers,
-      'links': instance.links,
+      if (instance.set_description case final value?) 'set_description': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.set_cover_image_url case final value?)
+        'set_cover_image_url': value,
+      if (instance.cover_image_url case final value?) 'cover_image_url': value,
+      if (instance.featured_organizations case final value?)
+        'featured_organizations': value,
+      if (instance.highlighted_subscription_tiers case final value?)
+        'highlighted_subscription_tiers': value,
+      if (instance.links case final value?) 'links': value,
     };

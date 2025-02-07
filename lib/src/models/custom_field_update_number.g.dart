@@ -19,9 +19,9 @@ _$CustomFieldUpdateNumberImpl _$$CustomFieldUpdateNumberImplFromJson(
 Map<String, dynamic> _$$CustomFieldUpdateNumberImplToJson(
         _$CustomFieldUpdateNumberImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
-      'name': instance.name,
-      'slug': instance.slug,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.slug case final value?) 'slug': value,
       'type': instance.type,
-      'properties': instance.properties,
+      if (instance.properties case final value?) 'properties': value,
     };

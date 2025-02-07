@@ -23,13 +23,17 @@ _$CheckoutConfirmStripeImpl _$$CheckoutConfirmStripeImplFromJson(
 Map<String, dynamic> _$$CheckoutConfirmStripeImplToJson(
         _$CheckoutConfirmStripeImpl instance) =>
     <String, dynamic>{
-      'custom_field_data': instance.custom_field_data,
-      'product_price_id': instance.product_price_id,
-      'amount': instance.amount,
-      'customer_name': instance.customer_name,
-      'customer_email': instance.customer_email,
-      'customer_billing_address': instance.customer_billing_address,
-      'customer_tax_id': instance.customer_tax_id,
-      'discount_code': instance.discount_code,
-      'confirmation_token_id': instance.confirmation_token_id,
+      if (instance.custom_field_data case final value?)
+        'custom_field_data': value,
+      if (instance.product_price_id case final value?)
+        'product_price_id': value,
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.customer_name case final value?) 'customer_name': value,
+      if (instance.customer_email case final value?) 'customer_email': value,
+      if (instance.customer_billing_address case final value?)
+        'customer_billing_address': value,
+      if (instance.customer_tax_id case final value?) 'customer_tax_id': value,
+      if (instance.discount_code case final value?) 'discount_code': value,
+      if (instance.confirmation_token_id case final value?)
+        'confirmation_token_id': value,
     };

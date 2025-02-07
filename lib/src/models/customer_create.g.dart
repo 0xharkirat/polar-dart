@@ -19,10 +19,10 @@ _$CustomerCreateImpl _$$CustomerCreateImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CustomerCreateImplToJson(
         _$CustomerCreateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'email': instance.email,
-      'name': instance.name,
-      'billing_address': instance.billing_address,
-      'tax_id': instance.tax_id,
-      'organization_id': instance.organization_id,
+      if (instance.name case final value?) 'name': value,
+      if (instance.billing_address case final value?) 'billing_address': value,
+      if (instance.tax_id case final value?) 'tax_id': value,
+      if (instance.organization_id case final value?) 'organization_id': value,
     };

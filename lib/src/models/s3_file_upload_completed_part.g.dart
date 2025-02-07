@@ -19,5 +19,6 @@ Map<String, dynamic> _$$S3FileUploadCompletedPartImplToJson(
     <String, dynamic>{
       'number': instance.number,
       'checksum_etag': instance.checksum_etag,
-      'checksum_sha256_base64': instance.checksum_sha256_base64,
+      if (instance.checksum_sha256_base64 case final value?)
+        'checksum_sha256_base64': value,
     };

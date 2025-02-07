@@ -1,7 +1,3 @@
-
-
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import '../models/list_resource_organization.dart';
 import '../models/organization.dart';
@@ -64,10 +60,8 @@ class OrganizationsApi {
 
   Future<Organization> organizationsUpdate({required OrganizationUpdate body, required String id}) async {
     try {
-
-      print('body: ${body.toJson()}');
       final response = await _dio.patch(
-        '/v1/organizations/$id',
+        '/v1/organizations/${id}',
         data: body.toJson(),
       );
       return Organization.fromJson(response.data);

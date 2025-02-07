@@ -38,7 +38,7 @@ void main() async {
 
     // final updatedOrganization = await polarClient.organizationsApi.organizationsUpdate(
     //   id: organization.id,
-    //   body: OrganizationUpdate(name: "Harks Example Updated"),
+    //   body: OrganizationUpdate(name: "Custom Builder"),
     // );
     // print("updatedOrganization: $updatedOrganization");
   } catch (e) {

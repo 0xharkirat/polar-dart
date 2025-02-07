@@ -19,9 +19,10 @@ _$CustomFieldNumberPropertiesImpl _$$CustomFieldNumberPropertiesImplFromJson(
 Map<String, dynamic> _$$CustomFieldNumberPropertiesImplToJson(
         _$CustomFieldNumberPropertiesImpl instance) =>
     <String, dynamic>{
-      'form_label': instance.form_label,
-      'form_help_text': instance.form_help_text,
-      'form_placeholder': instance.form_placeholder,
-      'ge': instance.ge,
-      'le': instance.le,
+      if (instance.form_label case final value?) 'form_label': value,
+      if (instance.form_help_text case final value?) 'form_help_text': value,
+      if (instance.form_placeholder case final value?)
+        'form_placeholder': value,
+      if (instance.ge case final value?) 'ge': value,
+      if (instance.le case final value?) 'le': value,
     };

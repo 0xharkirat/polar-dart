@@ -15,5 +15,6 @@ _$OrganizationFeatureSettingsImpl _$$OrganizationFeatureSettingsImplFromJson(
 Map<String, dynamic> _$$OrganizationFeatureSettingsImplToJson(
         _$OrganizationFeatureSettingsImpl instance) =>
     <String, dynamic>{
-      'issue_funding_enabled': instance.issue_funding_enabled,
+      if (instance.issue_funding_enabled case final value?)
+        'issue_funding_enabled': value,
     };

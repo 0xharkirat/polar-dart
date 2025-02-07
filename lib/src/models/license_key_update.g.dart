@@ -19,9 +19,10 @@ _$LicenseKeyUpdateImpl _$$LicenseKeyUpdateImplFromJson(
 Map<String, dynamic> _$$LicenseKeyUpdateImplToJson(
         _$LicenseKeyUpdateImpl instance) =>
     <String, dynamic>{
-      'status': instance.status,
-      'usage': instance.usage,
-      'limit_activations': instance.limit_activations,
-      'limit_usage': instance.limit_usage,
-      'expires_at': instance.expires_at,
+      if (instance.status case final value?) 'status': value,
+      if (instance.usage case final value?) 'usage': value,
+      if (instance.limit_activations case final value?)
+        'limit_activations': value,
+      if (instance.limit_usage case final value?) 'limit_usage': value,
+      if (instance.expires_at case final value?) 'expires_at': value,
     };

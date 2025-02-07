@@ -21,11 +21,13 @@ _$OrganizationProfileSettingsImpl _$$OrganizationProfileSettingsImplFromJson(
 Map<String, dynamic> _$$OrganizationProfileSettingsImplToJson(
         _$OrganizationProfileSettingsImpl instance) =>
     <String, dynamic>{
-      'enabled': instance.enabled,
-      'description': instance.description,
-      'featured_projects': instance.featured_projects,
-      'featured_organizations': instance.featured_organizations,
-      'links': instance.links,
-      'subscribe': instance.subscribe,
-      'accent_color': instance.accent_color,
+      if (instance.enabled case final value?) 'enabled': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.featured_projects case final value?)
+        'featured_projects': value,
+      if (instance.featured_organizations case final value?)
+        'featured_organizations': value,
+      if (instance.links case final value?) 'links': value,
+      if (instance.subscribe case final value?) 'subscribe': value,
+      if (instance.accent_color case final value?) 'accent_color': value,
     };

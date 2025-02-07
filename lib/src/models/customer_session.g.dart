@@ -23,7 +23,7 @@ Map<String, dynamic> _$$CustomerSessionImplToJson(
         _$CustomerSessionImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'token': instance.token,
       'expires_at': instance.expires_at,

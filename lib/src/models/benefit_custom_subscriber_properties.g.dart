@@ -16,5 +16,5 @@ _$BenefitCustomSubscriberPropertiesImpl
 Map<String, dynamic> _$$BenefitCustomSubscriberPropertiesImplToJson(
         _$BenefitCustomSubscriberPropertiesImpl instance) =>
     <String, dynamic>{
-      'note': instance.note,
+      if (instance.note case final value?) 'note': value,
     };

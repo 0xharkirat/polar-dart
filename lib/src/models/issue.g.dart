@@ -40,24 +40,28 @@ Map<String, dynamic> _$$IssueImplToJson(_$IssueImpl instance) =>
       'platform': _$PlatformsEnumMap[instance.platform]!,
       'number': instance.number,
       'title': instance.title,
-      'body': instance.body,
-      'comments': instance.comments,
-      'labels': instance.labels,
-      'author': instance.author,
-      'assignees': instance.assignees,
-      'reactions': instance.reactions,
+      if (instance.body case final value?) 'body': value,
+      if (instance.comments case final value?) 'comments': value,
+      if (instance.labels case final value?) 'labels': value,
+      if (instance.author case final value?) 'author': value,
+      if (instance.assignees case final value?) 'assignees': value,
+      if (instance.reactions case final value?) 'reactions': value,
       'state': _$StateEnumMap[instance.state]!,
-      'issue_closed_at': instance.issue_closed_at,
-      'issue_modified_at': instance.issue_modified_at,
+      if (instance.issue_closed_at case final value?) 'issue_closed_at': value,
+      if (instance.issue_modified_at case final value?)
+        'issue_modified_at': value,
       'issue_created_at': instance.issue_created_at,
       'needs_confirmation_solved': instance.needs_confirmation_solved,
-      'confirmed_solved_at': instance.confirmed_solved_at,
+      if (instance.confirmed_solved_at case final value?)
+        'confirmed_solved_at': value,
       'funding': instance.funding,
       'repository': instance.repository,
-      'upfront_split_to_contributors': instance.upfront_split_to_contributors,
+      if (instance.upfront_split_to_contributors case final value?)
+        'upfront_split_to_contributors': value,
       'pledge_badge_currently_embedded':
           instance.pledge_badge_currently_embedded,
-      'badge_custom_content': instance.badge_custom_content,
+      if (instance.badge_custom_content case final value?)
+        'badge_custom_content': value,
     };
 
 const _$PlatformsEnumMap = {

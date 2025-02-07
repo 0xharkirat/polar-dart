@@ -24,8 +24,9 @@ Map<String, dynamic> _$$S3FileUploadPartImplToJson(
       'number': instance.number,
       'chunk_start': instance.chunk_start,
       'chunk_end': instance.chunk_end,
-      'checksum_sha256_base64': instance.checksum_sha256_base64,
+      if (instance.checksum_sha256_base64 case final value?)
+        'checksum_sha256_base64': value,
       'url': instance.url,
       'expires_at': instance.expires_at,
-      'headers': instance.headers,
+      if (instance.headers case final value?) 'headers': value,
     };
