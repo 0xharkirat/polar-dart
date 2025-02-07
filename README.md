@@ -3,12 +3,16 @@
 ## What is Polar Dart SDK?
 Polar Dart SDK is an SDK for [polar.sh](https://polar.sh), built specifically for Dart and Flutter developers. This SDK allows developers to interact with the Polar API seamlessly.
 
+Read my [medium article](https://medium.com/@0xharkirat/polar-dart-polar-sh-dart-sdk-what-who-why-how-424e88d20faf) about the story behind this
+
+[Polar Docs](https://docs.polar.sh/documentation/welcome-to-polar) 
+
 ## Project Structure
 This monorepo contains:
 
 - **`lib/` (SDK)**: The generated Dart SDK code for interacting with Polar APIs.
 - **`generator/` (Generator)**: A pure Dart-based code generator that builds the SDK automatically from Polar's OpenAPI spec.
-- **`playground/` (Playground)**: A Flutter web app to interact with the SDK and test API calls in action.
+- **`playground/` ([Playground](https://polar-dart.web.app/))**: A Flutter web app to interact with the SDK and test API calls in action.
 
 Unlike other SDKs, this SDK does **not** use OpenAPI Generator due to its limitations for Dart. Instead, a custom Dart-based generator was built to create a fully type-safe SDK. (See the `How it Works` section for details.)
 
