@@ -20,21 +20,33 @@ OrganizationUpdate _$OrganizationUpdateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrganizationUpdate {
+  @JsonKey(includeIfNull: false)
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get avatar_url => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get default_upfront_split_to_contributors =>
       throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   bool? get pledge_badge_show_amount => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get billing_email => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get default_badge_custom_content =>
       throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   int? get pledge_minimum_amount => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get total_monthly_spending_limit =>
       throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get per_user_monthly_spending_limit =>
       throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get profile_settings => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get feature_settings => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   dynamic? get subscription_settings => throw _privateConstructorUsedError;
 
   /// Serializes this OrganizationUpdate to a JSON map.
@@ -54,18 +66,19 @@ abstract class $OrganizationUpdateCopyWith<$Res> {
       _$OrganizationUpdateCopyWithImpl<$Res, OrganizationUpdate>;
   @useResult
   $Res call(
-      {String? name,
-      String? avatar_url,
+      {@JsonKey(includeIfNull: false) String? name,
+      @JsonKey(includeIfNull: false) String? avatar_url,
+      @JsonKey(includeIfNull: false)
       dynamic? default_upfront_split_to_contributors,
-      bool? pledge_badge_show_amount,
-      String? billing_email,
-      String? default_badge_custom_content,
-      int? pledge_minimum_amount,
-      dynamic? total_monthly_spending_limit,
-      dynamic? per_user_monthly_spending_limit,
-      dynamic? profile_settings,
-      dynamic? feature_settings,
-      dynamic? subscription_settings});
+      @JsonKey(includeIfNull: false) bool? pledge_badge_show_amount,
+      @JsonKey(includeIfNull: false) String? billing_email,
+      @JsonKey(includeIfNull: false) String? default_badge_custom_content,
+      @JsonKey(includeIfNull: false) int? pledge_minimum_amount,
+      @JsonKey(includeIfNull: false) dynamic? total_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) dynamic? per_user_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) dynamic? profile_settings,
+      @JsonKey(includeIfNull: false) dynamic? feature_settings,
+      @JsonKey(includeIfNull: false) dynamic? subscription_settings});
 }
 
 /// @nodoc
@@ -160,18 +173,19 @@ abstract class _$$OrganizationUpdateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name,
-      String? avatar_url,
+      {@JsonKey(includeIfNull: false) String? name,
+      @JsonKey(includeIfNull: false) String? avatar_url,
+      @JsonKey(includeIfNull: false)
       dynamic? default_upfront_split_to_contributors,
-      bool? pledge_badge_show_amount,
-      String? billing_email,
-      String? default_badge_custom_content,
-      int? pledge_minimum_amount,
-      dynamic? total_monthly_spending_limit,
-      dynamic? per_user_monthly_spending_limit,
-      dynamic? profile_settings,
-      dynamic? feature_settings,
-      dynamic? subscription_settings});
+      @JsonKey(includeIfNull: false) bool? pledge_badge_show_amount,
+      @JsonKey(includeIfNull: false) String? billing_email,
+      @JsonKey(includeIfNull: false) String? default_badge_custom_content,
+      @JsonKey(includeIfNull: false) int? pledge_minimum_amount,
+      @JsonKey(includeIfNull: false) dynamic? total_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) dynamic? per_user_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) dynamic? profile_settings,
+      @JsonKey(includeIfNull: false) dynamic? feature_settings,
+      @JsonKey(includeIfNull: false) dynamic? subscription_settings});
 }
 
 /// @nodoc
@@ -259,45 +273,57 @@ class __$$OrganizationUpdateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrganizationUpdateImpl implements _OrganizationUpdate {
   const _$OrganizationUpdateImpl(
-      {this.name,
-      this.avatar_url,
-      this.default_upfront_split_to_contributors,
-      this.pledge_badge_show_amount,
-      this.billing_email,
-      this.default_badge_custom_content,
-      this.pledge_minimum_amount,
-      this.total_monthly_spending_limit,
-      this.per_user_monthly_spending_limit,
-      this.profile_settings,
-      this.feature_settings,
-      this.subscription_settings});
+      {@JsonKey(includeIfNull: false) this.name,
+      @JsonKey(includeIfNull: false) this.avatar_url,
+      @JsonKey(includeIfNull: false) this.default_upfront_split_to_contributors,
+      @JsonKey(includeIfNull: false) this.pledge_badge_show_amount,
+      @JsonKey(includeIfNull: false) this.billing_email,
+      @JsonKey(includeIfNull: false) this.default_badge_custom_content,
+      @JsonKey(includeIfNull: false) this.pledge_minimum_amount,
+      @JsonKey(includeIfNull: false) this.total_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) this.per_user_monthly_spending_limit,
+      @JsonKey(includeIfNull: false) this.profile_settings,
+      @JsonKey(includeIfNull: false) this.feature_settings,
+      @JsonKey(includeIfNull: false) this.subscription_settings});
 
   factory _$OrganizationUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrganizationUpdateImplFromJson(json);
 
   @override
+  @JsonKey(includeIfNull: false)
   final String? name;
   @override
+  @JsonKey(includeIfNull: false)
   final String? avatar_url;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? default_upfront_split_to_contributors;
   @override
+  @JsonKey(includeIfNull: false)
   final bool? pledge_badge_show_amount;
   @override
+  @JsonKey(includeIfNull: false)
   final String? billing_email;
   @override
+  @JsonKey(includeIfNull: false)
   final String? default_badge_custom_content;
   @override
+  @JsonKey(includeIfNull: false)
   final int? pledge_minimum_amount;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? total_monthly_spending_limit;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? per_user_monthly_spending_limit;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? profile_settings;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? feature_settings;
   @override
+  @JsonKey(includeIfNull: false)
   final dynamic? subscription_settings;
 
   @override
@@ -378,45 +404,61 @@ class _$OrganizationUpdateImpl implements _OrganizationUpdate {
 
 abstract class _OrganizationUpdate implements OrganizationUpdate {
   const factory _OrganizationUpdate(
-      {final String? name,
-      final String? avatar_url,
+      {@JsonKey(includeIfNull: false) final String? name,
+      @JsonKey(includeIfNull: false) final String? avatar_url,
+      @JsonKey(includeIfNull: false)
       final dynamic? default_upfront_split_to_contributors,
-      final bool? pledge_badge_show_amount,
-      final String? billing_email,
-      final String? default_badge_custom_content,
-      final int? pledge_minimum_amount,
+      @JsonKey(includeIfNull: false) final bool? pledge_badge_show_amount,
+      @JsonKey(includeIfNull: false) final String? billing_email,
+      @JsonKey(includeIfNull: false) final String? default_badge_custom_content,
+      @JsonKey(includeIfNull: false) final int? pledge_minimum_amount,
+      @JsonKey(includeIfNull: false)
       final dynamic? total_monthly_spending_limit,
+      @JsonKey(includeIfNull: false)
       final dynamic? per_user_monthly_spending_limit,
-      final dynamic? profile_settings,
-      final dynamic? feature_settings,
+      @JsonKey(includeIfNull: false) final dynamic? profile_settings,
+      @JsonKey(includeIfNull: false) final dynamic? feature_settings,
+      @JsonKey(includeIfNull: false)
       final dynamic? subscription_settings}) = _$OrganizationUpdateImpl;
 
   factory _OrganizationUpdate.fromJson(Map<String, dynamic> json) =
       _$OrganizationUpdateImpl.fromJson;
 
   @override
+  @JsonKey(includeIfNull: false)
   String? get name;
   @override
+  @JsonKey(includeIfNull: false)
   String? get avatar_url;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get default_upfront_split_to_contributors;
   @override
+  @JsonKey(includeIfNull: false)
   bool? get pledge_badge_show_amount;
   @override
+  @JsonKey(includeIfNull: false)
   String? get billing_email;
   @override
+  @JsonKey(includeIfNull: false)
   String? get default_badge_custom_content;
   @override
+  @JsonKey(includeIfNull: false)
   int? get pledge_minimum_amount;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get total_monthly_spending_limit;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get per_user_monthly_spending_limit;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get profile_settings;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get feature_settings;
   @override
+  @JsonKey(includeIfNull: false)
   dynamic? get subscription_settings;
 
   /// Create a copy of OrganizationUpdate

@@ -6,18 +6,18 @@ part 'organization_update.freezed.dart';
 @freezed
 class OrganizationUpdate with _$OrganizationUpdate {
   const factory OrganizationUpdate({
-    String? name,
-    String? avatar_url,
-    dynamic? default_upfront_split_to_contributors,
-    bool? pledge_badge_show_amount,
-    String? billing_email,
-    String? default_badge_custom_content,
-    int? pledge_minimum_amount,
-    dynamic? total_monthly_spending_limit,
-    dynamic? per_user_monthly_spending_limit,
-    dynamic? profile_settings,
-    dynamic? feature_settings,
-    dynamic? subscription_settings,
+    @JsonKey(includeIfNull: false) String? name,
+    @JsonKey(includeIfNull: false) String? avatar_url,
+    @JsonKey(includeIfNull: false) dynamic? default_upfront_split_to_contributors,
+    @JsonKey(includeIfNull: false) bool? pledge_badge_show_amount,
+    @JsonKey(includeIfNull: false) String? billing_email,
+    @JsonKey(includeIfNull: false) String? default_badge_custom_content,
+    @JsonKey(includeIfNull: false) int? pledge_minimum_amount,
+    @JsonKey(includeIfNull: false) dynamic? total_monthly_spending_limit,
+    @JsonKey(includeIfNull: false) dynamic? per_user_monthly_spending_limit,
+    @JsonKey(includeIfNull: false) dynamic? profile_settings,
+    @JsonKey(includeIfNull: false) dynamic? feature_settings,
+    @JsonKey(includeIfNull: false) dynamic? subscription_settings,
   }) = _OrganizationUpdate;
 
   factory OrganizationUpdate.fromJson(Map<String, dynamic> json) => _$OrganizationUpdateFromJson(json);

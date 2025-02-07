@@ -26,6 +26,21 @@ void main() async {
     final organization = await polarClient.organizationsApi
         .organizationsGet(id: organizations.items.first.id);
     print("organization: $organization");
+
+    // final newOrganization = await polarClient.organizationsApi.organizationsCreate(
+    //   body: OrganizationCreate(
+    //     name: "Harks Example",
+    //     slug: 'harksExample',
+    //   ),
+    // );
+    // print("newOrganization: $newOrganization");
+
+
+    // final updatedOrganization = await polarClient.organizationsApi.organizationsUpdate(
+    //   id: organization.id,
+    //   body: OrganizationUpdate(name: "Harks Example Updated"),
+    // );
+    // print("updatedOrganization: $updatedOrganization");
   } catch (e) {
     print('Error occurred: $e');
   }
