@@ -18,9 +18,9 @@ _$CustomerUpdateImpl _$$CustomerUpdateImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CustomerUpdateImplToJson(
         _$CustomerUpdateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
-      'email': instance.email,
-      'name': instance.name,
-      'billing_address': instance.billing_address,
-      'tax_id': instance.tax_id,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.billing_address case final value?) 'billing_address': value,
+      if (instance.tax_id case final value?) 'tax_id': value,
     };

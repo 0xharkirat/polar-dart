@@ -21,6 +21,6 @@ Map<String, dynamic> _$$BenefitAdsCreateImplToJson(
     <String, dynamic>{
       'type': instance.type,
       'description': instance.description,
-      'organization_id': instance.organization_id,
+      if (instance.organization_id case final value?) 'organization_id': value,
       'properties': instance.properties,
     };

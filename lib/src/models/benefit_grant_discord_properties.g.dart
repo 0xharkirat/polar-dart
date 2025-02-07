@@ -17,7 +17,7 @@ _$BenefitGrantDiscordPropertiesImpl
 Map<String, dynamic> _$$BenefitGrantDiscordPropertiesImplToJson(
         _$BenefitGrantDiscordPropertiesImpl instance) =>
     <String, dynamic>{
-      'account_id': instance.account_id,
-      'guild_id': instance.guild_id,
-      'role_id': instance.role_id,
+      if (instance.account_id case final value?) 'account_id': value,
+      if (instance.guild_id case final value?) 'guild_id': value,
+      if (instance.role_id case final value?) 'role_id': value,
     };

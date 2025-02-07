@@ -19,8 +19,9 @@ _$BenefitGrantGitHubRepositoryPropertiesImpl
 Map<String, dynamic> _$$BenefitGrantGitHubRepositoryPropertiesImplToJson(
         _$BenefitGrantGitHubRepositoryPropertiesImpl instance) =>
     <String, dynamic>{
-      'account_id': instance.account_id,
-      'repository_owner': instance.repository_owner,
-      'repository_name': instance.repository_name,
-      'permission': instance.permission,
+      if (instance.account_id case final value?) 'account_id': value,
+      if (instance.repository_owner case final value?)
+        'repository_owner': value,
+      if (instance.repository_name case final value?) 'repository_name': value,
+      if (instance.permission case final value?) 'permission': value,
     };

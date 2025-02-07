@@ -41,10 +41,11 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
 Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'metadata': instance.metadata,
-      'custom_field_data': instance.custom_field_data,
+      if (instance.custom_field_data case final value?)
+        'custom_field_data': value,
       'status': instance.status,
       'amount': instance.amount,
       'tax_amount': instance.tax_amount,
@@ -52,20 +53,20 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'refunded_tax_amount': instance.refunded_tax_amount,
       'currency': instance.currency,
       'billing_reason': _$OrderBillingReasonEnumMap[instance.billing_reason]!,
-      'billing_address': instance.billing_address,
+      if (instance.billing_address case final value?) 'billing_address': value,
       'customer_id': instance.customer_id,
       'product_id': instance.product_id,
       'product_price_id': instance.product_price_id,
-      'discount_id': instance.discount_id,
-      'subscription_id': instance.subscription_id,
-      'checkout_id': instance.checkout_id,
+      if (instance.discount_id case final value?) 'discount_id': value,
+      if (instance.subscription_id case final value?) 'subscription_id': value,
+      if (instance.checkout_id case final value?) 'checkout_id': value,
       'customer': instance.customer,
       'user_id': instance.user_id,
       'user': instance.user,
       'product': instance.product,
       'product_price': instance.product_price,
-      'discount': instance.discount,
-      'subscription': instance.subscription,
+      if (instance.discount case final value?) 'discount': value,
+      if (instance.subscription case final value?) 'subscription': value,
     };
 
 const _$OrderBillingReasonEnumMap = {

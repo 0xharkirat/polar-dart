@@ -26,17 +26,18 @@ _$DiscountUpdateImpl _$$DiscountUpdateImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$DiscountUpdateImplToJson(
         _$DiscountUpdateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
-      'name': instance.name,
-      'code': instance.code,
-      'starts_at': instance.starts_at,
-      'ends_at': instance.ends_at,
-      'max_redemptions': instance.max_redemptions,
-      'duration': instance.duration,
-      'duration_in_months': instance.duration_in_months,
-      'type': instance.type,
-      'amount': instance.amount,
-      'currency': instance.currency,
-      'basis_points': instance.basis_points,
-      'products': instance.products,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.starts_at case final value?) 'starts_at': value,
+      if (instance.ends_at case final value?) 'ends_at': value,
+      if (instance.max_redemptions case final value?) 'max_redemptions': value,
+      if (instance.duration case final value?) 'duration': value,
+      if (instance.duration_in_months case final value?)
+        'duration_in_months': value,
+      if (instance.type case final value?) 'type': value,
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.currency case final value?) 'currency': value,
+      if (instance.basis_points case final value?) 'basis_points': value,
+      if (instance.products case final value?) 'products': value,
     };

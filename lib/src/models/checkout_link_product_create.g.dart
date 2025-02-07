@@ -21,11 +21,12 @@ _$CheckoutLinkProductCreateImpl _$$CheckoutLinkProductCreateImplFromJson(
 Map<String, dynamic> _$$CheckoutLinkProductCreateImplToJson(
         _$CheckoutLinkProductCreateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'payment_processor': instance.payment_processor,
-      'label': instance.label,
-      'allow_discount_codes': instance.allow_discount_codes,
-      'discount_id': instance.discount_id,
-      'success_url': instance.success_url,
+      if (instance.label case final value?) 'label': value,
+      if (instance.allow_discount_codes case final value?)
+        'allow_discount_codes': value,
+      if (instance.discount_id case final value?) 'discount_id': value,
+      if (instance.success_url case final value?) 'success_url': value,
       'product_id': instance.product_id,
     };

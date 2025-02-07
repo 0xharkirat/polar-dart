@@ -27,6 +27,6 @@ Map<String, dynamic> _$$LicenseKeyActivationReadImplToJson(
       'label': instance.label,
       'meta': instance.meta,
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'license_key': instance.license_key,
     };

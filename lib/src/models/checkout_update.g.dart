@@ -27,18 +27,24 @@ _$CheckoutUpdateImpl _$$CheckoutUpdateImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CheckoutUpdateImplToJson(
         _$CheckoutUpdateImpl instance) =>
     <String, dynamic>{
-      'custom_field_data': instance.custom_field_data,
-      'product_price_id': instance.product_price_id,
-      'amount': instance.amount,
-      'customer_name': instance.customer_name,
-      'customer_email': instance.customer_email,
-      'customer_billing_address': instance.customer_billing_address,
-      'customer_tax_id': instance.customer_tax_id,
-      'metadata': instance.metadata,
-      'discount_id': instance.discount_id,
-      'allow_discount_codes': instance.allow_discount_codes,
-      'customer_ip_address': instance.customer_ip_address,
-      'customer_metadata': instance.customer_metadata,
-      'success_url': instance.success_url,
-      'embed_origin': instance.embed_origin,
+      if (instance.custom_field_data case final value?)
+        'custom_field_data': value,
+      if (instance.product_price_id case final value?)
+        'product_price_id': value,
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.customer_name case final value?) 'customer_name': value,
+      if (instance.customer_email case final value?) 'customer_email': value,
+      if (instance.customer_billing_address case final value?)
+        'customer_billing_address': value,
+      if (instance.customer_tax_id case final value?) 'customer_tax_id': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.discount_id case final value?) 'discount_id': value,
+      if (instance.allow_discount_codes case final value?)
+        'allow_discount_codes': value,
+      if (instance.customer_ip_address case final value?)
+        'customer_ip_address': value,
+      if (instance.customer_metadata case final value?)
+        'customer_metadata': value,
+      if (instance.success_url case final value?) 'success_url': value,
+      if (instance.embed_origin case final value?) 'embed_origin': value,
     };

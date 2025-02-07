@@ -26,7 +26,7 @@ Map<String, dynamic> _$$CheckoutDiscountPercentageOnceForeverDurationImplToJson(
       'basis_points': instance.basis_points,
       'id': instance.id,
       'name': instance.name,
-      'code': instance.code,
+      if (instance.code case final value?) 'code': value,
     };
 
 const _$DiscountDurationEnumMap = {

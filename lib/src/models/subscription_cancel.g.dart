@@ -19,8 +19,11 @@ _$SubscriptionCancelImpl _$$SubscriptionCancelImplFromJson(
 Map<String, dynamic> _$$SubscriptionCancelImplToJson(
         _$SubscriptionCancelImpl instance) =>
     <String, dynamic>{
-      'cancel_at_period_end': instance.cancel_at_period_end,
-      'revoke': instance.revoke,
-      'customer_cancellation_reason': instance.customer_cancellation_reason,
-      'customer_cancellation_comment': instance.customer_cancellation_comment,
+      if (instance.cancel_at_period_end case final value?)
+        'cancel_at_period_end': value,
+      if (instance.revoke case final value?) 'revoke': value,
+      if (instance.customer_cancellation_reason case final value?)
+        'customer_cancellation_reason': value,
+      if (instance.customer_cancellation_comment case final value?)
+        'customer_cancellation_comment': value,
     };

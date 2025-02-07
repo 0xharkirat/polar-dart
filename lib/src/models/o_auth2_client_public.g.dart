@@ -23,11 +23,11 @@ Map<String, dynamic> _$$OAuth2ClientPublicImplToJson(
         _$OAuth2ClientPublicImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'client_id': instance.client_id,
-      'client_name': instance.client_name,
-      'client_uri': instance.client_uri,
-      'logo_uri': instance.logo_uri,
-      'tos_uri': instance.tos_uri,
-      'policy_uri': instance.policy_uri,
+      if (instance.client_name case final value?) 'client_name': value,
+      if (instance.client_uri case final value?) 'client_uri': value,
+      if (instance.logo_uri case final value?) 'logo_uri': value,
+      if (instance.tos_uri case final value?) 'tos_uri': value,
+      if (instance.policy_uri case final value?) 'policy_uri': value,
     };

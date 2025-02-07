@@ -32,10 +32,10 @@ Map<String, dynamic> _$$CheckoutLinkProductImplToJson(
         _$CheckoutLinkProductImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'name': instance.name,
-      'description': instance.description,
+      if (instance.description case final value?) 'description': value,
       'is_recurring': instance.is_recurring,
       'is_archived': instance.is_archived,
       'organization_id': instance.organization_id,

@@ -16,6 +16,6 @@ _$BenefitAdsPropertiesImpl _$$BenefitAdsPropertiesImplFromJson(
 Map<String, dynamic> _$$BenefitAdsPropertiesImplToJson(
         _$BenefitAdsPropertiesImpl instance) =>
     <String, dynamic>{
-      'image_height': instance.image_height,
-      'image_width': instance.image_width,
+      if (instance.image_height case final value?) 'image_height': value,
+      if (instance.image_width case final value?) 'image_width': value,
     };

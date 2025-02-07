@@ -17,7 +17,7 @@ _$UserInfoUserImpl _$$UserInfoUserImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$UserInfoUserImplToJson(_$UserInfoUserImpl instance) =>
     <String, dynamic>{
       'sub': instance.sub,
-      'name': instance.name,
-      'email': instance.email,
-      'email_verified': instance.email_verified,
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.email_verified case final value?) 'email_verified': value,
     };

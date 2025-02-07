@@ -21,5 +21,5 @@ Map<String, dynamic> _$$ProductPriceOneTimeFixedCreateImplToJson(
       'type': instance.type,
       'amount_type': instance.amount_type,
       'price_amount': instance.price_amount,
-      'price_currency': instance.price_currency,
+      if (instance.price_currency case final value?) 'price_currency': value,
     };

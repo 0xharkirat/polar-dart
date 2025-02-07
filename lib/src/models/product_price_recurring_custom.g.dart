@@ -28,15 +28,15 @@ Map<String, dynamic> _$$ProductPriceRecurringCustomImplToJson(
         _$ProductPriceRecurringCustomImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'amount_type': instance.amount_type,
       'is_archived': instance.is_archived,
       'product_id': instance.product_id,
       'price_currency': instance.price_currency,
-      'minimum_amount': instance.minimum_amount,
-      'maximum_amount': instance.maximum_amount,
-      'preset_amount': instance.preset_amount,
+      if (instance.minimum_amount case final value?) 'minimum_amount': value,
+      if (instance.maximum_amount case final value?) 'maximum_amount': value,
+      if (instance.preset_amount case final value?) 'preset_amount': value,
       'type': instance.type,
       'recurring_interval':
           _$SubscriptionRecurringIntervalEnumMap[instance.recurring_interval]!,

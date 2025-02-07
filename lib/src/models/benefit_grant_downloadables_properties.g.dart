@@ -18,5 +18,5 @@ _$BenefitGrantDownloadablesPropertiesImpl
 Map<String, dynamic> _$$BenefitGrantDownloadablesPropertiesImplToJson(
         _$BenefitGrantDownloadablesPropertiesImpl instance) =>
     <String, dynamic>{
-      'files': instance.files,
+      if (instance.files case final value?) 'files': value,
     };

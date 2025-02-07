@@ -27,17 +27,17 @@ _$BenefitGrantImpl _$$BenefitGrantImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$BenefitGrantImplToJson(_$BenefitGrantImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
-      'granted_at': instance.granted_at,
+      if (instance.granted_at case final value?) 'granted_at': value,
       'is_granted': instance.is_granted,
-      'revoked_at': instance.revoked_at,
+      if (instance.revoked_at case final value?) 'revoked_at': value,
       'is_revoked': instance.is_revoked,
-      'subscription_id': instance.subscription_id,
-      'order_id': instance.order_id,
+      if (instance.subscription_id case final value?) 'subscription_id': value,
+      if (instance.order_id case final value?) 'order_id': value,
       'customer_id': instance.customer_id,
       'user_id': instance.user_id,
       'benefit_id': instance.benefit_id,
       'customer': instance.customer,
-      'properties': instance.properties,
+      if (instance.properties case final value?) 'properties': value,
     };

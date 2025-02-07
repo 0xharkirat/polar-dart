@@ -30,7 +30,7 @@ Map<String, dynamic> _$$CheckoutDiscountFixedRepeatDurationImplToJson(
       'currency': instance.currency,
       'id': instance.id,
       'name': instance.name,
-      'code': instance.code,
+      if (instance.code case final value?) 'code': value,
     };
 
 const _$DiscountDurationEnumMap = {

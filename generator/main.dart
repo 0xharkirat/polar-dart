@@ -16,13 +16,14 @@ void main() async {
   const registryPath = '$jsonOutputDir/api.registry.json';
   const polarClientPath = 'lib/src/polar_client.dart';
   
-
+  // Models generatation
   // Generate models.dart.json from OpenAPI spec
   await ModelsParser.generateDartJson(specPath, jsonOutputDir);
 
   // Generate Dart files from models.dart.json
   await DartClassGenerator.generateFilesFromJson(modelsJsonOutputPath, modelsOutputDir);
 
+  // API generation
   // Generate APIs.dart.json from OpenAPI spec
   await PathParser.generateApisJson(specPath, jsonOutputDir);
 

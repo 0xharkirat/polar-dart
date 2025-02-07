@@ -17,5 +17,5 @@ _$HTTPValidationErrorImpl _$$HTTPValidationErrorImplFromJson(
 Map<String, dynamic> _$$HTTPValidationErrorImplToJson(
         _$HTTPValidationErrorImpl instance) =>
     <String, dynamic>{
-      'detail': instance.detail,
+      if (instance.detail case final value?) 'detail': value,
     };

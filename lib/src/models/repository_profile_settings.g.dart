@@ -19,9 +19,11 @@ _$RepositoryProfileSettingsImpl _$$RepositoryProfileSettingsImplFromJson(
 Map<String, dynamic> _$$RepositoryProfileSettingsImplToJson(
         _$RepositoryProfileSettingsImpl instance) =>
     <String, dynamic>{
-      'description': instance.description,
-      'cover_image_url': instance.cover_image_url,
-      'featured_organizations': instance.featured_organizations,
-      'highlighted_subscription_tiers': instance.highlighted_subscription_tiers,
-      'links': instance.links,
+      if (instance.description case final value?) 'description': value,
+      if (instance.cover_image_url case final value?) 'cover_image_url': value,
+      if (instance.featured_organizations case final value?)
+        'featured_organizations': value,
+      if (instance.highlighted_subscription_tiers case final value?)
+        'highlighted_subscription_tiers': value,
+      if (instance.links case final value?) 'links': value,
     };

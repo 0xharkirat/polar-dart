@@ -22,9 +22,9 @@ Map<String, dynamic> _$$CheckoutLegacyImplToJson(
         _$CheckoutLegacyImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'url': instance.url,
-      'customer_email': instance.customer_email,
-      'customer_name': instance.customer_name,
+      if (instance.url case final value?) 'url': value,
+      if (instance.customer_email case final value?) 'customer_email': value,
+      if (instance.customer_name case final value?) 'customer_name': value,
       'product': instance.product,
       'product_price': instance.product_price,
     };

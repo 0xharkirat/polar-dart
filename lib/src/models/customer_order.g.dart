@@ -29,7 +29,7 @@ _$CustomerOrderImpl _$$CustomerOrderImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CustomerOrderImplToJson(_$CustomerOrderImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'amount': instance.amount,
       'tax_amount': instance.tax_amount,
@@ -37,9 +37,9 @@ Map<String, dynamic> _$$CustomerOrderImplToJson(_$CustomerOrderImpl instance) =>
       'customer_id': instance.customer_id,
       'product_id': instance.product_id,
       'product_price_id': instance.product_price_id,
-      'subscription_id': instance.subscription_id,
+      if (instance.subscription_id case final value?) 'subscription_id': value,
       'user_id': instance.user_id,
       'product': instance.product,
       'product_price': instance.product_price,
-      'subscription': instance.subscription,
+      if (instance.subscription case final value?) 'subscription': value,
     };

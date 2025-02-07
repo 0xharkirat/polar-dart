@@ -24,11 +24,12 @@ _$ProductOneTimeCreateImpl _$$ProductOneTimeCreateImplFromJson(
 Map<String, dynamic> _$$ProductOneTimeCreateImplToJson(
         _$ProductOneTimeCreateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'name': instance.name,
-      'description': instance.description,
+      if (instance.description case final value?) 'description': value,
       'prices': instance.prices,
-      'medias': instance.medias,
-      'attached_custom_fields': instance.attached_custom_fields,
-      'organization_id': instance.organization_id,
+      if (instance.medias case final value?) 'medias': value,
+      if (instance.attached_custom_fields case final value?)
+        'attached_custom_fields': value,
+      if (instance.organization_id case final value?) 'organization_id': value,
     };

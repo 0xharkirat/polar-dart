@@ -21,7 +21,9 @@ Map<String, dynamic> _$$OrganizationCreateImplToJson(
     <String, dynamic>{
       'name': instance.name,
       'slug': instance.slug,
-      'avatar_url': instance.avatar_url,
-      'feature_settings': instance.feature_settings,
-      'subscription_settings': instance.subscription_settings,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
+      if (instance.feature_settings case final value?)
+        'feature_settings': value,
+      if (instance.subscription_settings case final value?)
+        'subscription_settings': value,
     };

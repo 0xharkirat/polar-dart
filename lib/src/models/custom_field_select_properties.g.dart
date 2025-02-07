@@ -21,8 +21,9 @@ _$CustomFieldSelectPropertiesImpl _$$CustomFieldSelectPropertiesImplFromJson(
 Map<String, dynamic> _$$CustomFieldSelectPropertiesImplToJson(
         _$CustomFieldSelectPropertiesImpl instance) =>
     <String, dynamic>{
-      'form_label': instance.form_label,
-      'form_help_text': instance.form_help_text,
-      'form_placeholder': instance.form_placeholder,
+      if (instance.form_label case final value?) 'form_label': value,
+      if (instance.form_help_text case final value?) 'form_help_text': value,
+      if (instance.form_placeholder case final value?)
+        'form_placeholder': value,
       'options': instance.options,
     };

@@ -15,5 +15,6 @@ _$RepositoryUpdateImpl _$$RepositoryUpdateImplFromJson(
 Map<String, dynamic> _$$RepositoryUpdateImplToJson(
         _$RepositoryUpdateImpl instance) =>
     <String, dynamic>{
-      'profile_settings': instance.profile_settings,
+      if (instance.profile_settings case final value?)
+        'profile_settings': value,
     };

@@ -22,5 +22,5 @@ Map<String, dynamic> _$$BenefitGitHubRepositoryPropertiesImplToJson(
       'repository_owner': instance.repository_owner,
       'repository_name': instance.repository_name,
       'permission': instance.permission,
-      'repository_id': instance.repository_id,
+      if (instance.repository_id case final value?) 'repository_id': value,
     };

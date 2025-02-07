@@ -21,7 +21,7 @@ Map<String, dynamic> _$$TokenResponseImplToJson(_$TokenResponseImpl instance) =>
       'access_token': instance.access_token,
       'token_type': instance.token_type,
       'expires_in': instance.expires_in,
-      'refresh_token': instance.refresh_token,
+      if (instance.refresh_token case final value?) 'refresh_token': value,
       'scope': instance.scope,
       'id_token': instance.id_token,
     };

@@ -22,8 +22,8 @@ Map<String, dynamic> _$$ProductPriceOneTimeCustomCreateImplToJson(
     <String, dynamic>{
       'type': instance.type,
       'amount_type': instance.amount_type,
-      'price_currency': instance.price_currency,
-      'minimum_amount': instance.minimum_amount,
-      'maximum_amount': instance.maximum_amount,
-      'preset_amount': instance.preset_amount,
+      if (instance.price_currency case final value?) 'price_currency': value,
+      if (instance.minimum_amount case final value?) 'minimum_amount': value,
+      if (instance.maximum_amount case final value?) 'maximum_amount': value,
+      if (instance.preset_amount case final value?) 'preset_amount': value,
     };

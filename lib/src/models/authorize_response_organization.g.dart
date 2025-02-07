@@ -27,7 +27,7 @@ Map<String, dynamic> _$$AuthorizeResponseOrganizationImplToJson(
     <String, dynamic>{
       'client': instance.client,
       'sub_type': instance.sub_type,
-      'sub': instance.sub,
+      if (instance.sub case final value?) 'sub': value,
       'scopes': instance.scopes.map((e) => _$ScopeEnumMap[e]!).toList(),
       'organizations': instance.organizations,
     };

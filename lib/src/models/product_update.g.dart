@@ -19,11 +19,12 @@ _$ProductUpdateImpl _$$ProductUpdateImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ProductUpdateImplToJson(_$ProductUpdateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
-      'name': instance.name,
-      'description': instance.description,
-      'is_archived': instance.is_archived,
-      'prices': instance.prices,
-      'medias': instance.medias,
-      'attached_custom_fields': instance.attached_custom_fields,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.is_archived case final value?) 'is_archived': value,
+      if (instance.prices case final value?) 'prices': value,
+      if (instance.medias case final value?) 'medias': value,
+      if (instance.attached_custom_fields case final value?)
+        'attached_custom_fields': value,
     };

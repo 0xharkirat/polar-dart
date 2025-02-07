@@ -29,14 +29,14 @@ Map<String, dynamic> _$$DiscountPercentageOnceForeverDurationCreateImplToJson(
       'duration': _$DiscountDurationEnumMap[instance.duration]!,
       'type': _$DiscountTypeEnumMap[instance.type]!,
       'basis_points': instance.basis_points,
-      'metadata': instance.metadata,
+      if (instance.metadata case final value?) 'metadata': value,
       'name': instance.name,
-      'code': instance.code,
-      'starts_at': instance.starts_at,
-      'ends_at': instance.ends_at,
-      'max_redemptions': instance.max_redemptions,
-      'products': instance.products,
-      'organization_id': instance.organization_id,
+      if (instance.code case final value?) 'code': value,
+      if (instance.starts_at case final value?) 'starts_at': value,
+      if (instance.ends_at case final value?) 'ends_at': value,
+      if (instance.max_redemptions case final value?) 'max_redemptions': value,
+      if (instance.products case final value?) 'products': value,
+      if (instance.organization_id case final value?) 'organization_id': value,
     };
 
 const _$DiscountDurationEnumMap = {

@@ -23,7 +23,7 @@ Map<String, dynamic> _$$AuthorizeResponseUserImplToJson(
     <String, dynamic>{
       'client': instance.client,
       'sub_type': instance.sub_type,
-      'sub': instance.sub,
+      if (instance.sub case final value?) 'sub': value,
       'scopes': instance.scopes.map((e) => _$ScopeEnumMap[e]!).toList(),
     };
 

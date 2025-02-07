@@ -17,5 +17,5 @@ Map<String, dynamic> _$$UserInfoOrganizationImplToJson(
         _$UserInfoOrganizationImpl instance) =>
     <String, dynamic>{
       'sub': instance.sub,
-      'name': instance.name,
+      if (instance.name case final value?) 'name': value,
     };

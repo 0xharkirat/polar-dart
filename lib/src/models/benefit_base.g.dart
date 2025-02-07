@@ -21,7 +21,7 @@ _$BenefitBaseImpl _$$BenefitBaseImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$BenefitBaseImplToJson(_$BenefitBaseImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'type': _$BenefitTypeEnumMap[instance.type]!,
       'description': instance.description,

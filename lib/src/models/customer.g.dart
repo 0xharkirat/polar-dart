@@ -24,14 +24,14 @@ _$CustomerImpl _$$CustomerImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CustomerImplToJson(_$CustomerImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'metadata': instance.metadata,
       'email': instance.email,
       'email_verified': instance.email_verified,
-      'name': instance.name,
-      'billing_address': instance.billing_address,
-      'tax_id': instance.tax_id,
+      if (instance.name case final value?) 'name': value,
+      if (instance.billing_address case final value?) 'billing_address': value,
+      if (instance.tax_id case final value?) 'tax_id': value,
       'organization_id': instance.organization_id,
       'avatar_url': instance.avatar_url,
     };

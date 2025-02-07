@@ -20,10 +20,11 @@ _$CustomFieldTextPropertiesImpl _$$CustomFieldTextPropertiesImplFromJson(
 Map<String, dynamic> _$$CustomFieldTextPropertiesImplToJson(
         _$CustomFieldTextPropertiesImpl instance) =>
     <String, dynamic>{
-      'form_label': instance.form_label,
-      'form_help_text': instance.form_help_text,
-      'form_placeholder': instance.form_placeholder,
-      'textarea': instance.textarea,
-      'min_length': instance.min_length,
-      'max_length': instance.max_length,
+      if (instance.form_label case final value?) 'form_label': value,
+      if (instance.form_help_text case final value?) 'form_help_text': value,
+      if (instance.form_placeholder case final value?)
+        'form_placeholder': value,
+      if (instance.textarea case final value?) 'textarea': value,
+      if (instance.min_length case final value?) 'min_length': value,
+      if (instance.max_length case final value?) 'max_length': value,
     };

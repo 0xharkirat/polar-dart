@@ -42,13 +42,15 @@ Map<String, dynamic> _$$ValidatedLicenseKeyImplToJson(
       'key': instance.key,
       'display_key': instance.display_key,
       'status': _$LicenseKeyStatusEnumMap[instance.status]!,
-      'limit_activations': instance.limit_activations,
+      if (instance.limit_activations case final value?)
+        'limit_activations': value,
       'usage': instance.usage,
-      'limit_usage': instance.limit_usage,
+      if (instance.limit_usage case final value?) 'limit_usage': value,
       'validations': instance.validations,
-      'last_validated_at': instance.last_validated_at,
-      'expires_at': instance.expires_at,
-      'activation': instance.activation,
+      if (instance.last_validated_at case final value?)
+        'last_validated_at': value,
+      if (instance.expires_at case final value?) 'expires_at': value,
+      if (instance.activation case final value?) 'activation': value,
     };
 
 const _$LicenseKeyStatusEnumMap = {

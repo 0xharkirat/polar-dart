@@ -27,20 +27,24 @@ _$PledgeImpl _$$PledgeImplFromJson(Map<String, dynamic> json) => _$PledgeImpl(
 Map<String, dynamic> _$$PledgeImplToJson(_$PledgeImpl instance) =>
     <String, dynamic>{
       'created_at': instance.created_at,
-      'modified_at': instance.modified_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'id': instance.id,
       'amount': instance.amount,
       'currency': instance.currency,
       'state': _$PledgeStateEnumMap[instance.state]!,
       'type': _$PledgeTypeEnumMap[instance.type]!,
-      'refunded_at': instance.refunded_at,
-      'scheduled_payout_at': instance.scheduled_payout_at,
+      if (instance.refunded_at case final value?) 'refunded_at': value,
+      if (instance.scheduled_payout_at case final value?)
+        'scheduled_payout_at': value,
       'issue': instance.issue,
-      'pledger': instance.pledger,
-      'hosted_invoice_url': instance.hosted_invoice_url,
-      'authed_can_admin_sender': instance.authed_can_admin_sender,
-      'authed_can_admin_received': instance.authed_can_admin_received,
-      'created_by': instance.created_by,
+      if (instance.pledger case final value?) 'pledger': value,
+      if (instance.hosted_invoice_url case final value?)
+        'hosted_invoice_url': value,
+      if (instance.authed_can_admin_sender case final value?)
+        'authed_can_admin_sender': value,
+      if (instance.authed_can_admin_received case final value?)
+        'authed_can_admin_received': value,
+      if (instance.created_by case final value?) 'created_by': value,
     };
 
 const _$PledgeStateEnumMap = {

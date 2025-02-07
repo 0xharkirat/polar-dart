@@ -35,14 +35,17 @@ Map<String, dynamic> _$$FileUploadImplToJson(_$FileUploadImpl instance) =>
       'path': instance.path,
       'mime_type': instance.mime_type,
       'size': instance.size,
-      'storage_version': instance.storage_version,
-      'checksum_etag': instance.checksum_etag,
-      'checksum_sha256_base64': instance.checksum_sha256_base64,
-      'checksum_sha256_hex': instance.checksum_sha256_hex,
-      'last_modified_at': instance.last_modified_at,
+      if (instance.storage_version case final value?) 'storage_version': value,
+      if (instance.checksum_etag case final value?) 'checksum_etag': value,
+      if (instance.checksum_sha256_base64 case final value?)
+        'checksum_sha256_base64': value,
+      if (instance.checksum_sha256_hex case final value?)
+        'checksum_sha256_hex': value,
+      if (instance.last_modified_at case final value?)
+        'last_modified_at': value,
       'upload': instance.upload,
-      'version': instance.version,
-      'is_uploaded': instance.is_uploaded,
+      if (instance.version case final value?) 'version': value,
+      if (instance.is_uploaded case final value?) 'is_uploaded': value,
       'service': _$FileServiceTypesEnumMap[instance.service]!,
       'size_readable': instance.size_readable,
     };

@@ -18,10 +18,10 @@ _$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
     <String, dynamic>{
-      'line1': instance.line1,
-      'line2': instance.line2,
-      'postal_code': instance.postal_code,
-      'city': instance.city,
-      'state': instance.state,
+      if (instance.line1 case final value?) 'line1': value,
+      if (instance.line2 case final value?) 'line2': value,
+      if (instance.postal_code case final value?) 'postal_code': value,
+      if (instance.city case final value?) 'city': value,
+      if (instance.state case final value?) 'state': value,
       'country': instance.country,
     };

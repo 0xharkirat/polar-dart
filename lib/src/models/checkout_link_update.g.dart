@@ -20,10 +20,12 @@ _$CheckoutLinkUpdateImpl _$$CheckoutLinkUpdateImplFromJson(
 Map<String, dynamic> _$$CheckoutLinkUpdateImplToJson(
         _$CheckoutLinkUpdateImpl instance) =>
     <String, dynamic>{
-      'metadata': instance.metadata,
-      'label': instance.label,
-      'allow_discount_codes': instance.allow_discount_codes,
-      'product_price_id': instance.product_price_id,
-      'discount_id': instance.discount_id,
-      'success_url': instance.success_url,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.label case final value?) 'label': value,
+      if (instance.allow_discount_codes case final value?)
+        'allow_discount_codes': value,
+      if (instance.product_price_id case final value?)
+        'product_price_id': value,
+      if (instance.discount_id case final value?) 'discount_id': value,
+      if (instance.success_url case final value?) 'success_url': value,
     };

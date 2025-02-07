@@ -22,6 +22,6 @@ Map<String, dynamic> _$$SubscriptionUserImplToJson(
       'id': instance.id,
       'email': instance.email,
       'public_name': instance.public_name,
-      'avatar_url': instance.avatar_url,
-      'github_username': instance.github_username,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
+      if (instance.github_username case final value?) 'github_username': value,
     };

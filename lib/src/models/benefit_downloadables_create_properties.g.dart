@@ -18,6 +18,6 @@ _$BenefitDownloadablesCreatePropertiesImpl
 Map<String, dynamic> _$$BenefitDownloadablesCreatePropertiesImplToJson(
         _$BenefitDownloadablesCreatePropertiesImpl instance) =>
     <String, dynamic>{
-      'archived': instance.archived,
+      if (instance.archived case final value?) 'archived': value,
       'files': instance.files,
     };

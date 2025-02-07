@@ -17,6 +17,6 @@ _$BenefitGrantLicenseKeysPropertiesImpl
 Map<String, dynamic> _$$BenefitGrantLicenseKeysPropertiesImplToJson(
         _$BenefitGrantLicenseKeysPropertiesImpl instance) =>
     <String, dynamic>{
-      'license_key_id': instance.license_key_id,
-      'display_key': instance.display_key,
+      if (instance.license_key_id case final value?) 'license_key_id': value,
+      if (instance.display_key case final value?) 'display_key': value,
     };

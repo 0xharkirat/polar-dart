@@ -20,5 +20,5 @@ Map<String, dynamic> _$$LicenseKeyUserImplToJson(
       'id': instance.id,
       'email': instance.email,
       'public_name': instance.public_name,
-      'avatar_url': instance.avatar_url,
+      if (instance.avatar_url case final value?) 'avatar_url': value,
     };
