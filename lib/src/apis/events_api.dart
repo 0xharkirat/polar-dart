@@ -15,7 +15,7 @@ class EventsApi {
     try {
       final response = await _dio.get(
         '/v1/events/',
-        queryParameters: { if (filter != null) 'filter': filter, if (start_timestamp != null) 'start_timestamp': start_timestamp, if (end_timestamp != null) 'end_timestamp': end_timestamp, if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (meter_id != null) 'meter_id': meter_id, if (name != null) 'name': name, if (source != null) 'source': source, if (query != null) 'query': query, if (parent_id != null) 'parent_id': parent_id, if (depth != null) 'depth': depth, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (filter != null) 'filter': filter, if (start_timestamp != null) 'start_timestamp': start_timestamp, if (end_timestamp != null) 'end_timestamp': end_timestamp, if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (meter_id != null) 'meter_id': meter_id, if (name != null) 'name': name, if (source != null) 'source': source, if (query != null) 'query': query, if (parent_id != null) 'parent_id': parent_id, if (depth != null) 'depth': depth, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return response.data;
     } catch (e) {
@@ -31,7 +31,7 @@ class EventsApi {
     try {
       final response = await _dio.get(
         '/v1/events/names',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (source != null) 'source': source, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (source != null) 'source': source, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceEventName.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class EventsApi {
   Future<Event> eventsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/events/${id}',
+        '/v1/events/$id',
       );
       return Event.fromJson(response.data);
     } catch (e) {

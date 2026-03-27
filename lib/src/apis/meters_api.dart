@@ -16,7 +16,7 @@ class MetersApi {
     try {
       final response = await _dio.get(
         '/v1/meters/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceMeter.fromJson(response.data);
     } catch (e) {
@@ -47,7 +47,7 @@ class MetersApi {
   Future<Meter> metersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/meters/${id}',
+        '/v1/meters/$id',
       );
       return Meter.fromJson(response.data);
     } catch (e) {
@@ -62,7 +62,7 @@ class MetersApi {
   Future<Meter> metersUpdate({required MeterUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/meters/${id}',
+        '/v1/meters/$id',
         data: body.toJson(),
       );
       return Meter.fromJson(response.data);
@@ -78,8 +78,8 @@ class MetersApi {
   Future<MeterQuantities> metersQuantities({required String id, required String start_timestamp, required String end_timestamp, required dynamic interval, String timezone = 'UTC', dynamic customer_id, dynamic external_customer_id, dynamic customer_aggregation_function, dynamic metadata}) async {
     try {
       final response = await _dio.get(
-        '/v1/meters/${id}/quantities',
-        queryParameters: { if (start_timestamp != null) 'start_timestamp': start_timestamp, if (end_timestamp != null) 'end_timestamp': end_timestamp, if (interval != null) 'interval': interval, if (timezone != null) 'timezone': timezone, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (customer_aggregation_function != null) 'customer_aggregation_function': customer_aggregation_function, if (metadata != null) 'metadata': metadata },
+        '/v1/meters/$id/quantities',
+        queryParameters: { 'start_timestamp': start_timestamp, 'end_timestamp': end_timestamp, 'interval': interval, 'timezone': timezone, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (customer_aggregation_function != null) 'customer_aggregation_function': customer_aggregation_function, if (metadata != null) 'metadata': metadata },
       );
       return MeterQuantities.fromJson(response.data);
     } catch (e) {

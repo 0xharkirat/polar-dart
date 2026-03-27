@@ -13,7 +13,7 @@ class PaymentsApi {
     try {
       final response = await _dio.get(
         '/v1/payments/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (checkout_id != null) 'checkout_id': checkout_id, if (order_id != null) 'order_id': order_id, if (status != null) 'status': status, if (method != null) 'method': method, if (customer_email != null) 'customer_email': customer_email, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (checkout_id != null) 'checkout_id': checkout_id, if (order_id != null) 'order_id': order_id, if (status != null) 'status': status, if (method != null) 'method': method, if (customer_email != null) 'customer_email': customer_email, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResource.fromJson(response.data);
     } catch (e) {
@@ -28,7 +28,7 @@ class PaymentsApi {
   Future<Payment> paymentsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/payments/${id}',
+        '/v1/payments/$id',
       );
       return Payment.fromJson(response.data);
     } catch (e) {

@@ -16,7 +16,7 @@ class ProductsApi {
     try {
       final response = await _dio.get(
         '/v1/products/',
-        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, if (is_recurring != null) 'is_recurring': is_recurring, if (benefit_id != null) 'benefit_id': benefit_id, if (visibility != null) 'visibility': visibility, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, if (is_recurring != null) 'is_recurring': is_recurring, if (benefit_id != null) 'benefit_id': benefit_id, if (visibility != null) 'visibility': visibility, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceProduct.fromJson(response.data);
     } catch (e) {
@@ -47,7 +47,7 @@ class ProductsApi {
   Future<Product> productsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/products/${id}',
+        '/v1/products/$id',
       );
       return Product.fromJson(response.data);
     } catch (e) {
@@ -62,7 +62,7 @@ class ProductsApi {
   Future<Product> productsUpdate({required ProductUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/products/${id}',
+        '/v1/products/$id',
         data: body.toJson(),
       );
       return Product.fromJson(response.data);
@@ -78,7 +78,7 @@ class ProductsApi {
   Future<Product> productsUpdateBenefits({required ProductBenefitsUpdate body, required String id}) async {
     try {
       final response = await _dio.post(
-        '/v1/products/${id}/benefits',
+        '/v1/products/$id/benefits',
         data: body.toJson(),
       );
       return Product.fromJson(response.data);

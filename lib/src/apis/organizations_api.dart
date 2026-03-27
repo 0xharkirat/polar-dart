@@ -15,7 +15,7 @@ class OrganizationsApi {
     try {
       final response = await _dio.get(
         '/v1/organizations/',
-        queryParameters: { if (slug != null) 'slug': slug, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (slug != null) 'slug': slug, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceOrganization.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class OrganizationsApi {
   Future<Organization> organizationsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/organizations/${id}',
+        '/v1/organizations/$id',
       );
       return Organization.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class OrganizationsApi {
   Future<Organization> organizationsUpdate({required OrganizationUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/organizations/${id}',
+        '/v1/organizations/$id',
         data: body.toJson(),
       );
       return Organization.fromJson(response.data);

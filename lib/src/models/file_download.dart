@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 's3_download_u_r_l.dart';
 import 'file_service_types.dart';
 

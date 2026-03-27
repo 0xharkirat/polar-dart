@@ -14,7 +14,7 @@ class SubscriptionsApi {
     try {
       final response = await _dio.get(
         '/v1/subscriptions/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (discount_id != null) 'discount_id': discount_id, if (active != null) 'active': active, if (cancel_at_period_end != null) 'cancel_at_period_end': cancel_at_period_end, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (discount_id != null) 'discount_id': discount_id, if (active != null) 'active': active, if (cancel_at_period_end != null) 'cancel_at_period_end': cancel_at_period_end, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceSubscription.fromJson(response.data);
     } catch (e) {
@@ -60,7 +60,7 @@ class SubscriptionsApi {
   Future<Subscription> subscriptionsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/subscriptions/${id}',
+        '/v1/subscriptions/$id',
       );
       return Subscription.fromJson(response.data);
     } catch (e) {
@@ -75,7 +75,7 @@ class SubscriptionsApi {
   Future<Subscription> subscriptionsUpdate({required SubscriptionUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/subscriptions/${id}',
+        '/v1/subscriptions/$id',
         data: body.toJson(),
       );
       return Subscription.fromJson(response.data);
@@ -91,7 +91,7 @@ class SubscriptionsApi {
   Future<Subscription> subscriptionsRevoke({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/subscriptions/${id}',
+        '/v1/subscriptions/$id',
       );
       return Subscription.fromJson(response.data);
     } catch (e) {

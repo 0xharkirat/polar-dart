@@ -40,6 +40,9 @@ class DartClassGenerator {
     await Common.ensureDirectoryExists(directory);
 
     final buffer = StringBuffer();
+    buffer.writeln(
+        '// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark');
+    buffer.writeln();
 
     for (final import in classData['imports']) {
       buffer.writeln(import);
@@ -93,6 +96,8 @@ class DartClassGenerator {
     final buffer = StringBuffer();
     final enumName = Common.toUpperCamelCase(enumData['className']);
 
+    buffer.writeln('// ignore_for_file: constant_identifier_names');
+    buffer.writeln();
     buffer.writeln("import 'package:freezed_annotation/freezed_annotation.dart';");
     buffer.writeln();
     buffer.writeln('enum $enumName {');

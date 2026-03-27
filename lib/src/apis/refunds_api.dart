@@ -14,7 +14,7 @@ class RefundsApi {
     try {
       final response = await _dio.get(
         '/v1/refunds/',
-        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (succeeded != null) 'succeeded': succeeded, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (succeeded != null) 'succeeded': succeeded, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceRefund.fromJson(response.data);
     } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'billing_address_field_mode.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';

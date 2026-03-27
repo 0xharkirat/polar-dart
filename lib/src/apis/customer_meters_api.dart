@@ -13,7 +13,7 @@ class CustomerMetersApi {
     try {
       final response = await _dio.get(
         '/v1/customer-meters/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (meter_id != null) 'meter_id': meter_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (meter_id != null) 'meter_id': meter_id, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerMeter.fromJson(response.data);
     } catch (e) {
@@ -28,7 +28,7 @@ class CustomerMetersApi {
   Future<CustomerMeter> customerMetersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-meters/${id}',
+        '/v1/customer-meters/$id',
       );
       return CustomerMeter.fromJson(response.data);
     } catch (e) {

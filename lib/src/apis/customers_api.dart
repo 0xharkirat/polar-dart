@@ -17,7 +17,7 @@ class CustomersApi {
     try {
       final response = await _dio.get(
         '/v1/customers/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (email != null) 'email': email, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (email != null) 'email': email, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResource.fromJson(response.data);
     } catch (e) {
@@ -64,7 +64,7 @@ class CustomersApi {
   Future<Customer> customersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customers/${id}',
+        '/v1/customers/$id',
       );
       return Customer.fromJson(response.data);
     } catch (e) {
@@ -79,7 +79,7 @@ class CustomersApi {
   Future<Customer> customersUpdate({required CustomerUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customers/${id}',
+        '/v1/customers/$id',
         data: body.toJson(),
       );
       return Customer.fromJson(response.data);
@@ -95,7 +95,7 @@ class CustomersApi {
   Future<dynamic> customersDelete({required String id, bool anonymize = false}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customers/${id}',
+        '/v1/customers/$id',
       );
       return response.data;
     } catch (e) {
@@ -110,7 +110,7 @@ class CustomersApi {
   Future<Customer> customersGetExternal({required String external_id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customers/external/${external_id}',
+        '/v1/customers/external/$external_id',
       );
       return Customer.fromJson(response.data);
     } catch (e) {
@@ -125,7 +125,7 @@ class CustomersApi {
   Future<Customer> customersUpdateExternal({required CustomerUpdateExternalID body, required String external_id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customers/external/${external_id}',
+        '/v1/customers/external/$external_id',
         data: body.toJson(),
       );
       return Customer.fromJson(response.data);
@@ -141,7 +141,7 @@ class CustomersApi {
   Future<dynamic> customersDeleteExternal({required String external_id, bool anonymize = false}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customers/external/${external_id}',
+        '/v1/customers/external/$external_id',
       );
       return response.data;
     } catch (e) {
@@ -156,7 +156,7 @@ class CustomersApi {
   Future<CustomerState> customersGetState({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customers/${id}/state',
+        '/v1/customers/$id/state',
       );
       return CustomerState.fromJson(response.data);
     } catch (e) {
@@ -171,7 +171,7 @@ class CustomersApi {
   Future<CustomerState> customersGetStateExternal({required String external_id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customers/external/${external_id}/state',
+        '/v1/customers/external/$external_id/state',
       );
       return CustomerState.fromJson(response.data);
     } catch (e) {

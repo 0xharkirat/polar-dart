@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'o_auth2_client_public.dart';
 import 'scope.dart';
 import 'authorize_organization.dart';

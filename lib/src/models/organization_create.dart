@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'presentment_currency.dart';
 import 'tax_behavior_option.dart';
 

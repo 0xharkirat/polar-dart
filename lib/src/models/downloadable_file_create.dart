@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 's3_file_create_multipart.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';

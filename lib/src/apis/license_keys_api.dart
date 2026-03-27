@@ -20,7 +20,7 @@ class LicenseKeysApi {
     try {
       final response = await _dio.get(
         '/v1/license-keys/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (benefit_id != null) 'benefit_id': benefit_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (benefit_id != null) 'benefit_id': benefit_id, 'page': page, 'limit': limit },
       );
       return ListResourceLicenseKeyRead.fromJson(response.data);
     } catch (e) {
@@ -35,7 +35,7 @@ class LicenseKeysApi {
   Future<LicenseKeyWithActivations> licenseKeysGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/license-keys/${id}',
+        '/v1/license-keys/$id',
       );
       return LicenseKeyWithActivations.fromJson(response.data);
     } catch (e) {
@@ -50,7 +50,7 @@ class LicenseKeysApi {
   Future<LicenseKeyRead> licenseKeysUpdate({required LicenseKeyUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/license-keys/${id}',
+        '/v1/license-keys/$id',
         data: body.toJson(),
       );
       return LicenseKeyRead.fromJson(response.data);
@@ -66,7 +66,7 @@ class LicenseKeysApi {
   Future<LicenseKeyActivationRead> licenseKeysGetActivation({required String id, required String activation_id}) async {
     try {
       final response = await _dio.get(
-        '/v1/license-keys/${id}/activations/${activation_id}',
+        '/v1/license-keys/$id/activations/$activation_id',
       );
       return LicenseKeyActivationRead.fromJson(response.data);
     } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'metric_period.dart';
 import 'metrics_totals.dart';
 import 'metrics.dart';

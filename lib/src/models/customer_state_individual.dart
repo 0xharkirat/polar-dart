@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'metadata_output_type.dart';
 import 'customer_state_subscription.dart';
 import 'customer_state_benefit_grant.dart';

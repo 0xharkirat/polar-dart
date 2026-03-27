@@ -12,7 +12,7 @@ class BenefitGrantsApi {
     try {
       final response = await _dio.get(
         '/v1/benefit-grants/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (is_granted != null) 'is_granted': is_granted, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (is_granted != null) 'is_granted': is_granted, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceBenefitGrant.fromJson(response.data);
     } catch (e) {

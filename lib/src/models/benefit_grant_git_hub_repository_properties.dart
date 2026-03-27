@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'benefit_grant_git_hub_repository_properties.g.dart';

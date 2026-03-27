@@ -15,7 +15,7 @@ class OrdersApi {
     try {
       final response = await _dio.get(
         '/v1/orders/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (product_billing_type != null) 'product_billing_type': product_billing_type, if (discount_id != null) 'discount_id': discount_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (checkout_id != null) 'checkout_id': checkout_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (product_billing_type != null) 'product_billing_type': product_billing_type, if (discount_id != null) 'discount_id': discount_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (checkout_id != null) 'checkout_id': checkout_id, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceOrder.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class OrdersApi {
   Future<Order> ordersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/orders/${id}',
+        '/v1/orders/$id',
       );
       return Order.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class OrdersApi {
   Future<Order> ordersUpdate({required OrderUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/orders/${id}',
+        '/v1/orders/$id',
         data: body.toJson(),
       );
       return Order.fromJson(response.data);
@@ -77,7 +77,7 @@ class OrdersApi {
   Future<dynamic> ordersGenerateInvoice({required String id}) async {
     try {
       final response = await _dio.post(
-        '/v1/orders/${id}/invoice',
+        '/v1/orders/$id/invoice',
       );
       return response.data;
     } catch (e) {
@@ -92,7 +92,7 @@ class OrdersApi {
   Future<OrderInvoice> ordersInvoice({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/orders/${id}/invoice',
+        '/v1/orders/$id/invoice',
       );
       return OrderInvoice.fromJson(response.data);
     } catch (e) {

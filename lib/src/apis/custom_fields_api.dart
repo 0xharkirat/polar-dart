@@ -15,7 +15,7 @@ class CustomFieldsApi {
     try {
       final response = await _dio.get(
         '/v1/custom-fields/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (type != null) 'type': type, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (type != null) 'type': type, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomField.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class CustomFieldsApi {
   Future<CustomField> customFieldsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/custom-fields/${id}',
+        '/v1/custom-fields/$id',
       );
       return CustomField.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class CustomFieldsApi {
   Future<CustomField> customFieldsUpdate({required CustomFieldUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/custom-fields/${id}',
+        '/v1/custom-fields/$id',
         data: body.toJson(),
       );
       return CustomField.fromJson(response.data);
@@ -77,7 +77,7 @@ class CustomFieldsApi {
   Future<dynamic> customFieldsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/custom-fields/${id}',
+        '/v1/custom-fields/$id',
       );
       return response.data;
     } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'discount_duration.dart';
 import 'discount_type.dart';
 import 'metadata_output_type.dart';

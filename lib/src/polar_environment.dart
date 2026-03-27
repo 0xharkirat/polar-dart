@@ -10,7 +10,6 @@ extension PolarEnvironmentExtension on PolarEnvironment {
       case PolarEnvironment.sandbox:
         return 'https://sandbox-api.polar.sh';
       case PolarEnvironment.production:
-      default:
         return 'https://api.polar.sh';
     }
   }

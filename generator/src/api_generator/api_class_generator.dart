@@ -98,14 +98,21 @@ class $className {
         // Replace path parameters like {id} with actual values
         final resolvedPath = path.replaceAllMapped(
           RegExp(r'\{(.*?)\}'),
-          (match) => '\${${match.group(1)}}',
+          (match) => '\$${match.group(1)}',
         );
 
         // Build query parameters dynamically
         final queryParams = parameters
             .where((param) => param['in'] == 'query')
-            .map((param) =>
-                "if (${param['name']} != null) '${param['name']}': ${param['name']}")
+            .map((param) {
+              final name = param['name'];
+              final shouldGuardForNull =
+                  param['nullable'] == true && param['default'] == null;
+              if (shouldGuardForNull) {
+                return "if ($name != null) '$name': $name";
+              }
+              return "'$name': $name";
+            })
             .join(', ');
 
         // Write method with path, query parameters, and error handling

@@ -13,7 +13,7 @@ class MetricsApi {
     try {
       final response = await _dio.get(
         '/v1/metrics/',
-        queryParameters: { if (start_date != null) 'start_date': start_date, if (end_date != null) 'end_date': end_date, if (timezone != null) 'timezone': timezone, if (interval != null) 'interval': interval, if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (billing_type != null) 'billing_type': billing_type, if (customer_id != null) 'customer_id': customer_id, if (metrics != null) 'metrics': metrics },
+        queryParameters: { 'start_date': start_date, 'end_date': end_date, 'timezone': timezone, 'interval': interval, if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (billing_type != null) 'billing_type': billing_type, if (customer_id != null) 'customer_id': customer_id, if (metrics != null) 'metrics': metrics },
       );
       return MetricsResponse.fromJson(response.data);
     } catch (e) {

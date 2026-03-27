@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'subscription_proration_behavior.dart';
 import 'organization_customer_portal_settings.dart';
 import 'customer_organization_feature_settings.dart';

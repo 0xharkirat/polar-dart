@@ -15,7 +15,7 @@ class DiscountsApi {
     try {
       final response = await _dio.get(
         '/v1/discounts/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceDiscount.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class DiscountsApi {
   Future<Discount> discountsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/discounts/${id}',
+        '/v1/discounts/$id',
       );
       return Discount.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class DiscountsApi {
   Future<Discount> discountsUpdate({required DiscountUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/discounts/${id}',
+        '/v1/discounts/$id',
         data: body.toJson(),
       );
       return Discount.fromJson(response.data);
@@ -77,7 +77,7 @@ class DiscountsApi {
   Future<dynamic> discountsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/discounts/${id}',
+        '/v1/discounts/$id',
       );
       return response.data;
     } catch (e) {

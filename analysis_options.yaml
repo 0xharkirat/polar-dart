@@ -13,6 +13,13 @@
 
 include: package:lints/recommended.yaml
 
+analyzer:
+  exclude:
+    - "**/*.freezed.dart"
+    - "**/*.g.dart"
+    - "lib/src/apis/**"
+    - "lib/src/models/**"
+
 # Uncomment the following section to specify additional rules.
 
 # linter:

@@ -52,7 +52,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/benefit-grants/',
-        queryParameters: { if (query != null) 'query': query, if (type != null) 'type': type, if (benefit_id != null) 'benefit_id': benefit_id, if (checkout_id != null) 'checkout_id': checkout_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (member_id != null) 'member_id': member_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (query != null) 'query': query, if (type != null) 'type': type, if (benefit_id != null) 'benefit_id': benefit_id, if (checkout_id != null) 'checkout_id': checkout_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (member_id != null) 'member_id': member_id, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerBenefitGrant.fromJson(response.data);
     } catch (e) {
@@ -67,7 +67,7 @@ class CustomerPortalApi {
   Future<CustomerBenefitGrant> customerPortalBenefitGrantsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/benefit-grants/${id}',
+        '/v1/customer-portal/benefit-grants/$id',
       );
       return CustomerBenefitGrant.fromJson(response.data);
     } catch (e) {
@@ -82,7 +82,7 @@ class CustomerPortalApi {
   Future<CustomerBenefitGrant> customerPortalBenefitGrantsUpdate({required CustomerBenefitGrantUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customer-portal/benefit-grants/${id}',
+        '/v1/customer-portal/benefit-grants/$id',
         data: body.toJson(),
       );
       return CustomerBenefitGrant.fromJson(response.data);
@@ -130,7 +130,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/customers/me/payment-methods',
-        queryParameters: { if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { 'page': page, 'limit': limit },
       );
       return ListResourceCustomerPaymentMethod.fromJson(response.data);
     } catch (e) {
@@ -177,7 +177,7 @@ class CustomerPortalApi {
   Future<dynamic> customerPortalCustomersDeletePaymentMethod({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customer-portal/customers/me/payment-methods/${id}',
+        '/v1/customer-portal/customers/me/payment-methods/$id',
       );
       return response.data;
     } catch (e) {
@@ -193,7 +193,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/meters/',
-        queryParameters: { if (meter_id != null) 'meter_id': meter_id, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (meter_id != null) 'meter_id': meter_id, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerCustomerMeter.fromJson(response.data);
     } catch (e) {
@@ -208,7 +208,7 @@ class CustomerPortalApi {
   Future<CustomerCustomerMeter> customerPortalCustomerMetersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/meters/${id}',
+        '/v1/customer-portal/meters/$id',
       );
       return CustomerCustomerMeter.fromJson(response.data);
     } catch (e) {
@@ -255,7 +255,7 @@ class CustomerPortalApi {
   Future<CustomerSeat> customerPortalSeatsRevokeSeat({required String seat_id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customer-portal/seats/${seat_id}',
+        '/v1/customer-portal/seats/$seat_id',
       );
       return CustomerSeat.fromJson(response.data);
     } catch (e) {
@@ -270,7 +270,7 @@ class CustomerPortalApi {
   Future<CustomerSeat> customerPortalSeatsResendInvitation({required String seat_id}) async {
     try {
       final response = await _dio.post(
-        '/v1/customer-portal/seats/${seat_id}/resend',
+        '/v1/customer-portal/seats/$seat_id/resend',
       );
       return CustomerSeat.fromJson(response.data);
     } catch (e) {
@@ -286,7 +286,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/seats/subscriptions',
-        queryParameters: { if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { 'page': page, 'limit': limit },
       );
       return ListResourceCustomerSubscription.fromJson(response.data);
     } catch (e) {
@@ -332,7 +332,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/downloadables/',
-        queryParameters: { if (benefit_id != null) 'benefit_id': benefit_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (benefit_id != null) 'benefit_id': benefit_id, 'page': page, 'limit': limit },
       );
       return ListResourceDownloadableRead.fromJson(response.data);
     } catch (e) {
@@ -348,7 +348,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/license-keys/',
-        queryParameters: { if (benefit_id != null) 'benefit_id': benefit_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (benefit_id != null) 'benefit_id': benefit_id, 'page': page, 'limit': limit },
       );
       return ListResourceLicenseKeyRead.fromJson(response.data);
     } catch (e) {
@@ -363,7 +363,7 @@ class CustomerPortalApi {
   Future<LicenseKeyWithActivations> customerPortalLicenseKeysGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/license-keys/${id}',
+        '/v1/customer-portal/license-keys/$id',
       );
       return LicenseKeyWithActivations.fromJson(response.data);
     } catch (e) {
@@ -427,7 +427,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/members',
-        queryParameters: { if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { 'page': page, 'limit': limit },
       );
       return ListResourceCustomerPortalMember.fromJson(response.data);
     } catch (e) {
@@ -458,7 +458,7 @@ class CustomerPortalApi {
   Future<CustomerPortalMember> customerPortalMembersUpdateMember({required CustomerPortalMemberUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customer-portal/members/${id}',
+        '/v1/customer-portal/members/$id',
         data: body.toJson(),
       );
       return CustomerPortalMember.fromJson(response.data);
@@ -474,7 +474,7 @@ class CustomerPortalApi {
   Future<dynamic> customerPortalMembersRemoveMember({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customer-portal/members/${id}',
+        '/v1/customer-portal/members/$id',
       );
       return response.data;
     } catch (e) {
@@ -490,7 +490,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/orders/',
-        queryParameters: { if (product_id != null) 'product_id': product_id, if (product_billing_type != null) 'product_billing_type': product_billing_type, if (subscription_id != null) 'subscription_id': subscription_id, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (product_id != null) 'product_id': product_id, if (product_billing_type != null) 'product_billing_type': product_billing_type, if (subscription_id != null) 'subscription_id': subscription_id, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerOrder.fromJson(response.data);
     } catch (e) {
@@ -505,7 +505,7 @@ class CustomerPortalApi {
   Future<CustomerOrder> customerPortalOrdersGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/orders/${id}',
+        '/v1/customer-portal/orders/$id',
       );
       return CustomerOrder.fromJson(response.data);
     } catch (e) {
@@ -520,7 +520,7 @@ class CustomerPortalApi {
   Future<CustomerOrder> customerPortalOrdersUpdate({required CustomerOrderUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customer-portal/orders/${id}',
+        '/v1/customer-portal/orders/$id',
         data: body.toJson(),
       );
       return CustomerOrder.fromJson(response.data);
@@ -536,7 +536,7 @@ class CustomerPortalApi {
   Future<dynamic> customerPortalOrdersGenerateInvoice({required String id}) async {
     try {
       final response = await _dio.post(
-        '/v1/customer-portal/orders/${id}/invoice',
+        '/v1/customer-portal/orders/$id/invoice',
       );
       return response.data;
     } catch (e) {
@@ -551,7 +551,7 @@ class CustomerPortalApi {
   Future<CustomerOrderInvoice> customerPortalOrdersInvoice({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/orders/${id}/invoice',
+        '/v1/customer-portal/orders/$id/invoice',
       );
       return CustomerOrderInvoice.fromJson(response.data);
     } catch (e) {
@@ -566,7 +566,7 @@ class CustomerPortalApi {
   Future<CustomerOrderPaymentStatus> customerPortalOrdersGetPaymentStatus({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/orders/${id}/payment-status',
+        '/v1/customer-portal/orders/$id/payment-status',
       );
       return CustomerOrderPaymentStatus.fromJson(response.data);
     } catch (e) {
@@ -581,7 +581,7 @@ class CustomerPortalApi {
   Future<CustomerOrderPaymentConfirmation> customerPortalOrdersConfirmRetryPayment({required CustomerOrderConfirmPayment body, required String id}) async {
     try {
       final response = await _dio.post(
-        '/v1/customer-portal/orders/${id}/confirm-payment',
+        '/v1/customer-portal/orders/$id/confirm-payment',
         data: body.toJson(),
       );
       return CustomerOrderPaymentConfirmation.fromJson(response.data);
@@ -597,7 +597,7 @@ class CustomerPortalApi {
   Future<CustomerOrganizationData> customerPortalOrganizationsGet({required String slug}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/organizations/${slug}',
+        '/v1/customer-portal/organizations/$slug',
       );
       return CustomerOrganizationData.fromJson(response.data);
     } catch (e) {
@@ -613,7 +613,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/subscriptions/',
-        queryParameters: { if (product_id != null) 'product_id': product_id, if (active != null) 'active': active, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (product_id != null) 'product_id': product_id, if (active != null) 'active': active, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerSubscription.fromJson(response.data);
     } catch (e) {
@@ -628,7 +628,7 @@ class CustomerPortalApi {
   Future<CustomerSubscription> customerPortalSubscriptionsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/subscriptions/${id}',
+        '/v1/customer-portal/subscriptions/$id',
       );
       return CustomerSubscription.fromJson(response.data);
     } catch (e) {
@@ -643,7 +643,7 @@ class CustomerPortalApi {
   Future<CustomerSubscription> customerPortalSubscriptionsUpdate({required CustomerSubscriptionUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/customer-portal/subscriptions/${id}',
+        '/v1/customer-portal/subscriptions/$id',
         data: body.toJson(),
       );
       return CustomerSubscription.fromJson(response.data);
@@ -659,7 +659,7 @@ class CustomerPortalApi {
   Future<CustomerSubscription> customerPortalSubscriptionsCancel({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customer-portal/subscriptions/${id}',
+        '/v1/customer-portal/subscriptions/$id',
       );
       return CustomerSubscription.fromJson(response.data);
     } catch (e) {
@@ -675,7 +675,7 @@ class CustomerPortalApi {
     try {
       final response = await _dio.get(
         '/v1/customer-portal/wallets/',
-        queryParameters: { if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCustomerWallet.fromJson(response.data);
     } catch (e) {
@@ -690,7 +690,7 @@ class CustomerPortalApi {
   Future<CustomerWallet> customerPortalWalletsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-portal/wallets/${id}',
+        '/v1/customer-portal/wallets/$id',
       );
       return CustomerWallet.fromJson(response.data);
     } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'subscription_recurring_interval.dart';
 import 'subscription_status.dart';
 import 'customer_subscription_product.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'custom_field_date_properties.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';

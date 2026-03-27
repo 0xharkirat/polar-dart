@@ -15,7 +15,7 @@ class CheckoutLinksApi {
     try {
       final response = await _dio.get(
         '/v1/checkout-links/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceCheckoutLink.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class CheckoutLinksApi {
   Future<CheckoutLink> checkoutLinksGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/checkout-links/${id}',
+        '/v1/checkout-links/$id',
       );
       return CheckoutLink.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class CheckoutLinksApi {
   Future<CheckoutLink> checkoutLinksUpdate({required CheckoutLinkUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/checkout-links/${id}',
+        '/v1/checkout-links/$id',
         data: body.toJson(),
       );
       return CheckoutLink.fromJson(response.data);
@@ -77,7 +77,7 @@ class CheckoutLinksApi {
   Future<dynamic> checkoutLinksDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/checkout-links/${id}',
+        '/v1/checkout-links/$id',
       );
       return response.data;
     } catch (e) {

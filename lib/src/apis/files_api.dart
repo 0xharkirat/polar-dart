@@ -16,7 +16,7 @@ class FilesApi {
     try {
       final response = await _dio.get(
         '/v1/files/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (ids != null) 'ids': ids, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (ids != null) 'ids': ids, 'page': page, 'limit': limit },
       );
       return ListResourceFileRead.fromJson(response.data);
     } catch (e) {
@@ -47,7 +47,7 @@ class FilesApi {
   Future<dynamic> filesUploaded({required FileUploadCompleted body, required String id}) async {
     try {
       final response = await _dio.post(
-        '/v1/files/${id}/uploaded',
+        '/v1/files/$id/uploaded',
         data: body.toJson(),
       );
       return response.data;
@@ -63,7 +63,7 @@ class FilesApi {
   Future<dynamic> filesUpdate({required FilePatch body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/files/${id}',
+        '/v1/files/$id',
         data: body.toJson(),
       );
       return response.data;
@@ -79,7 +79,7 @@ class FilesApi {
   Future<dynamic> filesDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/files/${id}',
+        '/v1/files/$id',
       );
       return response.data;
     } catch (e) {

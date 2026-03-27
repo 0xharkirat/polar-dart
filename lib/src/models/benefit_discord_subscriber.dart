@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'metadata_output_type.dart';
 import 'benefit_subscriber_organization.dart';
 import 'benefit_discord_subscriber_properties.dart';

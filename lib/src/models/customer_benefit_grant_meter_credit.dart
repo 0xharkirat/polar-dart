@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'customer_portal_customer.dart';
 import 'benefit_meter_credit_subscriber.dart';
 import 'benefit_grant_meter_credit_properties.dart';

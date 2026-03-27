@@ -31,7 +31,7 @@ class Oauth2Api {
   Future<dynamic> oauth2ClientsOauth2GetClient({required String client_id}) async {
     try {
       final response = await _dio.get(
-        '/v1/oauth2/register/${client_id}',
+        '/v1/oauth2/register/$client_id',
       );
       return response.data;
     } catch (e) {
@@ -46,7 +46,7 @@ class Oauth2Api {
   Future<dynamic> oauth2ClientsOauth2UpdateClient({required OAuth2ClientConfigurationUpdate body, required String client_id}) async {
     try {
       final response = await _dio.put(
-        '/v1/oauth2/register/${client_id}',
+        '/v1/oauth2/register/$client_id',
         data: body.toJson(),
       );
       return response.data;
@@ -62,7 +62,7 @@ class Oauth2Api {
   Future<dynamic> oauth2ClientsOauth2DeleteClient({required String client_id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/oauth2/register/${client_id}',
+        '/v1/oauth2/register/$client_id',
       );
       return response.data;
     } catch (e) {

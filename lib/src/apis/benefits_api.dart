@@ -15,7 +15,7 @@ class BenefitsApi {
     try {
       final response = await _dio.get(
         '/v1/benefits/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (type != null) 'type': type, if (id != null) 'id': id, if (exclude_id != null) 'exclude_id': exclude_id, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (type != null) 'type': type, if (id != null) 'id': id, if (exclude_id != null) 'exclude_id': exclude_id, if (query != null) 'query': query, 'page': page, 'limit': limit, 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceBenefit.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class BenefitsApi {
   Future<Benefit> benefitsGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/benefits/${id}',
+        '/v1/benefits/$id',
       );
       return Benefit.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class BenefitsApi {
   Future<Benefit> benefitsUpdate({required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/benefits/${id}',
+        '/v1/benefits/$id',
       );
       return Benefit.fromJson(response.data);
     } catch (e) {
@@ -76,7 +76,7 @@ class BenefitsApi {
   Future<dynamic> benefitsDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/benefits/${id}',
+        '/v1/benefits/$id',
       );
       return response.data;
     } catch (e) {
@@ -91,8 +91,8 @@ class BenefitsApi {
   Future<ListResourceBenefitGrant> benefitsGrants({required String id, dynamic is_granted, dynamic customer_id, dynamic member_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
-        '/v1/benefits/${id}/grants',
-        queryParameters: { if (is_granted != null) 'is_granted': is_granted, if (customer_id != null) 'customer_id': customer_id, if (member_id != null) 'member_id': member_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        '/v1/benefits/$id/grants',
+        queryParameters: { if (is_granted != null) 'is_granted': is_granted, if (customer_id != null) 'customer_id': customer_id, if (member_id != null) 'member_id': member_id, 'page': page, 'limit': limit },
       );
       return ListResourceBenefitGrant.fromJson(response.data);
     } catch (e) {

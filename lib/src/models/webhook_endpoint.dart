@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'webhook_format.dart';
 import 'webhook_event_type.dart';
 

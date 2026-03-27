@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'metadata_output_type.dart';
 import 'product_visibility.dart';
 import 'benefit_public.dart';

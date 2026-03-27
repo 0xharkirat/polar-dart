@@ -48,7 +48,7 @@ class CustomerSeatsApi {
   Future<CustomerSeat> customerSeatsRevokeSeat({required String seat_id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/customer-seats/${seat_id}',
+        '/v1/customer-seats/$seat_id',
       );
       return CustomerSeat.fromJson(response.data);
     } catch (e) {
@@ -63,7 +63,7 @@ class CustomerSeatsApi {
   Future<CustomerSeat> customerSeatsResendInvitation({required String seat_id}) async {
     try {
       final response = await _dio.post(
-        '/v1/customer-seats/${seat_id}/resend',
+        '/v1/customer-seats/$seat_id/resend',
       );
       return CustomerSeat.fromJson(response.data);
     } catch (e) {
@@ -78,7 +78,7 @@ class CustomerSeatsApi {
   Future<SeatClaimInfo> customerSeatsGetClaimInfo({required String invitation_token}) async {
     try {
       final response = await _dio.get(
-        '/v1/customer-seats/claim/${invitation_token}',
+        '/v1/customer-seats/claim/$invitation_token',
       );
       return SeatClaimInfo.fromJson(response.data);
     } catch (e) {

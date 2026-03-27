@@ -16,7 +16,7 @@ class OrganizationAccessTokensApi {
     try {
       final response = await _dio.get(
         '/v1/organization-access-tokens/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceOrganizationAccessToken.fromJson(response.data);
     } catch (e) {
@@ -47,7 +47,7 @@ class OrganizationAccessTokensApi {
   Future<OrganizationAccessToken> organizationAccessTokensUpdate({required OrganizationAccessTokenUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/organization-access-tokens/${id}',
+        '/v1/organization-access-tokens/$id',
         data: body.toJson(),
       );
       return OrganizationAccessToken.fromJson(response.data);
@@ -63,7 +63,7 @@ class OrganizationAccessTokensApi {
   Future<dynamic> organizationAccessTokensDelete({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/organization-access-tokens/${id}',
+        '/v1/organization-access-tokens/$id',
       );
       return response.data;
     } catch (e) {

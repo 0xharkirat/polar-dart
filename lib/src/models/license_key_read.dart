@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'license_key_customer.dart';
 import 'license_key_status.dart';
 

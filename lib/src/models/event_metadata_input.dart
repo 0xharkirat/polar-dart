@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'cost_metadata_input.dart';
 import 'l_l_m_metadata.dart';
 

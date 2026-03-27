@@ -13,7 +13,7 @@ class DisputesApi {
     try {
       final response = await _dio.get(
         '/v1/disputes/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (status != null) 'status': status, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (status != null) 'status': status, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceDispute.fromJson(response.data);
     } catch (e) {
@@ -28,7 +28,7 @@ class DisputesApi {
   Future<Dispute> disputesGet({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/disputes/${id}',
+        '/v1/disputes/$id',
       );
       return Dispute.fromJson(response.data);
     } catch (e) {

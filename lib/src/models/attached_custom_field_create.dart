@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'attached_custom_field_create.g.dart';

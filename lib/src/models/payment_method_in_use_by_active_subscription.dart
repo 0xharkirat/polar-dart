@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'payment_method_in_use_by_active_subscription.g.dart';

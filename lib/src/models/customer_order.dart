@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'order_status.dart';
 import 'order_billing_reason.dart';
 import 'order_item_schema.dart';

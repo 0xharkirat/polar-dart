@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'payment_processor.dart';
 import 'payment_status.dart';
 import 'card_payment_metadata.dart';

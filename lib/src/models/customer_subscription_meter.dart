@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'customer_subscription_meter_meter.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';

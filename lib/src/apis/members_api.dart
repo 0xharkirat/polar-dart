@@ -15,7 +15,7 @@ class MembersApi {
     try {
       final response = await _dio.get(
         '/v1/members/',
-        queryParameters: { if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (role != null) 'role': role, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (role != null) 'role': role, 'page': page, 'limit': limit, 'sorting': sorting },
       );
       return ListResourceMember.fromJson(response.data);
     } catch (e) {
@@ -46,7 +46,7 @@ class MembersApi {
   Future<Member> membersGetMember({required String id}) async {
     try {
       final response = await _dio.get(
-        '/v1/members/${id}',
+        '/v1/members/$id',
       );
       return Member.fromJson(response.data);
     } catch (e) {
@@ -61,7 +61,7 @@ class MembersApi {
   Future<Member> membersUpdateMember({required MemberUpdate body, required String id}) async {
     try {
       final response = await _dio.patch(
-        '/v1/members/${id}',
+        '/v1/members/$id',
         data: body.toJson(),
       );
       return Member.fromJson(response.data);
@@ -77,7 +77,7 @@ class MembersApi {
   Future<dynamic> membersDeleteMember({required String id}) async {
     try {
       final response = await _dio.delete(
-        '/v1/members/${id}',
+        '/v1/members/$id',
       );
       return response.data;
     } catch (e) {

@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, unnecessary_question_mark
+
 import 'product_visibility.dart';
 import 'attached_custom_field_create.dart';
 import 'subscription_recurring_interval.dart';
