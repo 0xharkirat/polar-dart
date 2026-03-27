@@ -1,5 +1,6 @@
 import 'discount_duration.dart';
 import 'discount_type.dart';
+import 'metadata_output_type.dart';
 import 'discount_product.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,7 +17,7 @@ class DiscountPercentageOnceForeverDuration with _$DiscountPercentageOnceForever
     required String created_at,
     required String? modified_at,
     required String id,
-    required Map<String, dynamic> metadata,
+    required MetadataOutputType metadata,
     required String name,
     required String? code,
     required String? starts_at,

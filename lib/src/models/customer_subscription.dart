@@ -1,7 +1,7 @@
 import 'subscription_recurring_interval.dart';
 import 'subscription_status.dart';
 import 'customer_subscription_product.dart';
-import 'product_price.dart';
+import 'customer_subscription_meter.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,12 +14,15 @@ class CustomerSubscription with _$CustomerSubscription {
     required String created_at,
     required String? modified_at,
     required String id,
-    required dynamic amount,
-    required String? currency,
+    required int amount,
+    required String currency,
     required SubscriptionRecurringInterval recurring_interval,
+    required int recurring_interval_count,
     required SubscriptionStatus status,
     required String current_period_start,
-    required String? current_period_end,
+    required String current_period_end,
+    required String? trial_start,
+    required String? trial_end,
     required bool cancel_at_period_end,
     required String? canceled_at,
     required String? started_at,
@@ -27,14 +30,15 @@ class CustomerSubscription with _$CustomerSubscription {
     required String? ended_at,
     required String customer_id,
     required String product_id,
-    required String price_id,
     required String? discount_id,
     required String? checkout_id,
+    dynamic? seats,
     required dynamic customer_cancellation_reason,
     required String? customer_cancellation_comment,
-    required String user_id,
     required CustomerSubscriptionProduct product,
-    required ProductPrice price,
+    required List<dynamic> prices,
+    required List<CustomerSubscriptionMeter> meters,
+    required dynamic pending_update,
   }) = _CustomerSubscription;
 
   factory CustomerSubscription.fromJson(Map<String, dynamic> json) => _$CustomerSubscriptionFromJson(json);

@@ -9,16 +9,18 @@ part of 'benefit_license_keys_subscriber.dart';
 _$BenefitLicenseKeysSubscriberImpl _$$BenefitLicenseKeysSubscriberImplFromJson(
         Map<String, dynamic> json) =>
     _$BenefitLicenseKeysSubscriberImpl(
+      id: json['id'] as String,
       created_at: json['created_at'] as String,
       modified_at: json['modified_at'] as String?,
-      id: json['id'] as String,
       type: json['type'] as String,
       description: json['description'] as String,
       selectable: json['selectable'] as bool,
       deletable: json['deletable'] as bool,
       organization_id: json['organization_id'] as String,
-      organization:
-          Organization.fromJson(json['organization'] as Map<String, dynamic>),
+      metadata:
+          MetadataOutputType.fromJson(json['metadata'] as Map<String, dynamic>),
+      organization: BenefitSubscriberOrganization.fromJson(
+          json['organization'] as Map<String, dynamic>),
       properties: BenefitLicenseKeysSubscriberProperties.fromJson(
           json['properties'] as Map<String, dynamic>),
     );
@@ -26,14 +28,15 @@ _$BenefitLicenseKeysSubscriberImpl _$$BenefitLicenseKeysSubscriberImplFromJson(
 Map<String, dynamic> _$$BenefitLicenseKeysSubscriberImplToJson(
         _$BenefitLicenseKeysSubscriberImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'created_at': instance.created_at,
       if (instance.modified_at case final value?) 'modified_at': value,
-      'id': instance.id,
       'type': instance.type,
       'description': instance.description,
       'selectable': instance.selectable,
       'deletable': instance.deletable,
       'organization_id': instance.organization_id,
+      'metadata': instance.metadata,
       'organization': instance.organization,
       'properties': instance.properties,
     };

@@ -6,7 +6,7 @@ part 'custom_field_update_text.freezed.dart';
 @freezed
 class CustomFieldUpdateText with _$CustomFieldUpdateText {
   const factory CustomFieldUpdateText({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
     String? name,
     String? slug,
     required String type,

@@ -23,7 +23,7 @@ mixin _$CustomFieldCheckbox {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -51,13 +51,14 @@ abstract class $CustomFieldCheckboxCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String type,
       String slug,
       String name,
       String organization_id,
       CustomFieldCheckboxProperties properties});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $CustomFieldCheckboxPropertiesCopyWith<$Res> get properties;
 }
 
@@ -102,7 +103,7 @@ class _$CustomFieldCheckboxCopyWithImpl<$Res, $Val extends CustomFieldCheckbox>
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -130,6 +131,16 @@ class _$CustomFieldCheckboxCopyWithImpl<$Res, $Val extends CustomFieldCheckbox>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CustomFieldCheckbox
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $CustomFieldCheckboxPropertiesCopyWith<$Res> get properties {
     return $CustomFieldCheckboxPropertiesCopyWith<$Res>(_value.properties,
         (value) {
@@ -150,13 +161,15 @@ abstract class _$$CustomFieldCheckboxImplCopyWith<$Res>
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String type,
       String slug,
       String name,
       String organization_id,
       CustomFieldCheckboxProperties properties});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $CustomFieldCheckboxPropertiesCopyWith<$Res> get properties;
 }
@@ -198,9 +211,9 @@ class __$$CustomFieldCheckboxImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -232,13 +245,12 @@ class _$CustomFieldCheckboxImpl implements _CustomFieldCheckbox {
       {required this.created_at,
       required this.modified_at,
       required this.id,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       required this.type,
       required this.slug,
       required this.name,
       required this.organization_id,
-      required this.properties})
-      : _metadata = metadata;
+      required this.properties});
 
   factory _$CustomFieldCheckboxImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldCheckboxImplFromJson(json);
@@ -249,14 +261,8 @@ class _$CustomFieldCheckboxImpl implements _CustomFieldCheckbox {
   final String? modified_at;
   @override
   final String id;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final String type;
   @override
@@ -283,7 +289,8 @@ class _$CustomFieldCheckboxImpl implements _CustomFieldCheckbox {
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.name, name) || other.name == name) &&
@@ -295,17 +302,8 @@ class _$CustomFieldCheckboxImpl implements _CustomFieldCheckbox {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      created_at,
-      modified_at,
-      id,
-      const DeepCollectionEquality().hash(_metadata),
-      type,
-      slug,
-      name,
-      organization_id,
-      properties);
+  int get hashCode => Object.hash(runtimeType, created_at, modified_at, id,
+      metadata, type, slug, name, organization_id, properties);
 
   /// Create a copy of CustomFieldCheckbox
   /// with the given fields replaced by the non-null parameter values.
@@ -329,7 +327,7 @@ abstract class _CustomFieldCheckbox implements CustomFieldCheckbox {
           {required final String created_at,
           required final String? modified_at,
           required final String id,
-          required final Map<String, dynamic> metadata,
+          required final MetadataOutputType metadata,
           required final String type,
           required final String slug,
           required final String name,
@@ -347,7 +345,7 @@ abstract class _CustomFieldCheckbox implements CustomFieldCheckbox {
   @override
   String get id;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   String get type;
   @override

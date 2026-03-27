@@ -6,6 +6,7 @@ part 'benefit_grant_license_keys_properties.freezed.dart';
 @freezed
 class BenefitGrantLicenseKeysProperties with _$BenefitGrantLicenseKeysProperties {
   const factory BenefitGrantLicenseKeysProperties({
+    String? user_provided_key,
     String? license_key_id,
     String? display_key,
   }) = _BenefitGrantLicenseKeysProperties;

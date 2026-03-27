@@ -22,6 +22,7 @@ WebhookBenefitGrantRevokedPayload _$WebhookBenefitGrantRevokedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookBenefitGrantRevokedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   BenefitGrantWebhook get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookBenefitGrantRevokedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookBenefitGrantRevokedPayloadCopyWith<$Res> {
       _$WebhookBenefitGrantRevokedPayloadCopyWithImpl<$Res,
           WebhookBenefitGrantRevokedPayload>;
   @useResult
-  $Res call({String type, BenefitGrantWebhook data});
+  $Res call({String type, String timestamp, BenefitGrantWebhook data});
 
   $BenefitGrantWebhookCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookBenefitGrantRevokedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookBenefitGrantRevokedPayloadImplCopyWith<$Res>
       __$$WebhookBenefitGrantRevokedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, BenefitGrantWebhook data});
+  $Res call({String type, String timestamp, BenefitGrantWebhook data});
 
   @override
   $BenefitGrantWebhookCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookBenefitGrantRevokedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookBenefitGrantRevokedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookBenefitGrantRevokedPayloadImplCopyWithImpl<$Res>
 class _$WebhookBenefitGrantRevokedPayloadImpl
     implements _WebhookBenefitGrantRevokedPayload {
   const _$WebhookBenefitGrantRevokedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookBenefitGrantRevokedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookBenefitGrantRevokedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final BenefitGrantWebhook data;
 
   @override
   String toString() {
-    return 'WebhookBenefitGrantRevokedPayload(type: $type, data: $data)';
+    return 'WebhookBenefitGrantRevokedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookBenefitGrantRevokedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookBenefitGrantRevokedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookBenefitGrantRevokedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,6 +206,7 @@ abstract class _WebhookBenefitGrantRevokedPayload
     implements WebhookBenefitGrantRevokedPayload {
   const factory _WebhookBenefitGrantRevokedPayload(
           {required final String type,
+          required final String timestamp,
           required final BenefitGrantWebhook data}) =
       _$WebhookBenefitGrantRevokedPayloadImpl;
 
@@ -200,6 +216,8 @@ abstract class _WebhookBenefitGrantRevokedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   BenefitGrantWebhook get data;
 

@@ -31,6 +31,7 @@ mixin _$OAuth2ClientConfigurationUpdate {
   String? get logo_uri => throw _privateConstructorUsedError;
   String? get tos_uri => throw _privateConstructorUsedError;
   String? get policy_uri => throw _privateConstructorUsedError;
+  SubType? get default_sub_type => throw _privateConstructorUsedError;
   String get client_id => throw _privateConstructorUsedError;
 
   /// Serializes this OAuth2ClientConfigurationUpdate to a JSON map.
@@ -62,6 +63,7 @@ abstract class $OAuth2ClientConfigurationUpdateCopyWith<$Res> {
       String? logo_uri,
       String? tos_uri,
       String? policy_uri,
+      SubType? default_sub_type,
       String client_id});
 }
 
@@ -91,6 +93,7 @@ class _$OAuth2ClientConfigurationUpdateCopyWithImpl<$Res,
     Object? logo_uri = freezed,
     Object? tos_uri = freezed,
     Object? policy_uri = freezed,
+    Object? default_sub_type = freezed,
     Object? client_id = null,
   }) {
     return _then(_value.copyWith(
@@ -134,6 +137,10 @@ class _$OAuth2ClientConfigurationUpdateCopyWithImpl<$Res,
           ? _value.policy_uri
           : policy_uri // ignore: cast_nullable_to_non_nullable
               as String?,
+      default_sub_type: freezed == default_sub_type
+          ? _value.default_sub_type
+          : default_sub_type // ignore: cast_nullable_to_non_nullable
+              as SubType?,
       client_id: null == client_id
           ? _value.client_id
           : client_id // ignore: cast_nullable_to_non_nullable
@@ -162,6 +169,7 @@ abstract class _$$OAuth2ClientConfigurationUpdateImplCopyWith<$Res>
       String? logo_uri,
       String? tos_uri,
       String? policy_uri,
+      SubType? default_sub_type,
       String client_id});
 }
 
@@ -190,6 +198,7 @@ class __$$OAuth2ClientConfigurationUpdateImplCopyWithImpl<$Res>
     Object? logo_uri = freezed,
     Object? tos_uri = freezed,
     Object? policy_uri = freezed,
+    Object? default_sub_type = freezed,
     Object? client_id = null,
   }) {
     return _then(_$OAuth2ClientConfigurationUpdateImpl(
@@ -233,6 +242,10 @@ class __$$OAuth2ClientConfigurationUpdateImplCopyWithImpl<$Res>
           ? _value.policy_uri
           : policy_uri // ignore: cast_nullable_to_non_nullable
               as String?,
+      default_sub_type: freezed == default_sub_type
+          ? _value.default_sub_type
+          : default_sub_type // ignore: cast_nullable_to_non_nullable
+              as SubType?,
       client_id: null == client_id
           ? _value.client_id
           : client_id // ignore: cast_nullable_to_non_nullable
@@ -256,6 +269,7 @@ class _$OAuth2ClientConfigurationUpdateImpl
       this.logo_uri,
       this.tos_uri,
       this.policy_uri,
+      this.default_sub_type,
       required this.client_id})
       : _redirect_uris = redirect_uris,
         _grant_types = grant_types,
@@ -308,11 +322,13 @@ class _$OAuth2ClientConfigurationUpdateImpl
   @override
   final String? policy_uri;
   @override
+  final SubType? default_sub_type;
+  @override
   final String client_id;
 
   @override
   String toString() {
-    return 'OAuth2ClientConfigurationUpdate(redirect_uris: $redirect_uris, token_endpoint_auth_method: $token_endpoint_auth_method, grant_types: $grant_types, response_types: $response_types, scope: $scope, client_name: $client_name, client_uri: $client_uri, logo_uri: $logo_uri, tos_uri: $tos_uri, policy_uri: $policy_uri, client_id: $client_id)';
+    return 'OAuth2ClientConfigurationUpdate(redirect_uris: $redirect_uris, token_endpoint_auth_method: $token_endpoint_auth_method, grant_types: $grant_types, response_types: $response_types, scope: $scope, client_name: $client_name, client_uri: $client_uri, logo_uri: $logo_uri, tos_uri: $tos_uri, policy_uri: $policy_uri, default_sub_type: $default_sub_type, client_id: $client_id)';
   }
 
   @override
@@ -340,6 +356,8 @@ class _$OAuth2ClientConfigurationUpdateImpl
             (identical(other.tos_uri, tos_uri) || other.tos_uri == tos_uri) &&
             (identical(other.policy_uri, policy_uri) ||
                 other.policy_uri == policy_uri) &&
+            (identical(other.default_sub_type, default_sub_type) ||
+                other.default_sub_type == default_sub_type) &&
             (identical(other.client_id, client_id) ||
                 other.client_id == client_id));
   }
@@ -358,6 +376,7 @@ class _$OAuth2ClientConfigurationUpdateImpl
       logo_uri,
       tos_uri,
       policy_uri,
+      default_sub_type,
       client_id);
 
   /// Create a copy of OAuth2ClientConfigurationUpdate
@@ -391,6 +410,7 @@ abstract class _OAuth2ClientConfigurationUpdate
       final String? logo_uri,
       final String? tos_uri,
       final String? policy_uri,
+      final SubType? default_sub_type,
       required final String client_id}) = _$OAuth2ClientConfigurationUpdateImpl;
 
   factory _OAuth2ClientConfigurationUpdate.fromJson(Map<String, dynamic> json) =
@@ -416,6 +436,8 @@ abstract class _OAuth2ClientConfigurationUpdate
   String? get tos_uri;
   @override
   String? get policy_uri;
+  @override
+  SubType? get default_sub_type;
   @override
   String get client_id;
 

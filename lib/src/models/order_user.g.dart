@@ -9,7 +9,7 @@ part of 'order_user.dart';
 _$OrderUserImpl _$$OrderUserImplFromJson(Map<String, dynamic> json) =>
     _$OrderUserImpl(
       id: json['id'] as String,
-      email: json['email'] as String,
+      email: json['email'] as String?,
       public_name: json['public_name'] as String,
       avatar_url: json['avatar_url'] as String?,
       github_username: json['github_username'] as String?,
@@ -18,7 +18,7 @@ _$OrderUserImpl _$$OrderUserImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$OrderUserImplToJson(_$OrderUserImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'email': instance.email,
+      if (instance.email case final value?) 'email': value,
       'public_name': instance.public_name,
       if (instance.avatar_url case final value?) 'avatar_url': value,
       if (instance.github_username case final value?) 'github_username': value,

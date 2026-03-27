@@ -9,6 +9,7 @@ part 'webhook_checkout_updated_payload.freezed.dart';
 class WebhookCheckoutUpdatedPayload with _$WebhookCheckoutUpdatedPayload {
   const factory WebhookCheckoutUpdatedPayload({
     required String type,
+    required String timestamp,
     required Checkout data,
   }) = _WebhookCheckoutUpdatedPayload;
 

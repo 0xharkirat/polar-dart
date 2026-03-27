@@ -11,8 +11,9 @@ class DiscountFixedOnceForeverDurationCreate with _$DiscountFixedOnceForeverDura
   const factory DiscountFixedOnceForeverDurationCreate({
     required DiscountDuration duration,
     required DiscountType type,
-    required int amount,
-    String? currency,
+    dynamic? amount,
+    dynamic? currency,
+    dynamic? amounts,
     Map<String, dynamic>? metadata,
     required String name,
     String? code,

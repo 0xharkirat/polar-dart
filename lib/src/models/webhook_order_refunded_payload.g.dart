@@ -10,6 +10,7 @@ _$WebhookOrderRefundedPayloadImpl _$$WebhookOrderRefundedPayloadImplFromJson(
         Map<String, dynamic> json) =>
     _$WebhookOrderRefundedPayloadImpl(
       type: json['type'] as String,
+      timestamp: json['timestamp'] as String,
       data: Order.fromJson(json['data'] as Map<String, dynamic>),
     );
 
@@ -17,5 +18,6 @@ Map<String, dynamic> _$$WebhookOrderRefundedPayloadImplToJson(
         _$WebhookOrderRefundedPayloadImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
+      'timestamp': instance.timestamp,
       'data': instance.data,
     };

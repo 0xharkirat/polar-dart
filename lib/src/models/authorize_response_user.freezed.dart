@@ -25,6 +25,8 @@ mixin _$AuthorizeResponseUser {
   String get sub_type => throw _privateConstructorUsedError;
   dynamic get sub => throw _privateConstructorUsedError;
   List<Scope> get scopes => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get scope_display_names =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this AuthorizeResponseUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,7 +48,8 @@ abstract class $AuthorizeResponseUserCopyWith<$Res> {
       {OAuth2ClientPublic client,
       String sub_type,
       dynamic sub,
-      List<Scope> scopes});
+      List<Scope> scopes,
+      Map<String, dynamic>? scope_display_names});
 
   $OAuth2ClientPublicCopyWith<$Res> get client;
 }
@@ -71,6 +74,7 @@ class _$AuthorizeResponseUserCopyWithImpl<$Res,
     Object? sub_type = null,
     Object? sub = freezed,
     Object? scopes = null,
+    Object? scope_display_names = freezed,
   }) {
     return _then(_value.copyWith(
       client: null == client
@@ -89,6 +93,10 @@ class _$AuthorizeResponseUserCopyWithImpl<$Res,
           ? _value.scopes
           : scopes // ignore: cast_nullable_to_non_nullable
               as List<Scope>,
+      scope_display_names: freezed == scope_display_names
+          ? _value.scope_display_names
+          : scope_display_names // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -116,7 +124,8 @@ abstract class _$$AuthorizeResponseUserImplCopyWith<$Res>
       {OAuth2ClientPublic client,
       String sub_type,
       dynamic sub,
-      List<Scope> scopes});
+      List<Scope> scopes,
+      Map<String, dynamic>? scope_display_names});
 
   @override
   $OAuth2ClientPublicCopyWith<$Res> get client;
@@ -140,6 +149,7 @@ class __$$AuthorizeResponseUserImplCopyWithImpl<$Res>
     Object? sub_type = null,
     Object? sub = freezed,
     Object? scopes = null,
+    Object? scope_display_names = freezed,
   }) {
     return _then(_$AuthorizeResponseUserImpl(
       client: null == client
@@ -158,6 +168,10 @@ class __$$AuthorizeResponseUserImplCopyWithImpl<$Res>
           ? _value._scopes
           : scopes // ignore: cast_nullable_to_non_nullable
               as List<Scope>,
+      scope_display_names: freezed == scope_display_names
+          ? _value._scope_display_names
+          : scope_display_names // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -169,8 +183,10 @@ class _$AuthorizeResponseUserImpl implements _AuthorizeResponseUser {
       {required this.client,
       required this.sub_type,
       required this.sub,
-      required final List<Scope> scopes})
-      : _scopes = scopes;
+      required final List<Scope> scopes,
+      final Map<String, dynamic>? scope_display_names})
+      : _scopes = scopes,
+        _scope_display_names = scope_display_names;
 
   factory _$AuthorizeResponseUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthorizeResponseUserImplFromJson(json);
@@ -189,9 +205,20 @@ class _$AuthorizeResponseUserImpl implements _AuthorizeResponseUser {
     return EqualUnmodifiableListView(_scopes);
   }
 
+  final Map<String, dynamic>? _scope_display_names;
+  @override
+  Map<String, dynamic>? get scope_display_names {
+    final value = _scope_display_names;
+    if (value == null) return null;
+    if (_scope_display_names is EqualUnmodifiableMapView)
+      return _scope_display_names;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'AuthorizeResponseUser(client: $client, sub_type: $sub_type, sub: $sub, scopes: $scopes)';
+    return 'AuthorizeResponseUser(client: $client, sub_type: $sub_type, sub: $sub, scopes: $scopes, scope_display_names: $scope_display_names)';
   }
 
   @override
@@ -203,7 +230,9 @@ class _$AuthorizeResponseUserImpl implements _AuthorizeResponseUser {
             (identical(other.sub_type, sub_type) ||
                 other.sub_type == sub_type) &&
             const DeepCollectionEquality().equals(other.sub, sub) &&
-            const DeepCollectionEquality().equals(other._scopes, _scopes));
+            const DeepCollectionEquality().equals(other._scopes, _scopes) &&
+            const DeepCollectionEquality()
+                .equals(other._scope_display_names, _scope_display_names));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -213,7 +242,8 @@ class _$AuthorizeResponseUserImpl implements _AuthorizeResponseUser {
       client,
       sub_type,
       const DeepCollectionEquality().hash(sub),
-      const DeepCollectionEquality().hash(_scopes));
+      const DeepCollectionEquality().hash(_scopes),
+      const DeepCollectionEquality().hash(_scope_display_names));
 
   /// Create a copy of AuthorizeResponseUser
   /// with the given fields replaced by the non-null parameter values.
@@ -234,10 +264,12 @@ class _$AuthorizeResponseUserImpl implements _AuthorizeResponseUser {
 
 abstract class _AuthorizeResponseUser implements AuthorizeResponseUser {
   const factory _AuthorizeResponseUser(
-      {required final OAuth2ClientPublic client,
-      required final String sub_type,
-      required final dynamic sub,
-      required final List<Scope> scopes}) = _$AuthorizeResponseUserImpl;
+          {required final OAuth2ClientPublic client,
+          required final String sub_type,
+          required final dynamic sub,
+          required final List<Scope> scopes,
+          final Map<String, dynamic>? scope_display_names}) =
+      _$AuthorizeResponseUserImpl;
 
   factory _AuthorizeResponseUser.fromJson(Map<String, dynamic> json) =
       _$AuthorizeResponseUserImpl.fromJson;
@@ -250,6 +282,8 @@ abstract class _AuthorizeResponseUser implements AuthorizeResponseUser {
   dynamic get sub;
   @override
   List<Scope> get scopes;
+  @override
+  Map<String, dynamic>? get scope_display_names;
 
   /// Create a copy of AuthorizeResponseUser
   /// with the given fields replaced by the non-null parameter values.

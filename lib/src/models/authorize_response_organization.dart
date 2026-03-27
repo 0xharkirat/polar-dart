@@ -14,6 +14,7 @@ class AuthorizeResponseOrganization with _$AuthorizeResponseOrganization {
     required String sub_type,
     required dynamic sub,
     required List<Scope> scopes,
+    Map<String, dynamic>? scope_display_names,
     required List<AuthorizeOrganization> organizations,
   }) = _AuthorizeResponseOrganization;
 

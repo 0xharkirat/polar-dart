@@ -9,9 +9,9 @@ class TokenResponse with _$TokenResponse {
     required String access_token,
     required String token_type,
     required int expires_in,
-    required String? refresh_token,
+    String? refresh_token,
     required String scope,
-    required String id_token,
+    String? id_token,
   }) = _TokenResponse;
 
   factory TokenResponse.fromJson(Map<String, dynamic> json) => _$TokenResponseFromJson(json);

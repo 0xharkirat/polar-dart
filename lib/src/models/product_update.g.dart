@@ -8,10 +8,15 @@ part of 'product_update.dart';
 
 _$ProductUpdateImpl _$$ProductUpdateImplFromJson(Map<String, dynamic> json) =>
     _$ProductUpdateImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      trial_interval: json['trial_interval'],
+      trial_interval_count: json['trial_interval_count'],
       name: json['name'] as String?,
       description: json['description'] as String?,
+      recurring_interval: json['recurring_interval'],
+      recurring_interval_count: json['recurring_interval_count'],
       is_archived: json['is_archived'],
+      visibility: json['visibility'],
       prices: json['prices'],
       medias: json['medias'],
       attached_custom_fields: json['attached_custom_fields'],
@@ -20,9 +25,17 @@ _$ProductUpdateImpl _$$ProductUpdateImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ProductUpdateImplToJson(_$ProductUpdateImpl instance) =>
     <String, dynamic>{
       if (instance.metadata case final value?) 'metadata': value,
+      if (instance.trial_interval case final value?) 'trial_interval': value,
+      if (instance.trial_interval_count case final value?)
+        'trial_interval_count': value,
       if (instance.name case final value?) 'name': value,
       if (instance.description case final value?) 'description': value,
+      if (instance.recurring_interval case final value?)
+        'recurring_interval': value,
+      if (instance.recurring_interval_count case final value?)
+        'recurring_interval_count': value,
       if (instance.is_archived case final value?) 'is_archived': value,
+      if (instance.visibility case final value?) 'visibility': value,
       if (instance.prices case final value?) 'prices': value,
       if (instance.medias case final value?) 'medias': value,
       if (instance.attached_custom_fields case final value?)

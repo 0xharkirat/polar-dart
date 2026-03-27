@@ -20,17 +20,18 @@ DiscountUpdate _$DiscountUpdateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DiscountUpdate {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  dynamic? get code => throw _privateConstructorUsedError;
-  dynamic? get starts_at => throw _privateConstructorUsedError;
-  dynamic? get ends_at => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
+  String? get starts_at => throw _privateConstructorUsedError;
+  String? get ends_at => throw _privateConstructorUsedError;
   dynamic? get max_redemptions => throw _privateConstructorUsedError;
   dynamic? get duration => throw _privateConstructorUsedError;
   dynamic? get duration_in_months => throw _privateConstructorUsedError;
   dynamic? get type => throw _privateConstructorUsedError;
   dynamic? get amount => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
+  dynamic? get currency => throw _privateConstructorUsedError;
+  dynamic? get amounts => throw _privateConstructorUsedError;
   dynamic? get basis_points => throw _privateConstructorUsedError;
   dynamic? get products => throw _privateConstructorUsedError;
 
@@ -51,17 +52,18 @@ abstract class $DiscountUpdateCopyWith<$Res> {
       _$DiscountUpdateCopyWithImpl<$Res, DiscountUpdate>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
-      dynamic? code,
-      dynamic? starts_at,
-      dynamic? ends_at,
+      String? code,
+      String? starts_at,
+      String? ends_at,
       dynamic? max_redemptions,
       dynamic? duration,
       dynamic? duration_in_months,
       dynamic? type,
       dynamic? amount,
-      String? currency,
+      dynamic? currency,
+      dynamic? amounts,
       dynamic? basis_points,
       dynamic? products});
 }
@@ -92,6 +94,7 @@ class _$DiscountUpdateCopyWithImpl<$Res, $Val extends DiscountUpdate>
     Object? type = freezed,
     Object? amount = freezed,
     Object? currency = freezed,
+    Object? amounts = freezed,
     Object? basis_points = freezed,
     Object? products = freezed,
   }) {
@@ -99,7 +102,7 @@ class _$DiscountUpdateCopyWithImpl<$Res, $Val extends DiscountUpdate>
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -107,15 +110,15 @@ class _$DiscountUpdateCopyWithImpl<$Res, $Val extends DiscountUpdate>
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       starts_at: freezed == starts_at
           ? _value.starts_at
           : starts_at // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       ends_at: freezed == ends_at
           ? _value.ends_at
           : ends_at // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       max_redemptions: freezed == max_redemptions
           ? _value.max_redemptions
           : max_redemptions // ignore: cast_nullable_to_non_nullable
@@ -139,7 +142,11 @@ class _$DiscountUpdateCopyWithImpl<$Res, $Val extends DiscountUpdate>
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic?,
+      amounts: freezed == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       basis_points: freezed == basis_points
           ? _value.basis_points
           : basis_points // ignore: cast_nullable_to_non_nullable
@@ -161,17 +168,18 @@ abstract class _$$DiscountUpdateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
-      dynamic? code,
-      dynamic? starts_at,
-      dynamic? ends_at,
+      String? code,
+      String? starts_at,
+      String? ends_at,
       dynamic? max_redemptions,
       dynamic? duration,
       dynamic? duration_in_months,
       dynamic? type,
       dynamic? amount,
-      String? currency,
+      dynamic? currency,
+      dynamic? amounts,
       dynamic? basis_points,
       dynamic? products});
 }
@@ -200,14 +208,15 @@ class __$$DiscountUpdateImplCopyWithImpl<$Res>
     Object? type = freezed,
     Object? amount = freezed,
     Object? currency = freezed,
+    Object? amounts = freezed,
     Object? basis_points = freezed,
     Object? products = freezed,
   }) {
     return _then(_$DiscountUpdateImpl(
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -215,15 +224,15 @@ class __$$DiscountUpdateImplCopyWithImpl<$Res>
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       starts_at: freezed == starts_at
           ? _value.starts_at
           : starts_at // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       ends_at: freezed == ends_at
           ? _value.ends_at
           : ends_at // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as String?,
       max_redemptions: freezed == max_redemptions
           ? _value.max_redemptions
           : max_redemptions // ignore: cast_nullable_to_non_nullable
@@ -247,7 +256,11 @@ class __$$DiscountUpdateImplCopyWithImpl<$Res>
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic?,
+      amounts: freezed == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       basis_points: freezed == basis_points
           ? _value.basis_points
           : basis_points // ignore: cast_nullable_to_non_nullable
@@ -264,7 +277,7 @@ class __$$DiscountUpdateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DiscountUpdateImpl implements _DiscountUpdate {
   const _$DiscountUpdateImpl(
-      {this.metadata,
+      {final Map<String, dynamic>? metadata,
       this.name,
       this.code,
       this.starts_at,
@@ -275,22 +288,32 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
       this.type,
       this.amount,
       this.currency,
+      this.amounts,
       this.basis_points,
-      this.products});
+      this.products})
+      : _metadata = metadata;
 
   factory _$DiscountUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$DiscountUpdateImplFromJson(json);
 
+  final Map<String, dynamic>? _metadata;
   @override
-  final dynamic? metadata;
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? name;
   @override
-  final dynamic? code;
+  final String? code;
   @override
-  final dynamic? starts_at;
+  final String? starts_at;
   @override
-  final dynamic? ends_at;
+  final String? ends_at;
   @override
   final dynamic? max_redemptions;
   @override
@@ -302,7 +325,9 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
   @override
   final dynamic? amount;
   @override
-  final String? currency;
+  final dynamic? currency;
+  @override
+  final dynamic? amounts;
   @override
   final dynamic? basis_points;
   @override
@@ -310,7 +335,7 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
 
   @override
   String toString() {
-    return 'DiscountUpdate(metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, duration: $duration, duration_in_months: $duration_in_months, type: $type, amount: $amount, currency: $currency, basis_points: $basis_points, products: $products)';
+    return 'DiscountUpdate(metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, duration: $duration, duration_in_months: $duration_in_months, type: $type, amount: $amount, currency: $currency, amounts: $amounts, basis_points: $basis_points, products: $products)';
   }
 
   @override
@@ -318,11 +343,12 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DiscountUpdateImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.code, code) &&
-            const DeepCollectionEquality().equals(other.starts_at, starts_at) &&
-            const DeepCollectionEquality().equals(other.ends_at, ends_at) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.starts_at, starts_at) ||
+                other.starts_at == starts_at) &&
+            (identical(other.ends_at, ends_at) || other.ends_at == ends_at) &&
             const DeepCollectionEquality()
                 .equals(other.max_redemptions, max_redemptions) &&
             const DeepCollectionEquality().equals(other.duration, duration) &&
@@ -330,8 +356,8 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
                 .equals(other.duration_in_months, duration_in_months) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
+            const DeepCollectionEquality().equals(other.currency, currency) &&
+            const DeepCollectionEquality().equals(other.amounts, amounts) &&
             const DeepCollectionEquality()
                 .equals(other.basis_points, basis_points) &&
             const DeepCollectionEquality().equals(other.products, products));
@@ -341,17 +367,18 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(_metadata),
       name,
-      const DeepCollectionEquality().hash(code),
-      const DeepCollectionEquality().hash(starts_at),
-      const DeepCollectionEquality().hash(ends_at),
+      code,
+      starts_at,
+      ends_at,
       const DeepCollectionEquality().hash(max_redemptions),
       const DeepCollectionEquality().hash(duration),
       const DeepCollectionEquality().hash(duration_in_months),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(amount),
-      currency,
+      const DeepCollectionEquality().hash(currency),
+      const DeepCollectionEquality().hash(amounts),
       const DeepCollectionEquality().hash(basis_points),
       const DeepCollectionEquality().hash(products));
 
@@ -374,17 +401,18 @@ class _$DiscountUpdateImpl implements _DiscountUpdate {
 
 abstract class _DiscountUpdate implements DiscountUpdate {
   const factory _DiscountUpdate(
-      {final dynamic? metadata,
+      {final Map<String, dynamic>? metadata,
       final String? name,
-      final dynamic? code,
-      final dynamic? starts_at,
-      final dynamic? ends_at,
+      final String? code,
+      final String? starts_at,
+      final String? ends_at,
       final dynamic? max_redemptions,
       final dynamic? duration,
       final dynamic? duration_in_months,
       final dynamic? type,
       final dynamic? amount,
-      final String? currency,
+      final dynamic? currency,
+      final dynamic? amounts,
       final dynamic? basis_points,
       final dynamic? products}) = _$DiscountUpdateImpl;
 
@@ -392,15 +420,15 @@ abstract class _DiscountUpdate implements DiscountUpdate {
       _$DiscountUpdateImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  Map<String, dynamic>? get metadata;
   @override
   String? get name;
   @override
-  dynamic? get code;
+  String? get code;
   @override
-  dynamic? get starts_at;
+  String? get starts_at;
   @override
-  dynamic? get ends_at;
+  String? get ends_at;
   @override
   dynamic? get max_redemptions;
   @override
@@ -412,7 +440,9 @@ abstract class _DiscountUpdate implements DiscountUpdate {
   @override
   dynamic? get amount;
   @override
-  String? get currency;
+  dynamic? get currency;
+  @override
+  dynamic? get amounts;
   @override
   dynamic? get basis_points;
   @override

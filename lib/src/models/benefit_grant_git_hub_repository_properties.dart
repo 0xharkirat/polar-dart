@@ -10,6 +10,7 @@ class BenefitGrantGitHubRepositoryProperties with _$BenefitGrantGitHubRepository
     String? repository_owner,
     String? repository_name,
     String? permission,
+    String? granted_account_id,
   }) = _BenefitGrantGitHubRepositoryProperties;
 
   factory BenefitGrantGitHubRepositoryProperties.fromJson(Map<String, dynamic> json) => _$BenefitGrantGitHubRepositoryPropertiesFromJson(json);

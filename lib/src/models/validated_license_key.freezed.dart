@@ -21,10 +21,10 @@ ValidatedLicenseKey _$ValidatedLicenseKeyFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ValidatedLicenseKey {
   String get id => throw _privateConstructorUsedError;
+  String get created_at => throw _privateConstructorUsedError;
+  String? get modified_at => throw _privateConstructorUsedError;
   String get organization_id => throw _privateConstructorUsedError;
-  String get user_id => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
-  LicenseKeyUser get user => throw _privateConstructorUsedError;
   LicenseKeyCustomer get customer => throw _privateConstructorUsedError;
   String get benefit_id => throw _privateConstructorUsedError;
   String get key => throw _privateConstructorUsedError;
@@ -56,10 +56,10 @@ abstract class $ValidatedLicenseKeyCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String created_at,
+      String? modified_at,
       String organization_id,
-      String user_id,
       String customer_id,
-      LicenseKeyUser user,
       LicenseKeyCustomer customer,
       String benefit_id,
       String key,
@@ -73,7 +73,6 @@ abstract class $ValidatedLicenseKeyCopyWith<$Res> {
       String? expires_at,
       dynamic? activation});
 
-  $LicenseKeyUserCopyWith<$Res> get user;
   $LicenseKeyCustomerCopyWith<$Res> get customer;
 }
 
@@ -93,10 +92,10 @@ class _$ValidatedLicenseKeyCopyWithImpl<$Res, $Val extends ValidatedLicenseKey>
   @override
   $Res call({
     Object? id = null,
+    Object? created_at = null,
+    Object? modified_at = freezed,
     Object? organization_id = null,
-    Object? user_id = null,
     Object? customer_id = null,
-    Object? user = null,
     Object? customer = null,
     Object? benefit_id = null,
     Object? key = null,
@@ -115,22 +114,22 @@ class _$ValidatedLicenseKeyCopyWithImpl<$Res, $Val extends ValidatedLicenseKey>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as String,
+      modified_at: freezed == modified_at
+          ? _value.modified_at
+          : modified_at // ignore: cast_nullable_to_non_nullable
+              as String?,
       organization_id: null == organization_id
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
               as String,
       customer_id: null == customer_id
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as LicenseKeyUser,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
@@ -186,16 +185,6 @@ class _$ValidatedLicenseKeyCopyWithImpl<$Res, $Val extends ValidatedLicenseKey>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LicenseKeyUserCopyWith<$Res> get user {
-    return $LicenseKeyUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-
-  /// Create a copy of ValidatedLicenseKey
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $LicenseKeyCustomerCopyWith<$Res> get customer {
     return $LicenseKeyCustomerCopyWith<$Res>(_value.customer, (value) {
       return _then(_value.copyWith(customer: value) as $Val);
@@ -213,10 +202,10 @@ abstract class _$$ValidatedLicenseKeyImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      String created_at,
+      String? modified_at,
       String organization_id,
-      String user_id,
       String customer_id,
-      LicenseKeyUser user,
       LicenseKeyCustomer customer,
       String benefit_id,
       String key,
@@ -230,8 +219,6 @@ abstract class _$$ValidatedLicenseKeyImplCopyWith<$Res>
       String? expires_at,
       dynamic? activation});
 
-  @override
-  $LicenseKeyUserCopyWith<$Res> get user;
   @override
   $LicenseKeyCustomerCopyWith<$Res> get customer;
 }
@@ -250,10 +237,10 @@ class __$$ValidatedLicenseKeyImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? created_at = null,
+    Object? modified_at = freezed,
     Object? organization_id = null,
-    Object? user_id = null,
     Object? customer_id = null,
-    Object? user = null,
     Object? customer = null,
     Object? benefit_id = null,
     Object? key = null,
@@ -272,22 +259,22 @@ class __$$ValidatedLicenseKeyImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as String,
+      modified_at: freezed == modified_at
+          ? _value.modified_at
+          : modified_at // ignore: cast_nullable_to_non_nullable
+              as String?,
       organization_id: null == organization_id
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
               as String,
       customer_id: null == customer_id
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as LicenseKeyUser,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
@@ -345,10 +332,10 @@ class __$$ValidatedLicenseKeyImplCopyWithImpl<$Res>
 class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
   const _$ValidatedLicenseKeyImpl(
       {required this.id,
+      required this.created_at,
+      required this.modified_at,
       required this.organization_id,
-      required this.user_id,
       required this.customer_id,
-      required this.user,
       required this.customer,
       required this.benefit_id,
       required this.key,
@@ -368,13 +355,13 @@ class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
   @override
   final String id;
   @override
+  final String created_at;
+  @override
+  final String? modified_at;
+  @override
   final String organization_id;
   @override
-  final String user_id;
-  @override
   final String customer_id;
-  @override
-  final LicenseKeyUser user;
   @override
   final LicenseKeyCustomer customer;
   @override
@@ -402,7 +389,7 @@ class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
 
   @override
   String toString() {
-    return 'ValidatedLicenseKey(id: $id, organization_id: $organization_id, user_id: $user_id, customer_id: $customer_id, user: $user, customer: $customer, benefit_id: $benefit_id, key: $key, display_key: $display_key, status: $status, limit_activations: $limit_activations, usage: $usage, limit_usage: $limit_usage, validations: $validations, last_validated_at: $last_validated_at, expires_at: $expires_at, activation: $activation)';
+    return 'ValidatedLicenseKey(id: $id, created_at: $created_at, modified_at: $modified_at, organization_id: $organization_id, customer_id: $customer_id, customer: $customer, benefit_id: $benefit_id, key: $key, display_key: $display_key, status: $status, limit_activations: $limit_activations, usage: $usage, limit_usage: $limit_usage, validations: $validations, last_validated_at: $last_validated_at, expires_at: $expires_at, activation: $activation)';
   }
 
   @override
@@ -411,12 +398,14 @@ class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
         (other.runtimeType == runtimeType &&
             other is _$ValidatedLicenseKeyImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.modified_at, modified_at) ||
+                other.modified_at == modified_at) &&
             (identical(other.organization_id, organization_id) ||
                 other.organization_id == organization_id) &&
-            (identical(other.user_id, user_id) || other.user_id == user_id) &&
             (identical(other.customer_id, customer_id) ||
                 other.customer_id == customer_id) &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.customer, customer) ||
                 other.customer == customer) &&
             (identical(other.benefit_id, benefit_id) ||
@@ -445,10 +434,10 @@ class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      created_at,
+      modified_at,
       organization_id,
-      user_id,
       customer_id,
-      user,
       customer,
       benefit_id,
       key,
@@ -482,10 +471,10 @@ class _$ValidatedLicenseKeyImpl implements _ValidatedLicenseKey {
 abstract class _ValidatedLicenseKey implements ValidatedLicenseKey {
   const factory _ValidatedLicenseKey(
       {required final String id,
+      required final String created_at,
+      required final String? modified_at,
       required final String organization_id,
-      required final String user_id,
       required final String customer_id,
-      required final LicenseKeyUser user,
       required final LicenseKeyCustomer customer,
       required final String benefit_id,
       required final String key,
@@ -505,13 +494,13 @@ abstract class _ValidatedLicenseKey implements ValidatedLicenseKey {
   @override
   String get id;
   @override
+  String get created_at;
+  @override
+  String? get modified_at;
+  @override
   String get organization_id;
   @override
-  String get user_id;
-  @override
   String get customer_id;
-  @override
-  LicenseKeyUser get user;
   @override
   LicenseKeyCustomer get customer;
   @override

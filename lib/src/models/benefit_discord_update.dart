@@ -6,6 +6,7 @@ part 'benefit_discord_update.freezed.dart';
 @freezed
 class BenefitDiscordUpdate with _$BenefitDiscordUpdate {
   const factory BenefitDiscordUpdate({
+    Map<String, dynamic>? metadata,
     String? description,
     required String type,
     dynamic? properties,

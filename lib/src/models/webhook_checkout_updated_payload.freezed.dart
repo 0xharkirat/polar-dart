@@ -22,6 +22,7 @@ WebhookCheckoutUpdatedPayload _$WebhookCheckoutUpdatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookCheckoutUpdatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Checkout get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookCheckoutUpdatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookCheckoutUpdatedPayloadCopyWith<$Res> {
       _$WebhookCheckoutUpdatedPayloadCopyWithImpl<$Res,
           WebhookCheckoutUpdatedPayload>;
   @useResult
-  $Res call({String type, Checkout data});
+  $Res call({String type, String timestamp, Checkout data});
 
   $CheckoutCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookCheckoutUpdatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookCheckoutUpdatedPayloadImplCopyWith<$Res>
       __$$WebhookCheckoutUpdatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Checkout data});
+  $Res call({String type, String timestamp, Checkout data});
 
   @override
   $CheckoutCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookCheckoutUpdatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookCheckoutUpdatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookCheckoutUpdatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookCheckoutUpdatedPayloadImpl
     implements _WebhookCheckoutUpdatedPayload {
   const _$WebhookCheckoutUpdatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookCheckoutUpdatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookCheckoutUpdatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Checkout data;
 
   @override
   String toString() {
-    return 'WebhookCheckoutUpdatedPayload(type: $type, data: $data)';
+    return 'WebhookCheckoutUpdatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookCheckoutUpdatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookCheckoutUpdatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookCheckoutUpdatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,6 +206,7 @@ abstract class _WebhookCheckoutUpdatedPayload
     implements WebhookCheckoutUpdatedPayload {
   const factory _WebhookCheckoutUpdatedPayload(
       {required final String type,
+      required final String timestamp,
       required final Checkout data}) = _$WebhookCheckoutUpdatedPayloadImpl;
 
   factory _WebhookCheckoutUpdatedPayload.fromJson(Map<String, dynamic> json) =
@@ -198,6 +214,8 @@ abstract class _WebhookCheckoutUpdatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Checkout get data;
 

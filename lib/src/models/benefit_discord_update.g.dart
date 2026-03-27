@@ -9,6 +9,7 @@ part of 'benefit_discord_update.dart';
 _$BenefitDiscordUpdateImpl _$$BenefitDiscordUpdateImplFromJson(
         Map<String, dynamic> json) =>
     _$BenefitDiscordUpdateImpl(
+      metadata: json['metadata'] as Map<String, dynamic>?,
       description: json['description'] as String?,
       type: json['type'] as String,
       properties: json['properties'],
@@ -17,6 +18,7 @@ _$BenefitDiscordUpdateImpl _$$BenefitDiscordUpdateImplFromJson(
 Map<String, dynamic> _$$BenefitDiscordUpdateImplToJson(
         _$BenefitDiscordUpdateImpl instance) =>
     <String, dynamic>{
+      if (instance.metadata case final value?) 'metadata': value,
       if (instance.description case final value?) 'description': value,
       'type': instance.type,
       if (instance.properties case final value?) 'properties': value,

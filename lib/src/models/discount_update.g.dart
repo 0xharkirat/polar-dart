@@ -8,17 +8,18 @@ part of 'discount_update.dart';
 
 _$DiscountUpdateImpl _$$DiscountUpdateImplFromJson(Map<String, dynamic> json) =>
     _$DiscountUpdateImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
       name: json['name'] as String?,
-      code: json['code'],
-      starts_at: json['starts_at'],
-      ends_at: json['ends_at'],
+      code: json['code'] as String?,
+      starts_at: json['starts_at'] as String?,
+      ends_at: json['ends_at'] as String?,
       max_redemptions: json['max_redemptions'],
       duration: json['duration'],
       duration_in_months: json['duration_in_months'],
       type: json['type'],
       amount: json['amount'],
-      currency: json['currency'] as String?,
+      currency: json['currency'],
+      amounts: json['amounts'],
       basis_points: json['basis_points'],
       products: json['products'],
     );
@@ -38,6 +39,7 @@ Map<String, dynamic> _$$DiscountUpdateImplToJson(
       if (instance.type case final value?) 'type': value,
       if (instance.amount case final value?) 'amount': value,
       if (instance.currency case final value?) 'currency': value,
+      if (instance.amounts case final value?) 'amounts': value,
       if (instance.basis_points case final value?) 'basis_points': value,
       if (instance.products case final value?) 'products': value,
     };

@@ -1,4 +1,5 @@
 import 'metric_period.dart';
+import 'metrics_totals.dart';
 import 'metrics.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -10,6 +11,7 @@ part 'metrics_response.freezed.dart';
 class MetricsResponse with _$MetricsResponse {
   const factory MetricsResponse({
     required List<MetricPeriod> periods,
+    required MetricsTotals totals,
     required Metrics metrics,
   }) = _MetricsResponse;
 

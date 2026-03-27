@@ -1,76 +1,154 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum TaxIDFormat {
+  @JsonValue('ad_nrt')
   ad_nrt,
+  @JsonValue('ae_trn')
   ae_trn,
+  @JsonValue('ar_cuit')
   ar_cuit,
+  @JsonValue('au_abn')
   au_abn,
+  @JsonValue('au_arn')
   au_arn,
+  @JsonValue('bg_uic')
   bg_uic,
+  @JsonValue('bh_vat')
   bh_vat,
+  @JsonValue('bo_tin')
   bo_tin,
+  @JsonValue('br_cnpj')
   br_cnpj,
+  @JsonValue('br_cpf')
   br_cpf,
+  @JsonValue('ca_bn')
   ca_bn,
+  @JsonValue('ca_gst_hst')
   ca_gst_hst,
+  @JsonValue('ca_pst_bc')
   ca_pst_bc,
+  @JsonValue('ca_pst_mb')
   ca_pst_mb,
+  @JsonValue('ca_pst_sk')
   ca_pst_sk,
+  @JsonValue('ca_qst')
   ca_qst,
+  @JsonValue('ch_uid')
   ch_uid,
+  @JsonValue('ch_vat')
   ch_vat,
+  @JsonValue('cl_tin')
   cl_tin,
+  @JsonValue('cn_tin')
   cn_tin,
+  @JsonValue('co_nit')
   co_nit,
+  @JsonValue('cr_tin')
   cr_tin,
+  @JsonValue('de_stn')
   de_stn,
+  @JsonValue('do_rcn')
   do_rcn,
+  @JsonValue('ec_ruc')
   ec_ruc,
+  @JsonValue('eg_tin')
   eg_tin,
+  @JsonValue('es_cif')
   es_cif,
+  @JsonValue('eu_oss_vat')
   eu_oss_vat,
+  @JsonValue('eu_vat')
   eu_vat,
+  @JsonValue('gb_vat')
   gb_vat,
+  @JsonValue('ge_vat')
   ge_vat,
+  @JsonValue('hk_br')
   hk_br,
+  @JsonValue('hr_oib')
   hr_oib,
+  @JsonValue('hu_tin')
   hu_tin,
+  @JsonValue('id_npwp')
   id_npwp,
+  @JsonValue('il_vat')
   il_vat,
+  @JsonValue('in_gst')
   in_gst,
+  @JsonValue('is_vat')
   is_vat,
+  @JsonValue('jp_cn')
   jp_cn,
+  @JsonValue('jp_rn')
   jp_rn,
+  @JsonValue('jp_trn')
   jp_trn,
+  @JsonValue('ke_pin')
   ke_pin,
+  @JsonValue('kr_brn')
   kr_brn,
+  @JsonValue('kz_bin')
   kz_bin,
+  @JsonValue('li_uid')
   li_uid,
+  @JsonValue('mk_vat')
+  mk_vat,
+  @JsonValue('mx_rfc')
   mx_rfc,
+  @JsonValue('my_frp')
   my_frp,
+  @JsonValue('my_itn')
   my_itn,
+  @JsonValue('my_sst')
   my_sst,
+  @JsonValue('ng_tin')
   ng_tin,
+  @JsonValue('no_vat')
   no_vat,
+  @JsonValue('no_voec')
   no_voec,
+  @JsonValue('nz_gst')
   nz_gst,
+  @JsonValue('om_vat')
   om_vat,
+  @JsonValue('pe_ruc')
   pe_ruc,
+  @JsonValue('ph_tin')
   ph_tin,
+  @JsonValue('ro_tin')
   ro_tin,
+  @JsonValue('rs_pib')
   rs_pib,
+  @JsonValue('ru_inn')
   ru_inn,
+  @JsonValue('ru_kpp')
   ru_kpp,
+  @JsonValue('sa_vat')
   sa_vat,
+  @JsonValue('sg_gst')
   sg_gst,
+  @JsonValue('sg_uen')
   sg_uen,
+  @JsonValue('si_tin')
   si_tin,
+  @JsonValue('sv_nit')
   sv_nit,
+  @JsonValue('th_vat')
   th_vat,
+  @JsonValue('tr_tin')
   tr_tin,
+  @JsonValue('tw_vat')
   tw_vat,
+  @JsonValue('ua_vat')
   ua_vat,
+  @JsonValue('us_ein')
   us_ein,
+  @JsonValue('uy_ruc')
   uy_ruc,
+  @JsonValue('ve_rif')
   ve_rif,
+  @JsonValue('vn_tin')
   vn_tin,
+  @JsonValue('za_vat')
   za_vat,
 }

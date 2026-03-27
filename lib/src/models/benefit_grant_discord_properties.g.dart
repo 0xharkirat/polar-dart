@@ -12,6 +12,7 @@ _$BenefitGrantDiscordPropertiesImpl
           account_id: json['account_id'] as String?,
           guild_id: json['guild_id'] as String?,
           role_id: json['role_id'] as String?,
+          granted_account_id: json['granted_account_id'] as String?,
         );
 
 Map<String, dynamic> _$$BenefitGrantDiscordPropertiesImplToJson(
@@ -20,4 +21,6 @@ Map<String, dynamic> _$$BenefitGrantDiscordPropertiesImplToJson(
       if (instance.account_id case final value?) 'account_id': value,
       if (instance.guild_id case final value?) 'guild_id': value,
       if (instance.role_id case final value?) 'role_id': value,
+      if (instance.granted_account_id case final value?)
+        'granted_account_id': value,
     };

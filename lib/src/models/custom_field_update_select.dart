@@ -6,7 +6,7 @@ part 'custom_field_update_select.freezed.dart';
 @freezed
 class CustomFieldUpdateSelect with _$CustomFieldUpdateSelect {
   const factory CustomFieldUpdateSelect({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
     String? name,
     String? slug,
     required String type,

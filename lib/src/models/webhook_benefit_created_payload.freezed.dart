@@ -22,6 +22,7 @@ WebhookBenefitCreatedPayload _$WebhookBenefitCreatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookBenefitCreatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Benefit get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookBenefitCreatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookBenefitCreatedPayloadCopyWith<$Res> {
       _$WebhookBenefitCreatedPayloadCopyWithImpl<$Res,
           WebhookBenefitCreatedPayload>;
   @useResult
-  $Res call({String type, Benefit data});
+  $Res call({String type, String timestamp, Benefit data});
 
   $BenefitCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookBenefitCreatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookBenefitCreatedPayloadImplCopyWith<$Res>
       __$$WebhookBenefitCreatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Benefit data});
+  $Res call({String type, String timestamp, Benefit data});
 
   @override
   $BenefitCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookBenefitCreatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookBenefitCreatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookBenefitCreatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookBenefitCreatedPayloadImpl
     implements _WebhookBenefitCreatedPayload {
   const _$WebhookBenefitCreatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookBenefitCreatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookBenefitCreatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Benefit data;
 
   @override
   String toString() {
-    return 'WebhookBenefitCreatedPayload(type: $type, data: $data)';
+    return 'WebhookBenefitCreatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookBenefitCreatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookBenefitCreatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookBenefitCreatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,6 +206,7 @@ abstract class _WebhookBenefitCreatedPayload
     implements WebhookBenefitCreatedPayload {
   const factory _WebhookBenefitCreatedPayload(
       {required final String type,
+      required final String timestamp,
       required final Benefit data}) = _$WebhookBenefitCreatedPayloadImpl;
 
   factory _WebhookBenefitCreatedPayload.fromJson(Map<String, dynamic> json) =
@@ -198,6 +214,8 @@ abstract class _WebhookBenefitCreatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Benefit get data;
 

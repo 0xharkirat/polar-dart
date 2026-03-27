@@ -8,6 +8,7 @@ class BenefitDiscordCreateProperties with _$BenefitDiscordCreateProperties {
   const factory BenefitDiscordCreateProperties({
     required String guild_token,
     required String role_id,
+    required bool kick_member,
   }) = _BenefitDiscordCreateProperties;
 
   factory BenefitDiscordCreateProperties.fromJson(Map<String, dynamic> json) => _$BenefitDiscordCreatePropertiesFromJson(json);

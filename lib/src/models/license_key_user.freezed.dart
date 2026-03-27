@@ -21,7 +21,7 @@ LicenseKeyUser _$LicenseKeyUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LicenseKeyUser {
   String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   String get public_name => throw _privateConstructorUsedError;
   String? get avatar_url => throw _privateConstructorUsedError;
 
@@ -41,7 +41,7 @@ abstract class $LicenseKeyUserCopyWith<$Res> {
           LicenseKeyUser value, $Res Function(LicenseKeyUser) then) =
       _$LicenseKeyUserCopyWithImpl<$Res, LicenseKeyUser>;
   @useResult
-  $Res call({String id, String email, String public_name, String? avatar_url});
+  $Res call({String id, String? email, String public_name, String? avatar_url});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$LicenseKeyUserCopyWithImpl<$Res, $Val extends LicenseKeyUser>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? public_name = null,
     Object? avatar_url = freezed,
   }) {
@@ -69,10 +69,10 @@ class _$LicenseKeyUserCopyWithImpl<$Res, $Val extends LicenseKeyUser>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       public_name: null == public_name
           ? _value.public_name
           : public_name // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$$LicenseKeyUserImplCopyWith<$Res>
       __$$LicenseKeyUserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String email, String public_name, String? avatar_url});
+  $Res call({String id, String? email, String public_name, String? avatar_url});
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class __$$LicenseKeyUserImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? public_name = null,
     Object? avatar_url = freezed,
   }) {
@@ -119,10 +119,10 @@ class __$$LicenseKeyUserImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       public_name: null == public_name
           ? _value.public_name
           : public_name // ignore: cast_nullable_to_non_nullable
@@ -140,7 +140,7 @@ class __$$LicenseKeyUserImplCopyWithImpl<$Res>
 class _$LicenseKeyUserImpl implements _LicenseKeyUser {
   const _$LicenseKeyUserImpl(
       {required this.id,
-      required this.email,
+      this.email,
       required this.public_name,
       this.avatar_url});
 
@@ -150,7 +150,7 @@ class _$LicenseKeyUserImpl implements _LicenseKeyUser {
   @override
   final String id;
   @override
-  final String email;
+  final String? email;
   @override
   final String public_name;
   @override
@@ -199,7 +199,7 @@ class _$LicenseKeyUserImpl implements _LicenseKeyUser {
 abstract class _LicenseKeyUser implements LicenseKeyUser {
   const factory _LicenseKeyUser(
       {required final String id,
-      required final String email,
+      final String? email,
       required final String public_name,
       final String? avatar_url}) = _$LicenseKeyUserImpl;
 
@@ -209,7 +209,7 @@ abstract class _LicenseKeyUser implements LicenseKeyUser {
   @override
   String get id;
   @override
-  String get email;
+  String? get email;
   @override
   String get public_name;
   @override

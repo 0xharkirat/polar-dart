@@ -1,8 +1,16 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum CustomerSortProperty {
+  @JsonValue('created_at')
   created_at,
-  _created_at,
+  @JsonValue('-created_at')
+  minus_created_at,
+  @JsonValue('email')
   email,
-  _email,
+  @JsonValue('-email')
+  minus_email,
+  @JsonValue('name')
   name,
-  _name,
+  @JsonValue('-name')
+  minus_name,
 }

@@ -9,6 +9,7 @@ part 'webhook_order_refunded_payload.freezed.dart';
 class WebhookOrderRefundedPayload with _$WebhookOrderRefundedPayload {
   const factory WebhookOrderRefundedPayload({
     required String type,
+    required String timestamp,
     required Order data,
   }) = _WebhookOrderRefundedPayload;
 

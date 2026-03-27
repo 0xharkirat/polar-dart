@@ -6,7 +6,7 @@ part 'custom_field_update_number.freezed.dart';
 @freezed
 class CustomFieldUpdateNumber with _$CustomFieldUpdateNumber {
   const factory CustomFieldUpdateNumber({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
     String? name,
     String? slug,
     required String type,

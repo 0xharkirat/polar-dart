@@ -22,6 +22,7 @@ WebhookProductCreatedPayload _$WebhookProductCreatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookProductCreatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Product get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookProductCreatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookProductCreatedPayloadCopyWith<$Res> {
       _$WebhookProductCreatedPayloadCopyWithImpl<$Res,
           WebhookProductCreatedPayload>;
   @useResult
-  $Res call({String type, Product data});
+  $Res call({String type, String timestamp, Product data});
 
   $ProductCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookProductCreatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookProductCreatedPayloadImplCopyWith<$Res>
       __$$WebhookProductCreatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Product data});
+  $Res call({String type, String timestamp, Product data});
 
   @override
   $ProductCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookProductCreatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookProductCreatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookProductCreatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookProductCreatedPayloadImpl
     implements _WebhookProductCreatedPayload {
   const _$WebhookProductCreatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookProductCreatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookProductCreatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Product data;
 
   @override
   String toString() {
-    return 'WebhookProductCreatedPayload(type: $type, data: $data)';
+    return 'WebhookProductCreatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookProductCreatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookProductCreatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookProductCreatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,6 +206,7 @@ abstract class _WebhookProductCreatedPayload
     implements WebhookProductCreatedPayload {
   const factory _WebhookProductCreatedPayload(
       {required final String type,
+      required final String timestamp,
       required final Product data}) = _$WebhookProductCreatedPayloadImpl;
 
   factory _WebhookProductCreatedPayload.fromJson(Map<String, dynamic> json) =
@@ -198,6 +214,8 @@ abstract class _WebhookProductCreatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Product get data;
 

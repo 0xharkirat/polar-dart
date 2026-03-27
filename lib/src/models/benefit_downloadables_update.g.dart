@@ -9,6 +9,7 @@ part of 'benefit_downloadables_update.dart';
 _$BenefitDownloadablesUpdateImpl _$$BenefitDownloadablesUpdateImplFromJson(
         Map<String, dynamic> json) =>
     _$BenefitDownloadablesUpdateImpl(
+      metadata: json['metadata'] as Map<String, dynamic>?,
       description: json['description'] as String?,
       type: json['type'] as String,
       properties: json['properties'],
@@ -17,6 +18,7 @@ _$BenefitDownloadablesUpdateImpl _$$BenefitDownloadablesUpdateImplFromJson(
 Map<String, dynamic> _$$BenefitDownloadablesUpdateImplToJson(
         _$BenefitDownloadablesUpdateImpl instance) =>
     <String, dynamic>{
+      if (instance.metadata case final value?) 'metadata': value,
       if (instance.description case final value?) 'description': value,
       'type': instance.type,
       if (instance.properties case final value?) 'properties': value,

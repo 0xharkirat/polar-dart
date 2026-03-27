@@ -10,12 +10,12 @@ _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl
     _$$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImplFromJson(
             Map<String, dynamic> json) =>
         _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl(
-          account_id: json['account_id'] as String,
+          account_id: json['account_id'] as String?,
         );
 
 Map<String,
     dynamic> _$$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImplToJson(
         _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl instance) =>
     <String, dynamic>{
-      'account_id': instance.account_id,
+      if (instance.account_id case final value?) 'account_id': value,
     };

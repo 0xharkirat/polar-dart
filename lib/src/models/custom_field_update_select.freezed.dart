@@ -21,7 +21,7 @@ CustomFieldUpdateSelect _$CustomFieldUpdateSelectFromJson(
 
 /// @nodoc
 mixin _$CustomFieldUpdateSelect {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $CustomFieldUpdateSelectCopyWith<$Res> {
       _$CustomFieldUpdateSelectCopyWithImpl<$Res, CustomFieldUpdateSelect>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -77,7 +77,7 @@ class _$CustomFieldUpdateSelectCopyWithImpl<$Res,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ abstract class _$$CustomFieldUpdateSelectImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -138,9 +138,9 @@ class __$$CustomFieldUpdateSelectImplCopyWithImpl<$Res>
   }) {
     return _then(_$CustomFieldUpdateSelectImpl(
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -165,17 +165,26 @@ class __$$CustomFieldUpdateSelectImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomFieldUpdateSelectImpl implements _CustomFieldUpdateSelect {
   const _$CustomFieldUpdateSelectImpl(
-      {this.metadata,
+      {final Map<String, dynamic>? metadata,
       this.name,
       this.slug,
       required this.type,
-      this.properties});
+      this.properties})
+      : _metadata = metadata;
 
   factory _$CustomFieldUpdateSelectImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldUpdateSelectImplFromJson(json);
 
+  final Map<String, dynamic>? _metadata;
   @override
-  final dynamic? metadata;
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? name;
   @override
@@ -195,7 +204,7 @@ class _$CustomFieldUpdateSelectImpl implements _CustomFieldUpdateSelect {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldUpdateSelectImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.type, type) || other.type == type) &&
@@ -207,7 +216,7 @@ class _$CustomFieldUpdateSelectImpl implements _CustomFieldUpdateSelect {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(_metadata),
       name,
       slug,
       type,
@@ -232,7 +241,7 @@ class _$CustomFieldUpdateSelectImpl implements _CustomFieldUpdateSelect {
 
 abstract class _CustomFieldUpdateSelect implements CustomFieldUpdateSelect {
   const factory _CustomFieldUpdateSelect(
-      {final dynamic? metadata,
+      {final Map<String, dynamic>? metadata,
       final String? name,
       final String? slug,
       required final String type,
@@ -242,7 +251,7 @@ abstract class _CustomFieldUpdateSelect implements CustomFieldUpdateSelect {
       _$CustomFieldUpdateSelectImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  Map<String, dynamic>? get metadata;
   @override
   String? get name;
   @override

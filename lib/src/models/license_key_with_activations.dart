@@ -1,4 +1,3 @@
-import 'license_key_user.dart';
 import 'license_key_customer.dart';
 import 'license_key_status.dart';
 import 'license_key_activation_base.dart';
@@ -12,10 +11,10 @@ part 'license_key_with_activations.freezed.dart';
 class LicenseKeyWithActivations with _$LicenseKeyWithActivations {
   const factory LicenseKeyWithActivations({
     required String id,
+    required String created_at,
+    required String? modified_at,
     required String organization_id,
-    required String user_id,
     required String customer_id,
-    required LicenseKeyUser user,
     required LicenseKeyCustomer customer,
     required String benefit_id,
     required String key,

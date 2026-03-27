@@ -5,14 +5,7 @@ part 'customer_create.freezed.dart';
 
 @freezed
 class CustomerCreate with _$CustomerCreate {
-  const factory CustomerCreate({
-    Map<String, dynamic>? metadata,
-    required String email,
-    String? name,
-    dynamic? billing_address,
-    dynamic? tax_id,
-    String? organization_id,
-  }) = _CustomerCreate;
+  const factory CustomerCreate({@Default({}) Map<String, dynamic> additionalProperties}) = _CustomerCreate;
 
   factory CustomerCreate.fromJson(Map<String, dynamic> json) => _$CustomerCreateFromJson(json);
 }

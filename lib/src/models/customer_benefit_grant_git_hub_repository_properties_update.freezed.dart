@@ -22,7 +22,7 @@ CustomerBenefitGrantGitHubRepositoryPropertiesUpdate
 
 /// @nodoc
 mixin _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdate {
-  String get account_id => throw _privateConstructorUsedError;
+  String? get account_id => throw _privateConstructorUsedError;
 
   /// Serializes this CustomerBenefitGrantGitHubRepositoryPropertiesUpdate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $CustomerBenefitGrantGitHubRepositoryPropertiesUpdateCopyWith<
       _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateCopyWithImpl<$Res,
           CustomerBenefitGrantGitHubRepositoryPropertiesUpdate>;
   @useResult
-  $Res call({String account_id});
+  $Res call({String? account_id});
 }
 
 /// @nodoc
@@ -66,13 +66,13 @@ class _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account_id = null,
+    Object? account_id = freezed,
   }) {
     return _then(_value.copyWith(
-      account_id: null == account_id
+      account_id: freezed == account_id
           ? _value.account_id
           : account_id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -91,7 +91,7 @@ abstract class _$$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImplCopyWi
           $Res>;
   @override
   @useResult
-  $Res call({String account_id});
+  $Res call({String? account_id});
 }
 
 /// @nodoc
@@ -113,13 +113,13 @@ class __$$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImplCopyWithImpl<
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account_id = null,
+    Object? account_id = freezed,
   }) {
     return _then(_$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl(
-      account_id: null == account_id
+      account_id: freezed == account_id
           ? _value.account_id
           : account_id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -136,7 +136,7 @@ class _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl
       _$$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImplFromJson(json);
 
   @override
-  final String account_id;
+  final String? account_id;
 
   @override
   String toString() {
@@ -180,7 +180,7 @@ class _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl
 abstract class _CustomerBenefitGrantGitHubRepositoryPropertiesUpdate
     implements CustomerBenefitGrantGitHubRepositoryPropertiesUpdate {
   const factory _CustomerBenefitGrantGitHubRepositoryPropertiesUpdate(
-          {required final String account_id}) =
+          {required final String? account_id}) =
       _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl;
 
   factory _CustomerBenefitGrantGitHubRepositoryPropertiesUpdate.fromJson(
@@ -188,7 +188,7 @@ abstract class _CustomerBenefitGrantGitHubRepositoryPropertiesUpdate
       _$CustomerBenefitGrantGitHubRepositoryPropertiesUpdateImpl.fromJson;
 
   @override
-  String get account_id;
+  String? get account_id;
 
   /// Create a copy of CustomerBenefitGrantGitHubRepositoryPropertiesUpdate
   /// with the given fields replaced by the non-null parameter values.

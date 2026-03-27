@@ -6,6 +6,7 @@ part 'benefit_custom_update.freezed.dart';
 @freezed
 class BenefitCustomUpdate with _$BenefitCustomUpdate {
   const factory BenefitCustomUpdate({
+    Map<String, dynamic>? metadata,
     String? description,
     required String type,
     dynamic? properties,

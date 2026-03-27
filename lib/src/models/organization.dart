@@ -1,4 +1,11 @@
+import 'subscription_proration_behavior.dart';
+import 'organization_social_link.dart';
+import 'organization_status.dart';
+import 'tax_behavior_option.dart';
 import 'organization_subscription_settings.dart';
+import 'organization_notification_settings.dart';
+import 'organization_customer_email_settings.dart';
+import 'organization_customer_portal_settings.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,18 +21,21 @@ class Organization with _$Organization {
     required String name,
     required String slug,
     required String? avatar_url,
-    required String? bio,
-    required String? company,
-    required String? blog,
-    required String? location,
+    required SubscriptionProrationBehavior proration_behavior,
+    required bool allow_customer_updates,
     required String? email,
-    required String? twitter_username,
-    required int pledge_minimum_amount,
-    required bool pledge_badge_show_amount,
-    required dynamic default_upfront_split_to_contributors,
-    required dynamic profile_settings,
+    required String? website,
+    required List<OrganizationSocialLink> socials,
+    required OrganizationStatus status,
+    required String? details_submitted_at,
+    required String default_presentment_currency,
+    required TaxBehaviorOption default_tax_behavior,
     required dynamic feature_settings,
     required OrganizationSubscriptionSettings subscription_settings,
+    required OrganizationNotificationSettings notification_settings,
+    required OrganizationCustomerEmailSettings customer_email_settings,
+    required OrganizationCustomerPortalSettings customer_portal_settings,
+    String? country,
   }) = _Organization;
 
   factory Organization.fromJson(Map<String, dynamic> json) => _$OrganizationFromJson(json);

@@ -20,12 +20,16 @@ CheckoutLinkUpdate _$CheckoutLinkUpdateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CheckoutLinkUpdate {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  dynamic? get trial_interval => throw _privateConstructorUsedError;
+  dynamic? get trial_interval_count => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  dynamic? get products => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
   dynamic? get allow_discount_codes => throw _privateConstructorUsedError;
-  String? get product_price_id => throw _privateConstructorUsedError;
+  dynamic? get require_billing_address => throw _privateConstructorUsedError;
   String? get discount_id => throw _privateConstructorUsedError;
   String? get success_url => throw _privateConstructorUsedError;
+  String? get return_url => throw _privateConstructorUsedError;
 
   /// Serializes this CheckoutLinkUpdate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,12 +48,16 @@ abstract class $CheckoutLinkUpdateCopyWith<$Res> {
       _$CheckoutLinkUpdateCopyWithImpl<$Res, CheckoutLinkUpdate>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {dynamic? trial_interval,
+      dynamic? trial_interval_count,
+      Map<String, dynamic>? metadata,
+      dynamic? products,
       String? label,
       dynamic? allow_discount_codes,
-      String? product_price_id,
+      dynamic? require_billing_address,
       String? discount_id,
-      String? success_url});
+      String? success_url,
+      String? return_url});
 }
 
 /// @nodoc
@@ -67,17 +75,33 @@ class _$CheckoutLinkUpdateCopyWithImpl<$Res, $Val extends CheckoutLinkUpdate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? trial_interval = freezed,
+    Object? trial_interval_count = freezed,
     Object? metadata = freezed,
+    Object? products = freezed,
     Object? label = freezed,
     Object? allow_discount_codes = freezed,
-    Object? product_price_id = freezed,
+    Object? require_billing_address = freezed,
     Object? discount_id = freezed,
     Object? success_url = freezed,
+    Object? return_url = freezed,
   }) {
     return _then(_value.copyWith(
+      trial_interval: freezed == trial_interval
+          ? _value.trial_interval
+          : trial_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      trial_interval_count: freezed == trial_interval_count
+          ? _value.trial_interval_count
+          : trial_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      products: freezed == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
               as dynamic?,
       label: freezed == label
           ? _value.label
@@ -87,10 +111,10 @@ class _$CheckoutLinkUpdateCopyWithImpl<$Res, $Val extends CheckoutLinkUpdate>
           ? _value.allow_discount_codes
           : allow_discount_codes // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      product_price_id: freezed == product_price_id
-          ? _value.product_price_id
-          : product_price_id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      require_billing_address: freezed == require_billing_address
+          ? _value.require_billing_address
+          : require_billing_address // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -98,6 +122,10 @@ class _$CheckoutLinkUpdateCopyWithImpl<$Res, $Val extends CheckoutLinkUpdate>
       success_url: freezed == success_url
           ? _value.success_url
           : success_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      return_url: freezed == return_url
+          ? _value.return_url
+          : return_url // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -112,12 +140,16 @@ abstract class _$$CheckoutLinkUpdateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {dynamic? trial_interval,
+      dynamic? trial_interval_count,
+      Map<String, dynamic>? metadata,
+      dynamic? products,
       String? label,
       dynamic? allow_discount_codes,
-      String? product_price_id,
+      dynamic? require_billing_address,
       String? discount_id,
-      String? success_url});
+      String? success_url,
+      String? return_url});
 }
 
 /// @nodoc
@@ -133,17 +165,33 @@ class __$$CheckoutLinkUpdateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? trial_interval = freezed,
+    Object? trial_interval_count = freezed,
     Object? metadata = freezed,
+    Object? products = freezed,
     Object? label = freezed,
     Object? allow_discount_codes = freezed,
-    Object? product_price_id = freezed,
+    Object? require_billing_address = freezed,
     Object? discount_id = freezed,
     Object? success_url = freezed,
+    Object? return_url = freezed,
   }) {
     return _then(_$CheckoutLinkUpdateImpl(
+      trial_interval: freezed == trial_interval
+          ? _value.trial_interval
+          : trial_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      trial_interval_count: freezed == trial_interval_count
+          ? _value.trial_interval_count
+          : trial_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      products: freezed == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
               as dynamic?,
       label: freezed == label
           ? _value.label
@@ -153,10 +201,10 @@ class __$$CheckoutLinkUpdateImplCopyWithImpl<$Res>
           ? _value.allow_discount_codes
           : allow_discount_codes // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      product_price_id: freezed == product_price_id
-          ? _value.product_price_id
-          : product_price_id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      require_billing_address: freezed == require_billing_address
+          ? _value.require_billing_address
+          : require_billing_address // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -164,6 +212,10 @@ class __$$CheckoutLinkUpdateImplCopyWithImpl<$Res>
       success_url: freezed == success_url
           ? _value.success_url
           : success_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      return_url: freezed == return_url
+          ? _value.return_url
+          : return_url // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -173,32 +225,53 @@ class __$$CheckoutLinkUpdateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CheckoutLinkUpdateImpl implements _CheckoutLinkUpdate {
   const _$CheckoutLinkUpdateImpl(
-      {this.metadata,
+      {this.trial_interval,
+      this.trial_interval_count,
+      final Map<String, dynamic>? metadata,
+      this.products,
       this.label,
       this.allow_discount_codes,
-      this.product_price_id,
+      this.require_billing_address,
       this.discount_id,
-      this.success_url});
+      this.success_url,
+      this.return_url})
+      : _metadata = metadata;
 
   factory _$CheckoutLinkUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$CheckoutLinkUpdateImplFromJson(json);
 
   @override
-  final dynamic? metadata;
+  final dynamic? trial_interval;
+  @override
+  final dynamic? trial_interval_count;
+  final Map<String, dynamic>? _metadata;
+  @override
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  final dynamic? products;
   @override
   final String? label;
   @override
   final dynamic? allow_discount_codes;
   @override
-  final String? product_price_id;
+  final dynamic? require_billing_address;
   @override
   final String? discount_id;
   @override
   final String? success_url;
+  @override
+  final String? return_url;
 
   @override
   String toString() {
-    return 'CheckoutLinkUpdate(metadata: $metadata, label: $label, allow_discount_codes: $allow_discount_codes, product_price_id: $product_price_id, discount_id: $discount_id, success_url: $success_url)';
+    return 'CheckoutLinkUpdate(trial_interval: $trial_interval, trial_interval_count: $trial_interval_count, metadata: $metadata, products: $products, label: $label, allow_discount_codes: $allow_discount_codes, require_billing_address: $require_billing_address, discount_id: $discount_id, success_url: $success_url, return_url: $return_url)';
   }
 
   @override
@@ -206,28 +279,39 @@ class _$CheckoutLinkUpdateImpl implements _CheckoutLinkUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CheckoutLinkUpdateImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality()
+                .equals(other.trial_interval, trial_interval) &&
+            const DeepCollectionEquality()
+                .equals(other.trial_interval_count, trial_interval_count) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            const DeepCollectionEquality().equals(other.products, products) &&
             (identical(other.label, label) || other.label == label) &&
             const DeepCollectionEquality()
                 .equals(other.allow_discount_codes, allow_discount_codes) &&
-            (identical(other.product_price_id, product_price_id) ||
-                other.product_price_id == product_price_id) &&
+            const DeepCollectionEquality().equals(
+                other.require_billing_address, require_billing_address) &&
             (identical(other.discount_id, discount_id) ||
                 other.discount_id == discount_id) &&
             (identical(other.success_url, success_url) ||
-                other.success_url == success_url));
+                other.success_url == success_url) &&
+            (identical(other.return_url, return_url) ||
+                other.return_url == return_url));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(trial_interval),
+      const DeepCollectionEquality().hash(trial_interval_count),
+      const DeepCollectionEquality().hash(_metadata),
+      const DeepCollectionEquality().hash(products),
       label,
       const DeepCollectionEquality().hash(allow_discount_codes),
-      product_price_id,
+      const DeepCollectionEquality().hash(require_billing_address),
       discount_id,
-      success_url);
+      success_url,
+      return_url);
 
   /// Create a copy of CheckoutLinkUpdate
   /// with the given fields replaced by the non-null parameter values.
@@ -248,28 +332,40 @@ class _$CheckoutLinkUpdateImpl implements _CheckoutLinkUpdate {
 
 abstract class _CheckoutLinkUpdate implements CheckoutLinkUpdate {
   const factory _CheckoutLinkUpdate(
-      {final dynamic? metadata,
+      {final dynamic? trial_interval,
+      final dynamic? trial_interval_count,
+      final Map<String, dynamic>? metadata,
+      final dynamic? products,
       final String? label,
       final dynamic? allow_discount_codes,
-      final String? product_price_id,
+      final dynamic? require_billing_address,
       final String? discount_id,
-      final String? success_url}) = _$CheckoutLinkUpdateImpl;
+      final String? success_url,
+      final String? return_url}) = _$CheckoutLinkUpdateImpl;
 
   factory _CheckoutLinkUpdate.fromJson(Map<String, dynamic> json) =
       _$CheckoutLinkUpdateImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  dynamic? get trial_interval;
+  @override
+  dynamic? get trial_interval_count;
+  @override
+  Map<String, dynamic>? get metadata;
+  @override
+  dynamic? get products;
   @override
   String? get label;
   @override
   dynamic? get allow_discount_codes;
   @override
-  String? get product_price_id;
+  dynamic? get require_billing_address;
   @override
   String? get discount_id;
   @override
   String? get success_url;
+  @override
+  String? get return_url;
 
   /// Create a copy of CheckoutLinkUpdate
   /// with the given fields replaced by the non-null parameter values.

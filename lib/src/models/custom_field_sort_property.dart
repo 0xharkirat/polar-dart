@@ -1,10 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum CustomFieldSortProperty {
+  @JsonValue('created_at')
   created_at,
-  _created_at,
+  @JsonValue('-created_at')
+  minus_created_at,
+  @JsonValue('slug')
   slug,
-  _slug,
+  @JsonValue('-slug')
+  minus_slug,
+  @JsonValue('name')
   name,
-  _name,
+  @JsonValue('-name')
+  minus_name,
+  @JsonValue('type')
   type,
-  _type,
+  @JsonValue('-type')
+  minus_type,
 }

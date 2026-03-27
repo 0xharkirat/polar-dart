@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import '../models/list_resource_o_auth2_client.dart';
 import '../models/o_auth2_client_configuration.dart';
 import '../models/o_auth2_client_configuration_update.dart';
 import '../models/token_response.dart';
@@ -12,22 +11,6 @@ class Oauth2Api {
 
   Oauth2Api(this._dio);
 
-
-  Future<ListResourceOAuth2Client> oauth2ClientsList({int page = 1, int limit = 10}) async {
-    try {
-      final response = await _dio.get(
-        '/v1/oauth2/',
-        queryParameters: { if (page != null) 'page': page, if (limit != null) 'limit': limit },
-      );
-      return ListResourceOAuth2Client.fromJson(response.data);
-    } catch (e) {
-      if (e is DioException) {
-       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
-
-      }
-      throw Exception('Unexpected Error: $e');
-    }
-  }
 
   Future<dynamic> oauth2ClientsOauth2CreateClient({required OAuth2ClientConfiguration body, }) async {
     try {

@@ -67,10 +67,14 @@ class DartClassGenerator {
     } else {
       buffer.writeln('  const factory $className({');
       classData['fields'].forEach((name, type) {
+        final fieldName = Common.sanitizeFieldIdentifier(name);
+        if (fieldName != name) {
+          buffer.writeln("    @JsonKey(name: '$name')");
+        }
         if (classData['requiredFields'].contains(name)) {
-          buffer.writeln('    required $type $name,');
+          buffer.writeln('    required $type $fieldName,');
         } else {
-          buffer.writeln('    $type $name,');
+          buffer.writeln('    $type $fieldName,');
         }
       });
       buffer.writeln('  }) = _$className;');
@@ -89,10 +93,14 @@ class DartClassGenerator {
     final buffer = StringBuffer();
     final enumName = Common.toUpperCamelCase(enumData['className']);
 
+    buffer.writeln("import 'package:freezed_annotation/freezed_annotation.dart';");
+    buffer.writeln();
     buffer.writeln('enum $enumName {');
     for (final value in enumData['values']) {
-      buffer.writeln(
-          '  ${value.toString().replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_')},');
+      final rawValue = value.toString();
+      final enumValue = Common.sanitizeEnumIdentifier(rawValue);
+      buffer.writeln("  @JsonValue('$rawValue')");
+      buffer.writeln('  $enumValue,');
     }
     buffer.writeln('}');
 

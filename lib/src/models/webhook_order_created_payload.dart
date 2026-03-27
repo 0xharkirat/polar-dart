@@ -9,6 +9,7 @@ part 'webhook_order_created_payload.freezed.dart';
 class WebhookOrderCreatedPayload with _$WebhookOrderCreatedPayload {
   const factory WebhookOrderCreatedPayload({
     required String type,
+    required String timestamp,
     required Order data,
   }) = _WebhookOrderCreatedPayload;
 

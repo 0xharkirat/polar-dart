@@ -11,7 +11,8 @@ class AttachedCustomField with _$AttachedCustomField {
     required String custom_field_id,
     required CustomField custom_field,
     required int order,
-    required bool required,
+    @JsonKey(name: 'required')
+    required bool required_field,
   }) = _AttachedCustomField;
 
   factory AttachedCustomField.fromJson(Map<String, dynamic> json) => _$AttachedCustomFieldFromJson(json);

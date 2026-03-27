@@ -25,10 +25,11 @@ mixin _$DiscountFixedOnceForeverDurationBase {
   DiscountType get type => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   String get currency => throw _privateConstructorUsedError;
+  Map<String, dynamic> get amounts => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
   String? get starts_at => throw _privateConstructorUsedError;
@@ -61,10 +62,11 @@ abstract class $DiscountFixedOnceForeverDurationBaseCopyWith<$Res> {
       DiscountType type,
       int amount,
       String currency,
+      Map<String, dynamic> amounts,
       String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String name,
       String? code,
       String? starts_at,
@@ -72,6 +74,8 @@ abstract class $DiscountFixedOnceForeverDurationBaseCopyWith<$Res> {
       dynamic max_redemptions,
       int redemptions_count,
       String organization_id});
+
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -94,6 +98,7 @@ class _$DiscountFixedOnceForeverDurationBaseCopyWithImpl<$Res,
     Object? type = null,
     Object? amount = null,
     Object? currency = null,
+    Object? amounts = null,
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
@@ -123,6 +128,10 @@ class _$DiscountFixedOnceForeverDurationBaseCopyWithImpl<$Res,
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      amounts: null == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -138,7 +147,7 @@ class _$DiscountFixedOnceForeverDurationBaseCopyWithImpl<$Res,
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -169,6 +178,16 @@ class _$DiscountFixedOnceForeverDurationBaseCopyWithImpl<$Res,
               as String,
     ) as $Val);
   }
+
+  /// Create a copy of DiscountFixedOnceForeverDurationBase
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -185,10 +204,11 @@ abstract class _$$DiscountFixedOnceForeverDurationBaseImplCopyWith<$Res>
       DiscountType type,
       int amount,
       String currency,
+      Map<String, dynamic> amounts,
       String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String name,
       String? code,
       String? starts_at,
@@ -196,6 +216,9 @@ abstract class _$$DiscountFixedOnceForeverDurationBaseImplCopyWith<$Res>
       dynamic max_redemptions,
       int redemptions_count,
       String organization_id});
+
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -217,6 +240,7 @@ class __$$DiscountFixedOnceForeverDurationBaseImplCopyWithImpl<$Res>
     Object? type = null,
     Object? amount = null,
     Object? currency = null,
+    Object? amounts = null,
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
@@ -246,6 +270,10 @@ class __$$DiscountFixedOnceForeverDurationBaseImplCopyWithImpl<$Res>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      amounts: null == amounts
+          ? _value._amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -259,9 +287,9 @@ class __$$DiscountFixedOnceForeverDurationBaseImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -303,10 +331,11 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
       required this.type,
       required this.amount,
       required this.currency,
+      required final Map<String, dynamic> amounts,
       required this.created_at,
       required this.modified_at,
       required this.id,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       required this.name,
       required this.code,
       required this.starts_at,
@@ -314,7 +343,7 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
       required this.max_redemptions,
       required this.redemptions_count,
       required this.organization_id})
-      : _metadata = metadata;
+      : _amounts = amounts;
 
   factory _$DiscountFixedOnceForeverDurationBaseImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -328,20 +357,22 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
   final int amount;
   @override
   final String currency;
+  final Map<String, dynamic> _amounts;
+  @override
+  Map<String, dynamic> get amounts {
+    if (_amounts is EqualUnmodifiableMapView) return _amounts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_amounts);
+  }
+
   @override
   final String created_at;
   @override
   final String? modified_at;
   @override
   final String id;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final String name;
   @override
@@ -359,7 +390,7 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
 
   @override
   String toString() {
-    return 'DiscountFixedOnceForeverDurationBase(duration: $duration, type: $type, amount: $amount, currency: $currency, created_at: $created_at, modified_at: $modified_at, id: $id, metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, redemptions_count: $redemptions_count, organization_id: $organization_id)';
+    return 'DiscountFixedOnceForeverDurationBase(duration: $duration, type: $type, amount: $amount, currency: $currency, amounts: $amounts, created_at: $created_at, modified_at: $modified_at, id: $id, metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, redemptions_count: $redemptions_count, organization_id: $organization_id)';
   }
 
   @override
@@ -373,12 +404,14 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
+            const DeepCollectionEquality().equals(other._amounts, _amounts) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.starts_at, starts_at) ||
@@ -400,10 +433,11 @@ class _$DiscountFixedOnceForeverDurationBaseImpl
       type,
       amount,
       currency,
+      const DeepCollectionEquality().hash(_amounts),
       created_at,
       modified_at,
       id,
-      const DeepCollectionEquality().hash(_metadata),
+      metadata,
       name,
       code,
       starts_at,
@@ -437,10 +471,11 @@ abstract class _DiscountFixedOnceForeverDurationBase
           required final DiscountType type,
           required final int amount,
           required final String currency,
+          required final Map<String, dynamic> amounts,
           required final String created_at,
           required final String? modified_at,
           required final String id,
-          required final Map<String, dynamic> metadata,
+          required final MetadataOutputType metadata,
           required final String name,
           required final String? code,
           required final String? starts_at,
@@ -463,13 +498,15 @@ abstract class _DiscountFixedOnceForeverDurationBase
   @override
   String get currency;
   @override
+  Map<String, dynamic> get amounts;
+  @override
   String get created_at;
   @override
   String? get modified_at;
   @override
   String get id;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   String get name;
   @override

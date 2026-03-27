@@ -12,8 +12,9 @@ _$DiscountFixedOnceForeverDurationCreateImpl
         _$DiscountFixedOnceForeverDurationCreateImpl(
           duration: $enumDecode(_$DiscountDurationEnumMap, json['duration']),
           type: $enumDecode(_$DiscountTypeEnumMap, json['type']),
-          amount: (json['amount'] as num).toInt(),
-          currency: json['currency'] as String?,
+          amount: json['amount'],
+          currency: json['currency'],
+          amounts: json['amounts'],
           metadata: json['metadata'] as Map<String, dynamic>?,
           name: json['name'] as String,
           code: json['code'] as String?,
@@ -29,8 +30,9 @@ Map<String, dynamic> _$$DiscountFixedOnceForeverDurationCreateImplToJson(
     <String, dynamic>{
       'duration': _$DiscountDurationEnumMap[instance.duration]!,
       'type': _$DiscountTypeEnumMap[instance.type]!,
-      'amount': instance.amount,
+      if (instance.amount case final value?) 'amount': value,
       if (instance.currency case final value?) 'currency': value,
+      if (instance.amounts case final value?) 'amounts': value,
       if (instance.metadata case final value?) 'metadata': value,
       'name': instance.name,
       if (instance.code case final value?) 'code': value,

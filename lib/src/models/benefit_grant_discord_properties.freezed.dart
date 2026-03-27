@@ -24,6 +24,7 @@ mixin _$BenefitGrantDiscordProperties {
   String? get account_id => throw _privateConstructorUsedError;
   String? get guild_id => throw _privateConstructorUsedError;
   String? get role_id => throw _privateConstructorUsedError;
+  String? get granted_account_id => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitGrantDiscordProperties to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +44,11 @@ abstract class $BenefitGrantDiscordPropertiesCopyWith<$Res> {
       _$BenefitGrantDiscordPropertiesCopyWithImpl<$Res,
           BenefitGrantDiscordProperties>;
   @useResult
-  $Res call({String? account_id, String? guild_id, String? role_id});
+  $Res call(
+      {String? account_id,
+      String? guild_id,
+      String? role_id,
+      String? granted_account_id});
 }
 
 /// @nodoc
@@ -65,6 +70,7 @@ class _$BenefitGrantDiscordPropertiesCopyWithImpl<$Res,
     Object? account_id = freezed,
     Object? guild_id = freezed,
     Object? role_id = freezed,
+    Object? granted_account_id = freezed,
   }) {
     return _then(_value.copyWith(
       account_id: freezed == account_id
@@ -79,6 +85,10 @@ class _$BenefitGrantDiscordPropertiesCopyWithImpl<$Res,
           ? _value.role_id
           : role_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      granted_account_id: freezed == granted_account_id
+          ? _value.granted_account_id
+          : granted_account_id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -92,7 +102,11 @@ abstract class _$$BenefitGrantDiscordPropertiesImplCopyWith<$Res>
       __$$BenefitGrantDiscordPropertiesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? account_id, String? guild_id, String? role_id});
+  $Res call(
+      {String? account_id,
+      String? guild_id,
+      String? role_id,
+      String? granted_account_id});
 }
 
 /// @nodoc
@@ -113,6 +127,7 @@ class __$$BenefitGrantDiscordPropertiesImplCopyWithImpl<$Res>
     Object? account_id = freezed,
     Object? guild_id = freezed,
     Object? role_id = freezed,
+    Object? granted_account_id = freezed,
   }) {
     return _then(_$BenefitGrantDiscordPropertiesImpl(
       account_id: freezed == account_id
@@ -127,6 +142,10 @@ class __$$BenefitGrantDiscordPropertiesImplCopyWithImpl<$Res>
           ? _value.role_id
           : role_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      granted_account_id: freezed == granted_account_id
+          ? _value.granted_account_id
+          : granted_account_id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -136,7 +155,7 @@ class __$$BenefitGrantDiscordPropertiesImplCopyWithImpl<$Res>
 class _$BenefitGrantDiscordPropertiesImpl
     implements _BenefitGrantDiscordProperties {
   const _$BenefitGrantDiscordPropertiesImpl(
-      {this.account_id, this.guild_id, this.role_id});
+      {this.account_id, this.guild_id, this.role_id, this.granted_account_id});
 
   factory _$BenefitGrantDiscordPropertiesImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -148,10 +167,12 @@ class _$BenefitGrantDiscordPropertiesImpl
   final String? guild_id;
   @override
   final String? role_id;
+  @override
+  final String? granted_account_id;
 
   @override
   String toString() {
-    return 'BenefitGrantDiscordProperties(account_id: $account_id, guild_id: $guild_id, role_id: $role_id)';
+    return 'BenefitGrantDiscordProperties(account_id: $account_id, guild_id: $guild_id, role_id: $role_id, granted_account_id: $granted_account_id)';
   }
 
   @override
@@ -163,12 +184,15 @@ class _$BenefitGrantDiscordPropertiesImpl
                 other.account_id == account_id) &&
             (identical(other.guild_id, guild_id) ||
                 other.guild_id == guild_id) &&
-            (identical(other.role_id, role_id) || other.role_id == role_id));
+            (identical(other.role_id, role_id) || other.role_id == role_id) &&
+            (identical(other.granted_account_id, granted_account_id) ||
+                other.granted_account_id == granted_account_id));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, account_id, guild_id, role_id);
+  int get hashCode => Object.hash(
+      runtimeType, account_id, guild_id, role_id, granted_account_id);
 
   /// Create a copy of BenefitGrantDiscordProperties
   /// with the given fields replaced by the non-null parameter values.
@@ -193,7 +217,8 @@ abstract class _BenefitGrantDiscordProperties
   const factory _BenefitGrantDiscordProperties(
       {final String? account_id,
       final String? guild_id,
-      final String? role_id}) = _$BenefitGrantDiscordPropertiesImpl;
+      final String? role_id,
+      final String? granted_account_id}) = _$BenefitGrantDiscordPropertiesImpl;
 
   factory _BenefitGrantDiscordProperties.fromJson(Map<String, dynamic> json) =
       _$BenefitGrantDiscordPropertiesImpl.fromJson;
@@ -204,6 +229,8 @@ abstract class _BenefitGrantDiscordProperties
   String? get guild_id;
   @override
   String? get role_id;
+  @override
+  String? get granted_account_id;
 
   /// Create a copy of BenefitGrantDiscordProperties
   /// with the given fields replaced by the non-null parameter values.

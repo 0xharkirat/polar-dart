@@ -18,9 +18,12 @@ _$BenefitGrantImpl _$$BenefitGrantImplFromJson(Map<String, dynamic> json) =>
       subscription_id: json['subscription_id'] as String?,
       order_id: json['order_id'] as String?,
       customer_id: json['customer_id'] as String,
-      user_id: json['user_id'] as String,
+      member_id: json['member_id'] as String?,
       benefit_id: json['benefit_id'] as String,
+      error: json['error'],
       customer: Customer.fromJson(json['customer'] as Map<String, dynamic>),
+      member: json['member'],
+      benefit: Benefit.fromJson(json['benefit'] as Map<String, dynamic>),
       properties: json['properties'],
     );
 
@@ -36,8 +39,11 @@ Map<String, dynamic> _$$BenefitGrantImplToJson(_$BenefitGrantImpl instance) =>
       if (instance.subscription_id case final value?) 'subscription_id': value,
       if (instance.order_id case final value?) 'order_id': value,
       'customer_id': instance.customer_id,
-      'user_id': instance.user_id,
+      if (instance.member_id case final value?) 'member_id': value,
       'benefit_id': instance.benefit_id,
+      if (instance.error case final value?) 'error': value,
       'customer': instance.customer,
+      if (instance.member case final value?) 'member': value,
+      'benefit': instance.benefit,
       if (instance.properties case final value?) 'properties': value,
     };

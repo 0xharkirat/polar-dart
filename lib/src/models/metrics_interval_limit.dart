@@ -6,6 +6,7 @@ part 'metrics_interval_limit.freezed.dart';
 @freezed
 class MetricsIntervalLimit with _$MetricsIntervalLimit {
   const factory MetricsIntervalLimit({
+    required int min_days,
     required int max_days,
   }) = _MetricsIntervalLimit;
 

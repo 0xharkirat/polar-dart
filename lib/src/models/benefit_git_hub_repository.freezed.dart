@@ -21,14 +21,15 @@ BenefitGitHubRepository _$BenefitGitHubRepositoryFromJson(
 
 /// @nodoc
 mixin _$BenefitGitHubRepository {
+  String get id => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get selectable => throw _privateConstructorUsedError;
   bool get deletable => throw _privateConstructorUsedError;
   String get organization_id => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   BenefitGitHubRepositoryProperties get properties =>
       throw _privateConstructorUsedError;
 
@@ -49,16 +50,18 @@ abstract class $BenefitGitHubRepositoryCopyWith<$Res> {
       _$BenefitGitHubRepositoryCopyWithImpl<$Res, BenefitGitHubRepository>;
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
+      MetadataOutputType metadata,
       BenefitGitHubRepositoryProperties properties});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $BenefitGitHubRepositoryPropertiesCopyWith<$Res> get properties;
 }
 
@@ -78,17 +81,22 @@ class _$BenefitGitHubRepositoryCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -97,10 +105,6 @@ class _$BenefitGitHubRepositoryCopyWithImpl<$Res,
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -121,11 +125,25 @@ class _$BenefitGitHubRepositoryCopyWithImpl<$Res,
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as BenefitGitHubRepositoryProperties,
     ) as $Val);
+  }
+
+  /// Create a copy of BenefitGitHubRepository
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 
   /// Create a copy of BenefitGitHubRepository
@@ -150,16 +168,19 @@ abstract class _$$BenefitGitHubRepositoryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
+      MetadataOutputType metadata,
       BenefitGitHubRepositoryProperties properties});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $BenefitGitHubRepositoryPropertiesCopyWith<$Res> get properties;
 }
@@ -179,17 +200,22 @@ class __$$BenefitGitHubRepositoryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
   }) {
     return _then(_$BenefitGitHubRepositoryImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -198,10 +224,6 @@ class __$$BenefitGitHubRepositoryImplCopyWithImpl<$Res>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -222,6 +244,10 @@ class __$$BenefitGitHubRepositoryImplCopyWithImpl<$Res>
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
@@ -234,25 +260,26 @@ class __$$BenefitGitHubRepositoryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitGitHubRepositoryImpl implements _BenefitGitHubRepository {
   const _$BenefitGitHubRepositoryImpl(
-      {required this.created_at,
+      {required this.id,
+      required this.created_at,
       required this.modified_at,
-      required this.id,
       required this.type,
       required this.description,
       required this.selectable,
       required this.deletable,
       required this.organization_id,
+      required this.metadata,
       required this.properties});
 
   factory _$BenefitGitHubRepositoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitGitHubRepositoryImplFromJson(json);
 
   @override
+  final String id;
+  @override
   final String created_at;
   @override
   final String? modified_at;
-  @override
-  final String id;
   @override
   final String type;
   @override
@@ -264,11 +291,13 @@ class _$BenefitGitHubRepositoryImpl implements _BenefitGitHubRepository {
   @override
   final String organization_id;
   @override
+  final MetadataOutputType metadata;
+  @override
   final BenefitGitHubRepositoryProperties properties;
 
   @override
   String toString() {
-    return 'BenefitGitHubRepository(created_at: $created_at, modified_at: $modified_at, id: $id, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, properties: $properties)';
+    return 'BenefitGitHubRepository(id: $id, created_at: $created_at, modified_at: $modified_at, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, metadata: $metadata, properties: $properties)';
   }
 
   @override
@@ -276,11 +305,11 @@ class _$BenefitGitHubRepositoryImpl implements _BenefitGitHubRepository {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitGitHubRepositoryImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -290,14 +319,26 @@ class _$BenefitGitHubRepositoryImpl implements _BenefitGitHubRepository {
                 other.deletable == deletable) &&
             (identical(other.organization_id, organization_id) ||
                 other.organization_id == organization_id) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.properties, properties) ||
                 other.properties == properties));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, created_at, modified_at, id,
-      type, description, selectable, deletable, organization_id, properties);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      created_at,
+      modified_at,
+      type,
+      description,
+      selectable,
+      deletable,
+      organization_id,
+      metadata,
+      properties);
 
   /// Create a copy of BenefitGitHubRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -318,14 +359,15 @@ class _$BenefitGitHubRepositoryImpl implements _BenefitGitHubRepository {
 
 abstract class _BenefitGitHubRepository implements BenefitGitHubRepository {
   const factory _BenefitGitHubRepository(
-          {required final String created_at,
+          {required final String id,
+          required final String created_at,
           required final String? modified_at,
-          required final String id,
           required final String type,
           required final String description,
           required final bool selectable,
           required final bool deletable,
           required final String organization_id,
+          required final MetadataOutputType metadata,
           required final BenefitGitHubRepositoryProperties properties}) =
       _$BenefitGitHubRepositoryImpl;
 
@@ -333,11 +375,11 @@ abstract class _BenefitGitHubRepository implements BenefitGitHubRepository {
       _$BenefitGitHubRepositoryImpl.fromJson;
 
   @override
+  String get id;
+  @override
   String get created_at;
   @override
   String? get modified_at;
-  @override
-  String get id;
   @override
   String get type;
   @override
@@ -348,6 +390,8 @@ abstract class _BenefitGitHubRepository implements BenefitGitHubRepository {
   bool get deletable;
   @override
   String get organization_id;
+  @override
+  MetadataOutputType get metadata;
   @override
   BenefitGitHubRepositoryProperties get properties;
 

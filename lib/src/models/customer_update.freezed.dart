@@ -20,11 +20,14 @@ CustomerUpdate _$CustomerUpdateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CustomerUpdate {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   dynamic? get billing_address => throw _privateConstructorUsedError;
-  dynamic? get tax_id => throw _privateConstructorUsedError;
+  String? get tax_id => throw _privateConstructorUsedError;
+  String? get locale => throw _privateConstructorUsedError;
+  String? get external_id => throw _privateConstructorUsedError;
+  dynamic? get type => throw _privateConstructorUsedError;
 
   /// Serializes this CustomerUpdate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,11 +46,14 @@ abstract class $CustomerUpdateCopyWith<$Res> {
       _$CustomerUpdateCopyWithImpl<$Res, CustomerUpdate>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? email,
       String? name,
       dynamic? billing_address,
-      dynamic? tax_id});
+      String? tax_id,
+      String? locale,
+      String? external_id,
+      dynamic? type});
 }
 
 /// @nodoc
@@ -70,12 +76,15 @@ class _$CustomerUpdateCopyWithImpl<$Res, $Val extends CustomerUpdate>
     Object? name = freezed,
     Object? billing_address = freezed,
     Object? tax_id = freezed,
+    Object? locale = freezed,
+    Object? external_id = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -91,6 +100,18 @@ class _$CustomerUpdateCopyWithImpl<$Res, $Val extends CustomerUpdate>
       tax_id: freezed == tax_id
           ? _value.tax_id
           : tax_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      external_id: freezed == external_id
+          ? _value.external_id
+          : external_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as dynamic?,
     ) as $Val);
   }
@@ -105,11 +126,14 @@ abstract class _$$CustomerUpdateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? email,
       String? name,
       dynamic? billing_address,
-      dynamic? tax_id});
+      String? tax_id,
+      String? locale,
+      String? external_id,
+      dynamic? type});
 }
 
 /// @nodoc
@@ -130,12 +154,15 @@ class __$$CustomerUpdateImplCopyWithImpl<$Res>
     Object? name = freezed,
     Object? billing_address = freezed,
     Object? tax_id = freezed,
+    Object? locale = freezed,
+    Object? external_id = freezed,
+    Object? type = freezed,
   }) {
     return _then(_$CustomerUpdateImpl(
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -151,6 +178,18 @@ class __$$CustomerUpdateImplCopyWithImpl<$Res>
       tax_id: freezed == tax_id
           ? _value.tax_id
           : tax_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locale: freezed == locale
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as String?,
+      external_id: freezed == external_id
+          ? _value.external_id
+          : external_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as dynamic?,
     ));
   }
@@ -160,17 +199,29 @@ class __$$CustomerUpdateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerUpdateImpl implements _CustomerUpdate {
   const _$CustomerUpdateImpl(
-      {this.metadata,
+      {final Map<String, dynamic>? metadata,
       this.email,
       this.name,
       this.billing_address,
-      this.tax_id});
+      this.tax_id,
+      this.locale,
+      this.external_id,
+      this.type})
+      : _metadata = metadata;
 
   factory _$CustomerUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomerUpdateImplFromJson(json);
 
+  final Map<String, dynamic>? _metadata;
   @override
-  final dynamic? metadata;
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? email;
   @override
@@ -178,11 +229,17 @@ class _$CustomerUpdateImpl implements _CustomerUpdate {
   @override
   final dynamic? billing_address;
   @override
-  final dynamic? tax_id;
+  final String? tax_id;
+  @override
+  final String? locale;
+  @override
+  final String? external_id;
+  @override
+  final dynamic? type;
 
   @override
   String toString() {
-    return 'CustomerUpdate(metadata: $metadata, email: $email, name: $name, billing_address: $billing_address, tax_id: $tax_id)';
+    return 'CustomerUpdate(metadata: $metadata, email: $email, name: $name, billing_address: $billing_address, tax_id: $tax_id, locale: $locale, external_id: $external_id, type: $type)';
   }
 
   @override
@@ -190,23 +247,30 @@ class _$CustomerUpdateImpl implements _CustomerUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomerUpdateImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other.billing_address, billing_address) &&
-            const DeepCollectionEquality().equals(other.tax_id, tax_id));
+            (identical(other.tax_id, tax_id) || other.tax_id == tax_id) &&
+            (identical(other.locale, locale) || other.locale == locale) &&
+            (identical(other.external_id, external_id) ||
+                other.external_id == external_id) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(_metadata),
       email,
       name,
       const DeepCollectionEquality().hash(billing_address),
-      const DeepCollectionEquality().hash(tax_id));
+      tax_id,
+      locale,
+      external_id,
+      const DeepCollectionEquality().hash(type));
 
   /// Create a copy of CustomerUpdate
   /// with the given fields replaced by the non-null parameter values.
@@ -227,17 +291,20 @@ class _$CustomerUpdateImpl implements _CustomerUpdate {
 
 abstract class _CustomerUpdate implements CustomerUpdate {
   const factory _CustomerUpdate(
-      {final dynamic? metadata,
+      {final Map<String, dynamic>? metadata,
       final String? email,
       final String? name,
       final dynamic? billing_address,
-      final dynamic? tax_id}) = _$CustomerUpdateImpl;
+      final String? tax_id,
+      final String? locale,
+      final String? external_id,
+      final dynamic? type}) = _$CustomerUpdateImpl;
 
   factory _CustomerUpdate.fromJson(Map<String, dynamic> json) =
       _$CustomerUpdateImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  Map<String, dynamic>? get metadata;
   @override
   String? get email;
   @override
@@ -245,7 +312,13 @@ abstract class _CustomerUpdate implements CustomerUpdate {
   @override
   dynamic? get billing_address;
   @override
-  dynamic? get tax_id;
+  String? get tax_id;
+  @override
+  String? get locale;
+  @override
+  String? get external_id;
+  @override
+  dynamic? get type;
 
   /// Create a copy of CustomerUpdate
   /// with the given fields replaced by the non-null parameter values.

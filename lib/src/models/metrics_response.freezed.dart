@@ -21,6 +21,7 @@ MetricsResponse _$MetricsResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MetricsResponse {
   List<MetricPeriod> get periods => throw _privateConstructorUsedError;
+  MetricsTotals get totals => throw _privateConstructorUsedError;
   Metrics get metrics => throw _privateConstructorUsedError;
 
   /// Serializes this MetricsResponse to a JSON map.
@@ -39,8 +40,10 @@ abstract class $MetricsResponseCopyWith<$Res> {
           MetricsResponse value, $Res Function(MetricsResponse) then) =
       _$MetricsResponseCopyWithImpl<$Res, MetricsResponse>;
   @useResult
-  $Res call({List<MetricPeriod> periods, Metrics metrics});
+  $Res call(
+      {List<MetricPeriod> periods, MetricsTotals totals, Metrics metrics});
 
+  $MetricsTotalsCopyWith<$Res> get totals;
   $MetricsCopyWith<$Res> get metrics;
 }
 
@@ -60,6 +63,7 @@ class _$MetricsResponseCopyWithImpl<$Res, $Val extends MetricsResponse>
   @override
   $Res call({
     Object? periods = null,
+    Object? totals = null,
     Object? metrics = null,
   }) {
     return _then(_value.copyWith(
@@ -67,11 +71,25 @@ class _$MetricsResponseCopyWithImpl<$Res, $Val extends MetricsResponse>
           ? _value.periods
           : periods // ignore: cast_nullable_to_non_nullable
               as List<MetricPeriod>,
+      totals: null == totals
+          ? _value.totals
+          : totals // ignore: cast_nullable_to_non_nullable
+              as MetricsTotals,
       metrics: null == metrics
           ? _value.metrics
           : metrics // ignore: cast_nullable_to_non_nullable
               as Metrics,
     ) as $Val);
+  }
+
+  /// Create a copy of MetricsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetricsTotalsCopyWith<$Res> get totals {
+    return $MetricsTotalsCopyWith<$Res>(_value.totals, (value) {
+      return _then(_value.copyWith(totals: value) as $Val);
+    });
   }
 
   /// Create a copy of MetricsResponse
@@ -93,8 +111,11 @@ abstract class _$$MetricsResponseImplCopyWith<$Res>
       __$$MetricsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<MetricPeriod> periods, Metrics metrics});
+  $Res call(
+      {List<MetricPeriod> periods, MetricsTotals totals, Metrics metrics});
 
+  @override
+  $MetricsTotalsCopyWith<$Res> get totals;
   @override
   $MetricsCopyWith<$Res> get metrics;
 }
@@ -113,6 +134,7 @@ class __$$MetricsResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? periods = null,
+    Object? totals = null,
     Object? metrics = null,
   }) {
     return _then(_$MetricsResponseImpl(
@@ -120,6 +142,10 @@ class __$$MetricsResponseImplCopyWithImpl<$Res>
           ? _value._periods
           : periods // ignore: cast_nullable_to_non_nullable
               as List<MetricPeriod>,
+      totals: null == totals
+          ? _value.totals
+          : totals // ignore: cast_nullable_to_non_nullable
+              as MetricsTotals,
       metrics: null == metrics
           ? _value.metrics
           : metrics // ignore: cast_nullable_to_non_nullable
@@ -132,7 +158,9 @@ class __$$MetricsResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MetricsResponseImpl implements _MetricsResponse {
   const _$MetricsResponseImpl(
-      {required final List<MetricPeriod> periods, required this.metrics})
+      {required final List<MetricPeriod> periods,
+      required this.totals,
+      required this.metrics})
       : _periods = periods;
 
   factory _$MetricsResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -147,11 +175,13 @@ class _$MetricsResponseImpl implements _MetricsResponse {
   }
 
   @override
+  final MetricsTotals totals;
+  @override
   final Metrics metrics;
 
   @override
   String toString() {
-    return 'MetricsResponse(periods: $periods, metrics: $metrics)';
+    return 'MetricsResponse(periods: $periods, totals: $totals, metrics: $metrics)';
   }
 
   @override
@@ -160,13 +190,14 @@ class _$MetricsResponseImpl implements _MetricsResponse {
         (other.runtimeType == runtimeType &&
             other is _$MetricsResponseImpl &&
             const DeepCollectionEquality().equals(other._periods, _periods) &&
+            (identical(other.totals, totals) || other.totals == totals) &&
             (identical(other.metrics, metrics) || other.metrics == metrics));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_periods), metrics);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_periods), totals, metrics);
 
   /// Create a copy of MetricsResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -188,6 +219,7 @@ class _$MetricsResponseImpl implements _MetricsResponse {
 abstract class _MetricsResponse implements MetricsResponse {
   const factory _MetricsResponse(
       {required final List<MetricPeriod> periods,
+      required final MetricsTotals totals,
       required final Metrics metrics}) = _$MetricsResponseImpl;
 
   factory _MetricsResponse.fromJson(Map<String, dynamic> json) =
@@ -195,6 +227,8 @@ abstract class _MetricsResponse implements MetricsResponse {
 
   @override
   List<MetricPeriod> get periods;
+  @override
+  MetricsTotals get totals;
   @override
   Metrics get metrics;
 

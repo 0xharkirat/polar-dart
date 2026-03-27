@@ -1,0 +1,35 @@
+import 'metadata_output_type.dart';
+import 'customer_state_subscription.dart';
+import 'customer_state_benefit_grant.dart';
+import 'customer_state_meter.dart';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'customer_state_team.g.dart';
+part 'customer_state_team.freezed.dart';
+
+@freezed
+class CustomerStateTeam with _$CustomerStateTeam {
+  const factory CustomerStateTeam({
+    required String id,
+    required String created_at,
+    required String? modified_at,
+    required MetadataOutputType metadata,
+    String? external_id,
+    String? email,
+    required bool email_verified,
+    required String type,
+    required String? name,
+    required dynamic billing_address,
+    required dynamic tax_id,
+    String? locale,
+    required String organization_id,
+    required String? deleted_at,
+    required List<CustomerStateSubscription> active_subscriptions,
+    required List<CustomerStateBenefitGrant> granted_benefits,
+    required List<CustomerStateMeter> active_meters,
+    required String avatar_url,
+  }) = _CustomerStateTeam;
+
+  factory CustomerStateTeam.fromJson(Map<String, dynamic> json) => _$CustomerStateTeamFromJson(json);
+}

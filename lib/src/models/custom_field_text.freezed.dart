@@ -23,7 +23,7 @@ mixin _$CustomFieldText {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -51,13 +51,14 @@ abstract class $CustomFieldTextCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String type,
       String slug,
       String name,
       String organization_id,
       CustomFieldTextProperties properties});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $CustomFieldTextPropertiesCopyWith<$Res> get properties;
 }
 
@@ -102,7 +103,7 @@ class _$CustomFieldTextCopyWithImpl<$Res, $Val extends CustomFieldText>
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -130,6 +131,16 @@ class _$CustomFieldTextCopyWithImpl<$Res, $Val extends CustomFieldText>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CustomFieldText
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
   $CustomFieldTextPropertiesCopyWith<$Res> get properties {
     return $CustomFieldTextPropertiesCopyWith<$Res>(_value.properties, (value) {
       return _then(_value.copyWith(properties: value) as $Val);
@@ -149,13 +160,15 @@ abstract class _$$CustomFieldTextImplCopyWith<$Res>
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String type,
       String slug,
       String name,
       String organization_id,
       CustomFieldTextProperties properties});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $CustomFieldTextPropertiesCopyWith<$Res> get properties;
 }
@@ -197,9 +210,9 @@ class __$$CustomFieldTextImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -231,13 +244,12 @@ class _$CustomFieldTextImpl implements _CustomFieldText {
       {required this.created_at,
       required this.modified_at,
       required this.id,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       required this.type,
       required this.slug,
       required this.name,
       required this.organization_id,
-      required this.properties})
-      : _metadata = metadata;
+      required this.properties});
 
   factory _$CustomFieldTextImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldTextImplFromJson(json);
@@ -248,14 +260,8 @@ class _$CustomFieldTextImpl implements _CustomFieldText {
   final String? modified_at;
   @override
   final String id;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final String type;
   @override
@@ -282,7 +288,8 @@ class _$CustomFieldTextImpl implements _CustomFieldText {
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.name, name) || other.name == name) &&
@@ -294,17 +301,8 @@ class _$CustomFieldTextImpl implements _CustomFieldText {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      created_at,
-      modified_at,
-      id,
-      const DeepCollectionEquality().hash(_metadata),
-      type,
-      slug,
-      name,
-      organization_id,
-      properties);
+  int get hashCode => Object.hash(runtimeType, created_at, modified_at, id,
+      metadata, type, slug, name, organization_id, properties);
 
   /// Create a copy of CustomFieldText
   /// with the given fields replaced by the non-null parameter values.
@@ -328,7 +326,7 @@ abstract class _CustomFieldText implements CustomFieldText {
           {required final String created_at,
           required final String? modified_at,
           required final String id,
-          required final Map<String, dynamic> metadata,
+          required final MetadataOutputType metadata,
           required final String type,
           required final String slug,
           required final String name,
@@ -346,7 +344,7 @@ abstract class _CustomFieldText implements CustomFieldText {
   @override
   String get id;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   String get type;
   @override

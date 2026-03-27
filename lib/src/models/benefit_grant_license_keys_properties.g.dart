@@ -10,6 +10,7 @@ _$BenefitGrantLicenseKeysPropertiesImpl
     _$$BenefitGrantLicenseKeysPropertiesImplFromJson(
             Map<String, dynamic> json) =>
         _$BenefitGrantLicenseKeysPropertiesImpl(
+          user_provided_key: json['user_provided_key'] as String?,
           license_key_id: json['license_key_id'] as String?,
           display_key: json['display_key'] as String?,
         );
@@ -17,6 +18,8 @@ _$BenefitGrantLicenseKeysPropertiesImpl
 Map<String, dynamic> _$$BenefitGrantLicenseKeysPropertiesImplToJson(
         _$BenefitGrantLicenseKeysPropertiesImpl instance) =>
     <String, dynamic>{
+      if (instance.user_provided_key case final value?)
+        'user_provided_key': value,
       if (instance.license_key_id case final value?) 'license_key_id': value,
       if (instance.display_key case final value?) 'display_key': value,
     };

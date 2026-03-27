@@ -9,39 +9,67 @@ part of 'checkout_product_create.dart';
 _$CheckoutProductCreateImpl _$$CheckoutProductCreateImplFromJson(
         Map<String, dynamic> json) =>
     _$CheckoutProductCreateImpl(
+      trial_interval: json['trial_interval'],
+      trial_interval_count: json['trial_interval_count'],
       metadata: json['metadata'] as Map<String, dynamic>?,
       custom_field_data: json['custom_field_data'] as Map<String, dynamic>?,
       discount_id: json['discount_id'] as String?,
       allow_discount_codes: json['allow_discount_codes'] as bool?,
+      require_billing_address: json['require_billing_address'] as bool?,
       amount: json['amount'],
+      seats: json['seats'],
+      min_seats: json['min_seats'],
+      max_seats: json['max_seats'],
+      allow_trial: json['allow_trial'] as bool?,
       customer_id: json['customer_id'] as String?,
+      is_business_customer: json['is_business_customer'] as bool?,
+      external_customer_id: json['external_customer_id'] as String?,
       customer_name: json['customer_name'] as String?,
       customer_email: json['customer_email'] as String?,
       customer_ip_address: json['customer_ip_address'] as String?,
+      customer_billing_name: json['customer_billing_name'] as String?,
       customer_billing_address: json['customer_billing_address'],
       customer_tax_id: json['customer_tax_id'] as String?,
       customer_metadata: json['customer_metadata'] as Map<String, dynamic>?,
       subscription_id: json['subscription_id'] as String?,
       success_url: json['success_url'] as String?,
+      return_url: json['return_url'] as String?,
       embed_origin: json['embed_origin'] as String?,
+      locale: json['locale'] as String?,
+      currency: json['currency'],
       product_id: json['product_id'] as String,
     );
 
 Map<String, dynamic> _$$CheckoutProductCreateImplToJson(
         _$CheckoutProductCreateImpl instance) =>
     <String, dynamic>{
+      if (instance.trial_interval case final value?) 'trial_interval': value,
+      if (instance.trial_interval_count case final value?)
+        'trial_interval_count': value,
       if (instance.metadata case final value?) 'metadata': value,
       if (instance.custom_field_data case final value?)
         'custom_field_data': value,
       if (instance.discount_id case final value?) 'discount_id': value,
       if (instance.allow_discount_codes case final value?)
         'allow_discount_codes': value,
+      if (instance.require_billing_address case final value?)
+        'require_billing_address': value,
       if (instance.amount case final value?) 'amount': value,
+      if (instance.seats case final value?) 'seats': value,
+      if (instance.min_seats case final value?) 'min_seats': value,
+      if (instance.max_seats case final value?) 'max_seats': value,
+      if (instance.allow_trial case final value?) 'allow_trial': value,
       if (instance.customer_id case final value?) 'customer_id': value,
+      if (instance.is_business_customer case final value?)
+        'is_business_customer': value,
+      if (instance.external_customer_id case final value?)
+        'external_customer_id': value,
       if (instance.customer_name case final value?) 'customer_name': value,
       if (instance.customer_email case final value?) 'customer_email': value,
       if (instance.customer_ip_address case final value?)
         'customer_ip_address': value,
+      if (instance.customer_billing_name case final value?)
+        'customer_billing_name': value,
       if (instance.customer_billing_address case final value?)
         'customer_billing_address': value,
       if (instance.customer_tax_id case final value?) 'customer_tax_id': value,
@@ -49,6 +77,9 @@ Map<String, dynamic> _$$CheckoutProductCreateImplToJson(
         'customer_metadata': value,
       if (instance.subscription_id case final value?) 'subscription_id': value,
       if (instance.success_url case final value?) 'success_url': value,
+      if (instance.return_url case final value?) 'return_url': value,
       if (instance.embed_origin case final value?) 'embed_origin': value,
+      if (instance.locale case final value?) 'locale': value,
+      if (instance.currency case final value?) 'currency': value,
       'product_id': instance.product_id,
     };

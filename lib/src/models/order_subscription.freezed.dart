@@ -20,17 +20,20 @@ OrderSubscription _$OrderSubscriptionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderSubscription {
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  dynamic get amount => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
+  int get amount => throw _privateConstructorUsedError;
+  String get currency => throw _privateConstructorUsedError;
   SubscriptionRecurringInterval get recurring_interval =>
       throw _privateConstructorUsedError;
+  int get recurring_interval_count => throw _privateConstructorUsedError;
   SubscriptionStatus get status => throw _privateConstructorUsedError;
   String get current_period_start => throw _privateConstructorUsedError;
-  String? get current_period_end => throw _privateConstructorUsedError;
+  String get current_period_end => throw _privateConstructorUsedError;
+  String? get trial_start => throw _privateConstructorUsedError;
+  String? get trial_end => throw _privateConstructorUsedError;
   bool get cancel_at_period_end => throw _privateConstructorUsedError;
   String? get canceled_at => throw _privateConstructorUsedError;
   String? get started_at => throw _privateConstructorUsedError;
@@ -38,14 +41,13 @@ mixin _$OrderSubscription {
   String? get ended_at => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
   String get product_id => throw _privateConstructorUsedError;
-  String get price_id => throw _privateConstructorUsedError;
   String? get discount_id => throw _privateConstructorUsedError;
   String? get checkout_id => throw _privateConstructorUsedError;
+  dynamic? get seats => throw _privateConstructorUsedError;
   dynamic get customer_cancellation_reason =>
       throw _privateConstructorUsedError;
   String? get customer_cancellation_comment =>
       throw _privateConstructorUsedError;
-  String get user_id => throw _privateConstructorUsedError;
 
   /// Serializes this OrderSubscription to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -64,16 +66,19 @@ abstract class $OrderSubscriptionCopyWith<$Res> {
       _$OrderSubscriptionCopyWithImpl<$Res, OrderSubscription>;
   @useResult
   $Res call(
-      {Map<String, dynamic> metadata,
+      {MetadataOutputType metadata,
       String created_at,
       String? modified_at,
       String id,
-      dynamic amount,
-      String? currency,
+      int amount,
+      String currency,
       SubscriptionRecurringInterval recurring_interval,
+      int recurring_interval_count,
       SubscriptionStatus status,
       String current_period_start,
-      String? current_period_end,
+      String current_period_end,
+      String? trial_start,
+      String? trial_end,
       bool cancel_at_period_end,
       String? canceled_at,
       String? started_at,
@@ -81,12 +86,13 @@ abstract class $OrderSubscriptionCopyWith<$Res> {
       String? ended_at,
       String customer_id,
       String product_id,
-      String price_id,
       String? discount_id,
       String? checkout_id,
+      dynamic? seats,
       dynamic customer_cancellation_reason,
-      String? customer_cancellation_comment,
-      String user_id});
+      String? customer_cancellation_comment});
+
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -108,12 +114,15 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? amount = freezed,
-    Object? currency = freezed,
+    Object? amount = null,
+    Object? currency = null,
     Object? recurring_interval = null,
+    Object? recurring_interval_count = null,
     Object? status = null,
     Object? current_period_start = null,
-    Object? current_period_end = freezed,
+    Object? current_period_end = null,
+    Object? trial_start = freezed,
+    Object? trial_end = freezed,
     Object? cancel_at_period_end = null,
     Object? canceled_at = freezed,
     Object? started_at = freezed,
@@ -121,18 +130,17 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
     Object? ended_at = freezed,
     Object? customer_id = null,
     Object? product_id = null,
-    Object? price_id = null,
     Object? discount_id = freezed,
     Object? checkout_id = freezed,
+    Object? seats = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
-    Object? user_id = null,
   }) {
     return _then(_value.copyWith(
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -145,18 +153,22 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
+              as int,
+      currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       recurring_interval: null == recurring_interval
           ? _value.recurring_interval
           : recurring_interval // ignore: cast_nullable_to_non_nullable
               as SubscriptionRecurringInterval,
+      recurring_interval_count: null == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as int,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -165,9 +177,17 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
           ? _value.current_period_start
           : current_period_start // ignore: cast_nullable_to_non_nullable
               as String,
-      current_period_end: freezed == current_period_end
+      current_period_end: null == current_period_end
           ? _value.current_period_end
           : current_period_end // ignore: cast_nullable_to_non_nullable
+              as String,
+      trial_start: freezed == trial_start
+          ? _value.trial_start
+          : trial_start // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trial_end: freezed == trial_end
+          ? _value.trial_end
+          : trial_end // ignore: cast_nullable_to_non_nullable
               as String?,
       cancel_at_period_end: null == cancel_at_period_end
           ? _value.cancel_at_period_end
@@ -197,10 +217,6 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
           ? _value.product_id
           : product_id // ignore: cast_nullable_to_non_nullable
               as String,
-      price_id: null == price_id
-          ? _value.price_id
-          : price_id // ignore: cast_nullable_to_non_nullable
-              as String,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -209,6 +225,10 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
           ? _value.checkout_id
           : checkout_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      seats: freezed == seats
+          ? _value.seats
+          : seats // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -217,11 +237,17 @@ class _$OrderSubscriptionCopyWithImpl<$Res, $Val extends OrderSubscription>
           ? _value.customer_cancellation_comment
           : customer_cancellation_comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
+  }
+
+  /// Create a copy of OrderSubscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 }
 
@@ -234,16 +260,19 @@ abstract class _$$OrderSubscriptionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Map<String, dynamic> metadata,
+      {MetadataOutputType metadata,
       String created_at,
       String? modified_at,
       String id,
-      dynamic amount,
-      String? currency,
+      int amount,
+      String currency,
       SubscriptionRecurringInterval recurring_interval,
+      int recurring_interval_count,
       SubscriptionStatus status,
       String current_period_start,
-      String? current_period_end,
+      String current_period_end,
+      String? trial_start,
+      String? trial_end,
       bool cancel_at_period_end,
       String? canceled_at,
       String? started_at,
@@ -251,12 +280,14 @@ abstract class _$$OrderSubscriptionImplCopyWith<$Res>
       String? ended_at,
       String customer_id,
       String product_id,
-      String price_id,
       String? discount_id,
       String? checkout_id,
+      dynamic? seats,
       dynamic customer_cancellation_reason,
-      String? customer_cancellation_comment,
-      String user_id});
+      String? customer_cancellation_comment});
+
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -276,12 +307,15 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? amount = freezed,
-    Object? currency = freezed,
+    Object? amount = null,
+    Object? currency = null,
     Object? recurring_interval = null,
+    Object? recurring_interval_count = null,
     Object? status = null,
     Object? current_period_start = null,
-    Object? current_period_end = freezed,
+    Object? current_period_end = null,
+    Object? trial_start = freezed,
+    Object? trial_end = freezed,
     Object? cancel_at_period_end = null,
     Object? canceled_at = freezed,
     Object? started_at = freezed,
@@ -289,18 +323,17 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
     Object? ended_at = freezed,
     Object? customer_id = null,
     Object? product_id = null,
-    Object? price_id = null,
     Object? discount_id = freezed,
     Object? checkout_id = freezed,
+    Object? seats = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
-    Object? user_id = null,
   }) {
     return _then(_$OrderSubscriptionImpl(
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -313,18 +346,22 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
+              as int,
+      currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       recurring_interval: null == recurring_interval
           ? _value.recurring_interval
           : recurring_interval // ignore: cast_nullable_to_non_nullable
               as SubscriptionRecurringInterval,
+      recurring_interval_count: null == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as int,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -333,9 +370,17 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
           ? _value.current_period_start
           : current_period_start // ignore: cast_nullable_to_non_nullable
               as String,
-      current_period_end: freezed == current_period_end
+      current_period_end: null == current_period_end
           ? _value.current_period_end
           : current_period_end // ignore: cast_nullable_to_non_nullable
+              as String,
+      trial_start: freezed == trial_start
+          ? _value.trial_start
+          : trial_start // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trial_end: freezed == trial_end
+          ? _value.trial_end
+          : trial_end // ignore: cast_nullable_to_non_nullable
               as String?,
       cancel_at_period_end: null == cancel_at_period_end
           ? _value.cancel_at_period_end
@@ -365,10 +410,6 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
           ? _value.product_id
           : product_id // ignore: cast_nullable_to_non_nullable
               as String,
-      price_id: null == price_id
-          ? _value.price_id
-          : price_id // ignore: cast_nullable_to_non_nullable
-              as String,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -377,6 +418,10 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
           ? _value.checkout_id
           : checkout_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      seats: freezed == seats
+          ? _value.seats
+          : seats // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -385,10 +430,6 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
           ? _value.customer_cancellation_comment
           : customer_cancellation_comment // ignore: cast_nullable_to_non_nullable
               as String?,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -397,16 +438,19 @@ class __$$OrderSubscriptionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderSubscriptionImpl implements _OrderSubscription {
   const _$OrderSubscriptionImpl(
-      {required final Map<String, dynamic> metadata,
+      {required this.metadata,
       required this.created_at,
       required this.modified_at,
       required this.id,
       required this.amount,
       required this.currency,
       required this.recurring_interval,
+      required this.recurring_interval_count,
       required this.status,
       required this.current_period_start,
       required this.current_period_end,
+      required this.trial_start,
+      required this.trial_end,
       required this.cancel_at_period_end,
       required this.canceled_at,
       required this.started_at,
@@ -414,25 +458,17 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
       required this.ended_at,
       required this.customer_id,
       required this.product_id,
-      required this.price_id,
       required this.discount_id,
       required this.checkout_id,
+      this.seats,
       required this.customer_cancellation_reason,
-      required this.customer_cancellation_comment,
-      required this.user_id})
-      : _metadata = metadata;
+      required this.customer_cancellation_comment});
 
   factory _$OrderSubscriptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderSubscriptionImplFromJson(json);
 
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final String created_at;
   @override
@@ -440,17 +476,23 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
   @override
   final String id;
   @override
-  final dynamic amount;
+  final int amount;
   @override
-  final String? currency;
+  final String currency;
   @override
   final SubscriptionRecurringInterval recurring_interval;
+  @override
+  final int recurring_interval_count;
   @override
   final SubscriptionStatus status;
   @override
   final String current_period_start;
   @override
-  final String? current_period_end;
+  final String current_period_end;
+  @override
+  final String? trial_start;
+  @override
+  final String? trial_end;
   @override
   final bool cancel_at_period_end;
   @override
@@ -466,21 +508,19 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
   @override
   final String product_id;
   @override
-  final String price_id;
-  @override
   final String? discount_id;
   @override
   final String? checkout_id;
   @override
+  final dynamic? seats;
+  @override
   final dynamic customer_cancellation_reason;
   @override
   final String? customer_cancellation_comment;
-  @override
-  final String user_id;
 
   @override
   String toString() {
-    return 'OrderSubscription(metadata: $metadata, created_at: $created_at, modified_at: $modified_at, id: $id, amount: $amount, currency: $currency, recurring_interval: $recurring_interval, status: $status, current_period_start: $current_period_start, current_period_end: $current_period_end, cancel_at_period_end: $cancel_at_period_end, canceled_at: $canceled_at, started_at: $started_at, ends_at: $ends_at, ended_at: $ended_at, customer_id: $customer_id, product_id: $product_id, price_id: $price_id, discount_id: $discount_id, checkout_id: $checkout_id, customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment, user_id: $user_id)';
+    return 'OrderSubscription(metadata: $metadata, created_at: $created_at, modified_at: $modified_at, id: $id, amount: $amount, currency: $currency, recurring_interval: $recurring_interval, recurring_interval_count: $recurring_interval_count, status: $status, current_period_start: $current_period_start, current_period_end: $current_period_end, trial_start: $trial_start, trial_end: $trial_end, cancel_at_period_end: $cancel_at_period_end, canceled_at: $canceled_at, started_at: $started_at, ends_at: $ends_at, ended_at: $ended_at, customer_id: $customer_id, product_id: $product_id, discount_id: $discount_id, checkout_id: $checkout_id, seats: $seats, customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment)';
   }
 
   @override
@@ -488,22 +528,30 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OrderSubscriptionImpl &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.recurring_interval, recurring_interval) ||
                 other.recurring_interval == recurring_interval) &&
+            (identical(
+                    other.recurring_interval_count, recurring_interval_count) ||
+                other.recurring_interval_count == recurring_interval_count) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.current_period_start, current_period_start) ||
                 other.current_period_start == current_period_start) &&
             (identical(other.current_period_end, current_period_end) ||
                 other.current_period_end == current_period_end) &&
+            (identical(other.trial_start, trial_start) ||
+                other.trial_start == trial_start) &&
+            (identical(other.trial_end, trial_end) ||
+                other.trial_end == trial_end) &&
             (identical(other.cancel_at_period_end, cancel_at_period_end) ||
                 other.cancel_at_period_end == cancel_at_period_end) &&
             (identical(other.canceled_at, canceled_at) ||
@@ -517,36 +565,37 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
                 other.customer_id == customer_id) &&
             (identical(other.product_id, product_id) ||
                 other.product_id == product_id) &&
-            (identical(other.price_id, price_id) ||
-                other.price_id == price_id) &&
             (identical(other.discount_id, discount_id) ||
                 other.discount_id == discount_id) &&
             (identical(other.checkout_id, checkout_id) ||
                 other.checkout_id == checkout_id) &&
+            const DeepCollectionEquality().equals(other.seats, seats) &&
             const DeepCollectionEquality().equals(
                 other.customer_cancellation_reason,
                 customer_cancellation_reason) &&
             (identical(other.customer_cancellation_comment,
                     customer_cancellation_comment) ||
                 other.customer_cancellation_comment ==
-                    customer_cancellation_comment) &&
-            (identical(other.user_id, user_id) || other.user_id == user_id));
+                    customer_cancellation_comment));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(_metadata),
+        metadata,
         created_at,
         modified_at,
         id,
-        const DeepCollectionEquality().hash(amount),
+        amount,
         currency,
         recurring_interval,
+        recurring_interval_count,
         status,
         current_period_start,
         current_period_end,
+        trial_start,
+        trial_end,
         cancel_at_period_end,
         canceled_at,
         started_at,
@@ -554,12 +603,11 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
         ended_at,
         customer_id,
         product_id,
-        price_id,
         discount_id,
         checkout_id,
+        const DeepCollectionEquality().hash(seats),
         const DeepCollectionEquality().hash(customer_cancellation_reason),
-        customer_cancellation_comment,
-        user_id
+        customer_cancellation_comment
       ]);
 
   /// Create a copy of OrderSubscription
@@ -581,35 +629,38 @@ class _$OrderSubscriptionImpl implements _OrderSubscription {
 
 abstract class _OrderSubscription implements OrderSubscription {
   const factory _OrderSubscription(
-      {required final Map<String, dynamic> metadata,
-      required final String created_at,
-      required final String? modified_at,
-      required final String id,
-      required final dynamic amount,
-      required final String? currency,
-      required final SubscriptionRecurringInterval recurring_interval,
-      required final SubscriptionStatus status,
-      required final String current_period_start,
-      required final String? current_period_end,
-      required final bool cancel_at_period_end,
-      required final String? canceled_at,
-      required final String? started_at,
-      required final String? ends_at,
-      required final String? ended_at,
-      required final String customer_id,
-      required final String product_id,
-      required final String price_id,
-      required final String? discount_id,
-      required final String? checkout_id,
-      required final dynamic customer_cancellation_reason,
-      required final String? customer_cancellation_comment,
-      required final String user_id}) = _$OrderSubscriptionImpl;
+          {required final MetadataOutputType metadata,
+          required final String created_at,
+          required final String? modified_at,
+          required final String id,
+          required final int amount,
+          required final String currency,
+          required final SubscriptionRecurringInterval recurring_interval,
+          required final int recurring_interval_count,
+          required final SubscriptionStatus status,
+          required final String current_period_start,
+          required final String current_period_end,
+          required final String? trial_start,
+          required final String? trial_end,
+          required final bool cancel_at_period_end,
+          required final String? canceled_at,
+          required final String? started_at,
+          required final String? ends_at,
+          required final String? ended_at,
+          required final String customer_id,
+          required final String product_id,
+          required final String? discount_id,
+          required final String? checkout_id,
+          final dynamic? seats,
+          required final dynamic customer_cancellation_reason,
+          required final String? customer_cancellation_comment}) =
+      _$OrderSubscriptionImpl;
 
   factory _OrderSubscription.fromJson(Map<String, dynamic> json) =
       _$OrderSubscriptionImpl.fromJson;
 
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   String get created_at;
   @override
@@ -617,17 +668,23 @@ abstract class _OrderSubscription implements OrderSubscription {
   @override
   String get id;
   @override
-  dynamic get amount;
+  int get amount;
   @override
-  String? get currency;
+  String get currency;
   @override
   SubscriptionRecurringInterval get recurring_interval;
+  @override
+  int get recurring_interval_count;
   @override
   SubscriptionStatus get status;
   @override
   String get current_period_start;
   @override
-  String? get current_period_end;
+  String get current_period_end;
+  @override
+  String? get trial_start;
+  @override
+  String? get trial_end;
   @override
   bool get cancel_at_period_end;
   @override
@@ -643,17 +700,15 @@ abstract class _OrderSubscription implements OrderSubscription {
   @override
   String get product_id;
   @override
-  String get price_id;
-  @override
   String? get discount_id;
   @override
   String? get checkout_id;
   @override
+  dynamic? get seats;
+  @override
   dynamic get customer_cancellation_reason;
   @override
   String? get customer_cancellation_comment;
-  @override
-  String get user_id;
 
   /// Create a copy of OrderSubscription
   /// with the given fields replaced by the non-null parameter values.

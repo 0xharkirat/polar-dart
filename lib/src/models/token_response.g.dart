@@ -13,7 +13,7 @@ _$TokenResponseImpl _$$TokenResponseImplFromJson(Map<String, dynamic> json) =>
       expires_in: (json['expires_in'] as num).toInt(),
       refresh_token: json['refresh_token'] as String?,
       scope: json['scope'] as String,
-      id_token: json['id_token'] as String,
+      id_token: json['id_token'] as String?,
     );
 
 Map<String, dynamic> _$$TokenResponseImplToJson(_$TokenResponseImpl instance) =>
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$TokenResponseImplToJson(_$TokenResponseImpl instance) =>
       'expires_in': instance.expires_in,
       if (instance.refresh_token case final value?) 'refresh_token': value,
       'scope': instance.scope,
-      'id_token': instance.id_token,
+      if (instance.id_token case final value?) 'id_token': value,
     };

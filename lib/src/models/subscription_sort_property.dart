@@ -1,16 +1,40 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum SubscriptionSortProperty {
+  @JsonValue('customer')
   customer,
-  _customer,
+  @JsonValue('-customer')
+  minus_customer,
+  @JsonValue('status')
   status,
-  _status,
+  @JsonValue('-status')
+  minus_status,
+  @JsonValue('started_at')
   started_at,
-  _started_at,
+  @JsonValue('-started_at')
+  minus_started_at,
+  @JsonValue('current_period_end')
   current_period_end,
-  _current_period_end,
+  @JsonValue('-current_period_end')
+  minus_current_period_end,
+  @JsonValue('ended_at')
+  ended_at,
+  @JsonValue('-ended_at')
+  minus_ended_at,
+  @JsonValue('ends_at')
+  ends_at,
+  @JsonValue('-ends_at')
+  minus_ends_at,
+  @JsonValue('amount')
   amount,
-  _amount,
+  @JsonValue('-amount')
+  minus_amount,
+  @JsonValue('product')
   product,
-  _product,
+  @JsonValue('-product')
+  minus_product,
+  @JsonValue('discount')
   discount,
-  _discount,
+  @JsonValue('-discount')
+  minus_discount,
 }

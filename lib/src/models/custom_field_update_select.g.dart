@@ -9,7 +9,7 @@ part of 'custom_field_update_select.dart';
 _$CustomFieldUpdateSelectImpl _$$CustomFieldUpdateSelectImplFromJson(
         Map<String, dynamic> json) =>
     _$CustomFieldUpdateSelectImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
       type: json['type'] as String,

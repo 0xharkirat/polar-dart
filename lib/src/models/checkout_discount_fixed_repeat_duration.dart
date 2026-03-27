@@ -14,6 +14,7 @@ class CheckoutDiscountFixedRepeatDuration with _$CheckoutDiscountFixedRepeatDura
     required DiscountType type,
     required int amount,
     required String currency,
+    required Map<String, dynamic> amounts,
     required String id,
     required String name,
     required String? code,

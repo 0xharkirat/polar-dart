@@ -9,7 +9,7 @@ part of 'custom_field_update_number.dart';
 _$CustomFieldUpdateNumberImpl _$$CustomFieldUpdateNumberImplFromJson(
         Map<String, dynamic> json) =>
     _$CustomFieldUpdateNumberImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
       type: json['type'] as String,

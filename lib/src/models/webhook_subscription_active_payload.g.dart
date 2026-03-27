@@ -11,6 +11,7 @@ _$WebhookSubscriptionActivePayloadImpl
             Map<String, dynamic> json) =>
         _$WebhookSubscriptionActivePayloadImpl(
           type: json['type'] as String,
+          timestamp: json['timestamp'] as String,
           data: Subscription.fromJson(json['data'] as Map<String, dynamic>),
         );
 
@@ -18,5 +19,6 @@ Map<String, dynamic> _$$WebhookSubscriptionActivePayloadImplToJson(
         _$WebhookSubscriptionActivePayloadImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
+      'timestamp': instance.timestamp,
       'data': instance.data,
     };

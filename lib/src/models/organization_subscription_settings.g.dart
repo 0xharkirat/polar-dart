@@ -16,6 +16,9 @@ _$OrganizationSubscriptionSettingsImpl
           proration_behavior: $enumDecode(
               _$SubscriptionProrationBehaviorEnumMap,
               json['proration_behavior']),
+          benefit_revocation_grace_period:
+              (json['benefit_revocation_grace_period'] as num).toInt(),
+          prevent_trial_abuse: json['prevent_trial_abuse'] as bool,
         );
 
 Map<String, dynamic> _$$OrganizationSubscriptionSettingsImplToJson(
@@ -25,9 +28,13 @@ Map<String, dynamic> _$$OrganizationSubscriptionSettingsImplToJson(
       'allow_customer_updates': instance.allow_customer_updates,
       'proration_behavior':
           _$SubscriptionProrationBehaviorEnumMap[instance.proration_behavior]!,
+      'benefit_revocation_grace_period':
+          instance.benefit_revocation_grace_period,
+      'prevent_trial_abuse': instance.prevent_trial_abuse,
     };
 
 const _$SubscriptionProrationBehaviorEnumMap = {
   SubscriptionProrationBehavior.invoice: 'invoice',
   SubscriptionProrationBehavior.prorate: 'prorate',
+  SubscriptionProrationBehavior.next_period: 'next_period',
 };

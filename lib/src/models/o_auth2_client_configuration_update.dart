@@ -1,3 +1,5 @@
+import 'sub_type.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'o_auth2_client_configuration_update.g.dart';
@@ -16,6 +18,7 @@ class OAuth2ClientConfigurationUpdate with _$OAuth2ClientConfigurationUpdate {
     String? logo_uri,
     String? tos_uri,
     String? policy_uri,
+    SubType? default_sub_type,
     required String client_id,
   }) = _OAuth2ClientConfigurationUpdate;
 

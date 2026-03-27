@@ -23,6 +23,8 @@ mixin _$ValidationError {
   List<dynamic> get loc => throw _privateConstructorUsedError;
   String get msg => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
+  dynamic? get input => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get ctx => throw _privateConstructorUsedError;
 
   /// Serializes this ValidationError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +42,12 @@ abstract class $ValidationErrorCopyWith<$Res> {
           ValidationError value, $Res Function(ValidationError) then) =
       _$ValidationErrorCopyWithImpl<$Res, ValidationError>;
   @useResult
-  $Res call({List<dynamic> loc, String msg, String type});
+  $Res call(
+      {List<dynamic> loc,
+      String msg,
+      String type,
+      dynamic? input,
+      Map<String, dynamic>? ctx});
 }
 
 /// @nodoc
@@ -61,6 +68,8 @@ class _$ValidationErrorCopyWithImpl<$Res, $Val extends ValidationError>
     Object? loc = null,
     Object? msg = null,
     Object? type = null,
+    Object? input = freezed,
+    Object? ctx = freezed,
   }) {
     return _then(_value.copyWith(
       loc: null == loc
@@ -75,6 +84,14 @@ class _$ValidationErrorCopyWithImpl<$Res, $Val extends ValidationError>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
+      input: freezed == input
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      ctx: freezed == ctx
+          ? _value.ctx
+          : ctx // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -87,7 +104,12 @@ abstract class _$$ValidationErrorImplCopyWith<$Res>
       __$$ValidationErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<dynamic> loc, String msg, String type});
+  $Res call(
+      {List<dynamic> loc,
+      String msg,
+      String type,
+      dynamic? input,
+      Map<String, dynamic>? ctx});
 }
 
 /// @nodoc
@@ -106,6 +128,8 @@ class __$$ValidationErrorImplCopyWithImpl<$Res>
     Object? loc = null,
     Object? msg = null,
     Object? type = null,
+    Object? input = freezed,
+    Object? ctx = freezed,
   }) {
     return _then(_$ValidationErrorImpl(
       loc: null == loc
@@ -120,6 +144,14 @@ class __$$ValidationErrorImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
+      input: freezed == input
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      ctx: freezed == ctx
+          ? _value._ctx
+          : ctx // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -128,8 +160,13 @@ class __$$ValidationErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ValidationErrorImpl implements _ValidationError {
   const _$ValidationErrorImpl(
-      {required final List<dynamic> loc, required this.msg, required this.type})
-      : _loc = loc;
+      {required final List<dynamic> loc,
+      required this.msg,
+      required this.type,
+      this.input,
+      final Map<String, dynamic>? ctx})
+      : _loc = loc,
+        _ctx = ctx;
 
   factory _$ValidationErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$ValidationErrorImplFromJson(json);
@@ -146,10 +183,21 @@ class _$ValidationErrorImpl implements _ValidationError {
   final String msg;
   @override
   final String type;
+  @override
+  final dynamic? input;
+  final Map<String, dynamic>? _ctx;
+  @override
+  Map<String, dynamic>? get ctx {
+    final value = _ctx;
+    if (value == null) return null;
+    if (_ctx is EqualUnmodifiableMapView) return _ctx;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'ValidationError(loc: $loc, msg: $msg, type: $type)';
+    return 'ValidationError(loc: $loc, msg: $msg, type: $type, input: $input, ctx: $ctx)';
   }
 
   @override
@@ -159,13 +207,20 @@ class _$ValidationErrorImpl implements _ValidationError {
             other is _$ValidationErrorImpl &&
             const DeepCollectionEquality().equals(other._loc, _loc) &&
             (identical(other.msg, msg) || other.msg == msg) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.input, input) &&
+            const DeepCollectionEquality().equals(other._ctx, _ctx));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_loc), msg, type);
+      runtimeType,
+      const DeepCollectionEquality().hash(_loc),
+      msg,
+      type,
+      const DeepCollectionEquality().hash(input),
+      const DeepCollectionEquality().hash(_ctx));
 
   /// Create a copy of ValidationError
   /// with the given fields replaced by the non-null parameter values.
@@ -188,7 +243,9 @@ abstract class _ValidationError implements ValidationError {
   const factory _ValidationError(
       {required final List<dynamic> loc,
       required final String msg,
-      required final String type}) = _$ValidationErrorImpl;
+      required final String type,
+      final dynamic? input,
+      final Map<String, dynamic>? ctx}) = _$ValidationErrorImpl;
 
   factory _ValidationError.fromJson(Map<String, dynamic> json) =
       _$ValidationErrorImpl.fromJson;
@@ -199,6 +256,10 @@ abstract class _ValidationError implements ValidationError {
   String get msg;
   @override
   String get type;
+  @override
+  dynamic? get input;
+  @override
+  Map<String, dynamic>? get ctx;
 
   /// Create a copy of ValidationError
   /// with the given fields replaced by the non-null parameter values.

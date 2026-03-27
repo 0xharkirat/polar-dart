@@ -25,6 +25,7 @@ mixin _$CustomerSession {
   String get id => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String get expires_at => throw _privateConstructorUsedError;
+  String? get return_url => throw _privateConstructorUsedError;
   String get customer_portal_url => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
   Customer get customer => throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $CustomerSessionCopyWith<$Res> {
       String id,
       String token,
       String expires_at,
+      String? return_url,
       String customer_portal_url,
       String customer_id,
       Customer customer});
@@ -78,6 +80,7 @@ class _$CustomerSessionCopyWithImpl<$Res, $Val extends CustomerSession>
     Object? id = null,
     Object? token = null,
     Object? expires_at = null,
+    Object? return_url = freezed,
     Object? customer_portal_url = null,
     Object? customer_id = null,
     Object? customer = null,
@@ -103,6 +106,10 @@ class _$CustomerSessionCopyWithImpl<$Res, $Val extends CustomerSession>
           ? _value.expires_at
           : expires_at // ignore: cast_nullable_to_non_nullable
               as String,
+      return_url: freezed == return_url
+          ? _value.return_url
+          : return_url // ignore: cast_nullable_to_non_nullable
+              as String?,
       customer_portal_url: null == customer_portal_url
           ? _value.customer_portal_url
           : customer_portal_url // ignore: cast_nullable_to_non_nullable
@@ -143,6 +150,7 @@ abstract class _$$CustomerSessionImplCopyWith<$Res>
       String id,
       String token,
       String expires_at,
+      String? return_url,
       String customer_portal_url,
       String customer_id,
       Customer customer});
@@ -169,6 +177,7 @@ class __$$CustomerSessionImplCopyWithImpl<$Res>
     Object? id = null,
     Object? token = null,
     Object? expires_at = null,
+    Object? return_url = freezed,
     Object? customer_portal_url = null,
     Object? customer_id = null,
     Object? customer = null,
@@ -194,6 +203,10 @@ class __$$CustomerSessionImplCopyWithImpl<$Res>
           ? _value.expires_at
           : expires_at // ignore: cast_nullable_to_non_nullable
               as String,
+      return_url: freezed == return_url
+          ? _value.return_url
+          : return_url // ignore: cast_nullable_to_non_nullable
+              as String?,
       customer_portal_url: null == customer_portal_url
           ? _value.customer_portal_url
           : customer_portal_url // ignore: cast_nullable_to_non_nullable
@@ -219,6 +232,7 @@ class _$CustomerSessionImpl implements _CustomerSession {
       required this.id,
       required this.token,
       required this.expires_at,
+      required this.return_url,
       required this.customer_portal_url,
       required this.customer_id,
       required this.customer});
@@ -237,6 +251,8 @@ class _$CustomerSessionImpl implements _CustomerSession {
   @override
   final String expires_at;
   @override
+  final String? return_url;
+  @override
   final String customer_portal_url;
   @override
   final String customer_id;
@@ -245,7 +261,7 @@ class _$CustomerSessionImpl implements _CustomerSession {
 
   @override
   String toString() {
-    return 'CustomerSession(created_at: $created_at, modified_at: $modified_at, id: $id, token: $token, expires_at: $expires_at, customer_portal_url: $customer_portal_url, customer_id: $customer_id, customer: $customer)';
+    return 'CustomerSession(created_at: $created_at, modified_at: $modified_at, id: $id, token: $token, expires_at: $expires_at, return_url: $return_url, customer_portal_url: $customer_portal_url, customer_id: $customer_id, customer: $customer)';
   }
 
   @override
@@ -261,6 +277,8 @@ class _$CustomerSessionImpl implements _CustomerSession {
             (identical(other.token, token) || other.token == token) &&
             (identical(other.expires_at, expires_at) ||
                 other.expires_at == expires_at) &&
+            (identical(other.return_url, return_url) ||
+                other.return_url == return_url) &&
             (identical(other.customer_portal_url, customer_portal_url) ||
                 other.customer_portal_url == customer_portal_url) &&
             (identical(other.customer_id, customer_id) ||
@@ -271,8 +289,17 @@ class _$CustomerSessionImpl implements _CustomerSession {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, created_at, modified_at, id,
-      token, expires_at, customer_portal_url, customer_id, customer);
+  int get hashCode => Object.hash(
+      runtimeType,
+      created_at,
+      modified_at,
+      id,
+      token,
+      expires_at,
+      return_url,
+      customer_portal_url,
+      customer_id,
+      customer);
 
   /// Create a copy of CustomerSession
   /// with the given fields replaced by the non-null parameter values.
@@ -298,6 +325,7 @@ abstract class _CustomerSession implements CustomerSession {
       required final String id,
       required final String token,
       required final String expires_at,
+      required final String? return_url,
       required final String customer_portal_url,
       required final String customer_id,
       required final Customer customer}) = _$CustomerSessionImpl;
@@ -315,6 +343,8 @@ abstract class _CustomerSession implements CustomerSession {
   String get token;
   @override
   String get expires_at;
+  @override
+  String? get return_url;
   @override
   String get customer_portal_url;
   @override

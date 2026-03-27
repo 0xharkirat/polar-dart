@@ -7,7 +7,7 @@ part 'license_key_user.freezed.dart';
 class LicenseKeyUser with _$LicenseKeyUser {
   const factory LicenseKeyUser({
     required String id,
-    required String email,
+    String? email,
     required String public_name,
     String? avatar_url,
   }) = _LicenseKeyUser;

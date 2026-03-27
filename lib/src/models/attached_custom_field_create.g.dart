@@ -10,12 +10,12 @@ _$AttachedCustomFieldCreateImpl _$$AttachedCustomFieldCreateImplFromJson(
         Map<String, dynamic> json) =>
     _$AttachedCustomFieldCreateImpl(
       custom_field_id: json['custom_field_id'] as String,
-      required: json['required'] as bool,
+      required_field: json['required'] as bool,
     );
 
 Map<String, dynamic> _$$AttachedCustomFieldCreateImplToJson(
         _$AttachedCustomFieldCreateImpl instance) =>
     <String, dynamic>{
       'custom_field_id': instance.custom_field_id,
-      'required': instance.required,
+      'required': instance.required_field,
     };

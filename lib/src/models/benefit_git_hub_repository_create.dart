@@ -8,6 +8,7 @@ part 'benefit_git_hub_repository_create.freezed.dart';
 @freezed
 class BenefitGitHubRepositoryCreate with _$BenefitGitHubRepositoryCreate {
   const factory BenefitGitHubRepositoryCreate({
+    Map<String, dynamic>? metadata,
     required String type,
     required String description,
     String? organization_id,

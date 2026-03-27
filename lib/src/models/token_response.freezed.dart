@@ -25,7 +25,7 @@ mixin _$TokenResponse {
   int get expires_in => throw _privateConstructorUsedError;
   String? get refresh_token => throw _privateConstructorUsedError;
   String get scope => throw _privateConstructorUsedError;
-  String get id_token => throw _privateConstructorUsedError;
+  String? get id_token => throw _privateConstructorUsedError;
 
   /// Serializes this TokenResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $TokenResponseCopyWith<$Res> {
       int expires_in,
       String? refresh_token,
       String scope,
-      String id_token});
+      String? id_token});
 }
 
 /// @nodoc
@@ -72,7 +72,7 @@ class _$TokenResponseCopyWithImpl<$Res, $Val extends TokenResponse>
     Object? expires_in = null,
     Object? refresh_token = freezed,
     Object? scope = null,
-    Object? id_token = null,
+    Object? id_token = freezed,
   }) {
     return _then(_value.copyWith(
       access_token: null == access_token
@@ -95,10 +95,10 @@ class _$TokenResponseCopyWithImpl<$Res, $Val extends TokenResponse>
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
               as String,
-      id_token: null == id_token
+      id_token: freezed == id_token
           ? _value.id_token
           : id_token // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -117,7 +117,7 @@ abstract class _$$TokenResponseImplCopyWith<$Res>
       int expires_in,
       String? refresh_token,
       String scope,
-      String id_token});
+      String? id_token});
 }
 
 /// @nodoc
@@ -138,7 +138,7 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
     Object? expires_in = null,
     Object? refresh_token = freezed,
     Object? scope = null,
-    Object? id_token = null,
+    Object? id_token = freezed,
   }) {
     return _then(_$TokenResponseImpl(
       access_token: null == access_token
@@ -161,10 +161,10 @@ class __$$TokenResponseImplCopyWithImpl<$Res>
           ? _value.scope
           : scope // ignore: cast_nullable_to_non_nullable
               as String,
-      id_token: null == id_token
+      id_token: freezed == id_token
           ? _value.id_token
           : id_token // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -176,9 +176,9 @@ class _$TokenResponseImpl implements _TokenResponse {
       {required this.access_token,
       required this.token_type,
       required this.expires_in,
-      required this.refresh_token,
+      this.refresh_token,
       required this.scope,
-      required this.id_token});
+      this.id_token});
 
   factory _$TokenResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$TokenResponseImplFromJson(json);
@@ -194,7 +194,7 @@ class _$TokenResponseImpl implements _TokenResponse {
   @override
   final String scope;
   @override
-  final String id_token;
+  final String? id_token;
 
   @override
   String toString() {
@@ -245,9 +245,9 @@ abstract class _TokenResponse implements TokenResponse {
       {required final String access_token,
       required final String token_type,
       required final int expires_in,
-      required final String? refresh_token,
+      final String? refresh_token,
       required final String scope,
-      required final String id_token}) = _$TokenResponseImpl;
+      final String? id_token}) = _$TokenResponseImpl;
 
   factory _TokenResponse.fromJson(Map<String, dynamic> json) =
       _$TokenResponseImpl.fromJson;
@@ -263,7 +263,7 @@ abstract class _TokenResponse implements TokenResponse {
   @override
   String get scope;
   @override
-  String get id_token;
+  String? get id_token;
 
   /// Create a copy of TokenResponse
   /// with the given fields replaced by the non-null parameter values.

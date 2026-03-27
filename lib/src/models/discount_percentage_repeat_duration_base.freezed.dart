@@ -28,7 +28,7 @@ mixin _$DiscountPercentageRepeatDurationBase {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
   String? get starts_at => throw _privateConstructorUsedError;
@@ -64,7 +64,7 @@ abstract class $DiscountPercentageRepeatDurationBaseCopyWith<$Res> {
       String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String name,
       String? code,
       String? starts_at,
@@ -72,6 +72,8 @@ abstract class $DiscountPercentageRepeatDurationBaseCopyWith<$Res> {
       dynamic max_redemptions,
       int redemptions_count,
       String organization_id});
+
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -138,7 +140,7 @@ class _$DiscountPercentageRepeatDurationBaseCopyWithImpl<$Res,
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -169,6 +171,16 @@ class _$DiscountPercentageRepeatDurationBaseCopyWithImpl<$Res,
               as String,
     ) as $Val);
   }
+
+  /// Create a copy of DiscountPercentageRepeatDurationBase
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -188,7 +200,7 @@ abstract class _$$DiscountPercentageRepeatDurationBaseImplCopyWith<$Res>
       String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       String name,
       String? code,
       String? starts_at,
@@ -196,6 +208,9 @@ abstract class _$$DiscountPercentageRepeatDurationBaseImplCopyWith<$Res>
       dynamic max_redemptions,
       int redemptions_count,
       String organization_id});
+
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -259,9 +274,9 @@ class __$$DiscountPercentageRepeatDurationBaseImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -306,15 +321,14 @@ class _$DiscountPercentageRepeatDurationBaseImpl
       required this.created_at,
       required this.modified_at,
       required this.id,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       required this.name,
       required this.code,
       required this.starts_at,
       required this.ends_at,
       required this.max_redemptions,
       required this.redemptions_count,
-      required this.organization_id})
-      : _metadata = metadata;
+      required this.organization_id});
 
   factory _$DiscountPercentageRepeatDurationBaseImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -334,14 +348,8 @@ class _$DiscountPercentageRepeatDurationBaseImpl
   final String? modified_at;
   @override
   final String id;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final String name;
   @override
@@ -379,7 +387,8 @@ class _$DiscountPercentageRepeatDurationBaseImpl
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.starts_at, starts_at) ||
@@ -404,7 +413,7 @@ class _$DiscountPercentageRepeatDurationBaseImpl
       created_at,
       modified_at,
       id,
-      const DeepCollectionEquality().hash(_metadata),
+      metadata,
       name,
       code,
       starts_at,
@@ -441,7 +450,7 @@ abstract class _DiscountPercentageRepeatDurationBase
           required final String created_at,
           required final String? modified_at,
           required final String id,
-          required final Map<String, dynamic> metadata,
+          required final MetadataOutputType metadata,
           required final String name,
           required final String? code,
           required final String? starts_at,
@@ -470,7 +479,7 @@ abstract class _DiscountPercentageRepeatDurationBase
   @override
   String get id;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   String get name;
   @override

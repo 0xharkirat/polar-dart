@@ -24,12 +24,15 @@ mixin _$CustomerPortalCustomer {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   bool get email_verified => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get billing_name => throw _privateConstructorUsedError;
   dynamic get billing_address => throw _privateConstructorUsedError;
   dynamic get tax_id => throw _privateConstructorUsedError;
   Map<String, dynamic> get oauth_accounts => throw _privateConstructorUsedError;
+  String? get default_payment_method_id => throw _privateConstructorUsedError;
+  dynamic? get type => throw _privateConstructorUsedError;
 
   /// Serializes this CustomerPortalCustomer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,12 +54,15 @@ abstract class $CustomerPortalCustomerCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      String email,
+      String? email,
       bool email_verified,
       String? name,
+      String? billing_name,
       dynamic billing_address,
       dynamic tax_id,
-      Map<String, dynamic> oauth_accounts});
+      Map<String, dynamic> oauth_accounts,
+      String? default_payment_method_id,
+      dynamic? type});
 }
 
 /// @nodoc
@@ -78,12 +84,15 @@ class _$CustomerPortalCustomerCopyWithImpl<$Res,
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? email_verified = null,
     Object? name = freezed,
+    Object? billing_name = freezed,
     Object? billing_address = freezed,
     Object? tax_id = freezed,
     Object? oauth_accounts = null,
+    Object? default_payment_method_id = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
       created_at: null == created_at
@@ -98,10 +107,10 @@ class _$CustomerPortalCustomerCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email_verified: null == email_verified
           ? _value.email_verified
           : email_verified // ignore: cast_nullable_to_non_nullable
@@ -109,6 +118,10 @@ class _$CustomerPortalCustomerCopyWithImpl<$Res,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      billing_name: freezed == billing_name
+          ? _value.billing_name
+          : billing_name // ignore: cast_nullable_to_non_nullable
               as String?,
       billing_address: freezed == billing_address
           ? _value.billing_address
@@ -122,6 +135,14 @@ class _$CustomerPortalCustomerCopyWithImpl<$Res,
           ? _value.oauth_accounts
           : oauth_accounts // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      default_payment_method_id: freezed == default_payment_method_id
+          ? _value.default_payment_method_id
+          : default_payment_method_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
     ) as $Val);
   }
 }
@@ -139,12 +160,15 @@ abstract class _$$CustomerPortalCustomerImplCopyWith<$Res>
       {String created_at,
       String? modified_at,
       String id,
-      String email,
+      String? email,
       bool email_verified,
       String? name,
+      String? billing_name,
       dynamic billing_address,
       dynamic tax_id,
-      Map<String, dynamic> oauth_accounts});
+      Map<String, dynamic> oauth_accounts,
+      String? default_payment_method_id,
+      dynamic? type});
 }
 
 /// @nodoc
@@ -165,12 +189,15 @@ class __$$CustomerPortalCustomerImplCopyWithImpl<$Res>
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? email_verified = null,
     Object? name = freezed,
+    Object? billing_name = freezed,
     Object? billing_address = freezed,
     Object? tax_id = freezed,
     Object? oauth_accounts = null,
+    Object? default_payment_method_id = freezed,
+    Object? type = freezed,
   }) {
     return _then(_$CustomerPortalCustomerImpl(
       created_at: null == created_at
@@ -185,10 +212,10 @@ class __$$CustomerPortalCustomerImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       email_verified: null == email_verified
           ? _value.email_verified
           : email_verified // ignore: cast_nullable_to_non_nullable
@@ -196,6 +223,10 @@ class __$$CustomerPortalCustomerImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      billing_name: freezed == billing_name
+          ? _value.billing_name
+          : billing_name // ignore: cast_nullable_to_non_nullable
               as String?,
       billing_address: freezed == billing_address
           ? _value.billing_address
@@ -209,6 +240,14 @@ class __$$CustomerPortalCustomerImplCopyWithImpl<$Res>
           ? _value._oauth_accounts
           : oauth_accounts // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      default_payment_method_id: freezed == default_payment_method_id
+          ? _value.default_payment_method_id
+          : default_payment_method_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
     ));
   }
 }
@@ -223,9 +262,12 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
       required this.email,
       required this.email_verified,
       required this.name,
+      required this.billing_name,
       required this.billing_address,
       required this.tax_id,
-      required final Map<String, dynamic> oauth_accounts})
+      required final Map<String, dynamic> oauth_accounts,
+      this.default_payment_method_id,
+      this.type})
       : _oauth_accounts = oauth_accounts;
 
   factory _$CustomerPortalCustomerImpl.fromJson(Map<String, dynamic> json) =>
@@ -238,11 +280,13 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
   @override
   final String id;
   @override
-  final String email;
+  final String? email;
   @override
   final bool email_verified;
   @override
   final String? name;
+  @override
+  final String? billing_name;
   @override
   final dynamic billing_address;
   @override
@@ -256,8 +300,13 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
   }
 
   @override
+  final String? default_payment_method_id;
+  @override
+  final dynamic? type;
+
+  @override
   String toString() {
-    return 'CustomerPortalCustomer(created_at: $created_at, modified_at: $modified_at, id: $id, email: $email, email_verified: $email_verified, name: $name, billing_address: $billing_address, tax_id: $tax_id, oauth_accounts: $oauth_accounts)';
+    return 'CustomerPortalCustomer(created_at: $created_at, modified_at: $modified_at, id: $id, email: $email, email_verified: $email_verified, name: $name, billing_name: $billing_name, billing_address: $billing_address, tax_id: $tax_id, oauth_accounts: $oauth_accounts, default_payment_method_id: $default_payment_method_id, type: $type)';
   }
 
   @override
@@ -274,11 +323,17 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
             (identical(other.email_verified, email_verified) ||
                 other.email_verified == email_verified) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.billing_name, billing_name) ||
+                other.billing_name == billing_name) &&
             const DeepCollectionEquality()
                 .equals(other.billing_address, billing_address) &&
             const DeepCollectionEquality().equals(other.tax_id, tax_id) &&
             const DeepCollectionEquality()
-                .equals(other._oauth_accounts, _oauth_accounts));
+                .equals(other._oauth_accounts, _oauth_accounts) &&
+            (identical(other.default_payment_method_id,
+                    default_payment_method_id) ||
+                other.default_payment_method_id == default_payment_method_id) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -291,9 +346,12 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
       email,
       email_verified,
       name,
+      billing_name,
       const DeepCollectionEquality().hash(billing_address),
       const DeepCollectionEquality().hash(tax_id),
-      const DeepCollectionEquality().hash(_oauth_accounts));
+      const DeepCollectionEquality().hash(_oauth_accounts),
+      default_payment_method_id,
+      const DeepCollectionEquality().hash(type));
 
   /// Create a copy of CustomerPortalCustomer
   /// with the given fields replaced by the non-null parameter values.
@@ -314,16 +372,18 @@ class _$CustomerPortalCustomerImpl implements _CustomerPortalCustomer {
 
 abstract class _CustomerPortalCustomer implements CustomerPortalCustomer {
   const factory _CustomerPortalCustomer(
-          {required final String created_at,
-          required final String? modified_at,
-          required final String id,
-          required final String email,
-          required final bool email_verified,
-          required final String? name,
-          required final dynamic billing_address,
-          required final dynamic tax_id,
-          required final Map<String, dynamic> oauth_accounts}) =
-      _$CustomerPortalCustomerImpl;
+      {required final String created_at,
+      required final String? modified_at,
+      required final String id,
+      required final String? email,
+      required final bool email_verified,
+      required final String? name,
+      required final String? billing_name,
+      required final dynamic billing_address,
+      required final dynamic tax_id,
+      required final Map<String, dynamic> oauth_accounts,
+      final String? default_payment_method_id,
+      final dynamic? type}) = _$CustomerPortalCustomerImpl;
 
   factory _CustomerPortalCustomer.fromJson(Map<String, dynamic> json) =
       _$CustomerPortalCustomerImpl.fromJson;
@@ -335,17 +395,23 @@ abstract class _CustomerPortalCustomer implements CustomerPortalCustomer {
   @override
   String get id;
   @override
-  String get email;
+  String? get email;
   @override
   bool get email_verified;
   @override
   String? get name;
+  @override
+  String? get billing_name;
   @override
   dynamic get billing_address;
   @override
   dynamic get tax_id;
   @override
   Map<String, dynamic> get oauth_accounts;
+  @override
+  String? get default_payment_method_id;
+  @override
+  dynamic? get type;
 
   /// Create a copy of CustomerPortalCustomer
   /// with the given fields replaced by the non-null parameter values.

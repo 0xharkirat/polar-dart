@@ -27,11 +27,13 @@ mixin _$CustomerBenefitGrantLicenseKeys {
   String? get granted_at => throw _privateConstructorUsedError;
   String? get revoked_at => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
+  String? get member_id => throw _privateConstructorUsedError;
   String get benefit_id => throw _privateConstructorUsedError;
   String? get subscription_id => throw _privateConstructorUsedError;
   String? get order_id => throw _privateConstructorUsedError;
   bool get is_granted => throw _privateConstructorUsedError;
   bool get is_revoked => throw _privateConstructorUsedError;
+  dynamic? get error => throw _privateConstructorUsedError;
   CustomerPortalCustomer get customer => throw _privateConstructorUsedError;
   BenefitLicenseKeysSubscriber get benefit =>
       throw _privateConstructorUsedError;
@@ -63,11 +65,13 @@ abstract class $CustomerBenefitGrantLicenseKeysCopyWith<$Res> {
       String? granted_at,
       String? revoked_at,
       String customer_id,
+      String? member_id,
       String benefit_id,
       String? subscription_id,
       String? order_id,
       bool is_granted,
       bool is_revoked,
+      dynamic? error,
       CustomerPortalCustomer customer,
       BenefitLicenseKeysSubscriber benefit,
       BenefitGrantLicenseKeysProperties properties});
@@ -99,11 +103,13 @@ class _$CustomerBenefitGrantLicenseKeysCopyWithImpl<$Res,
     Object? granted_at = freezed,
     Object? revoked_at = freezed,
     Object? customer_id = null,
+    Object? member_id = freezed,
     Object? benefit_id = null,
     Object? subscription_id = freezed,
     Object? order_id = freezed,
     Object? is_granted = null,
     Object? is_revoked = null,
+    Object? error = freezed,
     Object? customer = null,
     Object? benefit = null,
     Object? properties = null,
@@ -133,6 +139,10 @@ class _$CustomerBenefitGrantLicenseKeysCopyWithImpl<$Res,
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
+      member_id: freezed == member_id
+          ? _value.member_id
+          : member_id // ignore: cast_nullable_to_non_nullable
+              as String?,
       benefit_id: null == benefit_id
           ? _value.benefit_id
           : benefit_id // ignore: cast_nullable_to_non_nullable
@@ -153,6 +163,10 @@ class _$CustomerBenefitGrantLicenseKeysCopyWithImpl<$Res,
           ? _value.is_revoked
           : is_revoked // ignore: cast_nullable_to_non_nullable
               as bool,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
@@ -216,11 +230,13 @@ abstract class _$$CustomerBenefitGrantLicenseKeysImplCopyWith<$Res>
       String? granted_at,
       String? revoked_at,
       String customer_id,
+      String? member_id,
       String benefit_id,
       String? subscription_id,
       String? order_id,
       bool is_granted,
       bool is_revoked,
+      dynamic? error,
       CustomerPortalCustomer customer,
       BenefitLicenseKeysSubscriber benefit,
       BenefitGrantLicenseKeysProperties properties});
@@ -254,11 +270,13 @@ class __$$CustomerBenefitGrantLicenseKeysImplCopyWithImpl<$Res>
     Object? granted_at = freezed,
     Object? revoked_at = freezed,
     Object? customer_id = null,
+    Object? member_id = freezed,
     Object? benefit_id = null,
     Object? subscription_id = freezed,
     Object? order_id = freezed,
     Object? is_granted = null,
     Object? is_revoked = null,
+    Object? error = freezed,
     Object? customer = null,
     Object? benefit = null,
     Object? properties = null,
@@ -288,6 +306,10 @@ class __$$CustomerBenefitGrantLicenseKeysImplCopyWithImpl<$Res>
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
+      member_id: freezed == member_id
+          ? _value.member_id
+          : member_id // ignore: cast_nullable_to_non_nullable
+              as String?,
       benefit_id: null == benefit_id
           ? _value.benefit_id
           : benefit_id // ignore: cast_nullable_to_non_nullable
@@ -308,6 +330,10 @@ class __$$CustomerBenefitGrantLicenseKeysImplCopyWithImpl<$Res>
           ? _value.is_revoked
           : is_revoked // ignore: cast_nullable_to_non_nullable
               as bool,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
@@ -335,11 +361,13 @@ class _$CustomerBenefitGrantLicenseKeysImpl
       required this.granted_at,
       required this.revoked_at,
       required this.customer_id,
+      this.member_id,
       required this.benefit_id,
       required this.subscription_id,
       required this.order_id,
       required this.is_granted,
       required this.is_revoked,
+      this.error,
       required this.customer,
       required this.benefit,
       required this.properties});
@@ -361,6 +389,8 @@ class _$CustomerBenefitGrantLicenseKeysImpl
   @override
   final String customer_id;
   @override
+  final String? member_id;
+  @override
   final String benefit_id;
   @override
   final String? subscription_id;
@@ -371,6 +401,8 @@ class _$CustomerBenefitGrantLicenseKeysImpl
   @override
   final bool is_revoked;
   @override
+  final dynamic? error;
+  @override
   final CustomerPortalCustomer customer;
   @override
   final BenefitLicenseKeysSubscriber benefit;
@@ -379,7 +411,7 @@ class _$CustomerBenefitGrantLicenseKeysImpl
 
   @override
   String toString() {
-    return 'CustomerBenefitGrantLicenseKeys(created_at: $created_at, modified_at: $modified_at, id: $id, granted_at: $granted_at, revoked_at: $revoked_at, customer_id: $customer_id, benefit_id: $benefit_id, subscription_id: $subscription_id, order_id: $order_id, is_granted: $is_granted, is_revoked: $is_revoked, customer: $customer, benefit: $benefit, properties: $properties)';
+    return 'CustomerBenefitGrantLicenseKeys(created_at: $created_at, modified_at: $modified_at, id: $id, granted_at: $granted_at, revoked_at: $revoked_at, customer_id: $customer_id, member_id: $member_id, benefit_id: $benefit_id, subscription_id: $subscription_id, order_id: $order_id, is_granted: $is_granted, is_revoked: $is_revoked, error: $error, customer: $customer, benefit: $benefit, properties: $properties)';
   }
 
   @override
@@ -398,6 +430,8 @@ class _$CustomerBenefitGrantLicenseKeysImpl
                 other.revoked_at == revoked_at) &&
             (identical(other.customer_id, customer_id) ||
                 other.customer_id == customer_id) &&
+            (identical(other.member_id, member_id) ||
+                other.member_id == member_id) &&
             (identical(other.benefit_id, benefit_id) ||
                 other.benefit_id == benefit_id) &&
             (identical(other.subscription_id, subscription_id) ||
@@ -408,6 +442,7 @@ class _$CustomerBenefitGrantLicenseKeysImpl
                 other.is_granted == is_granted) &&
             (identical(other.is_revoked, is_revoked) ||
                 other.is_revoked == is_revoked) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.customer, customer) ||
                 other.customer == customer) &&
             (identical(other.benefit, benefit) || other.benefit == benefit) &&
@@ -425,11 +460,13 @@ class _$CustomerBenefitGrantLicenseKeysImpl
       granted_at,
       revoked_at,
       customer_id,
+      member_id,
       benefit_id,
       subscription_id,
       order_id,
       is_granted,
       is_revoked,
+      const DeepCollectionEquality().hash(error),
       customer,
       benefit,
       properties);
@@ -461,11 +498,13 @@ abstract class _CustomerBenefitGrantLicenseKeys
           required final String? granted_at,
           required final String? revoked_at,
           required final String customer_id,
+          final String? member_id,
           required final String benefit_id,
           required final String? subscription_id,
           required final String? order_id,
           required final bool is_granted,
           required final bool is_revoked,
+          final dynamic? error,
           required final CustomerPortalCustomer customer,
           required final BenefitLicenseKeysSubscriber benefit,
           required final BenefitGrantLicenseKeysProperties properties}) =
@@ -487,6 +526,8 @@ abstract class _CustomerBenefitGrantLicenseKeys
   @override
   String get customer_id;
   @override
+  String? get member_id;
+  @override
   String get benefit_id;
   @override
   String? get subscription_id;
@@ -496,6 +537,8 @@ abstract class _CustomerBenefitGrantLicenseKeys
   bool get is_granted;
   @override
   bool get is_revoked;
+  @override
+  dynamic? get error;
   @override
   CustomerPortalCustomer get customer;
   @override

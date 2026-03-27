@@ -1,7 +1,7 @@
-import 'product_price.dart';
-import 'benefit_base.dart';
+import 'product_visibility.dart';
+import 'benefit_public.dart';
 import 'product_media_file_read.dart';
-import 'organization.dart';
+import 'customer_organization.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,18 +11,23 @@ part 'customer_order_product.freezed.dart';
 @freezed
 class CustomerOrderProduct with _$CustomerOrderProduct {
   const factory CustomerOrderProduct({
+    required String id,
     required String created_at,
     required String? modified_at,
-    required String id,
+    required dynamic trial_interval,
+    required dynamic trial_interval_count,
     required String name,
     required String? description,
+    required ProductVisibility visibility,
+    required dynamic recurring_interval,
+    required dynamic recurring_interval_count,
     required bool is_recurring,
     required bool is_archived,
     required String organization_id,
-    required List<ProductPrice> prices,
-    required List<BenefitBase> benefits,
+    required List<dynamic> prices,
+    required List<BenefitPublic> benefits,
     required List<ProductMediaFileRead> medias,
-    required Organization organization,
+    required CustomerOrganization organization,
   }) = _CustomerOrderProduct;
 
   factory CustomerOrderProduct.fromJson(Map<String, dynamic> json) => _$CustomerOrderProductFromJson(json);

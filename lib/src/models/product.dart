@@ -1,4 +1,5 @@
-import 'product_price.dart';
+import 'product_visibility.dart';
+import 'metadata_output_type.dart';
 import 'benefit.dart';
 import 'product_media_file_read.dart';
 import 'attached_custom_field.dart';
@@ -11,16 +12,21 @@ part 'product.freezed.dart';
 @freezed
 class Product with _$Product {
   const factory Product({
+    required String id,
     required String created_at,
     required String? modified_at,
-    required String id,
+    required dynamic trial_interval,
+    required dynamic trial_interval_count,
     required String name,
     required String? description,
+    required ProductVisibility visibility,
+    required dynamic recurring_interval,
+    required dynamic recurring_interval_count,
     required bool is_recurring,
     required bool is_archived,
     required String organization_id,
-    required Map<String, dynamic> metadata,
-    required List<ProductPrice> prices,
+    required MetadataOutputType metadata,
+    required List<dynamic> prices,
     required List<Benefit> benefits,
     required List<ProductMediaFileRead> medias,
     required List<AttachedCustomField> attached_custom_fields,

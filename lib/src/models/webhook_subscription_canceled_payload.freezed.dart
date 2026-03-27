@@ -22,6 +22,7 @@ WebhookSubscriptionCanceledPayload _$WebhookSubscriptionCanceledPayloadFromJson(
 /// @nodoc
 mixin _$WebhookSubscriptionCanceledPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Subscription get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookSubscriptionCanceledPayload to a JSON map.
@@ -43,7 +44,7 @@ abstract class $WebhookSubscriptionCanceledPayloadCopyWith<$Res> {
       _$WebhookSubscriptionCanceledPayloadCopyWithImpl<$Res,
           WebhookSubscriptionCanceledPayload>;
   @useResult
-  $Res call({String type, Subscription data});
+  $Res call({String type, String timestamp, Subscription data});
 
   $SubscriptionCopyWith<$Res> get data;
 }
@@ -65,12 +66,17 @@ class _$WebhookSubscriptionCanceledPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -99,7 +105,7 @@ abstract class _$$WebhookSubscriptionCanceledPayloadImplCopyWith<$Res>
       __$$WebhookSubscriptionCanceledPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Subscription data});
+  $Res call({String type, String timestamp, Subscription data});
 
   @override
   $SubscriptionCopyWith<$Res> get data;
@@ -121,12 +127,17 @@ class __$$WebhookSubscriptionCanceledPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookSubscriptionCanceledPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -141,7 +152,7 @@ class __$$WebhookSubscriptionCanceledPayloadImplCopyWithImpl<$Res>
 class _$WebhookSubscriptionCanceledPayloadImpl
     implements _WebhookSubscriptionCanceledPayload {
   const _$WebhookSubscriptionCanceledPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookSubscriptionCanceledPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -150,11 +161,13 @@ class _$WebhookSubscriptionCanceledPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Subscription data;
 
   @override
   String toString() {
-    return 'WebhookSubscriptionCanceledPayload(type: $type, data: $data)';
+    return 'WebhookSubscriptionCanceledPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -163,12 +176,14 @@ class _$WebhookSubscriptionCanceledPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookSubscriptionCanceledPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookSubscriptionCanceledPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,7 +206,9 @@ class _$WebhookSubscriptionCanceledPayloadImpl
 abstract class _WebhookSubscriptionCanceledPayload
     implements WebhookSubscriptionCanceledPayload {
   const factory _WebhookSubscriptionCanceledPayload(
-          {required final String type, required final Subscription data}) =
+          {required final String type,
+          required final String timestamp,
+          required final Subscription data}) =
       _$WebhookSubscriptionCanceledPayloadImpl;
 
   factory _WebhookSubscriptionCanceledPayload.fromJson(
@@ -200,6 +217,8 @@ abstract class _WebhookSubscriptionCanceledPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Subscription get data;
 

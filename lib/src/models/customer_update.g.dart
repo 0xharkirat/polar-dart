@@ -8,11 +8,14 @@ part of 'customer_update.dart';
 
 _$CustomerUpdateImpl _$$CustomerUpdateImplFromJson(Map<String, dynamic> json) =>
     _$CustomerUpdateImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
       email: json['email'] as String?,
       name: json['name'] as String?,
       billing_address: json['billing_address'],
-      tax_id: json['tax_id'],
+      tax_id: json['tax_id'] as String?,
+      locale: json['locale'] as String?,
+      external_id: json['external_id'] as String?,
+      type: json['type'],
     );
 
 Map<String, dynamic> _$$CustomerUpdateImplToJson(
@@ -23,4 +26,7 @@ Map<String, dynamic> _$$CustomerUpdateImplToJson(
       if (instance.name case final value?) 'name': value,
       if (instance.billing_address case final value?) 'billing_address': value,
       if (instance.tax_id case final value?) 'tax_id': value,
+      if (instance.locale case final value?) 'locale': value,
+      if (instance.external_id case final value?) 'external_id': value,
+      if (instance.type case final value?) 'type': value,
     };

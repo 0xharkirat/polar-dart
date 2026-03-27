@@ -23,8 +23,21 @@ mixin _$OrganizationCreate {
   String get name => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
   String? get avatar_url => throw _privateConstructorUsedError;
+  dynamic? get legal_entity => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+  dynamic? get socials => throw _privateConstructorUsedError;
+  dynamic? get details => throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
   dynamic? get feature_settings => throw _privateConstructorUsedError;
   dynamic? get subscription_settings => throw _privateConstructorUsedError;
+  dynamic? get notification_settings => throw _privateConstructorUsedError;
+  dynamic? get customer_email_settings => throw _privateConstructorUsedError;
+  dynamic? get customer_portal_settings => throw _privateConstructorUsedError;
+  PresentmentCurrency? get default_presentment_currency =>
+      throw _privateConstructorUsedError;
+  TaxBehaviorOption? get default_tax_behavior =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this OrganizationCreate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,8 +59,19 @@ abstract class $OrganizationCreateCopyWith<$Res> {
       {String name,
       String slug,
       String? avatar_url,
+      dynamic? legal_entity,
+      String? email,
+      String? website,
+      dynamic? socials,
+      dynamic? details,
+      String? country,
       dynamic? feature_settings,
-      dynamic? subscription_settings});
+      dynamic? subscription_settings,
+      dynamic? notification_settings,
+      dynamic? customer_email_settings,
+      dynamic? customer_portal_settings,
+      PresentmentCurrency? default_presentment_currency,
+      TaxBehaviorOption? default_tax_behavior});
 }
 
 /// @nodoc
@@ -68,8 +92,19 @@ class _$OrganizationCreateCopyWithImpl<$Res, $Val extends OrganizationCreate>
     Object? name = null,
     Object? slug = null,
     Object? avatar_url = freezed,
+    Object? legal_entity = freezed,
+    Object? email = freezed,
+    Object? website = freezed,
+    Object? socials = freezed,
+    Object? details = freezed,
+    Object? country = freezed,
     Object? feature_settings = freezed,
     Object? subscription_settings = freezed,
+    Object? notification_settings = freezed,
+    Object? customer_email_settings = freezed,
+    Object? customer_portal_settings = freezed,
+    Object? default_presentment_currency = freezed,
+    Object? default_tax_behavior = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -84,6 +119,30 @@ class _$OrganizationCreateCopyWithImpl<$Res, $Val extends OrganizationCreate>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
+      legal_entity: freezed == legal_entity
+          ? _value.legal_entity
+          : legal_entity // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      socials: freezed == socials
+          ? _value.socials
+          : socials // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      details: freezed == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -92,6 +151,26 @@ class _$OrganizationCreateCopyWithImpl<$Res, $Val extends OrganizationCreate>
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
               as dynamic?,
+      notification_settings: freezed == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_email_settings: freezed == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_portal_settings: freezed == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_presentment_currency: freezed == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as PresentmentCurrency?,
+      default_tax_behavior: freezed == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
+              as TaxBehaviorOption?,
     ) as $Val);
   }
 }
@@ -108,8 +187,19 @@ abstract class _$$OrganizationCreateImplCopyWith<$Res>
       {String name,
       String slug,
       String? avatar_url,
+      dynamic? legal_entity,
+      String? email,
+      String? website,
+      dynamic? socials,
+      dynamic? details,
+      String? country,
       dynamic? feature_settings,
-      dynamic? subscription_settings});
+      dynamic? subscription_settings,
+      dynamic? notification_settings,
+      dynamic? customer_email_settings,
+      dynamic? customer_portal_settings,
+      PresentmentCurrency? default_presentment_currency,
+      TaxBehaviorOption? default_tax_behavior});
 }
 
 /// @nodoc
@@ -128,8 +218,19 @@ class __$$OrganizationCreateImplCopyWithImpl<$Res>
     Object? name = null,
     Object? slug = null,
     Object? avatar_url = freezed,
+    Object? legal_entity = freezed,
+    Object? email = freezed,
+    Object? website = freezed,
+    Object? socials = freezed,
+    Object? details = freezed,
+    Object? country = freezed,
     Object? feature_settings = freezed,
     Object? subscription_settings = freezed,
+    Object? notification_settings = freezed,
+    Object? customer_email_settings = freezed,
+    Object? customer_portal_settings = freezed,
+    Object? default_presentment_currency = freezed,
+    Object? default_tax_behavior = freezed,
   }) {
     return _then(_$OrganizationCreateImpl(
       name: null == name
@@ -144,6 +245,30 @@ class __$$OrganizationCreateImplCopyWithImpl<$Res>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
+      legal_entity: freezed == legal_entity
+          ? _value.legal_entity
+          : legal_entity // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      socials: freezed == socials
+          ? _value.socials
+          : socials // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      details: freezed == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -152,6 +277,26 @@ class __$$OrganizationCreateImplCopyWithImpl<$Res>
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
               as dynamic?,
+      notification_settings: freezed == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_email_settings: freezed == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_portal_settings: freezed == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_presentment_currency: freezed == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as PresentmentCurrency?,
+      default_tax_behavior: freezed == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
+              as TaxBehaviorOption?,
     ));
   }
 }
@@ -163,8 +308,19 @@ class _$OrganizationCreateImpl implements _OrganizationCreate {
       {required this.name,
       required this.slug,
       this.avatar_url,
+      this.legal_entity,
+      this.email,
+      this.website,
+      this.socials,
+      this.details,
+      this.country,
       this.feature_settings,
-      this.subscription_settings});
+      this.subscription_settings,
+      this.notification_settings,
+      this.customer_email_settings,
+      this.customer_portal_settings,
+      this.default_presentment_currency,
+      this.default_tax_behavior});
 
   factory _$OrganizationCreateImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrganizationCreateImplFromJson(json);
@@ -176,13 +332,35 @@ class _$OrganizationCreateImpl implements _OrganizationCreate {
   @override
   final String? avatar_url;
   @override
+  final dynamic? legal_entity;
+  @override
+  final String? email;
+  @override
+  final String? website;
+  @override
+  final dynamic? socials;
+  @override
+  final dynamic? details;
+  @override
+  final String? country;
+  @override
   final dynamic? feature_settings;
   @override
   final dynamic? subscription_settings;
+  @override
+  final dynamic? notification_settings;
+  @override
+  final dynamic? customer_email_settings;
+  @override
+  final dynamic? customer_portal_settings;
+  @override
+  final PresentmentCurrency? default_presentment_currency;
+  @override
+  final TaxBehaviorOption? default_tax_behavior;
 
   @override
   String toString() {
-    return 'OrganizationCreate(name: $name, slug: $slug, avatar_url: $avatar_url, feature_settings: $feature_settings, subscription_settings: $subscription_settings)';
+    return 'OrganizationCreate(name: $name, slug: $slug, avatar_url: $avatar_url, legal_entity: $legal_entity, email: $email, website: $website, socials: $socials, details: $details, country: $country, feature_settings: $feature_settings, subscription_settings: $subscription_settings, notification_settings: $notification_settings, customer_email_settings: $customer_email_settings, customer_portal_settings: $customer_portal_settings, default_presentment_currency: $default_presentment_currency, default_tax_behavior: $default_tax_behavior)';
   }
 
   @override
@@ -195,9 +373,28 @@ class _$OrganizationCreateImpl implements _OrganizationCreate {
             (identical(other.avatar_url, avatar_url) ||
                 other.avatar_url == avatar_url) &&
             const DeepCollectionEquality()
+                .equals(other.legal_entity, legal_entity) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.website, website) || other.website == website) &&
+            const DeepCollectionEquality().equals(other.socials, socials) &&
+            const DeepCollectionEquality().equals(other.details, details) &&
+            (identical(other.country, country) || other.country == country) &&
+            const DeepCollectionEquality()
                 .equals(other.feature_settings, feature_settings) &&
             const DeepCollectionEquality()
-                .equals(other.subscription_settings, subscription_settings));
+                .equals(other.subscription_settings, subscription_settings) &&
+            const DeepCollectionEquality()
+                .equals(other.notification_settings, notification_settings) &&
+            const DeepCollectionEquality().equals(
+                other.customer_email_settings, customer_email_settings) &&
+            const DeepCollectionEquality().equals(
+                other.customer_portal_settings, customer_portal_settings) &&
+            (identical(other.default_presentment_currency,
+                    default_presentment_currency) ||
+                other.default_presentment_currency ==
+                    default_presentment_currency) &&
+            (identical(other.default_tax_behavior, default_tax_behavior) ||
+                other.default_tax_behavior == default_tax_behavior));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -207,8 +404,19 @@ class _$OrganizationCreateImpl implements _OrganizationCreate {
       name,
       slug,
       avatar_url,
+      const DeepCollectionEquality().hash(legal_entity),
+      email,
+      website,
+      const DeepCollectionEquality().hash(socials),
+      const DeepCollectionEquality().hash(details),
+      country,
       const DeepCollectionEquality().hash(feature_settings),
-      const DeepCollectionEquality().hash(subscription_settings));
+      const DeepCollectionEquality().hash(subscription_settings),
+      const DeepCollectionEquality().hash(notification_settings),
+      const DeepCollectionEquality().hash(customer_email_settings),
+      const DeepCollectionEquality().hash(customer_portal_settings),
+      default_presentment_currency,
+      default_tax_behavior);
 
   /// Create a copy of OrganizationCreate
   /// with the given fields replaced by the non-null parameter values.
@@ -229,11 +437,23 @@ class _$OrganizationCreateImpl implements _OrganizationCreate {
 
 abstract class _OrganizationCreate implements OrganizationCreate {
   const factory _OrganizationCreate(
-      {required final String name,
-      required final String slug,
-      final String? avatar_url,
-      final dynamic? feature_settings,
-      final dynamic? subscription_settings}) = _$OrganizationCreateImpl;
+          {required final String name,
+          required final String slug,
+          final String? avatar_url,
+          final dynamic? legal_entity,
+          final String? email,
+          final String? website,
+          final dynamic? socials,
+          final dynamic? details,
+          final String? country,
+          final dynamic? feature_settings,
+          final dynamic? subscription_settings,
+          final dynamic? notification_settings,
+          final dynamic? customer_email_settings,
+          final dynamic? customer_portal_settings,
+          final PresentmentCurrency? default_presentment_currency,
+          final TaxBehaviorOption? default_tax_behavior}) =
+      _$OrganizationCreateImpl;
 
   factory _OrganizationCreate.fromJson(Map<String, dynamic> json) =
       _$OrganizationCreateImpl.fromJson;
@@ -245,9 +465,31 @@ abstract class _OrganizationCreate implements OrganizationCreate {
   @override
   String? get avatar_url;
   @override
+  dynamic? get legal_entity;
+  @override
+  String? get email;
+  @override
+  String? get website;
+  @override
+  dynamic? get socials;
+  @override
+  dynamic? get details;
+  @override
+  String? get country;
+  @override
   dynamic? get feature_settings;
   @override
   dynamic? get subscription_settings;
+  @override
+  dynamic? get notification_settings;
+  @override
+  dynamic? get customer_email_settings;
+  @override
+  dynamic? get customer_portal_settings;
+  @override
+  PresentmentCurrency? get default_presentment_currency;
+  @override
+  TaxBehaviorOption? get default_tax_behavior;
 
   /// Create a copy of OrganizationCreate
   /// with the given fields replaced by the non-null parameter values.

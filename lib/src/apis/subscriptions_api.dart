@@ -10,13 +10,28 @@ class SubscriptionsApi {
   SubscriptionsApi(this._dio);
 
 
-  Future<ListResourceSubscription> subscriptionsList({dynamic organization_id, dynamic product_id, dynamic customer_id, dynamic discount_id, dynamic active, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"]}) async {
+  Future<ListResourceSubscription> subscriptionsList({dynamic organization_id, dynamic product_id, dynamic customer_id, dynamic external_customer_id, dynamic discount_id, dynamic active, dynamic cancel_at_period_end, int page = 1, int limit = 10, dynamic sorting = const ["-started_at"], dynamic metadata}) async {
     try {
       final response = await _dio.get(
         '/v1/subscriptions/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (customer_id != null) 'customer_id': customer_id, if (discount_id != null) 'discount_id': discount_id, if (active != null) 'active': active, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (product_id != null) 'product_id': product_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (discount_id != null) 'discount_id': discount_id, if (active != null) 'active': active, if (cancel_at_period_end != null) 'cancel_at_period_end': cancel_at_period_end, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceSubscription.fromJson(response.data);
+    } catch (e) {
+      if (e is DioException) {
+       throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');
+
+      }
+      throw Exception('Unexpected Error: $e');
+    }
+  }
+
+  Future<Subscription> subscriptionsCreate() async {
+    try {
+      final response = await _dio.post(
+        '/v1/subscriptions/',
+      );
+      return Subscription.fromJson(response.data);
     } catch (e) {
       if (e is DioException) {
        throw Exception('HTTP Error: ${e.response?.statusCode} - ${e.message}');

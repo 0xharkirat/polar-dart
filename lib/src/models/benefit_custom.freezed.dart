@@ -20,16 +20,16 @@ BenefitCustom _$BenefitCustomFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BenefitCustom {
+  String get id => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get selectable => throw _privateConstructorUsedError;
   bool get deletable => throw _privateConstructorUsedError;
   String get organization_id => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   BenefitCustomProperties get properties => throw _privateConstructorUsedError;
-  bool get is_tax_applicable => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitCustom to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,17 +48,18 @@ abstract class $BenefitCustomCopyWith<$Res> {
       _$BenefitCustomCopyWithImpl<$Res, BenefitCustom>;
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
-      BenefitCustomProperties properties,
-      bool is_tax_applicable});
+      MetadataOutputType metadata,
+      BenefitCustomProperties properties});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $BenefitCustomPropertiesCopyWith<$Res> get properties;
 }
 
@@ -77,18 +78,22 @@ class _$BenefitCustomCopyWithImpl<$Res, $Val extends BenefitCustom>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
-    Object? is_tax_applicable = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -97,10 +102,6 @@ class _$BenefitCustomCopyWithImpl<$Res, $Val extends BenefitCustom>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -121,15 +122,25 @@ class _$BenefitCustomCopyWithImpl<$Res, $Val extends BenefitCustom>
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as BenefitCustomProperties,
-      is_tax_applicable: null == is_tax_applicable
-          ? _value.is_tax_applicable
-          : is_tax_applicable // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
+  }
+
+  /// Create a copy of BenefitCustom
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 
   /// Create a copy of BenefitCustom
@@ -152,17 +163,19 @@ abstract class _$$BenefitCustomImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
-      BenefitCustomProperties properties,
-      bool is_tax_applicable});
+      MetadataOutputType metadata,
+      BenefitCustomProperties properties});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $BenefitCustomPropertiesCopyWith<$Res> get properties;
 }
@@ -180,18 +193,22 @@ class __$$BenefitCustomImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
-    Object? is_tax_applicable = null,
   }) {
     return _then(_$BenefitCustomImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -200,10 +217,6 @@ class __$$BenefitCustomImplCopyWithImpl<$Res>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -224,14 +237,14 @@ class __$$BenefitCustomImplCopyWithImpl<$Res>
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as BenefitCustomProperties,
-      is_tax_applicable: null == is_tax_applicable
-          ? _value.is_tax_applicable
-          : is_tax_applicable // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -240,26 +253,26 @@ class __$$BenefitCustomImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitCustomImpl implements _BenefitCustom {
   const _$BenefitCustomImpl(
-      {required this.created_at,
+      {required this.id,
+      required this.created_at,
       required this.modified_at,
-      required this.id,
       required this.type,
       required this.description,
       required this.selectable,
       required this.deletable,
       required this.organization_id,
-      required this.properties,
-      required this.is_tax_applicable});
+      required this.metadata,
+      required this.properties});
 
   factory _$BenefitCustomImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitCustomImplFromJson(json);
 
   @override
+  final String id;
+  @override
   final String created_at;
   @override
   final String? modified_at;
-  @override
-  final String id;
   @override
   final String type;
   @override
@@ -271,13 +284,13 @@ class _$BenefitCustomImpl implements _BenefitCustom {
   @override
   final String organization_id;
   @override
-  final BenefitCustomProperties properties;
+  final MetadataOutputType metadata;
   @override
-  final bool is_tax_applicable;
+  final BenefitCustomProperties properties;
 
   @override
   String toString() {
-    return 'BenefitCustom(created_at: $created_at, modified_at: $modified_at, id: $id, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, properties: $properties, is_tax_applicable: $is_tax_applicable)';
+    return 'BenefitCustom(id: $id, created_at: $created_at, modified_at: $modified_at, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, metadata: $metadata, properties: $properties)';
   }
 
   @override
@@ -285,11 +298,11 @@ class _$BenefitCustomImpl implements _BenefitCustom {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitCustomImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -299,26 +312,26 @@ class _$BenefitCustomImpl implements _BenefitCustom {
                 other.deletable == deletable) &&
             (identical(other.organization_id, organization_id) ||
                 other.organization_id == organization_id) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.properties, properties) ||
-                other.properties == properties) &&
-            (identical(other.is_tax_applicable, is_tax_applicable) ||
-                other.is_tax_applicable == is_tax_applicable));
+                other.properties == properties));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       created_at,
       modified_at,
-      id,
       type,
       description,
       selectable,
       deletable,
       organization_id,
-      properties,
-      is_tax_applicable);
+      metadata,
+      properties);
 
   /// Create a copy of BenefitCustom
   /// with the given fields replaced by the non-null parameter values.
@@ -338,26 +351,26 @@ class _$BenefitCustomImpl implements _BenefitCustom {
 
 abstract class _BenefitCustom implements BenefitCustom {
   const factory _BenefitCustom(
-      {required final String created_at,
+      {required final String id,
+      required final String created_at,
       required final String? modified_at,
-      required final String id,
       required final String type,
       required final String description,
       required final bool selectable,
       required final bool deletable,
       required final String organization_id,
-      required final BenefitCustomProperties properties,
-      required final bool is_tax_applicable}) = _$BenefitCustomImpl;
+      required final MetadataOutputType metadata,
+      required final BenefitCustomProperties properties}) = _$BenefitCustomImpl;
 
   factory _BenefitCustom.fromJson(Map<String, dynamic> json) =
       _$BenefitCustomImpl.fromJson;
 
   @override
+  String get id;
+  @override
   String get created_at;
   @override
   String? get modified_at;
-  @override
-  String get id;
   @override
   String get type;
   @override
@@ -369,9 +382,9 @@ abstract class _BenefitCustom implements BenefitCustom {
   @override
   String get organization_id;
   @override
-  BenefitCustomProperties get properties;
+  MetadataOutputType get metadata;
   @override
-  bool get is_tax_applicable;
+  BenefitCustomProperties get properties;
 
   /// Create a copy of BenefitCustom
   /// with the given fields replaced by the non-null parameter values.

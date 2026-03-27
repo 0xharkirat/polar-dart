@@ -10,7 +10,8 @@ _$RefundImpl _$$RefundImplFromJson(Map<String, dynamic> json) => _$RefundImpl(
       created_at: json['created_at'] as String,
       modified_at: json['modified_at'] as String?,
       id: json['id'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata:
+          MetadataOutputType.fromJson(json['metadata'] as Map<String, dynamic>),
       status: $enumDecode(_$RefundStatusEnumMap, json['status']),
       reason: $enumDecode(_$RefundReasonEnumMap, json['reason']),
       amount: (json['amount'] as num).toInt(),
@@ -21,6 +22,7 @@ _$RefundImpl _$$RefundImplFromJson(Map<String, dynamic> json) => _$RefundImpl(
       subscription_id: json['subscription_id'] as String?,
       customer_id: json['customer_id'] as String,
       revoke_benefits: json['revoke_benefits'] as bool,
+      dispute: json['dispute'],
     );
 
 Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) =>
@@ -39,6 +41,7 @@ Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) =>
       if (instance.subscription_id case final value?) 'subscription_id': value,
       'customer_id': instance.customer_id,
       'revoke_benefits': instance.revoke_benefits,
+      if (instance.dispute case final value?) 'dispute': value,
     };
 
 const _$RefundStatusEnumMap = {
@@ -54,5 +57,6 @@ const _$RefundReasonEnumMap = {
   RefundReason.customer_request: 'customer_request',
   RefundReason.service_disruption: 'service_disruption',
   RefundReason.satisfaction_guarantee: 'satisfaction_guarantee',
+  RefundReason.dispute_prevention: 'dispute_prevention',
   RefundReason.other: 'other',
 };

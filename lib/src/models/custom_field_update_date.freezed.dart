@@ -21,7 +21,7 @@ CustomFieldUpdateDate _$CustomFieldUpdateDateFromJson(
 
 /// @nodoc
 mixin _$CustomFieldUpdateDate {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $CustomFieldUpdateDateCopyWith<$Res> {
       _$CustomFieldUpdateDateCopyWithImpl<$Res, CustomFieldUpdateDate>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -77,7 +77,7 @@ class _$CustomFieldUpdateDateCopyWithImpl<$Res,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ abstract class _$$CustomFieldUpdateDateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -137,9 +137,9 @@ class __$$CustomFieldUpdateDateImplCopyWithImpl<$Res>
   }) {
     return _then(_$CustomFieldUpdateDateImpl(
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -164,17 +164,26 @@ class __$$CustomFieldUpdateDateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomFieldUpdateDateImpl implements _CustomFieldUpdateDate {
   const _$CustomFieldUpdateDateImpl(
-      {this.metadata,
+      {final Map<String, dynamic>? metadata,
       this.name,
       this.slug,
       required this.type,
-      this.properties});
+      this.properties})
+      : _metadata = metadata;
 
   factory _$CustomFieldUpdateDateImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldUpdateDateImplFromJson(json);
 
+  final Map<String, dynamic>? _metadata;
   @override
-  final dynamic? metadata;
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? name;
   @override
@@ -194,7 +203,7 @@ class _$CustomFieldUpdateDateImpl implements _CustomFieldUpdateDate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldUpdateDateImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.type, type) || other.type == type) &&
@@ -206,7 +215,7 @@ class _$CustomFieldUpdateDateImpl implements _CustomFieldUpdateDate {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(_metadata),
       name,
       slug,
       type,
@@ -231,7 +240,7 @@ class _$CustomFieldUpdateDateImpl implements _CustomFieldUpdateDate {
 
 abstract class _CustomFieldUpdateDate implements CustomFieldUpdateDate {
   const factory _CustomFieldUpdateDate(
-      {final dynamic? metadata,
+      {final Map<String, dynamic>? metadata,
       final String? name,
       final String? slug,
       required final String type,
@@ -241,7 +250,7 @@ abstract class _CustomFieldUpdateDate implements CustomFieldUpdateDate {
       _$CustomFieldUpdateDateImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  Map<String, dynamic>? get metadata;
   @override
   String? get name;
   @override

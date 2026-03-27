@@ -22,6 +22,7 @@ WebhookRefundCreatedPayload _$WebhookRefundCreatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookRefundCreatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Refund get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookRefundCreatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookRefundCreatedPayloadCopyWith<$Res> {
       _$WebhookRefundCreatedPayloadCopyWithImpl<$Res,
           WebhookRefundCreatedPayload>;
   @useResult
-  $Res call({String type, Refund data});
+  $Res call({String type, String timestamp, Refund data});
 
   $RefundCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookRefundCreatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookRefundCreatedPayloadImplCopyWith<$Res>
       __$$WebhookRefundCreatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Refund data});
+  $Res call({String type, String timestamp, Refund data});
 
   @override
   $RefundCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookRefundCreatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookRefundCreatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookRefundCreatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookRefundCreatedPayloadImpl
     implements _WebhookRefundCreatedPayload {
   const _$WebhookRefundCreatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookRefundCreatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookRefundCreatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Refund data;
 
   @override
   String toString() {
-    return 'WebhookRefundCreatedPayload(type: $type, data: $data)';
+    return 'WebhookRefundCreatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookRefundCreatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookRefundCreatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookRefundCreatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -190,6 +205,7 @@ abstract class _WebhookRefundCreatedPayload
     implements WebhookRefundCreatedPayload {
   const factory _WebhookRefundCreatedPayload(
       {required final String type,
+      required final String timestamp,
       required final Refund data}) = _$WebhookRefundCreatedPayloadImpl;
 
   factory _WebhookRefundCreatedPayload.fromJson(Map<String, dynamic> json) =
@@ -197,6 +213,8 @@ abstract class _WebhookRefundCreatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Refund get data;
 

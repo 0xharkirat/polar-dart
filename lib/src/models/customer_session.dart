@@ -13,6 +13,7 @@ class CustomerSession with _$CustomerSession {
     required String id,
     required String token,
     required String expires_at,
+    required String? return_url,
     required String customer_portal_url,
     required String customer_id,
     required Customer customer,

@@ -20,6 +20,7 @@ BenefitCustomUpdate _$BenefitCustomUpdateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BenefitCustomUpdate {
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   dynamic? get properties => throw _privateConstructorUsedError;
@@ -40,7 +41,11 @@ abstract class $BenefitCustomUpdateCopyWith<$Res> {
           BenefitCustomUpdate value, $Res Function(BenefitCustomUpdate) then) =
       _$BenefitCustomUpdateCopyWithImpl<$Res, BenefitCustomUpdate>;
   @useResult
-  $Res call({String? description, String type, dynamic? properties});
+  $Res call(
+      {Map<String, dynamic>? metadata,
+      String? description,
+      String type,
+      dynamic? properties});
 }
 
 /// @nodoc
@@ -58,11 +63,16 @@ class _$BenefitCustomUpdateCopyWithImpl<$Res, $Val extends BenefitCustomUpdate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? description = freezed,
     Object? type = null,
     Object? properties = freezed,
   }) {
     return _then(_value.copyWith(
+      metadata: freezed == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -87,7 +97,11 @@ abstract class _$$BenefitCustomUpdateImplCopyWith<$Res>
       __$$BenefitCustomUpdateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? description, String type, dynamic? properties});
+  $Res call(
+      {Map<String, dynamic>? metadata,
+      String? description,
+      String type,
+      dynamic? properties});
 }
 
 /// @nodoc
@@ -103,11 +117,16 @@ class __$$BenefitCustomUpdateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? description = freezed,
     Object? type = null,
     Object? properties = freezed,
   }) {
     return _then(_$BenefitCustomUpdateImpl(
+      metadata: freezed == metadata
+          ? _value._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -128,10 +147,24 @@ class __$$BenefitCustomUpdateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitCustomUpdateImpl implements _BenefitCustomUpdate {
   const _$BenefitCustomUpdateImpl(
-      {this.description, required this.type, this.properties});
+      {final Map<String, dynamic>? metadata,
+      this.description,
+      required this.type,
+      this.properties})
+      : _metadata = metadata;
 
   factory _$BenefitCustomUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitCustomUpdateImplFromJson(json);
+
+  final Map<String, dynamic>? _metadata;
+  @override
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   final String? description;
@@ -142,7 +175,7 @@ class _$BenefitCustomUpdateImpl implements _BenefitCustomUpdate {
 
   @override
   String toString() {
-    return 'BenefitCustomUpdate(description: $description, type: $type, properties: $properties)';
+    return 'BenefitCustomUpdate(metadata: $metadata, description: $description, type: $type, properties: $properties)';
   }
 
   @override
@@ -150,6 +183,7 @@ class _$BenefitCustomUpdateImpl implements _BenefitCustomUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitCustomUpdateImpl &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.type, type) || other.type == type) &&
@@ -159,7 +193,11 @@ class _$BenefitCustomUpdateImpl implements _BenefitCustomUpdate {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, description, type,
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_metadata),
+      description,
+      type,
       const DeepCollectionEquality().hash(properties));
 
   /// Create a copy of BenefitCustomUpdate
@@ -181,13 +219,16 @@ class _$BenefitCustomUpdateImpl implements _BenefitCustomUpdate {
 
 abstract class _BenefitCustomUpdate implements BenefitCustomUpdate {
   const factory _BenefitCustomUpdate(
-      {final String? description,
+      {final Map<String, dynamic>? metadata,
+      final String? description,
       required final String type,
       final dynamic? properties}) = _$BenefitCustomUpdateImpl;
 
   factory _BenefitCustomUpdate.fromJson(Map<String, dynamic> json) =
       _$BenefitCustomUpdateImpl.fromJson;
 
+  @override
+  Map<String, dynamic>? get metadata;
   @override
   String? get description;
   @override

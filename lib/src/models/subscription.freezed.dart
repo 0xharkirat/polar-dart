@@ -23,13 +23,16 @@ mixin _$Subscription {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  dynamic get amount => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
+  int get amount => throw _privateConstructorUsedError;
+  String get currency => throw _privateConstructorUsedError;
   SubscriptionRecurringInterval get recurring_interval =>
       throw _privateConstructorUsedError;
+  int get recurring_interval_count => throw _privateConstructorUsedError;
   SubscriptionStatus get status => throw _privateConstructorUsedError;
   String get current_period_start => throw _privateConstructorUsedError;
-  String? get current_period_end => throw _privateConstructorUsedError;
+  String get current_period_end => throw _privateConstructorUsedError;
+  String? get trial_start => throw _privateConstructorUsedError;
+  String? get trial_end => throw _privateConstructorUsedError;
   bool get cancel_at_period_end => throw _privateConstructorUsedError;
   String? get canceled_at => throw _privateConstructorUsedError;
   String? get started_at => throw _privateConstructorUsedError;
@@ -37,22 +40,22 @@ mixin _$Subscription {
   String? get ended_at => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
   String get product_id => throw _privateConstructorUsedError;
-  String get price_id => throw _privateConstructorUsedError;
   String? get discount_id => throw _privateConstructorUsedError;
   String? get checkout_id => throw _privateConstructorUsedError;
+  dynamic? get seats => throw _privateConstructorUsedError;
   dynamic get customer_cancellation_reason =>
       throw _privateConstructorUsedError;
   String? get customer_cancellation_comment =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   Map<String, dynamic>? get custom_field_data =>
       throw _privateConstructorUsedError;
   SubscriptionCustomer get customer => throw _privateConstructorUsedError;
-  String get user_id => throw _privateConstructorUsedError;
-  SubscriptionUser get user => throw _privateConstructorUsedError;
   Product get product => throw _privateConstructorUsedError;
-  ProductPriceRecurring get price => throw _privateConstructorUsedError;
   dynamic get discount => throw _privateConstructorUsedError;
+  List<dynamic> get prices => throw _privateConstructorUsedError;
+  List<SubscriptionMeter> get meters => throw _privateConstructorUsedError;
+  dynamic get pending_update => throw _privateConstructorUsedError;
 
   /// Serializes this Subscription to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -74,12 +77,15 @@ abstract class $SubscriptionCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      dynamic amount,
-      String? currency,
+      int amount,
+      String currency,
       SubscriptionRecurringInterval recurring_interval,
+      int recurring_interval_count,
       SubscriptionStatus status,
       String current_period_start,
-      String? current_period_end,
+      String current_period_end,
+      String? trial_start,
+      String? trial_end,
       bool cancel_at_period_end,
       String? canceled_at,
       String? started_at,
@@ -87,24 +93,23 @@ abstract class $SubscriptionCopyWith<$Res> {
       String? ended_at,
       String customer_id,
       String product_id,
-      String price_id,
       String? discount_id,
       String? checkout_id,
+      dynamic? seats,
       dynamic customer_cancellation_reason,
       String? customer_cancellation_comment,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       Map<String, dynamic>? custom_field_data,
       SubscriptionCustomer customer,
-      String user_id,
-      SubscriptionUser user,
       Product product,
-      ProductPriceRecurring price,
-      dynamic discount});
+      dynamic discount,
+      List<dynamic> prices,
+      List<SubscriptionMeter> meters,
+      dynamic pending_update});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $SubscriptionCustomerCopyWith<$Res> get customer;
-  $SubscriptionUserCopyWith<$Res> get user;
   $ProductCopyWith<$Res> get product;
-  $ProductPriceRecurringCopyWith<$Res> get price;
 }
 
 /// @nodoc
@@ -125,12 +130,15 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? amount = freezed,
-    Object? currency = freezed,
+    Object? amount = null,
+    Object? currency = null,
     Object? recurring_interval = null,
+    Object? recurring_interval_count = null,
     Object? status = null,
     Object? current_period_start = null,
-    Object? current_period_end = freezed,
+    Object? current_period_end = null,
+    Object? trial_start = freezed,
+    Object? trial_end = freezed,
     Object? cancel_at_period_end = null,
     Object? canceled_at = freezed,
     Object? started_at = freezed,
@@ -138,19 +146,19 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
     Object? ended_at = freezed,
     Object? customer_id = null,
     Object? product_id = null,
-    Object? price_id = null,
     Object? discount_id = freezed,
     Object? checkout_id = freezed,
+    Object? seats = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
     Object? metadata = null,
     Object? custom_field_data = freezed,
     Object? customer = null,
-    Object? user_id = null,
-    Object? user = null,
     Object? product = null,
-    Object? price = null,
     Object? discount = freezed,
+    Object? prices = null,
+    Object? meters = null,
+    Object? pending_update = freezed,
   }) {
     return _then(_value.copyWith(
       created_at: null == created_at
@@ -165,18 +173,22 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
+              as int,
+      currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       recurring_interval: null == recurring_interval
           ? _value.recurring_interval
           : recurring_interval // ignore: cast_nullable_to_non_nullable
               as SubscriptionRecurringInterval,
+      recurring_interval_count: null == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as int,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -185,9 +197,17 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.current_period_start
           : current_period_start // ignore: cast_nullable_to_non_nullable
               as String,
-      current_period_end: freezed == current_period_end
+      current_period_end: null == current_period_end
           ? _value.current_period_end
           : current_period_end // ignore: cast_nullable_to_non_nullable
+              as String,
+      trial_start: freezed == trial_start
+          ? _value.trial_start
+          : trial_start // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trial_end: freezed == trial_end
+          ? _value.trial_end
+          : trial_end // ignore: cast_nullable_to_non_nullable
               as String?,
       cancel_at_period_end: null == cancel_at_period_end
           ? _value.cancel_at_period_end
@@ -217,10 +237,6 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.product_id
           : product_id // ignore: cast_nullable_to_non_nullable
               as String,
-      price_id: null == price_id
-          ? _value.price_id
-          : price_id // ignore: cast_nullable_to_non_nullable
-              as String,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -229,6 +245,10 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.checkout_id
           : checkout_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      seats: freezed == seats
+          ? _value.seats
+          : seats // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -240,7 +260,7 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       custom_field_data: freezed == custom_field_data
           ? _value.custom_field_data
           : custom_field_data // ignore: cast_nullable_to_non_nullable
@@ -249,27 +269,37 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as SubscriptionCustomer,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as SubscriptionUser,
       product: null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as Product,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as ProductPriceRecurring,
       discount: freezed == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      prices: null == prices
+          ? _value.prices
+          : prices // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      meters: null == meters
+          ? _value.meters
+          : meters // ignore: cast_nullable_to_non_nullable
+              as List<SubscriptionMeter>,
+      pending_update: freezed == pending_update
+          ? _value.pending_update
+          : pending_update // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
+  }
+
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 
   /// Create a copy of Subscription
@@ -286,29 +316,9 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $SubscriptionUserCopyWith<$Res> get user {
-    return $SubscriptionUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-
-  /// Create a copy of Subscription
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
   $ProductCopyWith<$Res> get product {
     return $ProductCopyWith<$Res>(_value.product, (value) {
       return _then(_value.copyWith(product: value) as $Val);
-    });
-  }
-
-  /// Create a copy of Subscription
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductPriceRecurringCopyWith<$Res> get price {
-    return $ProductPriceRecurringCopyWith<$Res>(_value.price, (value) {
-      return _then(_value.copyWith(price: value) as $Val);
     });
   }
 }
@@ -325,12 +335,15 @@ abstract class _$$SubscriptionImplCopyWith<$Res>
       {String created_at,
       String? modified_at,
       String id,
-      dynamic amount,
-      String? currency,
+      int amount,
+      String currency,
       SubscriptionRecurringInterval recurring_interval,
+      int recurring_interval_count,
       SubscriptionStatus status,
       String current_period_start,
-      String? current_period_end,
+      String current_period_end,
+      String? trial_start,
+      String? trial_end,
       bool cancel_at_period_end,
       String? canceled_at,
       String? started_at,
@@ -338,28 +351,26 @@ abstract class _$$SubscriptionImplCopyWith<$Res>
       String? ended_at,
       String customer_id,
       String product_id,
-      String price_id,
       String? discount_id,
       String? checkout_id,
+      dynamic? seats,
       dynamic customer_cancellation_reason,
       String? customer_cancellation_comment,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       Map<String, dynamic>? custom_field_data,
       SubscriptionCustomer customer,
-      String user_id,
-      SubscriptionUser user,
       Product product,
-      ProductPriceRecurring price,
-      dynamic discount});
+      dynamic discount,
+      List<dynamic> prices,
+      List<SubscriptionMeter> meters,
+      dynamic pending_update});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $SubscriptionCustomerCopyWith<$Res> get customer;
   @override
-  $SubscriptionUserCopyWith<$Res> get user;
-  @override
   $ProductCopyWith<$Res> get product;
-  @override
-  $ProductPriceRecurringCopyWith<$Res> get price;
 }
 
 /// @nodoc
@@ -378,12 +389,15 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
     Object? created_at = null,
     Object? modified_at = freezed,
     Object? id = null,
-    Object? amount = freezed,
-    Object? currency = freezed,
+    Object? amount = null,
+    Object? currency = null,
     Object? recurring_interval = null,
+    Object? recurring_interval_count = null,
     Object? status = null,
     Object? current_period_start = null,
-    Object? current_period_end = freezed,
+    Object? current_period_end = null,
+    Object? trial_start = freezed,
+    Object? trial_end = freezed,
     Object? cancel_at_period_end = null,
     Object? canceled_at = freezed,
     Object? started_at = freezed,
@@ -391,19 +405,19 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
     Object? ended_at = freezed,
     Object? customer_id = null,
     Object? product_id = null,
-    Object? price_id = null,
     Object? discount_id = freezed,
     Object? checkout_id = freezed,
+    Object? seats = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
     Object? metadata = null,
     Object? custom_field_data = freezed,
     Object? customer = null,
-    Object? user_id = null,
-    Object? user = null,
     Object? product = null,
-    Object? price = null,
     Object? discount = freezed,
+    Object? prices = null,
+    Object? meters = null,
+    Object? pending_update = freezed,
   }) {
     return _then(_$SubscriptionImpl(
       created_at: null == created_at
@@ -418,18 +432,22 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
+              as int,
+      currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       recurring_interval: null == recurring_interval
           ? _value.recurring_interval
           : recurring_interval // ignore: cast_nullable_to_non_nullable
               as SubscriptionRecurringInterval,
+      recurring_interval_count: null == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as int,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -438,9 +456,17 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.current_period_start
           : current_period_start // ignore: cast_nullable_to_non_nullable
               as String,
-      current_period_end: freezed == current_period_end
+      current_period_end: null == current_period_end
           ? _value.current_period_end
           : current_period_end // ignore: cast_nullable_to_non_nullable
+              as String,
+      trial_start: freezed == trial_start
+          ? _value.trial_start
+          : trial_start // ignore: cast_nullable_to_non_nullable
+              as String?,
+      trial_end: freezed == trial_end
+          ? _value.trial_end
+          : trial_end // ignore: cast_nullable_to_non_nullable
               as String?,
       cancel_at_period_end: null == cancel_at_period_end
           ? _value.cancel_at_period_end
@@ -470,10 +496,6 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.product_id
           : product_id // ignore: cast_nullable_to_non_nullable
               as String,
-      price_id: null == price_id
-          ? _value.price_id
-          : price_id // ignore: cast_nullable_to_non_nullable
-              as String,
       discount_id: freezed == discount_id
           ? _value.discount_id
           : discount_id // ignore: cast_nullable_to_non_nullable
@@ -482,6 +504,10 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.checkout_id
           : checkout_id // ignore: cast_nullable_to_non_nullable
               as String?,
+      seats: freezed == seats
+          ? _value.seats
+          : seats // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -491,9 +517,9 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           : customer_cancellation_comment // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       custom_field_data: freezed == custom_field_data
           ? _value._custom_field_data
           : custom_field_data // ignore: cast_nullable_to_non_nullable
@@ -502,25 +528,25 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as SubscriptionCustomer,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as SubscriptionUser,
       product: null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as Product,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as ProductPriceRecurring,
       discount: freezed == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      prices: null == prices
+          ? _value._prices
+          : prices // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      meters: null == meters
+          ? _value._meters
+          : meters // ignore: cast_nullable_to_non_nullable
+              as List<SubscriptionMeter>,
+      pending_update: freezed == pending_update
+          ? _value.pending_update
+          : pending_update // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
   }
@@ -536,9 +562,12 @@ class _$SubscriptionImpl implements _Subscription {
       required this.amount,
       required this.currency,
       required this.recurring_interval,
+      required this.recurring_interval_count,
       required this.status,
       required this.current_period_start,
       required this.current_period_end,
+      required this.trial_start,
+      required this.trial_end,
       required this.cancel_at_period_end,
       required this.canceled_at,
       required this.started_at,
@@ -546,21 +575,22 @@ class _$SubscriptionImpl implements _Subscription {
       required this.ended_at,
       required this.customer_id,
       required this.product_id,
-      required this.price_id,
       required this.discount_id,
       required this.checkout_id,
+      this.seats,
       required this.customer_cancellation_reason,
       required this.customer_cancellation_comment,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       final Map<String, dynamic>? custom_field_data,
       required this.customer,
-      required this.user_id,
-      required this.user,
       required this.product,
-      required this.price,
-      required this.discount})
-      : _metadata = metadata,
-        _custom_field_data = custom_field_data;
+      required this.discount,
+      required final List<dynamic> prices,
+      required final List<SubscriptionMeter> meters,
+      required this.pending_update})
+      : _custom_field_data = custom_field_data,
+        _prices = prices,
+        _meters = meters;
 
   factory _$SubscriptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubscriptionImplFromJson(json);
@@ -572,17 +602,23 @@ class _$SubscriptionImpl implements _Subscription {
   @override
   final String id;
   @override
-  final dynamic amount;
+  final int amount;
   @override
-  final String? currency;
+  final String currency;
   @override
   final SubscriptionRecurringInterval recurring_interval;
+  @override
+  final int recurring_interval_count;
   @override
   final SubscriptionStatus status;
   @override
   final String current_period_start;
   @override
-  final String? current_period_end;
+  final String current_period_end;
+  @override
+  final String? trial_start;
+  @override
+  final String? trial_end;
   @override
   final bool cancel_at_period_end;
   @override
@@ -598,23 +634,17 @@ class _$SubscriptionImpl implements _Subscription {
   @override
   final String product_id;
   @override
-  final String price_id;
-  @override
   final String? discount_id;
   @override
   final String? checkout_id;
   @override
+  final dynamic? seats;
+  @override
   final dynamic customer_cancellation_reason;
   @override
   final String? customer_cancellation_comment;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   final Map<String, dynamic>? _custom_field_data;
   @override
   Map<String, dynamic>? get custom_field_data {
@@ -629,19 +659,31 @@ class _$SubscriptionImpl implements _Subscription {
   @override
   final SubscriptionCustomer customer;
   @override
-  final String user_id;
-  @override
-  final SubscriptionUser user;
-  @override
   final Product product;
   @override
-  final ProductPriceRecurring price;
-  @override
   final dynamic discount;
+  final List<dynamic> _prices;
+  @override
+  List<dynamic> get prices {
+    if (_prices is EqualUnmodifiableListView) return _prices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_prices);
+  }
+
+  final List<SubscriptionMeter> _meters;
+  @override
+  List<SubscriptionMeter> get meters {
+    if (_meters is EqualUnmodifiableListView) return _meters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_meters);
+  }
+
+  @override
+  final dynamic pending_update;
 
   @override
   String toString() {
-    return 'Subscription(created_at: $created_at, modified_at: $modified_at, id: $id, amount: $amount, currency: $currency, recurring_interval: $recurring_interval, status: $status, current_period_start: $current_period_start, current_period_end: $current_period_end, cancel_at_period_end: $cancel_at_period_end, canceled_at: $canceled_at, started_at: $started_at, ends_at: $ends_at, ended_at: $ended_at, customer_id: $customer_id, product_id: $product_id, price_id: $price_id, discount_id: $discount_id, checkout_id: $checkout_id, customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment, metadata: $metadata, custom_field_data: $custom_field_data, customer: $customer, user_id: $user_id, user: $user, product: $product, price: $price, discount: $discount)';
+    return 'Subscription(created_at: $created_at, modified_at: $modified_at, id: $id, amount: $amount, currency: $currency, recurring_interval: $recurring_interval, recurring_interval_count: $recurring_interval_count, status: $status, current_period_start: $current_period_start, current_period_end: $current_period_end, trial_start: $trial_start, trial_end: $trial_end, cancel_at_period_end: $cancel_at_period_end, canceled_at: $canceled_at, started_at: $started_at, ends_at: $ends_at, ended_at: $ended_at, customer_id: $customer_id, product_id: $product_id, discount_id: $discount_id, checkout_id: $checkout_id, seats: $seats, customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment, metadata: $metadata, custom_field_data: $custom_field_data, customer: $customer, product: $product, discount: $discount, prices: $prices, meters: $meters, pending_update: $pending_update)';
   }
 
   @override
@@ -654,16 +696,23 @@ class _$SubscriptionImpl implements _Subscription {
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
             (identical(other.recurring_interval, recurring_interval) ||
                 other.recurring_interval == recurring_interval) &&
+            (identical(
+                    other.recurring_interval_count, recurring_interval_count) ||
+                other.recurring_interval_count == recurring_interval_count) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.current_period_start, current_period_start) ||
                 other.current_period_start == current_period_start) &&
             (identical(other.current_period_end, current_period_end) ||
                 other.current_period_end == current_period_end) &&
+            (identical(other.trial_start, trial_start) ||
+                other.trial_start == trial_start) &&
+            (identical(other.trial_end, trial_end) ||
+                other.trial_end == trial_end) &&
             (identical(other.cancel_at_period_end, cancel_at_period_end) ||
                 other.cancel_at_period_end == cancel_at_period_end) &&
             (identical(other.canceled_at, canceled_at) ||
@@ -677,12 +726,11 @@ class _$SubscriptionImpl implements _Subscription {
                 other.customer_id == customer_id) &&
             (identical(other.product_id, product_id) ||
                 other.product_id == product_id) &&
-            (identical(other.price_id, price_id) ||
-                other.price_id == price_id) &&
             (identical(other.discount_id, discount_id) ||
                 other.discount_id == discount_id) &&
             (identical(other.checkout_id, checkout_id) ||
                 other.checkout_id == checkout_id) &&
+            const DeepCollectionEquality().equals(other.seats, seats) &&
             const DeepCollectionEquality().equals(
                 other.customer_cancellation_reason,
                 customer_cancellation_reason) &&
@@ -690,16 +738,18 @@ class _$SubscriptionImpl implements _Subscription {
                     customer_cancellation_comment) ||
                 other.customer_cancellation_comment ==
                     customer_cancellation_comment) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             const DeepCollectionEquality()
                 .equals(other._custom_field_data, _custom_field_data) &&
             (identical(other.customer, customer) ||
                 other.customer == customer) &&
-            (identical(other.user_id, user_id) || other.user_id == user_id) &&
-            (identical(other.user, user) || other.user == user) &&
             (identical(other.product, product) || other.product == product) &&
-            (identical(other.price, price) || other.price == price) &&
-            const DeepCollectionEquality().equals(other.discount, discount));
+            const DeepCollectionEquality().equals(other.discount, discount) &&
+            const DeepCollectionEquality().equals(other._prices, _prices) &&
+            const DeepCollectionEquality().equals(other._meters, _meters) &&
+            const DeepCollectionEquality()
+                .equals(other.pending_update, pending_update));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -709,12 +759,15 @@ class _$SubscriptionImpl implements _Subscription {
         created_at,
         modified_at,
         id,
-        const DeepCollectionEquality().hash(amount),
+        amount,
         currency,
         recurring_interval,
+        recurring_interval_count,
         status,
         current_period_start,
         current_period_end,
+        trial_start,
+        trial_end,
         cancel_at_period_end,
         canceled_at,
         started_at,
@@ -722,19 +775,19 @@ class _$SubscriptionImpl implements _Subscription {
         ended_at,
         customer_id,
         product_id,
-        price_id,
         discount_id,
         checkout_id,
+        const DeepCollectionEquality().hash(seats),
         const DeepCollectionEquality().hash(customer_cancellation_reason),
         customer_cancellation_comment,
-        const DeepCollectionEquality().hash(_metadata),
+        metadata,
         const DeepCollectionEquality().hash(_custom_field_data),
         customer,
-        user_id,
-        user,
         product,
-        price,
-        const DeepCollectionEquality().hash(discount)
+        const DeepCollectionEquality().hash(discount),
+        const DeepCollectionEquality().hash(_prices),
+        const DeepCollectionEquality().hash(_meters),
+        const DeepCollectionEquality().hash(pending_update)
       ]);
 
   /// Create a copy of Subscription
@@ -758,12 +811,15 @@ abstract class _Subscription implements Subscription {
       {required final String created_at,
       required final String? modified_at,
       required final String id,
-      required final dynamic amount,
-      required final String? currency,
+      required final int amount,
+      required final String currency,
       required final SubscriptionRecurringInterval recurring_interval,
+      required final int recurring_interval_count,
       required final SubscriptionStatus status,
       required final String current_period_start,
-      required final String? current_period_end,
+      required final String current_period_end,
+      required final String? trial_start,
+      required final String? trial_end,
       required final bool cancel_at_period_end,
       required final String? canceled_at,
       required final String? started_at,
@@ -771,19 +827,19 @@ abstract class _Subscription implements Subscription {
       required final String? ended_at,
       required final String customer_id,
       required final String product_id,
-      required final String price_id,
       required final String? discount_id,
       required final String? checkout_id,
+      final dynamic? seats,
       required final dynamic customer_cancellation_reason,
       required final String? customer_cancellation_comment,
-      required final Map<String, dynamic> metadata,
+      required final MetadataOutputType metadata,
       final Map<String, dynamic>? custom_field_data,
       required final SubscriptionCustomer customer,
-      required final String user_id,
-      required final SubscriptionUser user,
       required final Product product,
-      required final ProductPriceRecurring price,
-      required final dynamic discount}) = _$SubscriptionImpl;
+      required final dynamic discount,
+      required final List<dynamic> prices,
+      required final List<SubscriptionMeter> meters,
+      required final dynamic pending_update}) = _$SubscriptionImpl;
 
   factory _Subscription.fromJson(Map<String, dynamic> json) =
       _$SubscriptionImpl.fromJson;
@@ -795,17 +851,23 @@ abstract class _Subscription implements Subscription {
   @override
   String get id;
   @override
-  dynamic get amount;
+  int get amount;
   @override
-  String? get currency;
+  String get currency;
   @override
   SubscriptionRecurringInterval get recurring_interval;
+  @override
+  int get recurring_interval_count;
   @override
   SubscriptionStatus get status;
   @override
   String get current_period_start;
   @override
-  String? get current_period_end;
+  String get current_period_end;
+  @override
+  String? get trial_start;
+  @override
+  String? get trial_end;
   @override
   bool get cancel_at_period_end;
   @override
@@ -821,31 +883,31 @@ abstract class _Subscription implements Subscription {
   @override
   String get product_id;
   @override
-  String get price_id;
-  @override
   String? get discount_id;
   @override
   String? get checkout_id;
+  @override
+  dynamic? get seats;
   @override
   dynamic get customer_cancellation_reason;
   @override
   String? get customer_cancellation_comment;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   Map<String, dynamic>? get custom_field_data;
   @override
   SubscriptionCustomer get customer;
   @override
-  String get user_id;
-  @override
-  SubscriptionUser get user;
-  @override
   Product get product;
   @override
-  ProductPriceRecurring get price;
-  @override
   dynamic get discount;
+  @override
+  List<dynamic> get prices;
+  @override
+  List<SubscriptionMeter> get meters;
+  @override
+  dynamic get pending_update;
 
   /// Create a copy of Subscription
   /// with the given fields replaced by the non-null parameter values.

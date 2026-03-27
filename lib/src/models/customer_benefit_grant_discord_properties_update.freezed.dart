@@ -22,7 +22,7 @@ CustomerBenefitGrantDiscordPropertiesUpdate
 
 /// @nodoc
 mixin _$CustomerBenefitGrantDiscordPropertiesUpdate {
-  String get account_id => throw _privateConstructorUsedError;
+  String? get account_id => throw _privateConstructorUsedError;
 
   /// Serializes this CustomerBenefitGrantDiscordPropertiesUpdate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $CustomerBenefitGrantDiscordPropertiesUpdateCopyWith<$Res> {
       _$CustomerBenefitGrantDiscordPropertiesUpdateCopyWithImpl<$Res,
           CustomerBenefitGrantDiscordPropertiesUpdate>;
   @useResult
-  $Res call({String account_id});
+  $Res call({String? account_id});
 }
 
 /// @nodoc
@@ -63,13 +63,13 @@ class _$CustomerBenefitGrantDiscordPropertiesUpdateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account_id = null,
+    Object? account_id = freezed,
   }) {
     return _then(_value.copyWith(
-      account_id: null == account_id
+      account_id: freezed == account_id
           ? _value.account_id
           : account_id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -84,7 +84,7 @@ abstract class _$$CustomerBenefitGrantDiscordPropertiesUpdateImplCopyWith<$Res>
       __$$CustomerBenefitGrantDiscordPropertiesUpdateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String account_id});
+  $Res call({String? account_id});
 }
 
 /// @nodoc
@@ -103,13 +103,13 @@ class __$$CustomerBenefitGrantDiscordPropertiesUpdateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? account_id = null,
+    Object? account_id = freezed,
   }) {
     return _then(_$CustomerBenefitGrantDiscordPropertiesUpdateImpl(
-      account_id: null == account_id
+      account_id: freezed == account_id
           ? _value.account_id
           : account_id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -126,7 +126,7 @@ class _$CustomerBenefitGrantDiscordPropertiesUpdateImpl
       _$$CustomerBenefitGrantDiscordPropertiesUpdateImplFromJson(json);
 
   @override
-  final String account_id;
+  final String? account_id;
 
   @override
   String toString() {
@@ -169,7 +169,7 @@ class _$CustomerBenefitGrantDiscordPropertiesUpdateImpl
 abstract class _CustomerBenefitGrantDiscordPropertiesUpdate
     implements CustomerBenefitGrantDiscordPropertiesUpdate {
   const factory _CustomerBenefitGrantDiscordPropertiesUpdate(
-          {required final String account_id}) =
+          {required final String? account_id}) =
       _$CustomerBenefitGrantDiscordPropertiesUpdateImpl;
 
   factory _CustomerBenefitGrantDiscordPropertiesUpdate.fromJson(
@@ -177,7 +177,7 @@ abstract class _CustomerBenefitGrantDiscordPropertiesUpdate
       _$CustomerBenefitGrantDiscordPropertiesUpdateImpl.fromJson;
 
   @override
-  String get account_id;
+  String? get account_id;
 
   /// Create a copy of CustomerBenefitGrantDiscordPropertiesUpdate
   /// with the given fields replaced by the non-null parameter values.

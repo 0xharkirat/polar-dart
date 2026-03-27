@@ -32,9 +32,10 @@ Map<String, dynamic> _$$BenefitBaseImplToJson(_$BenefitBaseImpl instance) =>
 
 const _$BenefitTypeEnumMap = {
   BenefitType.custom: 'custom',
-  BenefitType.ads: 'ads',
   BenefitType.discord: 'discord',
   BenefitType.github_repository: 'github_repository',
   BenefitType.downloadables: 'downloadables',
   BenefitType.license_keys: 'license_keys',
+  BenefitType.meter_credit: 'meter_credit',
+  BenefitType.feature_flag: 'feature_flag',
 };

@@ -8,6 +8,7 @@ part 'benefit_discord_create.freezed.dart';
 @freezed
 class BenefitDiscordCreate with _$BenefitDiscordCreate {
   const factory BenefitDiscordCreate({
+    Map<String, dynamic>? metadata,
     required String type,
     required String description,
     String? organization_id,

@@ -32,5 +32,6 @@ const _$RefundReasonEnumMap = {
   RefundReason.customer_request: 'customer_request',
   RefundReason.service_disruption: 'service_disruption',
   RefundReason.satisfaction_guarantee: 'satisfaction_guarantee',
+  RefundReason.dispute_prevention: 'dispute_prevention',
   RefundReason.other: 'other',
 };

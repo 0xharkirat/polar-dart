@@ -6,11 +6,14 @@ part 'customer_update.freezed.dart';
 @freezed
 class CustomerUpdate with _$CustomerUpdate {
   const factory CustomerUpdate({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
     String? email,
     String? name,
     dynamic? billing_address,
-    dynamic? tax_id,
+    String? tax_id,
+    String? locale,
+    String? external_id,
+    dynamic? type,
   }) = _CustomerUpdate;
 
   factory CustomerUpdate.fromJson(Map<String, dynamic> json) => _$CustomerUpdateFromJson(json);

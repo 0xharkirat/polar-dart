@@ -22,20 +22,19 @@ OrganizationUpdate _$OrganizationUpdateFromJson(Map<String, dynamic> json) {
 mixin _$OrganizationUpdate {
   String? get name => throw _privateConstructorUsedError;
   String? get avatar_url => throw _privateConstructorUsedError;
-  dynamic? get default_upfront_split_to_contributors =>
-      throw _privateConstructorUsedError;
-  bool? get pledge_badge_show_amount => throw _privateConstructorUsedError;
-  String? get billing_email => throw _privateConstructorUsedError;
-  String? get default_badge_custom_content =>
-      throw _privateConstructorUsedError;
-  int? get pledge_minimum_amount => throw _privateConstructorUsedError;
-  dynamic? get total_monthly_spending_limit =>
-      throw _privateConstructorUsedError;
-  dynamic? get per_user_monthly_spending_limit =>
-      throw _privateConstructorUsedError;
-  dynamic? get profile_settings => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+  dynamic? get socials => throw _privateConstructorUsedError;
+  dynamic? get details => throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
   dynamic? get feature_settings => throw _privateConstructorUsedError;
   dynamic? get subscription_settings => throw _privateConstructorUsedError;
+  dynamic? get notification_settings => throw _privateConstructorUsedError;
+  dynamic? get customer_email_settings => throw _privateConstructorUsedError;
+  dynamic? get customer_portal_settings => throw _privateConstructorUsedError;
+  dynamic? get default_presentment_currency =>
+      throw _privateConstructorUsedError;
+  dynamic? get default_tax_behavior => throw _privateConstructorUsedError;
 
   /// Serializes this OrganizationUpdate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,16 +55,18 @@ abstract class $OrganizationUpdateCopyWith<$Res> {
   $Res call(
       {String? name,
       String? avatar_url,
-      dynamic? default_upfront_split_to_contributors,
-      bool? pledge_badge_show_amount,
-      String? billing_email,
-      String? default_badge_custom_content,
-      int? pledge_minimum_amount,
-      dynamic? total_monthly_spending_limit,
-      dynamic? per_user_monthly_spending_limit,
-      dynamic? profile_settings,
+      String? email,
+      String? website,
+      dynamic? socials,
+      dynamic? details,
+      String? country,
       dynamic? feature_settings,
-      dynamic? subscription_settings});
+      dynamic? subscription_settings,
+      dynamic? notification_settings,
+      dynamic? customer_email_settings,
+      dynamic? customer_portal_settings,
+      dynamic? default_presentment_currency,
+      dynamic? default_tax_behavior});
 }
 
 /// @nodoc
@@ -85,16 +86,18 @@ class _$OrganizationUpdateCopyWithImpl<$Res, $Val extends OrganizationUpdate>
   $Res call({
     Object? name = freezed,
     Object? avatar_url = freezed,
-    Object? default_upfront_split_to_contributors = freezed,
-    Object? pledge_badge_show_amount = freezed,
-    Object? billing_email = freezed,
-    Object? default_badge_custom_content = freezed,
-    Object? pledge_minimum_amount = freezed,
-    Object? total_monthly_spending_limit = freezed,
-    Object? per_user_monthly_spending_limit = freezed,
-    Object? profile_settings = freezed,
+    Object? email = freezed,
+    Object? website = freezed,
+    Object? socials = freezed,
+    Object? details = freezed,
+    Object? country = freezed,
     Object? feature_settings = freezed,
     Object? subscription_settings = freezed,
+    Object? notification_settings = freezed,
+    Object? customer_email_settings = freezed,
+    Object? customer_portal_settings = freezed,
+    Object? default_presentment_currency = freezed,
+    Object? default_tax_behavior = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -105,40 +108,26 @@ class _$OrganizationUpdateCopyWithImpl<$Res, $Val extends OrganizationUpdate>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      default_upfront_split_to_contributors: freezed ==
-              default_upfront_split_to_contributors
-          ? _value.default_upfront_split_to_contributors
-          : default_upfront_split_to_contributors // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      pledge_badge_show_amount: freezed == pledge_badge_show_amount
-          ? _value.pledge_badge_show_amount
-          : pledge_badge_show_amount // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      billing_email: freezed == billing_email
-          ? _value.billing_email
-          : billing_email // ignore: cast_nullable_to_non_nullable
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      default_badge_custom_content: freezed == default_badge_custom_content
-          ? _value.default_badge_custom_content
-          : default_badge_custom_content // ignore: cast_nullable_to_non_nullable
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
               as String?,
-      pledge_minimum_amount: freezed == pledge_minimum_amount
-          ? _value.pledge_minimum_amount
-          : pledge_minimum_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      total_monthly_spending_limit: freezed == total_monthly_spending_limit
-          ? _value.total_monthly_spending_limit
-          : total_monthly_spending_limit // ignore: cast_nullable_to_non_nullable
+      socials: freezed == socials
+          ? _value.socials
+          : socials // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      per_user_monthly_spending_limit: freezed ==
-              per_user_monthly_spending_limit
-          ? _value.per_user_monthly_spending_limit
-          : per_user_monthly_spending_limit // ignore: cast_nullable_to_non_nullable
+      details: freezed == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      profile_settings: freezed == profile_settings
-          ? _value.profile_settings
-          : profile_settings // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -146,6 +135,26 @@ class _$OrganizationUpdateCopyWithImpl<$Res, $Val extends OrganizationUpdate>
       subscription_settings: freezed == subscription_settings
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      notification_settings: freezed == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_email_settings: freezed == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_portal_settings: freezed == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_presentment_currency: freezed == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_tax_behavior: freezed == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
               as dynamic?,
     ) as $Val);
   }
@@ -162,16 +171,18 @@ abstract class _$$OrganizationUpdateImplCopyWith<$Res>
   $Res call(
       {String? name,
       String? avatar_url,
-      dynamic? default_upfront_split_to_contributors,
-      bool? pledge_badge_show_amount,
-      String? billing_email,
-      String? default_badge_custom_content,
-      int? pledge_minimum_amount,
-      dynamic? total_monthly_spending_limit,
-      dynamic? per_user_monthly_spending_limit,
-      dynamic? profile_settings,
+      String? email,
+      String? website,
+      dynamic? socials,
+      dynamic? details,
+      String? country,
       dynamic? feature_settings,
-      dynamic? subscription_settings});
+      dynamic? subscription_settings,
+      dynamic? notification_settings,
+      dynamic? customer_email_settings,
+      dynamic? customer_portal_settings,
+      dynamic? default_presentment_currency,
+      dynamic? default_tax_behavior});
 }
 
 /// @nodoc
@@ -189,16 +200,18 @@ class __$$OrganizationUpdateImplCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? avatar_url = freezed,
-    Object? default_upfront_split_to_contributors = freezed,
-    Object? pledge_badge_show_amount = freezed,
-    Object? billing_email = freezed,
-    Object? default_badge_custom_content = freezed,
-    Object? pledge_minimum_amount = freezed,
-    Object? total_monthly_spending_limit = freezed,
-    Object? per_user_monthly_spending_limit = freezed,
-    Object? profile_settings = freezed,
+    Object? email = freezed,
+    Object? website = freezed,
+    Object? socials = freezed,
+    Object? details = freezed,
+    Object? country = freezed,
     Object? feature_settings = freezed,
     Object? subscription_settings = freezed,
+    Object? notification_settings = freezed,
+    Object? customer_email_settings = freezed,
+    Object? customer_portal_settings = freezed,
+    Object? default_presentment_currency = freezed,
+    Object? default_tax_behavior = freezed,
   }) {
     return _then(_$OrganizationUpdateImpl(
       name: freezed == name
@@ -209,40 +222,26 @@ class __$$OrganizationUpdateImplCopyWithImpl<$Res>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      default_upfront_split_to_contributors: freezed ==
-              default_upfront_split_to_contributors
-          ? _value.default_upfront_split_to_contributors
-          : default_upfront_split_to_contributors // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      pledge_badge_show_amount: freezed == pledge_badge_show_amount
-          ? _value.pledge_badge_show_amount
-          : pledge_badge_show_amount // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      billing_email: freezed == billing_email
-          ? _value.billing_email
-          : billing_email // ignore: cast_nullable_to_non_nullable
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      default_badge_custom_content: freezed == default_badge_custom_content
-          ? _value.default_badge_custom_content
-          : default_badge_custom_content // ignore: cast_nullable_to_non_nullable
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
               as String?,
-      pledge_minimum_amount: freezed == pledge_minimum_amount
-          ? _value.pledge_minimum_amount
-          : pledge_minimum_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      total_monthly_spending_limit: freezed == total_monthly_spending_limit
-          ? _value.total_monthly_spending_limit
-          : total_monthly_spending_limit // ignore: cast_nullable_to_non_nullable
+      socials: freezed == socials
+          ? _value.socials
+          : socials // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      per_user_monthly_spending_limit: freezed ==
-              per_user_monthly_spending_limit
-          ? _value.per_user_monthly_spending_limit
-          : per_user_monthly_spending_limit // ignore: cast_nullable_to_non_nullable
+      details: freezed == details
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
               as dynamic?,
-      profile_settings: freezed == profile_settings
-          ? _value.profile_settings
-          : profile_settings // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -250,6 +249,26 @@ class __$$OrganizationUpdateImplCopyWithImpl<$Res>
       subscription_settings: freezed == subscription_settings
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      notification_settings: freezed == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_email_settings: freezed == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      customer_portal_settings: freezed == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_presentment_currency: freezed == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      default_tax_behavior: freezed == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
               as dynamic?,
     ));
   }
@@ -261,16 +280,18 @@ class _$OrganizationUpdateImpl implements _OrganizationUpdate {
   const _$OrganizationUpdateImpl(
       {this.name,
       this.avatar_url,
-      this.default_upfront_split_to_contributors,
-      this.pledge_badge_show_amount,
-      this.billing_email,
-      this.default_badge_custom_content,
-      this.pledge_minimum_amount,
-      this.total_monthly_spending_limit,
-      this.per_user_monthly_spending_limit,
-      this.profile_settings,
+      this.email,
+      this.website,
+      this.socials,
+      this.details,
+      this.country,
       this.feature_settings,
-      this.subscription_settings});
+      this.subscription_settings,
+      this.notification_settings,
+      this.customer_email_settings,
+      this.customer_portal_settings,
+      this.default_presentment_currency,
+      this.default_tax_behavior});
 
   factory _$OrganizationUpdateImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrganizationUpdateImplFromJson(json);
@@ -280,29 +301,33 @@ class _$OrganizationUpdateImpl implements _OrganizationUpdate {
   @override
   final String? avatar_url;
   @override
-  final dynamic? default_upfront_split_to_contributors;
+  final String? email;
   @override
-  final bool? pledge_badge_show_amount;
+  final String? website;
   @override
-  final String? billing_email;
+  final dynamic? socials;
   @override
-  final String? default_badge_custom_content;
+  final dynamic? details;
   @override
-  final int? pledge_minimum_amount;
-  @override
-  final dynamic? total_monthly_spending_limit;
-  @override
-  final dynamic? per_user_monthly_spending_limit;
-  @override
-  final dynamic? profile_settings;
+  final String? country;
   @override
   final dynamic? feature_settings;
   @override
   final dynamic? subscription_settings;
+  @override
+  final dynamic? notification_settings;
+  @override
+  final dynamic? customer_email_settings;
+  @override
+  final dynamic? customer_portal_settings;
+  @override
+  final dynamic? default_presentment_currency;
+  @override
+  final dynamic? default_tax_behavior;
 
   @override
   String toString() {
-    return 'OrganizationUpdate(name: $name, avatar_url: $avatar_url, default_upfront_split_to_contributors: $default_upfront_split_to_contributors, pledge_badge_show_amount: $pledge_badge_show_amount, billing_email: $billing_email, default_badge_custom_content: $default_badge_custom_content, pledge_minimum_amount: $pledge_minimum_amount, total_monthly_spending_limit: $total_monthly_spending_limit, per_user_monthly_spending_limit: $per_user_monthly_spending_limit, profile_settings: $profile_settings, feature_settings: $feature_settings, subscription_settings: $subscription_settings)';
+    return 'OrganizationUpdate(name: $name, avatar_url: $avatar_url, email: $email, website: $website, socials: $socials, details: $details, country: $country, feature_settings: $feature_settings, subscription_settings: $subscription_settings, notification_settings: $notification_settings, customer_email_settings: $customer_email_settings, customer_portal_settings: $customer_portal_settings, default_presentment_currency: $default_presentment_currency, default_tax_behavior: $default_tax_behavior)';
   }
 
   @override
@@ -313,32 +338,26 @@ class _$OrganizationUpdateImpl implements _OrganizationUpdate {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.avatar_url, avatar_url) ||
                 other.avatar_url == avatar_url) &&
-            const DeepCollectionEquality().equals(
-                other.default_upfront_split_to_contributors,
-                default_upfront_split_to_contributors) &&
-            (identical(
-                    other.pledge_badge_show_amount, pledge_badge_show_amount) ||
-                other.pledge_badge_show_amount == pledge_badge_show_amount) &&
-            (identical(other.billing_email, billing_email) ||
-                other.billing_email == billing_email) &&
-            (identical(other.default_badge_custom_content,
-                    default_badge_custom_content) ||
-                other.default_badge_custom_content ==
-                    default_badge_custom_content) &&
-            (identical(other.pledge_minimum_amount, pledge_minimum_amount) ||
-                other.pledge_minimum_amount == pledge_minimum_amount) &&
-            const DeepCollectionEquality().equals(
-                other.total_monthly_spending_limit,
-                total_monthly_spending_limit) &&
-            const DeepCollectionEquality().equals(
-                other.per_user_monthly_spending_limit,
-                per_user_monthly_spending_limit) &&
-            const DeepCollectionEquality()
-                .equals(other.profile_settings, profile_settings) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.website, website) || other.website == website) &&
+            const DeepCollectionEquality().equals(other.socials, socials) &&
+            const DeepCollectionEquality().equals(other.details, details) &&
+            (identical(other.country, country) || other.country == country) &&
             const DeepCollectionEquality()
                 .equals(other.feature_settings, feature_settings) &&
             const DeepCollectionEquality()
-                .equals(other.subscription_settings, subscription_settings));
+                .equals(other.subscription_settings, subscription_settings) &&
+            const DeepCollectionEquality()
+                .equals(other.notification_settings, notification_settings) &&
+            const DeepCollectionEquality().equals(
+                other.customer_email_settings, customer_email_settings) &&
+            const DeepCollectionEquality().equals(
+                other.customer_portal_settings, customer_portal_settings) &&
+            const DeepCollectionEquality().equals(
+                other.default_presentment_currency,
+                default_presentment_currency) &&
+            const DeepCollectionEquality()
+                .equals(other.default_tax_behavior, default_tax_behavior));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -347,17 +366,18 @@ class _$OrganizationUpdateImpl implements _OrganizationUpdate {
       runtimeType,
       name,
       avatar_url,
-      const DeepCollectionEquality()
-          .hash(default_upfront_split_to_contributors),
-      pledge_badge_show_amount,
-      billing_email,
-      default_badge_custom_content,
-      pledge_minimum_amount,
-      const DeepCollectionEquality().hash(total_monthly_spending_limit),
-      const DeepCollectionEquality().hash(per_user_monthly_spending_limit),
-      const DeepCollectionEquality().hash(profile_settings),
+      email,
+      website,
+      const DeepCollectionEquality().hash(socials),
+      const DeepCollectionEquality().hash(details),
+      country,
       const DeepCollectionEquality().hash(feature_settings),
-      const DeepCollectionEquality().hash(subscription_settings));
+      const DeepCollectionEquality().hash(subscription_settings),
+      const DeepCollectionEquality().hash(notification_settings),
+      const DeepCollectionEquality().hash(customer_email_settings),
+      const DeepCollectionEquality().hash(customer_portal_settings),
+      const DeepCollectionEquality().hash(default_presentment_currency),
+      const DeepCollectionEquality().hash(default_tax_behavior));
 
   /// Create a copy of OrganizationUpdate
   /// with the given fields replaced by the non-null parameter values.
@@ -380,16 +400,18 @@ abstract class _OrganizationUpdate implements OrganizationUpdate {
   const factory _OrganizationUpdate(
       {final String? name,
       final String? avatar_url,
-      final dynamic? default_upfront_split_to_contributors,
-      final bool? pledge_badge_show_amount,
-      final String? billing_email,
-      final String? default_badge_custom_content,
-      final int? pledge_minimum_amount,
-      final dynamic? total_monthly_spending_limit,
-      final dynamic? per_user_monthly_spending_limit,
-      final dynamic? profile_settings,
+      final String? email,
+      final String? website,
+      final dynamic? socials,
+      final dynamic? details,
+      final String? country,
       final dynamic? feature_settings,
-      final dynamic? subscription_settings}) = _$OrganizationUpdateImpl;
+      final dynamic? subscription_settings,
+      final dynamic? notification_settings,
+      final dynamic? customer_email_settings,
+      final dynamic? customer_portal_settings,
+      final dynamic? default_presentment_currency,
+      final dynamic? default_tax_behavior}) = _$OrganizationUpdateImpl;
 
   factory _OrganizationUpdate.fromJson(Map<String, dynamic> json) =
       _$OrganizationUpdateImpl.fromJson;
@@ -399,25 +421,29 @@ abstract class _OrganizationUpdate implements OrganizationUpdate {
   @override
   String? get avatar_url;
   @override
-  dynamic? get default_upfront_split_to_contributors;
+  String? get email;
   @override
-  bool? get pledge_badge_show_amount;
+  String? get website;
   @override
-  String? get billing_email;
+  dynamic? get socials;
   @override
-  String? get default_badge_custom_content;
+  dynamic? get details;
   @override
-  int? get pledge_minimum_amount;
-  @override
-  dynamic? get total_monthly_spending_limit;
-  @override
-  dynamic? get per_user_monthly_spending_limit;
-  @override
-  dynamic? get profile_settings;
+  String? get country;
   @override
   dynamic? get feature_settings;
   @override
   dynamic? get subscription_settings;
+  @override
+  dynamic? get notification_settings;
+  @override
+  dynamic? get customer_email_settings;
+  @override
+  dynamic? get customer_portal_settings;
+  @override
+  dynamic? get default_presentment_currency;
+  @override
+  dynamic? get default_tax_behavior;
 
   /// Create a copy of OrganizationUpdate
   /// with the given fields replaced by the non-null parameter values.

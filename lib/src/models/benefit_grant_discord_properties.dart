@@ -9,6 +9,7 @@ class BenefitGrantDiscordProperties with _$BenefitGrantDiscordProperties {
     String? account_id,
     String? guild_id,
     String? role_id,
+    String? granted_account_id,
   }) = _BenefitGrantDiscordProperties;
 
   factory BenefitGrantDiscordProperties.fromJson(Map<String, dynamic> json) => _$BenefitGrantDiscordPropertiesFromJson(json);

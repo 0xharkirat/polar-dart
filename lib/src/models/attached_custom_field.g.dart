@@ -13,7 +13,7 @@ _$AttachedCustomFieldImpl _$$AttachedCustomFieldImplFromJson(
       custom_field:
           CustomField.fromJson(json['custom_field'] as Map<String, dynamic>),
       order: (json['order'] as num).toInt(),
-      required: json['required'] as bool,
+      required_field: json['required'] as bool,
     );
 
 Map<String, dynamic> _$$AttachedCustomFieldImplToJson(
@@ -22,5 +22,5 @@ Map<String, dynamic> _$$AttachedCustomFieldImplToJson(
       'custom_field_id': instance.custom_field_id,
       'custom_field': instance.custom_field,
       'order': instance.order,
-      'required': instance.required,
+      'required': instance.required_field,
     };

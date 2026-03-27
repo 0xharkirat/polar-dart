@@ -25,6 +25,8 @@ mixin _$AuthorizeResponseOrganization {
   String get sub_type => throw _privateConstructorUsedError;
   dynamic get sub => throw _privateConstructorUsedError;
   List<Scope> get scopes => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get scope_display_names =>
+      throw _privateConstructorUsedError;
   List<AuthorizeOrganization> get organizations =>
       throw _privateConstructorUsedError;
 
@@ -51,6 +53,7 @@ abstract class $AuthorizeResponseOrganizationCopyWith<$Res> {
       String sub_type,
       dynamic sub,
       List<Scope> scopes,
+      Map<String, dynamic>? scope_display_names,
       List<AuthorizeOrganization> organizations});
 
   $OAuth2ClientPublicCopyWith<$Res> get client;
@@ -76,6 +79,7 @@ class _$AuthorizeResponseOrganizationCopyWithImpl<$Res,
     Object? sub_type = null,
     Object? sub = freezed,
     Object? scopes = null,
+    Object? scope_display_names = freezed,
     Object? organizations = null,
   }) {
     return _then(_value.copyWith(
@@ -95,6 +99,10 @@ class _$AuthorizeResponseOrganizationCopyWithImpl<$Res,
           ? _value.scopes
           : scopes // ignore: cast_nullable_to_non_nullable
               as List<Scope>,
+      scope_display_names: freezed == scope_display_names
+          ? _value.scope_display_names
+          : scope_display_names // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       organizations: null == organizations
           ? _value.organizations
           : organizations // ignore: cast_nullable_to_non_nullable
@@ -127,6 +135,7 @@ abstract class _$$AuthorizeResponseOrganizationImplCopyWith<$Res>
       String sub_type,
       dynamic sub,
       List<Scope> scopes,
+      Map<String, dynamic>? scope_display_names,
       List<AuthorizeOrganization> organizations});
 
   @override
@@ -152,6 +161,7 @@ class __$$AuthorizeResponseOrganizationImplCopyWithImpl<$Res>
     Object? sub_type = null,
     Object? sub = freezed,
     Object? scopes = null,
+    Object? scope_display_names = freezed,
     Object? organizations = null,
   }) {
     return _then(_$AuthorizeResponseOrganizationImpl(
@@ -171,6 +181,10 @@ class __$$AuthorizeResponseOrganizationImplCopyWithImpl<$Res>
           ? _value._scopes
           : scopes // ignore: cast_nullable_to_non_nullable
               as List<Scope>,
+      scope_display_names: freezed == scope_display_names
+          ? _value._scope_display_names
+          : scope_display_names // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       organizations: null == organizations
           ? _value._organizations
           : organizations // ignore: cast_nullable_to_non_nullable
@@ -188,8 +202,10 @@ class _$AuthorizeResponseOrganizationImpl
       required this.sub_type,
       required this.sub,
       required final List<Scope> scopes,
+      final Map<String, dynamic>? scope_display_names,
       required final List<AuthorizeOrganization> organizations})
       : _scopes = scopes,
+        _scope_display_names = scope_display_names,
         _organizations = organizations;
 
   factory _$AuthorizeResponseOrganizationImpl.fromJson(
@@ -210,6 +226,17 @@ class _$AuthorizeResponseOrganizationImpl
     return EqualUnmodifiableListView(_scopes);
   }
 
+  final Map<String, dynamic>? _scope_display_names;
+  @override
+  Map<String, dynamic>? get scope_display_names {
+    final value = _scope_display_names;
+    if (value == null) return null;
+    if (_scope_display_names is EqualUnmodifiableMapView)
+      return _scope_display_names;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   final List<AuthorizeOrganization> _organizations;
   @override
   List<AuthorizeOrganization> get organizations {
@@ -220,7 +247,7 @@ class _$AuthorizeResponseOrganizationImpl
 
   @override
   String toString() {
-    return 'AuthorizeResponseOrganization(client: $client, sub_type: $sub_type, sub: $sub, scopes: $scopes, organizations: $organizations)';
+    return 'AuthorizeResponseOrganization(client: $client, sub_type: $sub_type, sub: $sub, scopes: $scopes, scope_display_names: $scope_display_names, organizations: $organizations)';
   }
 
   @override
@@ -234,6 +261,8 @@ class _$AuthorizeResponseOrganizationImpl
             const DeepCollectionEquality().equals(other.sub, sub) &&
             const DeepCollectionEquality().equals(other._scopes, _scopes) &&
             const DeepCollectionEquality()
+                .equals(other._scope_display_names, _scope_display_names) &&
+            const DeepCollectionEquality()
                 .equals(other._organizations, _organizations));
   }
 
@@ -245,6 +274,7 @@ class _$AuthorizeResponseOrganizationImpl
       sub_type,
       const DeepCollectionEquality().hash(sub),
       const DeepCollectionEquality().hash(_scopes),
+      const DeepCollectionEquality().hash(_scope_display_names),
       const DeepCollectionEquality().hash(_organizations));
 
   /// Create a copy of AuthorizeResponseOrganization
@@ -272,6 +302,7 @@ abstract class _AuthorizeResponseOrganization
           required final String sub_type,
           required final dynamic sub,
           required final List<Scope> scopes,
+          final Map<String, dynamic>? scope_display_names,
           required final List<AuthorizeOrganization> organizations}) =
       _$AuthorizeResponseOrganizationImpl;
 
@@ -286,6 +317,8 @@ abstract class _AuthorizeResponseOrganization
   dynamic get sub;
   @override
   List<Scope> get scopes;
+  @override
+  Map<String, dynamic>? get scope_display_names;
   @override
   List<AuthorizeOrganization> get organizations;
 

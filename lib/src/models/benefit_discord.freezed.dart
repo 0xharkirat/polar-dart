@@ -20,14 +20,15 @@ BenefitDiscord _$BenefitDiscordFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BenefitDiscord {
+  String get id => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get selectable => throw _privateConstructorUsedError;
   bool get deletable => throw _privateConstructorUsedError;
   String get organization_id => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   BenefitDiscordProperties get properties => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitDiscord to a JSON map.
@@ -47,16 +48,18 @@ abstract class $BenefitDiscordCopyWith<$Res> {
       _$BenefitDiscordCopyWithImpl<$Res, BenefitDiscord>;
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
+      MetadataOutputType metadata,
       BenefitDiscordProperties properties});
 
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   $BenefitDiscordPropertiesCopyWith<$Res> get properties;
 }
 
@@ -75,17 +78,22 @@ class _$BenefitDiscordCopyWithImpl<$Res, $Val extends BenefitDiscord>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -94,10 +102,6 @@ class _$BenefitDiscordCopyWithImpl<$Res, $Val extends BenefitDiscord>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -118,11 +122,25 @@ class _$BenefitDiscordCopyWithImpl<$Res, $Val extends BenefitDiscord>
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
               as BenefitDiscordProperties,
     ) as $Val);
+  }
+
+  /// Create a copy of BenefitDiscord
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 
   /// Create a copy of BenefitDiscord
@@ -145,16 +163,19 @@ abstract class _$$BenefitDiscordImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
       String type,
       String description,
       bool selectable,
       bool deletable,
       String organization_id,
+      MetadataOutputType metadata,
       BenefitDiscordProperties properties});
 
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
   @override
   $BenefitDiscordPropertiesCopyWith<$Res> get properties;
 }
@@ -172,17 +193,22 @@ class __$$BenefitDiscordImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
     Object? type = null,
     Object? description = null,
     Object? selectable = null,
     Object? deletable = null,
     Object? organization_id = null,
+    Object? metadata = null,
     Object? properties = null,
   }) {
     return _then(_$BenefitDiscordImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -191,10 +217,6 @@ class __$$BenefitDiscordImplCopyWithImpl<$Res>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -215,6 +237,10 @@ class __$$BenefitDiscordImplCopyWithImpl<$Res>
           ? _value.organization_id
           : organization_id // ignore: cast_nullable_to_non_nullable
               as String,
+      metadata: null == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as MetadataOutputType,
       properties: null == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
@@ -227,25 +253,26 @@ class __$$BenefitDiscordImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitDiscordImpl implements _BenefitDiscord {
   const _$BenefitDiscordImpl(
-      {required this.created_at,
+      {required this.id,
+      required this.created_at,
       required this.modified_at,
-      required this.id,
       required this.type,
       required this.description,
       required this.selectable,
       required this.deletable,
       required this.organization_id,
+      required this.metadata,
       required this.properties});
 
   factory _$BenefitDiscordImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitDiscordImplFromJson(json);
 
   @override
+  final String id;
+  @override
   final String created_at;
   @override
   final String? modified_at;
-  @override
-  final String id;
   @override
   final String type;
   @override
@@ -257,11 +284,13 @@ class _$BenefitDiscordImpl implements _BenefitDiscord {
   @override
   final String organization_id;
   @override
+  final MetadataOutputType metadata;
+  @override
   final BenefitDiscordProperties properties;
 
   @override
   String toString() {
-    return 'BenefitDiscord(created_at: $created_at, modified_at: $modified_at, id: $id, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, properties: $properties)';
+    return 'BenefitDiscord(id: $id, created_at: $created_at, modified_at: $modified_at, type: $type, description: $description, selectable: $selectable, deletable: $deletable, organization_id: $organization_id, metadata: $metadata, properties: $properties)';
   }
 
   @override
@@ -269,11 +298,11 @@ class _$BenefitDiscordImpl implements _BenefitDiscord {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitDiscordImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -283,14 +312,26 @@ class _$BenefitDiscordImpl implements _BenefitDiscord {
                 other.deletable == deletable) &&
             (identical(other.organization_id, organization_id) ||
                 other.organization_id == organization_id) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.properties, properties) ||
                 other.properties == properties));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, created_at, modified_at, id,
-      type, description, selectable, deletable, organization_id, properties);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      created_at,
+      modified_at,
+      type,
+      description,
+      selectable,
+      deletable,
+      organization_id,
+      metadata,
+      properties);
 
   /// Create a copy of BenefitDiscord
   /// with the given fields replaced by the non-null parameter values.
@@ -311,14 +352,15 @@ class _$BenefitDiscordImpl implements _BenefitDiscord {
 
 abstract class _BenefitDiscord implements BenefitDiscord {
   const factory _BenefitDiscord(
-          {required final String created_at,
+          {required final String id,
+          required final String created_at,
           required final String? modified_at,
-          required final String id,
           required final String type,
           required final String description,
           required final bool selectable,
           required final bool deletable,
           required final String organization_id,
+          required final MetadataOutputType metadata,
           required final BenefitDiscordProperties properties}) =
       _$BenefitDiscordImpl;
 
@@ -326,11 +368,11 @@ abstract class _BenefitDiscord implements BenefitDiscord {
       _$BenefitDiscordImpl.fromJson;
 
   @override
+  String get id;
+  @override
   String get created_at;
   @override
   String? get modified_at;
-  @override
-  String get id;
   @override
   String get type;
   @override
@@ -341,6 +383,8 @@ abstract class _BenefitDiscord implements BenefitDiscord {
   bool get deletable;
   @override
   String get organization_id;
+  @override
+  MetadataOutputType get metadata;
   @override
   BenefitDiscordProperties get properties;
 

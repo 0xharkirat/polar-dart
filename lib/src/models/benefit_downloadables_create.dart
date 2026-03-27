@@ -8,6 +8,7 @@ part 'benefit_downloadables_create.freezed.dart';
 @freezed
 class BenefitDownloadablesCreate with _$BenefitDownloadablesCreate {
   const factory BenefitDownloadablesCreate({
+    Map<String, dynamic>? metadata,
     required String type,
     required String description,
     String? organization_id,

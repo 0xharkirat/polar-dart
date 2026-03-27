@@ -26,20 +26,28 @@ mixin _$Organization {
   String get name => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
   String? get avatar_url => throw _privateConstructorUsedError;
-  String? get bio => throw _privateConstructorUsedError;
-  String? get company => throw _privateConstructorUsedError;
-  String? get blog => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get twitter_username => throw _privateConstructorUsedError;
-  int get pledge_minimum_amount => throw _privateConstructorUsedError;
-  bool get pledge_badge_show_amount => throw _privateConstructorUsedError;
-  dynamic get default_upfront_split_to_contributors =>
+  SubscriptionProrationBehavior get proration_behavior =>
       throw _privateConstructorUsedError;
-  dynamic get profile_settings => throw _privateConstructorUsedError;
+  bool get allow_customer_updates => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+  List<OrganizationSocialLink> get socials =>
+      throw _privateConstructorUsedError;
+  OrganizationStatus get status => throw _privateConstructorUsedError;
+  String? get details_submitted_at => throw _privateConstructorUsedError;
+  String get default_presentment_currency => throw _privateConstructorUsedError;
+  TaxBehaviorOption get default_tax_behavior =>
+      throw _privateConstructorUsedError;
   dynamic get feature_settings => throw _privateConstructorUsedError;
   OrganizationSubscriptionSettings get subscription_settings =>
       throw _privateConstructorUsedError;
+  OrganizationNotificationSettings get notification_settings =>
+      throw _privateConstructorUsedError;
+  OrganizationCustomerEmailSettings get customer_email_settings =>
+      throw _privateConstructorUsedError;
+  OrganizationCustomerPortalSettings get customer_portal_settings =>
+      throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
 
   /// Serializes this Organization to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -64,20 +72,27 @@ abstract class $OrganizationCopyWith<$Res> {
       String name,
       String slug,
       String? avatar_url,
-      String? bio,
-      String? company,
-      String? blog,
-      String? location,
+      SubscriptionProrationBehavior proration_behavior,
+      bool allow_customer_updates,
       String? email,
-      String? twitter_username,
-      int pledge_minimum_amount,
-      bool pledge_badge_show_amount,
-      dynamic default_upfront_split_to_contributors,
-      dynamic profile_settings,
+      String? website,
+      List<OrganizationSocialLink> socials,
+      OrganizationStatus status,
+      String? details_submitted_at,
+      String default_presentment_currency,
+      TaxBehaviorOption default_tax_behavior,
       dynamic feature_settings,
-      OrganizationSubscriptionSettings subscription_settings});
+      OrganizationSubscriptionSettings subscription_settings,
+      OrganizationNotificationSettings notification_settings,
+      OrganizationCustomerEmailSettings customer_email_settings,
+      OrganizationCustomerPortalSettings customer_portal_settings,
+      String? country});
 
   $OrganizationSubscriptionSettingsCopyWith<$Res> get subscription_settings;
+  $OrganizationNotificationSettingsCopyWith<$Res> get notification_settings;
+  $OrganizationCustomerEmailSettingsCopyWith<$Res> get customer_email_settings;
+  $OrganizationCustomerPortalSettingsCopyWith<$Res>
+      get customer_portal_settings;
 }
 
 /// @nodoc
@@ -101,18 +116,21 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
     Object? name = null,
     Object? slug = null,
     Object? avatar_url = freezed,
-    Object? bio = freezed,
-    Object? company = freezed,
-    Object? blog = freezed,
-    Object? location = freezed,
+    Object? proration_behavior = null,
+    Object? allow_customer_updates = null,
     Object? email = freezed,
-    Object? twitter_username = freezed,
-    Object? pledge_minimum_amount = null,
-    Object? pledge_badge_show_amount = null,
-    Object? default_upfront_split_to_contributors = freezed,
-    Object? profile_settings = freezed,
+    Object? website = freezed,
+    Object? socials = null,
+    Object? status = null,
+    Object? details_submitted_at = freezed,
+    Object? default_presentment_currency = null,
+    Object? default_tax_behavior = null,
     Object? feature_settings = freezed,
     Object? subscription_settings = null,
+    Object? notification_settings = null,
+    Object? customer_email_settings = null,
+    Object? customer_portal_settings = null,
+    Object? country = freezed,
   }) {
     return _then(_value.copyWith(
       created_at: null == created_at
@@ -139,47 +157,42 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      bio: freezed == bio
-          ? _value.bio
-          : bio // ignore: cast_nullable_to_non_nullable
-              as String?,
-      company: freezed == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blog: freezed == blog
-          ? _value.blog
-          : blog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String?,
+      proration_behavior: null == proration_behavior
+          ? _value.proration_behavior
+          : proration_behavior // ignore: cast_nullable_to_non_nullable
+              as SubscriptionProrationBehavior,
+      allow_customer_updates: null == allow_customer_updates
+          ? _value.allow_customer_updates
+          : allow_customer_updates // ignore: cast_nullable_to_non_nullable
+              as bool,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      twitter_username: freezed == twitter_username
-          ? _value.twitter_username
-          : twitter_username // ignore: cast_nullable_to_non_nullable
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
               as String?,
-      pledge_minimum_amount: null == pledge_minimum_amount
-          ? _value.pledge_minimum_amount
-          : pledge_minimum_amount // ignore: cast_nullable_to_non_nullable
-              as int,
-      pledge_badge_show_amount: null == pledge_badge_show_amount
-          ? _value.pledge_badge_show_amount
-          : pledge_badge_show_amount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      default_upfront_split_to_contributors: freezed ==
-              default_upfront_split_to_contributors
-          ? _value.default_upfront_split_to_contributors
-          : default_upfront_split_to_contributors // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      profile_settings: freezed == profile_settings
-          ? _value.profile_settings
-          : profile_settings // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+      socials: null == socials
+          ? _value.socials
+          : socials // ignore: cast_nullable_to_non_nullable
+              as List<OrganizationSocialLink>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrganizationStatus,
+      details_submitted_at: freezed == details_submitted_at
+          ? _value.details_submitted_at
+          : details_submitted_at // ignore: cast_nullable_to_non_nullable
+              as String?,
+      default_presentment_currency: null == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      default_tax_behavior: null == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
+              as TaxBehaviorOption,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -188,6 +201,22 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
               as OrganizationSubscriptionSettings,
+      notification_settings: null == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationNotificationSettings,
+      customer_email_settings: null == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationCustomerEmailSettings,
+      customer_portal_settings: null == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationCustomerPortalSettings,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -199,6 +228,40 @@ class _$OrganizationCopyWithImpl<$Res, $Val extends Organization>
     return $OrganizationSubscriptionSettingsCopyWith<$Res>(
         _value.subscription_settings, (value) {
       return _then(_value.copyWith(subscription_settings: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrganizationNotificationSettingsCopyWith<$Res> get notification_settings {
+    return $OrganizationNotificationSettingsCopyWith<$Res>(
+        _value.notification_settings, (value) {
+      return _then(_value.copyWith(notification_settings: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrganizationCustomerEmailSettingsCopyWith<$Res> get customer_email_settings {
+    return $OrganizationCustomerEmailSettingsCopyWith<$Res>(
+        _value.customer_email_settings, (value) {
+      return _then(_value.copyWith(customer_email_settings: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Organization
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrganizationCustomerPortalSettingsCopyWith<$Res>
+      get customer_portal_settings {
+    return $OrganizationCustomerPortalSettingsCopyWith<$Res>(
+        _value.customer_portal_settings, (value) {
+      return _then(_value.copyWith(customer_portal_settings: value) as $Val);
     });
   }
 }
@@ -218,21 +281,31 @@ abstract class _$$OrganizationImplCopyWith<$Res>
       String name,
       String slug,
       String? avatar_url,
-      String? bio,
-      String? company,
-      String? blog,
-      String? location,
+      SubscriptionProrationBehavior proration_behavior,
+      bool allow_customer_updates,
       String? email,
-      String? twitter_username,
-      int pledge_minimum_amount,
-      bool pledge_badge_show_amount,
-      dynamic default_upfront_split_to_contributors,
-      dynamic profile_settings,
+      String? website,
+      List<OrganizationSocialLink> socials,
+      OrganizationStatus status,
+      String? details_submitted_at,
+      String default_presentment_currency,
+      TaxBehaviorOption default_tax_behavior,
       dynamic feature_settings,
-      OrganizationSubscriptionSettings subscription_settings});
+      OrganizationSubscriptionSettings subscription_settings,
+      OrganizationNotificationSettings notification_settings,
+      OrganizationCustomerEmailSettings customer_email_settings,
+      OrganizationCustomerPortalSettings customer_portal_settings,
+      String? country});
 
   @override
   $OrganizationSubscriptionSettingsCopyWith<$Res> get subscription_settings;
+  @override
+  $OrganizationNotificationSettingsCopyWith<$Res> get notification_settings;
+  @override
+  $OrganizationCustomerEmailSettingsCopyWith<$Res> get customer_email_settings;
+  @override
+  $OrganizationCustomerPortalSettingsCopyWith<$Res>
+      get customer_portal_settings;
 }
 
 /// @nodoc
@@ -254,18 +327,21 @@ class __$$OrganizationImplCopyWithImpl<$Res>
     Object? name = null,
     Object? slug = null,
     Object? avatar_url = freezed,
-    Object? bio = freezed,
-    Object? company = freezed,
-    Object? blog = freezed,
-    Object? location = freezed,
+    Object? proration_behavior = null,
+    Object? allow_customer_updates = null,
     Object? email = freezed,
-    Object? twitter_username = freezed,
-    Object? pledge_minimum_amount = null,
-    Object? pledge_badge_show_amount = null,
-    Object? default_upfront_split_to_contributors = freezed,
-    Object? profile_settings = freezed,
+    Object? website = freezed,
+    Object? socials = null,
+    Object? status = null,
+    Object? details_submitted_at = freezed,
+    Object? default_presentment_currency = null,
+    Object? default_tax_behavior = null,
     Object? feature_settings = freezed,
     Object? subscription_settings = null,
+    Object? notification_settings = null,
+    Object? customer_email_settings = null,
+    Object? customer_portal_settings = null,
+    Object? country = freezed,
   }) {
     return _then(_$OrganizationImpl(
       created_at: null == created_at
@@ -292,47 +368,42 @@ class __$$OrganizationImplCopyWithImpl<$Res>
           ? _value.avatar_url
           : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      bio: freezed == bio
-          ? _value.bio
-          : bio // ignore: cast_nullable_to_non_nullable
-              as String?,
-      company: freezed == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blog: freezed == blog
-          ? _value.blog
-          : blog // ignore: cast_nullable_to_non_nullable
-              as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String?,
+      proration_behavior: null == proration_behavior
+          ? _value.proration_behavior
+          : proration_behavior // ignore: cast_nullable_to_non_nullable
+              as SubscriptionProrationBehavior,
+      allow_customer_updates: null == allow_customer_updates
+          ? _value.allow_customer_updates
+          : allow_customer_updates // ignore: cast_nullable_to_non_nullable
+              as bool,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      twitter_username: freezed == twitter_username
-          ? _value.twitter_username
-          : twitter_username // ignore: cast_nullable_to_non_nullable
+      website: freezed == website
+          ? _value.website
+          : website // ignore: cast_nullable_to_non_nullable
               as String?,
-      pledge_minimum_amount: null == pledge_minimum_amount
-          ? _value.pledge_minimum_amount
-          : pledge_minimum_amount // ignore: cast_nullable_to_non_nullable
-              as int,
-      pledge_badge_show_amount: null == pledge_badge_show_amount
-          ? _value.pledge_badge_show_amount
-          : pledge_badge_show_amount // ignore: cast_nullable_to_non_nullable
-              as bool,
-      default_upfront_split_to_contributors: freezed ==
-              default_upfront_split_to_contributors
-          ? _value.default_upfront_split_to_contributors
-          : default_upfront_split_to_contributors // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      profile_settings: freezed == profile_settings
-          ? _value.profile_settings
-          : profile_settings // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+      socials: null == socials
+          ? _value._socials
+          : socials // ignore: cast_nullable_to_non_nullable
+              as List<OrganizationSocialLink>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrganizationStatus,
+      details_submitted_at: freezed == details_submitted_at
+          ? _value.details_submitted_at
+          : details_submitted_at // ignore: cast_nullable_to_non_nullable
+              as String?,
+      default_presentment_currency: null == default_presentment_currency
+          ? _value.default_presentment_currency
+          : default_presentment_currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      default_tax_behavior: null == default_tax_behavior
+          ? _value.default_tax_behavior
+          : default_tax_behavior // ignore: cast_nullable_to_non_nullable
+              as TaxBehaviorOption,
       feature_settings: freezed == feature_settings
           ? _value.feature_settings
           : feature_settings // ignore: cast_nullable_to_non_nullable
@@ -341,6 +412,22 @@ class __$$OrganizationImplCopyWithImpl<$Res>
           ? _value.subscription_settings
           : subscription_settings // ignore: cast_nullable_to_non_nullable
               as OrganizationSubscriptionSettings,
+      notification_settings: null == notification_settings
+          ? _value.notification_settings
+          : notification_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationNotificationSettings,
+      customer_email_settings: null == customer_email_settings
+          ? _value.customer_email_settings
+          : customer_email_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationCustomerEmailSettings,
+      customer_portal_settings: null == customer_portal_settings
+          ? _value.customer_portal_settings
+          : customer_portal_settings // ignore: cast_nullable_to_non_nullable
+              as OrganizationCustomerPortalSettings,
+      country: freezed == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -355,18 +442,22 @@ class _$OrganizationImpl implements _Organization {
       required this.name,
       required this.slug,
       required this.avatar_url,
-      required this.bio,
-      required this.company,
-      required this.blog,
-      required this.location,
+      required this.proration_behavior,
+      required this.allow_customer_updates,
       required this.email,
-      required this.twitter_username,
-      required this.pledge_minimum_amount,
-      required this.pledge_badge_show_amount,
-      required this.default_upfront_split_to_contributors,
-      required this.profile_settings,
+      required this.website,
+      required final List<OrganizationSocialLink> socials,
+      required this.status,
+      required this.details_submitted_at,
+      required this.default_presentment_currency,
+      required this.default_tax_behavior,
       required this.feature_settings,
-      required this.subscription_settings});
+      required this.subscription_settings,
+      required this.notification_settings,
+      required this.customer_email_settings,
+      required this.customer_portal_settings,
+      this.country})
+      : _socials = socials;
 
   factory _$OrganizationImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrganizationImplFromJson(json);
@@ -384,33 +475,45 @@ class _$OrganizationImpl implements _Organization {
   @override
   final String? avatar_url;
   @override
-  final String? bio;
+  final SubscriptionProrationBehavior proration_behavior;
   @override
-  final String? company;
-  @override
-  final String? blog;
-  @override
-  final String? location;
+  final bool allow_customer_updates;
   @override
   final String? email;
   @override
-  final String? twitter_username;
+  final String? website;
+  final List<OrganizationSocialLink> _socials;
   @override
-  final int pledge_minimum_amount;
+  List<OrganizationSocialLink> get socials {
+    if (_socials is EqualUnmodifiableListView) return _socials;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_socials);
+  }
+
   @override
-  final bool pledge_badge_show_amount;
+  final OrganizationStatus status;
   @override
-  final dynamic default_upfront_split_to_contributors;
+  final String? details_submitted_at;
   @override
-  final dynamic profile_settings;
+  final String default_presentment_currency;
+  @override
+  final TaxBehaviorOption default_tax_behavior;
   @override
   final dynamic feature_settings;
   @override
   final OrganizationSubscriptionSettings subscription_settings;
+  @override
+  final OrganizationNotificationSettings notification_settings;
+  @override
+  final OrganizationCustomerEmailSettings customer_email_settings;
+  @override
+  final OrganizationCustomerPortalSettings customer_portal_settings;
+  @override
+  final String? country;
 
   @override
   String toString() {
-    return 'Organization(created_at: $created_at, modified_at: $modified_at, id: $id, name: $name, slug: $slug, avatar_url: $avatar_url, bio: $bio, company: $company, blog: $blog, location: $location, email: $email, twitter_username: $twitter_username, pledge_minimum_amount: $pledge_minimum_amount, pledge_badge_show_amount: $pledge_badge_show_amount, default_upfront_split_to_contributors: $default_upfront_split_to_contributors, profile_settings: $profile_settings, feature_settings: $feature_settings, subscription_settings: $subscription_settings)';
+    return 'Organization(created_at: $created_at, modified_at: $modified_at, id: $id, name: $name, slug: $slug, avatar_url: $avatar_url, proration_behavior: $proration_behavior, allow_customer_updates: $allow_customer_updates, email: $email, website: $website, socials: $socials, status: $status, details_submitted_at: $details_submitted_at, default_presentment_currency: $default_presentment_currency, default_tax_behavior: $default_tax_behavior, feature_settings: $feature_settings, subscription_settings: $subscription_settings, notification_settings: $notification_settings, customer_email_settings: $customer_email_settings, customer_portal_settings: $customer_portal_settings, country: $country)';
   }
 
   @override
@@ -427,53 +530,63 @@ class _$OrganizationImpl implements _Organization {
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.avatar_url, avatar_url) ||
                 other.avatar_url == avatar_url) &&
-            (identical(other.bio, bio) || other.bio == bio) &&
-            (identical(other.company, company) || other.company == company) &&
-            (identical(other.blog, blog) || other.blog == blog) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
+            (identical(other.proration_behavior, proration_behavior) ||
+                other.proration_behavior == proration_behavior) &&
+            (identical(other.allow_customer_updates, allow_customer_updates) ||
+                other.allow_customer_updates == allow_customer_updates) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.twitter_username, twitter_username) ||
-                other.twitter_username == twitter_username) &&
-            (identical(other.pledge_minimum_amount, pledge_minimum_amount) ||
-                other.pledge_minimum_amount == pledge_minimum_amount) &&
-            (identical(
-                    other.pledge_badge_show_amount, pledge_badge_show_amount) ||
-                other.pledge_badge_show_amount == pledge_badge_show_amount) &&
-            const DeepCollectionEquality().equals(
-                other.default_upfront_split_to_contributors,
-                default_upfront_split_to_contributors) &&
-            const DeepCollectionEquality()
-                .equals(other.profile_settings, profile_settings) &&
+            (identical(other.website, website) || other.website == website) &&
+            const DeepCollectionEquality().equals(other._socials, _socials) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.details_submitted_at, details_submitted_at) ||
+                other.details_submitted_at == details_submitted_at) &&
+            (identical(other.default_presentment_currency,
+                    default_presentment_currency) ||
+                other.default_presentment_currency ==
+                    default_presentment_currency) &&
+            (identical(other.default_tax_behavior, default_tax_behavior) ||
+                other.default_tax_behavior == default_tax_behavior) &&
             const DeepCollectionEquality()
                 .equals(other.feature_settings, feature_settings) &&
             (identical(other.subscription_settings, subscription_settings) ||
-                other.subscription_settings == subscription_settings));
+                other.subscription_settings == subscription_settings) &&
+            (identical(other.notification_settings, notification_settings) ||
+                other.notification_settings == notification_settings) &&
+            (identical(
+                    other.customer_email_settings, customer_email_settings) ||
+                other.customer_email_settings == customer_email_settings) &&
+            (identical(
+                    other.customer_portal_settings, customer_portal_settings) ||
+                other.customer_portal_settings == customer_portal_settings) &&
+            (identical(other.country, country) || other.country == country));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      created_at,
-      modified_at,
-      id,
-      name,
-      slug,
-      avatar_url,
-      bio,
-      company,
-      blog,
-      location,
-      email,
-      twitter_username,
-      pledge_minimum_amount,
-      pledge_badge_show_amount,
-      const DeepCollectionEquality()
-          .hash(default_upfront_split_to_contributors),
-      const DeepCollectionEquality().hash(profile_settings),
-      const DeepCollectionEquality().hash(feature_settings),
-      subscription_settings);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        created_at,
+        modified_at,
+        id,
+        name,
+        slug,
+        avatar_url,
+        proration_behavior,
+        allow_customer_updates,
+        email,
+        website,
+        const DeepCollectionEquality().hash(_socials),
+        status,
+        details_submitted_at,
+        default_presentment_currency,
+        default_tax_behavior,
+        const DeepCollectionEquality().hash(feature_settings),
+        subscription_settings,
+        notification_settings,
+        customer_email_settings,
+        customer_portal_settings,
+        country
+      ]);
 
   /// Create a copy of Organization
   /// with the given fields replaced by the non-null parameter values.
@@ -499,19 +612,22 @@ abstract class _Organization implements Organization {
       required final String name,
       required final String slug,
       required final String? avatar_url,
-      required final String? bio,
-      required final String? company,
-      required final String? blog,
-      required final String? location,
+      required final SubscriptionProrationBehavior proration_behavior,
+      required final bool allow_customer_updates,
       required final String? email,
-      required final String? twitter_username,
-      required final int pledge_minimum_amount,
-      required final bool pledge_badge_show_amount,
-      required final dynamic default_upfront_split_to_contributors,
-      required final dynamic profile_settings,
+      required final String? website,
+      required final List<OrganizationSocialLink> socials,
+      required final OrganizationStatus status,
+      required final String? details_submitted_at,
+      required final String default_presentment_currency,
+      required final TaxBehaviorOption default_tax_behavior,
       required final dynamic feature_settings,
-      required final OrganizationSubscriptionSettings
-          subscription_settings}) = _$OrganizationImpl;
+      required final OrganizationSubscriptionSettings subscription_settings,
+      required final OrganizationNotificationSettings notification_settings,
+      required final OrganizationCustomerEmailSettings customer_email_settings,
+      required final OrganizationCustomerPortalSettings
+          customer_portal_settings,
+      final String? country}) = _$OrganizationImpl;
 
   factory _Organization.fromJson(Map<String, dynamic> json) =
       _$OrganizationImpl.fromJson;
@@ -529,29 +645,35 @@ abstract class _Organization implements Organization {
   @override
   String? get avatar_url;
   @override
-  String? get bio;
+  SubscriptionProrationBehavior get proration_behavior;
   @override
-  String? get company;
-  @override
-  String? get blog;
-  @override
-  String? get location;
+  bool get allow_customer_updates;
   @override
   String? get email;
   @override
-  String? get twitter_username;
+  String? get website;
   @override
-  int get pledge_minimum_amount;
+  List<OrganizationSocialLink> get socials;
   @override
-  bool get pledge_badge_show_amount;
+  OrganizationStatus get status;
   @override
-  dynamic get default_upfront_split_to_contributors;
+  String? get details_submitted_at;
   @override
-  dynamic get profile_settings;
+  String get default_presentment_currency;
+  @override
+  TaxBehaviorOption get default_tax_behavior;
   @override
   dynamic get feature_settings;
   @override
   OrganizationSubscriptionSettings get subscription_settings;
+  @override
+  OrganizationNotificationSettings get notification_settings;
+  @override
+  OrganizationCustomerEmailSettings get customer_email_settings;
+  @override
+  OrganizationCustomerPortalSettings get customer_portal_settings;
+  @override
+  String? get country;
 
   /// Create a copy of Organization
   /// with the given fields replaced by the non-null parameter values.

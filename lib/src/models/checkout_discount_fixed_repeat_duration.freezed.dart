@@ -26,6 +26,7 @@ mixin _$CheckoutDiscountFixedRepeatDuration {
   DiscountType get type => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   String get currency => throw _privateConstructorUsedError;
+  Map<String, dynamic> get amounts => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
@@ -55,6 +56,7 @@ abstract class $CheckoutDiscountFixedRepeatDurationCopyWith<$Res> {
       DiscountType type,
       int amount,
       String currency,
+      Map<String, dynamic> amounts,
       String id,
       String name,
       String? code});
@@ -81,6 +83,7 @@ class _$CheckoutDiscountFixedRepeatDurationCopyWithImpl<$Res,
     Object? type = null,
     Object? amount = null,
     Object? currency = null,
+    Object? amounts = null,
     Object? id = null,
     Object? name = null,
     Object? code = freezed,
@@ -106,6 +109,10 @@ class _$CheckoutDiscountFixedRepeatDurationCopyWithImpl<$Res,
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      amounts: null == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -137,6 +144,7 @@ abstract class _$$CheckoutDiscountFixedRepeatDurationImplCopyWith<$Res>
       DiscountType type,
       int amount,
       String currency,
+      Map<String, dynamic> amounts,
       String id,
       String name,
       String? code});
@@ -162,6 +170,7 @@ class __$$CheckoutDiscountFixedRepeatDurationImplCopyWithImpl<$Res>
     Object? type = null,
     Object? amount = null,
     Object? currency = null,
+    Object? amounts = null,
     Object? id = null,
     Object? name = null,
     Object? code = freezed,
@@ -187,6 +196,10 @@ class __$$CheckoutDiscountFixedRepeatDurationImplCopyWithImpl<$Res>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      amounts: null == amounts
+          ? _value._amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -213,9 +226,11 @@ class _$CheckoutDiscountFixedRepeatDurationImpl
       required this.type,
       required this.amount,
       required this.currency,
+      required final Map<String, dynamic> amounts,
       required this.id,
       required this.name,
-      required this.code});
+      required this.code})
+      : _amounts = amounts;
 
   factory _$CheckoutDiscountFixedRepeatDurationImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -231,6 +246,14 @@ class _$CheckoutDiscountFixedRepeatDurationImpl
   final int amount;
   @override
   final String currency;
+  final Map<String, dynamic> _amounts;
+  @override
+  Map<String, dynamic> get amounts {
+    if (_amounts is EqualUnmodifiableMapView) return _amounts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_amounts);
+  }
+
   @override
   final String id;
   @override
@@ -240,7 +263,7 @@ class _$CheckoutDiscountFixedRepeatDurationImpl
 
   @override
   String toString() {
-    return 'CheckoutDiscountFixedRepeatDuration(duration: $duration, duration_in_months: $duration_in_months, type: $type, amount: $amount, currency: $currency, id: $id, name: $name, code: $code)';
+    return 'CheckoutDiscountFixedRepeatDuration(duration: $duration, duration_in_months: $duration_in_months, type: $type, amount: $amount, currency: $currency, amounts: $amounts, id: $id, name: $name, code: $code)';
   }
 
   @override
@@ -256,6 +279,7 @@ class _$CheckoutDiscountFixedRepeatDurationImpl
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
+            const DeepCollectionEquality().equals(other._amounts, _amounts) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code));
@@ -263,8 +287,17 @@ class _$CheckoutDiscountFixedRepeatDurationImpl
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, duration, duration_in_months,
-      type, amount, currency, id, name, code);
+  int get hashCode => Object.hash(
+      runtimeType,
+      duration,
+      duration_in_months,
+      type,
+      amount,
+      currency,
+      const DeepCollectionEquality().hash(_amounts),
+      id,
+      name,
+      code);
 
   /// Create a copy of CheckoutDiscountFixedRepeatDuration
   /// with the given fields replaced by the non-null parameter values.
@@ -292,6 +325,7 @@ abstract class _CheckoutDiscountFixedRepeatDuration
       required final DiscountType type,
       required final int amount,
       required final String currency,
+      required final Map<String, dynamic> amounts,
       required final String id,
       required final String name,
       required final String? code}) = _$CheckoutDiscountFixedRepeatDurationImpl;
@@ -310,6 +344,8 @@ abstract class _CheckoutDiscountFixedRepeatDuration
   int get amount;
   @override
   String get currency;
+  @override
+  Map<String, dynamic> get amounts;
   @override
   String get id;
   @override

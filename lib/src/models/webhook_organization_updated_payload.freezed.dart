@@ -22,6 +22,7 @@ WebhookOrganizationUpdatedPayload _$WebhookOrganizationUpdatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookOrganizationUpdatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   Organization get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookOrganizationUpdatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookOrganizationUpdatedPayloadCopyWith<$Res> {
       _$WebhookOrganizationUpdatedPayloadCopyWithImpl<$Res,
           WebhookOrganizationUpdatedPayload>;
   @useResult
-  $Res call({String type, Organization data});
+  $Res call({String type, String timestamp, Organization data});
 
   $OrganizationCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookOrganizationUpdatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookOrganizationUpdatedPayloadImplCopyWith<$Res>
       __$$WebhookOrganizationUpdatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, Organization data});
+  $Res call({String type, String timestamp, Organization data});
 
   @override
   $OrganizationCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookOrganizationUpdatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookOrganizationUpdatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookOrganizationUpdatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookOrganizationUpdatedPayloadImpl
     implements _WebhookOrganizationUpdatedPayload {
   const _$WebhookOrganizationUpdatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookOrganizationUpdatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookOrganizationUpdatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final Organization data;
 
   @override
   String toString() {
-    return 'WebhookOrganizationUpdatedPayload(type: $type, data: $data)';
+    return 'WebhookOrganizationUpdatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookOrganizationUpdatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookOrganizationUpdatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookOrganizationUpdatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -190,7 +205,9 @@ class _$WebhookOrganizationUpdatedPayloadImpl
 abstract class _WebhookOrganizationUpdatedPayload
     implements WebhookOrganizationUpdatedPayload {
   const factory _WebhookOrganizationUpdatedPayload(
-          {required final String type, required final Organization data}) =
+          {required final String type,
+          required final String timestamp,
+          required final Organization data}) =
       _$WebhookOrganizationUpdatedPayloadImpl;
 
   factory _WebhookOrganizationUpdatedPayload.fromJson(
@@ -199,6 +216,8 @@ abstract class _WebhookOrganizationUpdatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   Organization get data;
 

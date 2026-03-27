@@ -21,7 +21,7 @@ OrderUser _$OrderUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderUser {
   String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   String get public_name => throw _privateConstructorUsedError;
   String? get avatar_url => throw _privateConstructorUsedError;
   String? get github_username => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $OrderUserCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String email,
+      String? email,
       String public_name,
       String? avatar_url,
       String? github_username});
@@ -65,7 +65,7 @@ class _$OrderUserCopyWithImpl<$Res, $Val extends OrderUser>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? public_name = null,
     Object? avatar_url = freezed,
     Object? github_username = freezed,
@@ -75,10 +75,10 @@ class _$OrderUserCopyWithImpl<$Res, $Val extends OrderUser>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       public_name: null == public_name
           ? _value.public_name
           : public_name // ignore: cast_nullable_to_non_nullable
@@ -105,7 +105,7 @@ abstract class _$$OrderUserImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String email,
+      String? email,
       String public_name,
       String? avatar_url,
       String? github_username});
@@ -125,7 +125,7 @@ class __$$OrderUserImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? email = null,
+    Object? email = freezed,
     Object? public_name = null,
     Object? avatar_url = freezed,
     Object? github_username = freezed,
@@ -135,10 +135,10 @@ class __$$OrderUserImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       public_name: null == public_name
           ? _value.public_name
           : public_name // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ class __$$OrderUserImplCopyWithImpl<$Res>
 class _$OrderUserImpl implements _OrderUser {
   const _$OrderUserImpl(
       {required this.id,
-      required this.email,
+      this.email,
       required this.public_name,
       this.avatar_url,
       this.github_username});
@@ -171,7 +171,7 @@ class _$OrderUserImpl implements _OrderUser {
   @override
   final String id;
   @override
-  final String email;
+  final String? email;
   @override
   final String public_name;
   @override
@@ -223,7 +223,7 @@ class _$OrderUserImpl implements _OrderUser {
 abstract class _OrderUser implements OrderUser {
   const factory _OrderUser(
       {required final String id,
-      required final String email,
+      final String? email,
       required final String public_name,
       final String? avatar_url,
       final String? github_username}) = _$OrderUserImpl;
@@ -234,7 +234,7 @@ abstract class _OrderUser implements OrderUser {
   @override
   String get id;
   @override
-  String get email;
+  String? get email;
   @override
   String get public_name;
   @override

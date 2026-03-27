@@ -22,6 +22,7 @@ WebhookBenefitGrantCreatedPayload _$WebhookBenefitGrantCreatedPayloadFromJson(
 /// @nodoc
 mixin _$WebhookBenefitGrantCreatedPayload {
   String get type => throw _privateConstructorUsedError;
+  String get timestamp => throw _privateConstructorUsedError;
   BenefitGrantWebhook get data => throw _privateConstructorUsedError;
 
   /// Serializes this WebhookBenefitGrantCreatedPayload to a JSON map.
@@ -42,7 +43,7 @@ abstract class $WebhookBenefitGrantCreatedPayloadCopyWith<$Res> {
       _$WebhookBenefitGrantCreatedPayloadCopyWithImpl<$Res,
           WebhookBenefitGrantCreatedPayload>;
   @useResult
-  $Res call({String type, BenefitGrantWebhook data});
+  $Res call({String type, String timestamp, BenefitGrantWebhook data});
 
   $BenefitGrantWebhookCopyWith<$Res> get data;
 }
@@ -64,12 +65,17 @@ class _$WebhookBenefitGrantCreatedPayloadCopyWithImpl<$Res,
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -98,7 +104,7 @@ abstract class _$$WebhookBenefitGrantCreatedPayloadImplCopyWith<$Res>
       __$$WebhookBenefitGrantCreatedPayloadImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, BenefitGrantWebhook data});
+  $Res call({String type, String timestamp, BenefitGrantWebhook data});
 
   @override
   $BenefitGrantWebhookCopyWith<$Res> get data;
@@ -120,12 +126,17 @@ class __$$WebhookBenefitGrantCreatedPayloadImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? timestamp = null,
     Object? data = null,
   }) {
     return _then(_$WebhookBenefitGrantCreatedPayloadImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -140,7 +151,7 @@ class __$$WebhookBenefitGrantCreatedPayloadImplCopyWithImpl<$Res>
 class _$WebhookBenefitGrantCreatedPayloadImpl
     implements _WebhookBenefitGrantCreatedPayload {
   const _$WebhookBenefitGrantCreatedPayloadImpl(
-      {required this.type, required this.data});
+      {required this.type, required this.timestamp, required this.data});
 
   factory _$WebhookBenefitGrantCreatedPayloadImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -149,11 +160,13 @@ class _$WebhookBenefitGrantCreatedPayloadImpl
   @override
   final String type;
   @override
+  final String timestamp;
+  @override
   final BenefitGrantWebhook data;
 
   @override
   String toString() {
-    return 'WebhookBenefitGrantCreatedPayload(type: $type, data: $data)';
+    return 'WebhookBenefitGrantCreatedPayload(type: $type, timestamp: $timestamp, data: $data)';
   }
 
   @override
@@ -162,12 +175,14 @@ class _$WebhookBenefitGrantCreatedPayloadImpl
         (other.runtimeType == runtimeType &&
             other is _$WebhookBenefitGrantCreatedPayloadImpl &&
             (identical(other.type, type) || other.type == type) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, type, timestamp, data);
 
   /// Create a copy of WebhookBenefitGrantCreatedPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -191,6 +206,7 @@ abstract class _WebhookBenefitGrantCreatedPayload
     implements WebhookBenefitGrantCreatedPayload {
   const factory _WebhookBenefitGrantCreatedPayload(
           {required final String type,
+          required final String timestamp,
           required final BenefitGrantWebhook data}) =
       _$WebhookBenefitGrantCreatedPayloadImpl;
 
@@ -200,6 +216,8 @@ abstract class _WebhookBenefitGrantCreatedPayload
 
   @override
   String get type;
+  @override
+  String get timestamp;
   @override
   BenefitGrantWebhook get data;
 

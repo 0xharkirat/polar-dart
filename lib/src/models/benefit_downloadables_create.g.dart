@@ -9,6 +9,7 @@ part of 'benefit_downloadables_create.dart';
 _$BenefitDownloadablesCreateImpl _$$BenefitDownloadablesCreateImplFromJson(
         Map<String, dynamic> json) =>
     _$BenefitDownloadablesCreateImpl(
+      metadata: json['metadata'] as Map<String, dynamic>?,
       type: json['type'] as String,
       description: json['description'] as String,
       organization_id: json['organization_id'] as String?,
@@ -19,6 +20,7 @@ _$BenefitDownloadablesCreateImpl _$$BenefitDownloadablesCreateImplFromJson(
 Map<String, dynamic> _$$BenefitDownloadablesCreateImplToJson(
         _$BenefitDownloadablesCreateImpl instance) =>
     <String, dynamic>{
+      if (instance.metadata case final value?) 'metadata': value,
       'type': instance.type,
       'description': instance.description,
       if (instance.organization_id case final value?) 'organization_id': value,

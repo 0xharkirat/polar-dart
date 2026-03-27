@@ -10,6 +10,7 @@ _$WebhookBenefitUpdatedPayloadImpl _$$WebhookBenefitUpdatedPayloadImplFromJson(
         Map<String, dynamic> json) =>
     _$WebhookBenefitUpdatedPayloadImpl(
       type: json['type'] as String,
+      timestamp: json['timestamp'] as String,
       data: Benefit.fromJson(json['data'] as Map<String, dynamic>),
     );
 
@@ -17,5 +18,6 @@ Map<String, dynamic> _$$WebhookBenefitUpdatedPayloadImplToJson(
         _$WebhookBenefitUpdatedPayloadImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
+      'timestamp': instance.timestamp,
       'data': instance.data,
     };

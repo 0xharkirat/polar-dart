@@ -26,6 +26,7 @@ mixin _$BenefitGrantGitHubRepositoryProperties {
   String? get repository_owner => throw _privateConstructorUsedError;
   String? get repository_name => throw _privateConstructorUsedError;
   String? get permission => throw _privateConstructorUsedError;
+  String? get granted_account_id => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitGrantGitHubRepositoryProperties to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,7 +51,8 @@ abstract class $BenefitGrantGitHubRepositoryPropertiesCopyWith<$Res> {
       {String? account_id,
       String? repository_owner,
       String? repository_name,
-      String? permission});
+      String? permission,
+      String? granted_account_id});
 }
 
 /// @nodoc
@@ -73,6 +75,7 @@ class _$BenefitGrantGitHubRepositoryPropertiesCopyWithImpl<$Res,
     Object? repository_owner = freezed,
     Object? repository_name = freezed,
     Object? permission = freezed,
+    Object? granted_account_id = freezed,
   }) {
     return _then(_value.copyWith(
       account_id: freezed == account_id
@@ -91,6 +94,10 @@ class _$BenefitGrantGitHubRepositoryPropertiesCopyWithImpl<$Res,
           ? _value.permission
           : permission // ignore: cast_nullable_to_non_nullable
               as String?,
+      granted_account_id: freezed == granted_account_id
+          ? _value.granted_account_id
+          : granted_account_id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -108,7 +115,8 @@ abstract class _$$BenefitGrantGitHubRepositoryPropertiesImplCopyWith<$Res>
       {String? account_id,
       String? repository_owner,
       String? repository_name,
-      String? permission});
+      String? permission,
+      String? granted_account_id});
 }
 
 /// @nodoc
@@ -130,6 +138,7 @@ class __$$BenefitGrantGitHubRepositoryPropertiesImplCopyWithImpl<$Res>
     Object? repository_owner = freezed,
     Object? repository_name = freezed,
     Object? permission = freezed,
+    Object? granted_account_id = freezed,
   }) {
     return _then(_$BenefitGrantGitHubRepositoryPropertiesImpl(
       account_id: freezed == account_id
@@ -148,6 +157,10 @@ class __$$BenefitGrantGitHubRepositoryPropertiesImplCopyWithImpl<$Res>
           ? _value.permission
           : permission // ignore: cast_nullable_to_non_nullable
               as String?,
+      granted_account_id: freezed == granted_account_id
+          ? _value.granted_account_id
+          : granted_account_id // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -160,7 +173,8 @@ class _$BenefitGrantGitHubRepositoryPropertiesImpl
       {this.account_id,
       this.repository_owner,
       this.repository_name,
-      this.permission});
+      this.permission,
+      this.granted_account_id});
 
   factory _$BenefitGrantGitHubRepositoryPropertiesImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -174,10 +188,12 @@ class _$BenefitGrantGitHubRepositoryPropertiesImpl
   final String? repository_name;
   @override
   final String? permission;
+  @override
+  final String? granted_account_id;
 
   @override
   String toString() {
-    return 'BenefitGrantGitHubRepositoryProperties(account_id: $account_id, repository_owner: $repository_owner, repository_name: $repository_name, permission: $permission)';
+    return 'BenefitGrantGitHubRepositoryProperties(account_id: $account_id, repository_owner: $repository_owner, repository_name: $repository_name, permission: $permission, granted_account_id: $granted_account_id)';
   }
 
   @override
@@ -192,13 +208,15 @@ class _$BenefitGrantGitHubRepositoryPropertiesImpl
             (identical(other.repository_name, repository_name) ||
                 other.repository_name == repository_name) &&
             (identical(other.permission, permission) ||
-                other.permission == permission));
+                other.permission == permission) &&
+            (identical(other.granted_account_id, granted_account_id) ||
+                other.granted_account_id == granted_account_id));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, account_id, repository_owner, repository_name, permission);
+  int get hashCode => Object.hash(runtimeType, account_id, repository_owner,
+      repository_name, permission, granted_account_id);
 
   /// Create a copy of BenefitGrantGitHubRepositoryProperties
   /// with the given fields replaced by the non-null parameter values.
@@ -222,10 +240,12 @@ class _$BenefitGrantGitHubRepositoryPropertiesImpl
 abstract class _BenefitGrantGitHubRepositoryProperties
     implements BenefitGrantGitHubRepositoryProperties {
   const factory _BenefitGrantGitHubRepositoryProperties(
-      {final String? account_id,
-      final String? repository_owner,
-      final String? repository_name,
-      final String? permission}) = _$BenefitGrantGitHubRepositoryPropertiesImpl;
+          {final String? account_id,
+          final String? repository_owner,
+          final String? repository_name,
+          final String? permission,
+          final String? granted_account_id}) =
+      _$BenefitGrantGitHubRepositoryPropertiesImpl;
 
   factory _BenefitGrantGitHubRepositoryProperties.fromJson(
           Map<String, dynamic> json) =
@@ -239,6 +259,8 @@ abstract class _BenefitGrantGitHubRepositoryProperties
   String? get repository_name;
   @override
   String? get permission;
+  @override
+  String? get granted_account_id;
 
   /// Create a copy of BenefitGrantGitHubRepositoryProperties
   /// with the given fields replaced by the non-null parameter values.

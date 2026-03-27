@@ -1,3 +1,4 @@
+import 'metadata_output_type.dart';
 import 'benefit_license_keys_properties.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -8,14 +9,15 @@ part 'benefit_license_keys.freezed.dart';
 @freezed
 class BenefitLicenseKeys with _$BenefitLicenseKeys {
   const factory BenefitLicenseKeys({
+    required String id,
     required String created_at,
     required String? modified_at,
-    required String id,
     required String type,
     required String description,
     required bool selectable,
     required bool deletable,
     required String organization_id,
+    required MetadataOutputType metadata,
     required BenefitLicenseKeysProperties properties,
   }) = _BenefitLicenseKeys;
 

@@ -9,6 +9,8 @@ class ValidationError with _$ValidationError {
     required List<dynamic> loc,
     required String msg,
     required String type,
+    dynamic? input,
+    Map<String, dynamic>? ctx,
   }) = _ValidationError;
 
   factory ValidationError.fromJson(Map<String, dynamic> json) => _$ValidationErrorFromJson(json);

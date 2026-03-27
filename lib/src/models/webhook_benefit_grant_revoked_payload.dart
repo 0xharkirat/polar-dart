@@ -9,6 +9,7 @@ part 'webhook_benefit_grant_revoked_payload.freezed.dart';
 class WebhookBenefitGrantRevokedPayload with _$WebhookBenefitGrantRevokedPayload {
   const factory WebhookBenefitGrantRevokedPayload({
     required String type,
+    required String timestamp,
     required BenefitGrantWebhook data,
   }) = _WebhookBenefitGrantRevokedPayload;
 

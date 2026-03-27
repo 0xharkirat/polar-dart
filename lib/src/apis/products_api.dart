@@ -12,11 +12,11 @@ class ProductsApi {
   ProductsApi(this._dio);
 
 
-  Future<ListResourceProduct> productsList({dynamic id, dynamic organization_id, String? query, dynamic is_archived, dynamic is_recurring, dynamic benefit_id, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceProduct> productsList({dynamic id, dynamic organization_id, String? query, dynamic is_archived, dynamic is_recurring, dynamic benefit_id, dynamic visibility, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"], dynamic metadata}) async {
     try {
       final response = await _dio.get(
         '/v1/products/',
-        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, if (is_recurring != null) 'is_recurring': is_recurring, if (benefit_id != null) 'benefit_id': benefit_id, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (query != null) 'query': query, if (is_archived != null) 'is_archived': is_archived, if (is_recurring != null) 'is_recurring': is_recurring, if (benefit_id != null) 'benefit_id': benefit_id, if (visibility != null) 'visibility': visibility, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceProduct.fromJson(response.data);
     } catch (e) {

@@ -11,6 +11,8 @@ class OrganizationSubscriptionSettings with _$OrganizationSubscriptionSettings {
     required bool allow_multiple_subscriptions,
     required bool allow_customer_updates,
     required SubscriptionProrationBehavior proration_behavior,
+    required int benefit_revocation_grace_period,
+    required bool prevent_trial_abuse,
   }) = _OrganizationSubscriptionSettings;
 
   factory OrganizationSubscriptionSettings.fromJson(Map<String, dynamic> json) => _$OrganizationSubscriptionSettingsFromJson(json);

@@ -21,6 +21,7 @@ BenefitLicenseKeysCreate _$BenefitLicenseKeysCreateFromJson(
 
 /// @nodoc
 mixin _$BenefitLicenseKeysCreate {
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String? get organization_id => throw _privateConstructorUsedError;
@@ -44,7 +45,8 @@ abstract class $BenefitLicenseKeysCreateCopyWith<$Res> {
       _$BenefitLicenseKeysCreateCopyWithImpl<$Res, BenefitLicenseKeysCreate>;
   @useResult
   $Res call(
-      {String type,
+      {Map<String, dynamic>? metadata,
+      String type,
       String description,
       String? organization_id,
       BenefitLicenseKeysCreateProperties properties});
@@ -68,12 +70,17 @@ class _$BenefitLicenseKeysCreateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? type = null,
     Object? description = null,
     Object? organization_id = freezed,
     Object? properties = null,
   }) {
     return _then(_value.copyWith(
+      metadata: freezed == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -115,7 +122,8 @@ abstract class _$$BenefitLicenseKeysCreateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
+      {Map<String, dynamic>? metadata,
+      String type,
       String description,
       String? organization_id,
       BenefitLicenseKeysCreateProperties properties});
@@ -139,12 +147,17 @@ class __$$BenefitLicenseKeysCreateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? type = null,
     Object? description = null,
     Object? organization_id = freezed,
     Object? properties = null,
   }) {
     return _then(_$BenefitLicenseKeysCreateImpl(
+      metadata: freezed == metadata
+          ? _value._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -169,13 +182,25 @@ class __$$BenefitLicenseKeysCreateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitLicenseKeysCreateImpl implements _BenefitLicenseKeysCreate {
   const _$BenefitLicenseKeysCreateImpl(
-      {required this.type,
+      {final Map<String, dynamic>? metadata,
+      required this.type,
       required this.description,
       this.organization_id,
-      required this.properties});
+      required this.properties})
+      : _metadata = metadata;
 
   factory _$BenefitLicenseKeysCreateImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitLicenseKeysCreateImplFromJson(json);
+
+  final Map<String, dynamic>? _metadata;
+  @override
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   final String type;
@@ -188,7 +213,7 @@ class _$BenefitLicenseKeysCreateImpl implements _BenefitLicenseKeysCreate {
 
   @override
   String toString() {
-    return 'BenefitLicenseKeysCreate(type: $type, description: $description, organization_id: $organization_id, properties: $properties)';
+    return 'BenefitLicenseKeysCreate(metadata: $metadata, type: $type, description: $description, organization_id: $organization_id, properties: $properties)';
   }
 
   @override
@@ -196,6 +221,7 @@ class _$BenefitLicenseKeysCreateImpl implements _BenefitLicenseKeysCreate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitLicenseKeysCreateImpl &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -207,8 +233,13 @@ class _$BenefitLicenseKeysCreateImpl implements _BenefitLicenseKeysCreate {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, type, description, organization_id, properties);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_metadata),
+      type,
+      description,
+      organization_id,
+      properties);
 
   /// Create a copy of BenefitLicenseKeysCreate
   /// with the given fields replaced by the non-null parameter values.
@@ -229,7 +260,8 @@ class _$BenefitLicenseKeysCreateImpl implements _BenefitLicenseKeysCreate {
 
 abstract class _BenefitLicenseKeysCreate implements BenefitLicenseKeysCreate {
   const factory _BenefitLicenseKeysCreate(
-          {required final String type,
+          {final Map<String, dynamic>? metadata,
+          required final String type,
           required final String description,
           final String? organization_id,
           required final BenefitLicenseKeysCreateProperties properties}) =
@@ -238,6 +270,8 @@ abstract class _BenefitLicenseKeysCreate implements BenefitLicenseKeysCreate {
   factory _BenefitLicenseKeysCreate.fromJson(Map<String, dynamic> json) =
       _$BenefitLicenseKeysCreateImpl.fromJson;
 
+  @override
+  Map<String, dynamic>? get metadata;
   @override
   String get type;
   @override

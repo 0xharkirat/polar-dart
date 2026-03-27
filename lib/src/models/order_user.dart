@@ -7,7 +7,7 @@ part 'order_user.freezed.dart';
 class OrderUser with _$OrderUser {
   const factory OrderUser({
     required String id,
-    required String email,
+    String? email,
     required String public_name,
     String? avatar_url,
     String? github_username,

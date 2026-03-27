@@ -9,6 +9,7 @@ part 'webhook_subscription_created_payload.freezed.dart';
 class WebhookSubscriptionCreatedPayload with _$WebhookSubscriptionCreatedPayload {
   const factory WebhookSubscriptionCreatedPayload({
     required String type,
+    required String timestamp,
     required Subscription data,
   }) = _WebhookSubscriptionCreatedPayload;
 

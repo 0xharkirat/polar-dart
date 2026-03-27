@@ -7,7 +7,7 @@ part 'subscription_user.freezed.dart';
 class SubscriptionUser with _$SubscriptionUser {
   const factory SubscriptionUser({
     required String id,
-    required String email,
+    String? email,
     required String public_name,
     String? avatar_url,
     String? github_username,

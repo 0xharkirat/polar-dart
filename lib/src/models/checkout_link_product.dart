@@ -1,5 +1,6 @@
-import 'product_price.dart';
-import 'benefit_base.dart';
+import 'metadata_output_type.dart';
+import 'product_visibility.dart';
+import 'benefit_public.dart';
 import 'product_media_file_read.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -10,16 +11,22 @@ part 'checkout_link_product.freezed.dart';
 @freezed
 class CheckoutLinkProduct with _$CheckoutLinkProduct {
   const factory CheckoutLinkProduct({
+    required MetadataOutputType metadata,
+    required String id,
     required String created_at,
     required String? modified_at,
-    required String id,
+    required dynamic trial_interval,
+    required dynamic trial_interval_count,
     required String name,
     required String? description,
+    required ProductVisibility visibility,
+    required dynamic recurring_interval,
+    required dynamic recurring_interval_count,
     required bool is_recurring,
     required bool is_archived,
     required String organization_id,
-    required List<ProductPrice> prices,
-    required List<BenefitBase> benefits,
+    required List<dynamic> prices,
+    required List<BenefitPublic> benefits,
     required List<ProductMediaFileRead> medias,
   }) = _CheckoutLinkProduct;
 

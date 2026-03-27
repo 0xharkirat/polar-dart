@@ -9,6 +9,7 @@ part 'webhook_benefit_created_payload.freezed.dart';
 class WebhookBenefitCreatedPayload with _$WebhookBenefitCreatedPayload {
   const factory WebhookBenefitCreatedPayload({
     required String type,
+    required String timestamp,
     required Benefit data,
   }) = _WebhookBenefitCreatedPayload;
 

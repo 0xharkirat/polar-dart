@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import '../models/customer_session.dart';
-import '../models/customer_session_create.dart';
 
 /// A class to handle operations related to customer-sessions in the Polar API.
 class CustomerSessionsApi {
@@ -9,11 +8,10 @@ class CustomerSessionsApi {
   CustomerSessionsApi(this._dio);
 
 
-  Future<CustomerSession> customerSessionsCreate({required CustomerSessionCreate body, }) async {
+  Future<CustomerSession> customerSessionsCreate() async {
     try {
       final response = await _dio.post(
         '/v1/customer-sessions/',
-        data: body.toJson(),
       );
       return CustomerSession.fromJson(response.data);
     } catch (e) {

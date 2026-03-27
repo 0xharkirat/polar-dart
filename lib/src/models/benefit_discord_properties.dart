@@ -8,6 +8,7 @@ class BenefitDiscordProperties with _$BenefitDiscordProperties {
   const factory BenefitDiscordProperties({
     required String guild_id,
     required String role_id,
+    required bool kick_member,
     required String guild_token,
   }) = _BenefitDiscordProperties;
 

@@ -8,6 +8,7 @@ part 'benefit_license_keys_create.freezed.dart';
 @freezed
 class BenefitLicenseKeysCreate with _$BenefitLicenseKeysCreate {
   const factory BenefitLicenseKeysCreate({
+    Map<String, dynamic>? metadata,
     required String type,
     required String description,
     String? organization_id,

@@ -9,6 +9,7 @@ part 'webhook_subscription_canceled_payload.freezed.dart';
 class WebhookSubscriptionCanceledPayload with _$WebhookSubscriptionCanceledPayload {
   const factory WebhookSubscriptionCanceledPayload({
     required String type,
+    required String timestamp,
     required Subscription data,
   }) = _WebhookSubscriptionCanceledPayload;
 

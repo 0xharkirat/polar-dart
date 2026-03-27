@@ -12,7 +12,8 @@ _$CustomFieldDateImpl _$$CustomFieldDateImplFromJson(
       created_at: json['created_at'] as String,
       modified_at: json['modified_at'] as String?,
       id: json['id'] as String,
-      metadata: json['metadata'] as Map<String, dynamic>,
+      metadata:
+          MetadataOutputType.fromJson(json['metadata'] as Map<String, dynamic>),
       type: json['type'] as String,
       slug: json['slug'] as String,
       name: json['name'] as String,

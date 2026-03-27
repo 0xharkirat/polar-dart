@@ -23,6 +23,7 @@ BenefitDiscordProperties _$BenefitDiscordPropertiesFromJson(
 mixin _$BenefitDiscordProperties {
   String get guild_id => throw _privateConstructorUsedError;
   String get role_id => throw _privateConstructorUsedError;
+  bool get kick_member => throw _privateConstructorUsedError;
   String get guild_token => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitDiscordProperties to a JSON map.
@@ -41,7 +42,8 @@ abstract class $BenefitDiscordPropertiesCopyWith<$Res> {
           $Res Function(BenefitDiscordProperties) then) =
       _$BenefitDiscordPropertiesCopyWithImpl<$Res, BenefitDiscordProperties>;
   @useResult
-  $Res call({String guild_id, String role_id, String guild_token});
+  $Res call(
+      {String guild_id, String role_id, bool kick_member, String guild_token});
 }
 
 /// @nodoc
@@ -62,6 +64,7 @@ class _$BenefitDiscordPropertiesCopyWithImpl<$Res,
   $Res call({
     Object? guild_id = null,
     Object? role_id = null,
+    Object? kick_member = null,
     Object? guild_token = null,
   }) {
     return _then(_value.copyWith(
@@ -73,6 +76,10 @@ class _$BenefitDiscordPropertiesCopyWithImpl<$Res,
           ? _value.role_id
           : role_id // ignore: cast_nullable_to_non_nullable
               as String,
+      kick_member: null == kick_member
+          ? _value.kick_member
+          : kick_member // ignore: cast_nullable_to_non_nullable
+              as bool,
       guild_token: null == guild_token
           ? _value.guild_token
           : guild_token // ignore: cast_nullable_to_non_nullable
@@ -90,7 +97,8 @@ abstract class _$$BenefitDiscordPropertiesImplCopyWith<$Res>
       __$$BenefitDiscordPropertiesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String guild_id, String role_id, String guild_token});
+  $Res call(
+      {String guild_id, String role_id, bool kick_member, String guild_token});
 }
 
 /// @nodoc
@@ -110,6 +118,7 @@ class __$$BenefitDiscordPropertiesImplCopyWithImpl<$Res>
   $Res call({
     Object? guild_id = null,
     Object? role_id = null,
+    Object? kick_member = null,
     Object? guild_token = null,
   }) {
     return _then(_$BenefitDiscordPropertiesImpl(
@@ -121,6 +130,10 @@ class __$$BenefitDiscordPropertiesImplCopyWithImpl<$Res>
           ? _value.role_id
           : role_id // ignore: cast_nullable_to_non_nullable
               as String,
+      kick_member: null == kick_member
+          ? _value.kick_member
+          : kick_member // ignore: cast_nullable_to_non_nullable
+              as bool,
       guild_token: null == guild_token
           ? _value.guild_token
           : guild_token // ignore: cast_nullable_to_non_nullable
@@ -135,6 +148,7 @@ class _$BenefitDiscordPropertiesImpl implements _BenefitDiscordProperties {
   const _$BenefitDiscordPropertiesImpl(
       {required this.guild_id,
       required this.role_id,
+      required this.kick_member,
       required this.guild_token});
 
   factory _$BenefitDiscordPropertiesImpl.fromJson(Map<String, dynamic> json) =>
@@ -145,11 +159,13 @@ class _$BenefitDiscordPropertiesImpl implements _BenefitDiscordProperties {
   @override
   final String role_id;
   @override
+  final bool kick_member;
+  @override
   final String guild_token;
 
   @override
   String toString() {
-    return 'BenefitDiscordProperties(guild_id: $guild_id, role_id: $role_id, guild_token: $guild_token)';
+    return 'BenefitDiscordProperties(guild_id: $guild_id, role_id: $role_id, kick_member: $kick_member, guild_token: $guild_token)';
   }
 
   @override
@@ -160,13 +176,16 @@ class _$BenefitDiscordPropertiesImpl implements _BenefitDiscordProperties {
             (identical(other.guild_id, guild_id) ||
                 other.guild_id == guild_id) &&
             (identical(other.role_id, role_id) || other.role_id == role_id) &&
+            (identical(other.kick_member, kick_member) ||
+                other.kick_member == kick_member) &&
             (identical(other.guild_token, guild_token) ||
                 other.guild_token == guild_token));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, guild_id, role_id, guild_token);
+  int get hashCode =>
+      Object.hash(runtimeType, guild_id, role_id, kick_member, guild_token);
 
   /// Create a copy of BenefitDiscordProperties
   /// with the given fields replaced by the non-null parameter values.
@@ -189,6 +208,7 @@ abstract class _BenefitDiscordProperties implements BenefitDiscordProperties {
   const factory _BenefitDiscordProperties(
       {required final String guild_id,
       required final String role_id,
+      required final bool kick_member,
       required final String guild_token}) = _$BenefitDiscordPropertiesImpl;
 
   factory _BenefitDiscordProperties.fromJson(Map<String, dynamic> json) =
@@ -198,6 +218,8 @@ abstract class _BenefitDiscordProperties implements BenefitDiscordProperties {
   String get guild_id;
   @override
   String get role_id;
+  @override
+  bool get kick_member;
   @override
   String get guild_token;
 

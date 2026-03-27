@@ -20,12 +20,11 @@ SubscriptionCancel _$SubscriptionCancelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SubscriptionCancel {
-  dynamic? get cancel_at_period_end => throw _privateConstructorUsedError;
-  dynamic? get revoke => throw _privateConstructorUsedError;
   dynamic? get customer_cancellation_reason =>
       throw _privateConstructorUsedError;
   String? get customer_cancellation_comment =>
       throw _privateConstructorUsedError;
+  bool get cancel_at_period_end => throw _privateConstructorUsedError;
 
   /// Serializes this SubscriptionCancel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,10 +43,9 @@ abstract class $SubscriptionCancelCopyWith<$Res> {
       _$SubscriptionCancelCopyWithImpl<$Res, SubscriptionCancel>;
   @useResult
   $Res call(
-      {dynamic? cancel_at_period_end,
-      dynamic? revoke,
-      dynamic? customer_cancellation_reason,
-      String? customer_cancellation_comment});
+      {dynamic? customer_cancellation_reason,
+      String? customer_cancellation_comment,
+      bool cancel_at_period_end});
 }
 
 /// @nodoc
@@ -65,20 +63,11 @@ class _$SubscriptionCancelCopyWithImpl<$Res, $Val extends SubscriptionCancel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cancel_at_period_end = freezed,
-    Object? revoke = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
+    Object? cancel_at_period_end = null,
   }) {
     return _then(_value.copyWith(
-      cancel_at_period_end: freezed == cancel_at_period_end
-          ? _value.cancel_at_period_end
-          : cancel_at_period_end // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      revoke: freezed == revoke
-          ? _value.revoke
-          : revoke // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -87,6 +76,10 @@ class _$SubscriptionCancelCopyWithImpl<$Res, $Val extends SubscriptionCancel>
           ? _value.customer_cancellation_comment
           : customer_cancellation_comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      cancel_at_period_end: null == cancel_at_period_end
+          ? _value.cancel_at_period_end
+          : cancel_at_period_end // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -100,10 +93,9 @@ abstract class _$$SubscriptionCancelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? cancel_at_period_end,
-      dynamic? revoke,
-      dynamic? customer_cancellation_reason,
-      String? customer_cancellation_comment});
+      {dynamic? customer_cancellation_reason,
+      String? customer_cancellation_comment,
+      bool cancel_at_period_end});
 }
 
 /// @nodoc
@@ -119,20 +111,11 @@ class __$$SubscriptionCancelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cancel_at_period_end = freezed,
-    Object? revoke = freezed,
     Object? customer_cancellation_reason = freezed,
     Object? customer_cancellation_comment = freezed,
+    Object? cancel_at_period_end = null,
   }) {
     return _then(_$SubscriptionCancelImpl(
-      cancel_at_period_end: freezed == cancel_at_period_end
-          ? _value.cancel_at_period_end
-          : cancel_at_period_end // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      revoke: freezed == revoke
-          ? _value.revoke
-          : revoke // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
       customer_cancellation_reason: freezed == customer_cancellation_reason
           ? _value.customer_cancellation_reason
           : customer_cancellation_reason // ignore: cast_nullable_to_non_nullable
@@ -141,6 +124,10 @@ class __$$SubscriptionCancelImplCopyWithImpl<$Res>
           ? _value.customer_cancellation_comment
           : customer_cancellation_comment // ignore: cast_nullable_to_non_nullable
               as String?,
+      cancel_at_period_end: null == cancel_at_period_end
+          ? _value.cancel_at_period_end
+          : cancel_at_period_end // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -149,26 +136,23 @@ class __$$SubscriptionCancelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SubscriptionCancelImpl implements _SubscriptionCancel {
   const _$SubscriptionCancelImpl(
-      {this.cancel_at_period_end,
-      this.revoke,
-      this.customer_cancellation_reason,
-      this.customer_cancellation_comment});
+      {this.customer_cancellation_reason,
+      this.customer_cancellation_comment,
+      required this.cancel_at_period_end});
 
   factory _$SubscriptionCancelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubscriptionCancelImplFromJson(json);
 
   @override
-  final dynamic? cancel_at_period_end;
-  @override
-  final dynamic? revoke;
-  @override
   final dynamic? customer_cancellation_reason;
   @override
   final String? customer_cancellation_comment;
+  @override
+  final bool cancel_at_period_end;
 
   @override
   String toString() {
-    return 'SubscriptionCancel(cancel_at_period_end: $cancel_at_period_end, revoke: $revoke, customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment)';
+    return 'SubscriptionCancel(customer_cancellation_reason: $customer_cancellation_reason, customer_cancellation_comment: $customer_cancellation_comment, cancel_at_period_end: $cancel_at_period_end)';
   }
 
   @override
@@ -176,26 +160,24 @@ class _$SubscriptionCancelImpl implements _SubscriptionCancel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubscriptionCancelImpl &&
-            const DeepCollectionEquality()
-                .equals(other.cancel_at_period_end, cancel_at_period_end) &&
-            const DeepCollectionEquality().equals(other.revoke, revoke) &&
             const DeepCollectionEquality().equals(
                 other.customer_cancellation_reason,
                 customer_cancellation_reason) &&
             (identical(other.customer_cancellation_comment,
                     customer_cancellation_comment) ||
                 other.customer_cancellation_comment ==
-                    customer_cancellation_comment));
+                    customer_cancellation_comment) &&
+            (identical(other.cancel_at_period_end, cancel_at_period_end) ||
+                other.cancel_at_period_end == cancel_at_period_end));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(cancel_at_period_end),
-      const DeepCollectionEquality().hash(revoke),
       const DeepCollectionEquality().hash(customer_cancellation_reason),
-      customer_cancellation_comment);
+      customer_cancellation_comment,
+      cancel_at_period_end);
 
   /// Create a copy of SubscriptionCancel
   /// with the given fields replaced by the non-null parameter values.
@@ -216,22 +198,19 @@ class _$SubscriptionCancelImpl implements _SubscriptionCancel {
 
 abstract class _SubscriptionCancel implements SubscriptionCancel {
   const factory _SubscriptionCancel(
-      {final dynamic? cancel_at_period_end,
-      final dynamic? revoke,
-      final dynamic? customer_cancellation_reason,
-      final String? customer_cancellation_comment}) = _$SubscriptionCancelImpl;
+      {final dynamic? customer_cancellation_reason,
+      final String? customer_cancellation_comment,
+      required final bool cancel_at_period_end}) = _$SubscriptionCancelImpl;
 
   factory _SubscriptionCancel.fromJson(Map<String, dynamic> json) =
       _$SubscriptionCancelImpl.fromJson;
 
   @override
-  dynamic? get cancel_at_period_end;
-  @override
-  dynamic? get revoke;
-  @override
   dynamic? get customer_cancellation_reason;
   @override
   String? get customer_cancellation_comment;
+  @override
+  bool get cancel_at_period_end;
 
   /// Create a copy of SubscriptionCancel
   /// with the given fields replaced by the non-null parameter values.

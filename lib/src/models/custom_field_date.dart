@@ -1,3 +1,4 @@
+import 'metadata_output_type.dart';
 import 'custom_field_date_properties.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,7 +12,7 @@ class CustomFieldDate with _$CustomFieldDate {
     required String created_at,
     required String? modified_at,
     required String id,
-    required Map<String, dynamic> metadata,
+    required MetadataOutputType metadata,
     required String type,
     required String slug,
     required String name,

@@ -9,12 +9,15 @@ class CustomerPortalCustomer with _$CustomerPortalCustomer {
     required String created_at,
     required String? modified_at,
     required String id,
-    required String email,
+    required String? email,
     required bool email_verified,
     required String? name,
+    required String? billing_name,
     required dynamic billing_address,
     required dynamic tax_id,
     required Map<String, dynamic> oauth_accounts,
+    String? default_payment_method_id,
+    dynamic? type,
   }) = _CustomerPortalCustomer;
 
   factory CustomerPortalCustomer.fromJson(Map<String, dynamic> json) => _$CustomerPortalCustomerFromJson(json);

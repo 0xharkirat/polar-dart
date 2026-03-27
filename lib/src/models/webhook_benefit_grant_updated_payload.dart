@@ -9,6 +9,7 @@ part 'webhook_benefit_grant_updated_payload.freezed.dart';
 class WebhookBenefitGrantUpdatedPayload with _$WebhookBenefitGrantUpdatedPayload {
   const factory WebhookBenefitGrantUpdatedPayload({
     required String type,
+    required String timestamp,
     required BenefitGrantWebhook data,
   }) = _WebhookBenefitGrantUpdatedPayload;
 

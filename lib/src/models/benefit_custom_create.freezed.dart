@@ -20,6 +20,7 @@ BenefitCustomCreate _$BenefitCustomCreateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BenefitCustomCreate {
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String? get organization_id => throw _privateConstructorUsedError;
@@ -43,7 +44,8 @@ abstract class $BenefitCustomCreateCopyWith<$Res> {
       _$BenefitCustomCreateCopyWithImpl<$Res, BenefitCustomCreate>;
   @useResult
   $Res call(
-      {String type,
+      {Map<String, dynamic>? metadata,
+      String type,
       String description,
       String? organization_id,
       BenefitCustomCreateProperties properties});
@@ -66,12 +68,17 @@ class _$BenefitCustomCreateCopyWithImpl<$Res, $Val extends BenefitCustomCreate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? type = null,
     Object? description = null,
     Object? organization_id = freezed,
     Object? properties = null,
   }) {
     return _then(_value.copyWith(
+      metadata: freezed == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -112,7 +119,8 @@ abstract class _$$BenefitCustomCreateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
+      {Map<String, dynamic>? metadata,
+      String type,
       String description,
       String? organization_id,
       BenefitCustomCreateProperties properties});
@@ -134,12 +142,17 @@ class __$$BenefitCustomCreateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? metadata = freezed,
     Object? type = null,
     Object? description = null,
     Object? organization_id = freezed,
     Object? properties = null,
   }) {
     return _then(_$BenefitCustomCreateImpl(
+      metadata: freezed == metadata
+          ? _value._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -164,13 +177,25 @@ class __$$BenefitCustomCreateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BenefitCustomCreateImpl implements _BenefitCustomCreate {
   const _$BenefitCustomCreateImpl(
-      {required this.type,
+      {final Map<String, dynamic>? metadata,
+      required this.type,
       required this.description,
       this.organization_id,
-      required this.properties});
+      required this.properties})
+      : _metadata = metadata;
 
   factory _$BenefitCustomCreateImpl.fromJson(Map<String, dynamic> json) =>
       _$$BenefitCustomCreateImplFromJson(json);
+
+  final Map<String, dynamic>? _metadata;
+  @override
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   final String type;
@@ -183,7 +208,7 @@ class _$BenefitCustomCreateImpl implements _BenefitCustomCreate {
 
   @override
   String toString() {
-    return 'BenefitCustomCreate(type: $type, description: $description, organization_id: $organization_id, properties: $properties)';
+    return 'BenefitCustomCreate(metadata: $metadata, type: $type, description: $description, organization_id: $organization_id, properties: $properties)';
   }
 
   @override
@@ -191,6 +216,7 @@ class _$BenefitCustomCreateImpl implements _BenefitCustomCreate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitCustomCreateImpl &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -202,8 +228,13 @@ class _$BenefitCustomCreateImpl implements _BenefitCustomCreate {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, type, description, organization_id, properties);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_metadata),
+      type,
+      description,
+      organization_id,
+      properties);
 
   /// Create a copy of BenefitCustomCreate
   /// with the given fields replaced by the non-null parameter values.
@@ -224,7 +255,8 @@ class _$BenefitCustomCreateImpl implements _BenefitCustomCreate {
 
 abstract class _BenefitCustomCreate implements BenefitCustomCreate {
   const factory _BenefitCustomCreate(
-          {required final String type,
+          {final Map<String, dynamic>? metadata,
+          required final String type,
           required final String description,
           final String? organization_id,
           required final BenefitCustomCreateProperties properties}) =
@@ -233,6 +265,8 @@ abstract class _BenefitCustomCreate implements BenefitCustomCreate {
   factory _BenefitCustomCreate.fromJson(Map<String, dynamic> json) =
       _$BenefitCustomCreateImpl.fromJson;
 
+  @override
+  Map<String, dynamic>? get metadata;
   @override
   String get type;
   @override

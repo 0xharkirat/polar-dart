@@ -1,5 +1,6 @@
 import 'discount_duration.dart';
 import 'discount_type.dart';
+import 'metadata_output_type.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,10 +14,11 @@ class DiscountFixedOnceForeverDurationBase with _$DiscountFixedOnceForeverDurati
     required DiscountType type,
     required int amount,
     required String currency,
+    required Map<String, dynamic> amounts,
     required String created_at,
     required String? modified_at,
     required String id,
-    required Map<String, dynamic> metadata,
+    required MetadataOutputType metadata,
     required String name,
     required String? code,
     required String? starts_at,

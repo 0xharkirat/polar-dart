@@ -11,11 +11,11 @@ class BenefitsApi {
   BenefitsApi(this._dio);
 
 
-  Future<ListResourceBenefit> benefitsList({dynamic organization_id, dynamic type, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefit> benefitsList({dynamic organization_id, dynamic type, dynamic id, dynamic exclude_id, String? query, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"], dynamic metadata}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/',
-        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (type != null) 'type': type, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (organization_id != null) 'organization_id': organization_id, if (type != null) 'type': type, if (id != null) 'id': id, if (exclude_id != null) 'exclude_id': exclude_id, if (query != null) 'query': query, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting, if (metadata != null) 'metadata': metadata },
       );
       return ListResourceBenefit.fromJson(response.data);
     } catch (e) {
@@ -88,11 +88,11 @@ class BenefitsApi {
     }
   }
 
-  Future<ListResourceBenefitGrant> benefitsGrants({required String id, dynamic is_granted, dynamic customer_id, int page = 1, int limit = 10}) async {
+  Future<ListResourceBenefitGrant> benefitsGrants({required String id, dynamic is_granted, dynamic customer_id, dynamic member_id, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/benefits/${id}/grants',
-        queryParameters: { if (is_granted != null) 'is_granted': is_granted, if (customer_id != null) 'customer_id': customer_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
+        queryParameters: { if (is_granted != null) 'is_granted': is_granted, if (customer_id != null) 'customer_id': customer_id, if (member_id != null) 'member_id': member_id, if (page != null) 'page': page, if (limit != null) 'limit': limit },
       );
       return ListResourceBenefitGrant.fromJson(response.data);
     } catch (e) {

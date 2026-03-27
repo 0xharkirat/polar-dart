@@ -23,7 +23,8 @@ mixin _$AttachedCustomField {
   String get custom_field_id => throw _privateConstructorUsedError;
   CustomField get custom_field => throw _privateConstructorUsedError;
   int get order => throw _privateConstructorUsedError;
-  bool get required => throw _privateConstructorUsedError;
+  @JsonKey(name: 'required')
+  bool get required_field => throw _privateConstructorUsedError;
 
   /// Serializes this AttachedCustomField to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,7 +46,7 @@ abstract class $AttachedCustomFieldCopyWith<$Res> {
       {String custom_field_id,
       CustomField custom_field,
       int order,
-      bool required});
+      @JsonKey(name: 'required') bool required_field});
 
   $CustomFieldCopyWith<$Res> get custom_field;
 }
@@ -68,7 +69,7 @@ class _$AttachedCustomFieldCopyWithImpl<$Res, $Val extends AttachedCustomField>
     Object? custom_field_id = null,
     Object? custom_field = null,
     Object? order = null,
-    Object? required = null,
+    Object? required_field = null,
   }) {
     return _then(_value.copyWith(
       custom_field_id: null == custom_field_id
@@ -83,9 +84,9 @@ class _$AttachedCustomFieldCopyWithImpl<$Res, $Val extends AttachedCustomField>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
-      required: null == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
+      required_field: null == required_field
+          ? _value.required_field
+          : required_field // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -113,7 +114,7 @@ abstract class _$$AttachedCustomFieldImplCopyWith<$Res>
       {String custom_field_id,
       CustomField custom_field,
       int order,
-      bool required});
+      @JsonKey(name: 'required') bool required_field});
 
   @override
   $CustomFieldCopyWith<$Res> get custom_field;
@@ -135,7 +136,7 @@ class __$$AttachedCustomFieldImplCopyWithImpl<$Res>
     Object? custom_field_id = null,
     Object? custom_field = null,
     Object? order = null,
-    Object? required = null,
+    Object? required_field = null,
   }) {
     return _then(_$AttachedCustomFieldImpl(
       custom_field_id: null == custom_field_id
@@ -150,9 +151,9 @@ class __$$AttachedCustomFieldImplCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as int,
-      required: null == required
-          ? _value.required
-          : required // ignore: cast_nullable_to_non_nullable
+      required_field: null == required_field
+          ? _value.required_field
+          : required_field // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -165,7 +166,7 @@ class _$AttachedCustomFieldImpl implements _AttachedCustomField {
       {required this.custom_field_id,
       required this.custom_field,
       required this.order,
-      required this.required});
+      @JsonKey(name: 'required') required this.required_field});
 
   factory _$AttachedCustomFieldImpl.fromJson(Map<String, dynamic> json) =>
       _$$AttachedCustomFieldImplFromJson(json);
@@ -177,11 +178,12 @@ class _$AttachedCustomFieldImpl implements _AttachedCustomField {
   @override
   final int order;
   @override
-  final bool required;
+  @JsonKey(name: 'required')
+  final bool required_field;
 
   @override
   String toString() {
-    return 'AttachedCustomField(custom_field_id: $custom_field_id, custom_field: $custom_field, order: $order, required: $required)';
+    return 'AttachedCustomField(custom_field_id: $custom_field_id, custom_field: $custom_field, order: $order, required_field: $required_field)';
   }
 
   @override
@@ -194,14 +196,14 @@ class _$AttachedCustomFieldImpl implements _AttachedCustomField {
             (identical(other.custom_field, custom_field) ||
                 other.custom_field == custom_field) &&
             (identical(other.order, order) || other.order == order) &&
-            (identical(other.required, required) ||
-                other.required == required));
+            (identical(other.required_field, required_field) ||
+                other.required_field == required_field));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, custom_field_id, custom_field, order, required);
+  int get hashCode => Object.hash(
+      runtimeType, custom_field_id, custom_field, order, required_field);
 
   /// Create a copy of AttachedCustomField
   /// with the given fields replaced by the non-null parameter values.
@@ -222,10 +224,11 @@ class _$AttachedCustomFieldImpl implements _AttachedCustomField {
 
 abstract class _AttachedCustomField implements AttachedCustomField {
   const factory _AttachedCustomField(
-      {required final String custom_field_id,
-      required final CustomField custom_field,
-      required final int order,
-      required final bool required}) = _$AttachedCustomFieldImpl;
+          {required final String custom_field_id,
+          required final CustomField custom_field,
+          required final int order,
+          @JsonKey(name: 'required') required final bool required_field}) =
+      _$AttachedCustomFieldImpl;
 
   factory _AttachedCustomField.fromJson(Map<String, dynamic> json) =
       _$AttachedCustomFieldImpl.fromJson;
@@ -237,7 +240,8 @@ abstract class _AttachedCustomField implements AttachedCustomField {
   @override
   int get order;
   @override
-  bool get required;
+  @JsonKey(name: 'required')
+  bool get required_field;
 
   /// Create a copy of AttachedCustomField
   /// with the given fields replaced by the non-null parameter values.

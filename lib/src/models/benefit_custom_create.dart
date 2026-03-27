@@ -8,6 +8,7 @@ part 'benefit_custom_create.freezed.dart';
 @freezed
 class BenefitCustomCreate with _$BenefitCustomCreate {
   const factory BenefitCustomCreate({
+    Map<String, dynamic>? metadata,
     required String type,
     required String description,
     String? organization_id,

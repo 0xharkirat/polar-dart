@@ -10,6 +10,7 @@ _$WebhookProductUpdatedPayloadImpl _$$WebhookProductUpdatedPayloadImplFromJson(
         Map<String, dynamic> json) =>
     _$WebhookProductUpdatedPayloadImpl(
       type: json['type'] as String,
+      timestamp: json['timestamp'] as String,
       data: Product.fromJson(json['data'] as Map<String, dynamic>),
     );
 
@@ -17,5 +18,6 @@ Map<String, dynamic> _$$WebhookProductUpdatedPayloadImplToJson(
         _$WebhookProductUpdatedPayloadImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
+      'timestamp': instance.timestamp,
       'data': instance.data,
     };

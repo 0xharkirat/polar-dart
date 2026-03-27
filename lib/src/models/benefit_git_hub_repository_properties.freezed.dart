@@ -24,7 +24,6 @@ mixin _$BenefitGitHubRepositoryProperties {
   String get repository_owner => throw _privateConstructorUsedError;
   String get repository_name => throw _privateConstructorUsedError;
   String get permission => throw _privateConstructorUsedError;
-  String? get repository_id => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitGitHubRepositoryProperties to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,10 +44,7 @@ abstract class $BenefitGitHubRepositoryPropertiesCopyWith<$Res> {
           BenefitGitHubRepositoryProperties>;
   @useResult
   $Res call(
-      {String repository_owner,
-      String repository_name,
-      String permission,
-      String? repository_id});
+      {String repository_owner, String repository_name, String permission});
 }
 
 /// @nodoc
@@ -70,7 +66,6 @@ class _$BenefitGitHubRepositoryPropertiesCopyWithImpl<$Res,
     Object? repository_owner = null,
     Object? repository_name = null,
     Object? permission = null,
-    Object? repository_id = freezed,
   }) {
     return _then(_value.copyWith(
       repository_owner: null == repository_owner
@@ -85,10 +80,6 @@ class _$BenefitGitHubRepositoryPropertiesCopyWithImpl<$Res,
           ? _value.permission
           : permission // ignore: cast_nullable_to_non_nullable
               as String,
-      repository_id: freezed == repository_id
-          ? _value.repository_id
-          : repository_id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -103,10 +94,7 @@ abstract class _$$BenefitGitHubRepositoryPropertiesImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String repository_owner,
-      String repository_name,
-      String permission,
-      String? repository_id});
+      {String repository_owner, String repository_name, String permission});
 }
 
 /// @nodoc
@@ -127,7 +115,6 @@ class __$$BenefitGitHubRepositoryPropertiesImplCopyWithImpl<$Res>
     Object? repository_owner = null,
     Object? repository_name = null,
     Object? permission = null,
-    Object? repository_id = freezed,
   }) {
     return _then(_$BenefitGitHubRepositoryPropertiesImpl(
       repository_owner: null == repository_owner
@@ -142,10 +129,6 @@ class __$$BenefitGitHubRepositoryPropertiesImplCopyWithImpl<$Res>
           ? _value.permission
           : permission // ignore: cast_nullable_to_non_nullable
               as String,
-      repository_id: freezed == repository_id
-          ? _value.repository_id
-          : repository_id // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -157,8 +140,7 @@ class _$BenefitGitHubRepositoryPropertiesImpl
   const _$BenefitGitHubRepositoryPropertiesImpl(
       {required this.repository_owner,
       required this.repository_name,
-      required this.permission,
-      this.repository_id});
+      required this.permission});
 
   factory _$BenefitGitHubRepositoryPropertiesImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -170,12 +152,10 @@ class _$BenefitGitHubRepositoryPropertiesImpl
   final String repository_name;
   @override
   final String permission;
-  @override
-  final String? repository_id;
 
   @override
   String toString() {
-    return 'BenefitGitHubRepositoryProperties(repository_owner: $repository_owner, repository_name: $repository_name, permission: $permission, repository_id: $repository_id)';
+    return 'BenefitGitHubRepositoryProperties(repository_owner: $repository_owner, repository_name: $repository_name, permission: $permission)';
   }
 
   @override
@@ -188,15 +168,13 @@ class _$BenefitGitHubRepositoryPropertiesImpl
             (identical(other.repository_name, repository_name) ||
                 other.repository_name == repository_name) &&
             (identical(other.permission, permission) ||
-                other.permission == permission) &&
-            (identical(other.repository_id, repository_id) ||
-                other.repository_id == repository_id));
+                other.permission == permission));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, repository_owner,
-      repository_name, permission, repository_id);
+  int get hashCode =>
+      Object.hash(runtimeType, repository_owner, repository_name, permission);
 
   /// Create a copy of BenefitGitHubRepositoryProperties
   /// with the given fields replaced by the non-null parameter values.
@@ -219,10 +197,10 @@ class _$BenefitGitHubRepositoryPropertiesImpl
 abstract class _BenefitGitHubRepositoryProperties
     implements BenefitGitHubRepositoryProperties {
   const factory _BenefitGitHubRepositoryProperties(
-      {required final String repository_owner,
-      required final String repository_name,
-      required final String permission,
-      final String? repository_id}) = _$BenefitGitHubRepositoryPropertiesImpl;
+          {required final String repository_owner,
+          required final String repository_name,
+          required final String permission}) =
+      _$BenefitGitHubRepositoryPropertiesImpl;
 
   factory _BenefitGitHubRepositoryProperties.fromJson(
           Map<String, dynamic> json) =
@@ -234,8 +212,6 @@ abstract class _BenefitGitHubRepositoryProperties
   String get repository_name;
   @override
   String get permission;
-  @override
-  String? get repository_id;
 
   /// Create a copy of BenefitGitHubRepositoryProperties
   /// with the given fields replaced by the non-null parameter values.

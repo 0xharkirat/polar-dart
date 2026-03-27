@@ -2,6 +2,75 @@ import 'dart:convert';
 import 'dart:io';
 
 class Common {
+  static const Set<String> _dartKeywords = {
+    'abstract',
+    'as',
+    'assert',
+    'async',
+    'await',
+    'base',
+    'break',
+    'case',
+    'catch',
+    'class',
+    'const',
+    'continue',
+    'covariant',
+    'default',
+    'deferred',
+    'do',
+    'dynamic',
+    'else',
+    'enum',
+    'export',
+    'extends',
+    'extension',
+    'external',
+    'factory',
+    'false',
+    'final',
+    'finally',
+    'for',
+    'Function',
+    'get',
+    'hide',
+    'if',
+    'implements',
+    'import',
+    'in',
+    'interface',
+    'is',
+    'late',
+    'library',
+    'mixin',
+    'new',
+    'null',
+    'on',
+    'operator',
+    'part',
+    'required',
+    'rethrow',
+    'return',
+    'sealed',
+    'set',
+    'show',
+    'static',
+    'super',
+    'switch',
+    'sync',
+    'this',
+    'throw',
+    'true',
+    'try',
+    'typedef',
+    'var',
+    'void',
+    'when',
+    'while',
+    'with',
+    'yield',
+  };
+
   static Future<Map<String, dynamic>?> loadOpenApiSpec(String filePath) async {
     final file = File(filePath);
     if (!await file.exists()) {
@@ -41,7 +110,8 @@ class Common {
 
       // Make non-required fields nullable if they aren't already
       final finalType =
-          requiredFields.contains(propertyName) || dartType.endsWith('?')
+          requiredFields.contains(propertyName) ||
+                  dartType.endsWith('?')
               ? dartType
               : '$dartType?';
 
@@ -125,7 +195,7 @@ class Common {
       case 'object':
         return 'Map<String, dynamic>';
       case 'null':
-        return 'null';
+        return 'dynamic';
       default:
         return 'dynamic';
     }
@@ -134,7 +204,7 @@ class Common {
   static String resolveRefType(String? ref) {
     if (ref == null) return 'dynamic';
     final refParts = ref.split('/');
-    return refParts.isNotEmpty ? refParts.last : 'dynamic';
+    return refParts.isNotEmpty ? toUpperCamelCase(refParts.last) : 'dynamic';
   }
 
   static String toSnakeCase(String input) {
@@ -235,7 +305,6 @@ class Common {
       'double',
       'bool',
       'dynamic',
-      'null',
       'List',
       'Map<String, dynamic>'
     };
@@ -264,5 +333,54 @@ class Common {
   // combine to lowerFirst and toUpperCamelCase to create tolowerCamelCase
   static String toLowerCamelCase(String input) {
     return toLowerFirst(toUpperCamelCase(input));
+  }
+
+  static String sanitizeEnumIdentifier(String rawValue) {
+    var value = rawValue;
+    if (value.startsWith('-')) {
+      value = 'minus_${value.substring(1)}';
+    } else if (value.startsWith('+')) {
+      value = 'plus_${value.substring(1)}';
+    }
+
+    var sanitized = value.replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_');
+    sanitized = sanitized.replaceAll(RegExp(r'_+'), '_');
+    sanitized = sanitized.replaceAll(RegExp(r'^_+'), '');
+    sanitized = sanitized.replaceAll(RegExp(r'_+$'), '');
+
+    if (sanitized.isEmpty) {
+      sanitized = 'empty';
+    }
+
+    if (RegExp(r'^[0-9]').hasMatch(sanitized)) {
+      sanitized = 'value_$sanitized';
+    }
+
+    if (_dartKeywords.contains(sanitized)) {
+      sanitized = '${sanitized}_value';
+    }
+
+    return sanitized;
+  }
+
+  static String sanitizeFieldIdentifier(String rawName) {
+    var sanitized = rawName.replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_');
+    sanitized = sanitized.replaceAll(RegExp(r'^_+'), '');
+    sanitized = sanitized.replaceAll(RegExp(r'_+'), '_');
+    sanitized = sanitized.replaceAll(RegExp(r'_+$'), '');
+
+    if (sanitized.isEmpty) {
+      sanitized = 'value';
+    }
+
+    if (RegExp(r'^[0-9]').hasMatch(sanitized)) {
+      sanitized = 'value_$sanitized';
+    }
+
+    if (_dartKeywords.contains(sanitized)) {
+      sanitized = '${sanitized}_field';
+    }
+
+    return sanitized;
   }
 }

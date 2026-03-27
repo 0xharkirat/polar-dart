@@ -20,6 +20,7 @@ MetricsIntervalLimit _$MetricsIntervalLimitFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MetricsIntervalLimit {
+  int get min_days => throw _privateConstructorUsedError;
   int get max_days => throw _privateConstructorUsedError;
 
   /// Serializes this MetricsIntervalLimit to a JSON map.
@@ -38,7 +39,7 @@ abstract class $MetricsIntervalLimitCopyWith<$Res> {
           $Res Function(MetricsIntervalLimit) then) =
       _$MetricsIntervalLimitCopyWithImpl<$Res, MetricsIntervalLimit>;
   @useResult
-  $Res call({int max_days});
+  $Res call({int min_days, int max_days});
 }
 
 /// @nodoc
@@ -57,9 +58,14 @@ class _$MetricsIntervalLimitCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? min_days = null,
     Object? max_days = null,
   }) {
     return _then(_value.copyWith(
+      min_days: null == min_days
+          ? _value.min_days
+          : min_days // ignore: cast_nullable_to_non_nullable
+              as int,
       max_days: null == max_days
           ? _value.max_days
           : max_days // ignore: cast_nullable_to_non_nullable
@@ -76,7 +82,7 @@ abstract class _$$MetricsIntervalLimitImplCopyWith<$Res>
       __$$MetricsIntervalLimitImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int max_days});
+  $Res call({int min_days, int max_days});
 }
 
 /// @nodoc
@@ -92,9 +98,14 @@ class __$$MetricsIntervalLimitImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? min_days = null,
     Object? max_days = null,
   }) {
     return _then(_$MetricsIntervalLimitImpl(
+      min_days: null == min_days
+          ? _value.min_days
+          : min_days // ignore: cast_nullable_to_non_nullable
+              as int,
       max_days: null == max_days
           ? _value.max_days
           : max_days // ignore: cast_nullable_to_non_nullable
@@ -106,17 +117,20 @@ class __$$MetricsIntervalLimitImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MetricsIntervalLimitImpl implements _MetricsIntervalLimit {
-  const _$MetricsIntervalLimitImpl({required this.max_days});
+  const _$MetricsIntervalLimitImpl(
+      {required this.min_days, required this.max_days});
 
   factory _$MetricsIntervalLimitImpl.fromJson(Map<String, dynamic> json) =>
       _$$MetricsIntervalLimitImplFromJson(json);
 
   @override
+  final int min_days;
+  @override
   final int max_days;
 
   @override
   String toString() {
-    return 'MetricsIntervalLimit(max_days: $max_days)';
+    return 'MetricsIntervalLimit(min_days: $min_days, max_days: $max_days)';
   }
 
   @override
@@ -124,13 +138,15 @@ class _$MetricsIntervalLimitImpl implements _MetricsIntervalLimit {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetricsIntervalLimitImpl &&
+            (identical(other.min_days, min_days) ||
+                other.min_days == min_days) &&
             (identical(other.max_days, max_days) ||
                 other.max_days == max_days));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, max_days);
+  int get hashCode => Object.hash(runtimeType, min_days, max_days);
 
   /// Create a copy of MetricsIntervalLimit
   /// with the given fields replaced by the non-null parameter values.
@@ -151,12 +167,15 @@ class _$MetricsIntervalLimitImpl implements _MetricsIntervalLimit {
 }
 
 abstract class _MetricsIntervalLimit implements MetricsIntervalLimit {
-  const factory _MetricsIntervalLimit({required final int max_days}) =
-      _$MetricsIntervalLimitImpl;
+  const factory _MetricsIntervalLimit(
+      {required final int min_days,
+      required final int max_days}) = _$MetricsIntervalLimitImpl;
 
   factory _MetricsIntervalLimit.fromJson(Map<String, dynamic> json) =
       _$MetricsIntervalLimitImpl.fromJson;
 
+  @override
+  int get min_days;
   @override
   int get max_days;
 

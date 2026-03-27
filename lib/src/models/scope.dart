@@ -1,46 +1,130 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum Scope {
+  @JsonValue('openid')
   openid,
+  @JsonValue('profile')
   profile,
+  @JsonValue('email')
   email,
+  @JsonValue('user:read')
   user_read,
-  admin,
-  web_default,
+  @JsonValue('user:write')
+  user_write,
+  @JsonValue('web:read')
+  web_read,
+  @JsonValue('web:write')
+  web_write,
+  @JsonValue('organizations:read')
   organizations_read,
+  @JsonValue('organizations:write')
   organizations_write,
+  @JsonValue('custom_fields:read')
   custom_fields_read,
+  @JsonValue('custom_fields:write')
   custom_fields_write,
+  @JsonValue('discounts:read')
   discounts_read,
+  @JsonValue('discounts:write')
   discounts_write,
+  @JsonValue('checkout_links:read')
   checkout_links_read,
+  @JsonValue('checkout_links:write')
   checkout_links_write,
+  @JsonValue('checkouts:read')
   checkouts_read,
+  @JsonValue('checkouts:write')
   checkouts_write,
+  @JsonValue('transactions:read')
+  transactions_read,
+  @JsonValue('transactions:write')
+  transactions_write,
+  @JsonValue('payouts:read')
+  payouts_read,
+  @JsonValue('payouts:write')
+  payouts_write,
+  @JsonValue('products:read')
   products_read,
+  @JsonValue('products:write')
   products_write,
+  @JsonValue('benefits:read')
   benefits_read,
+  @JsonValue('benefits:write')
   benefits_write,
+  @JsonValue('events:read')
   events_read,
+  @JsonValue('events:write')
   events_write,
+  @JsonValue('meters:read')
+  meters_read,
+  @JsonValue('meters:write')
+  meters_write,
+  @JsonValue('files:read')
   files_read,
+  @JsonValue('files:write')
   files_write,
+  @JsonValue('subscriptions:read')
   subscriptions_read,
+  @JsonValue('subscriptions:write')
   subscriptions_write,
+  @JsonValue('customers:read')
   customers_read,
+  @JsonValue('customers:write')
   customers_write,
+  @JsonValue('members:read')
+  members_read,
+  @JsonValue('members:write')
+  members_write,
+  @JsonValue('wallets:read')
+  wallets_read,
+  @JsonValue('wallets:write')
+  wallets_write,
+  @JsonValue('disputes:read')
+  disputes_read,
+  @JsonValue('customer_meters:read')
+  customer_meters_read,
+  @JsonValue('customer_sessions:write')
   customer_sessions_write,
+  @JsonValue('member_sessions:write')
+  member_sessions_write,
+  @JsonValue('customer_seats:read')
+  customer_seats_read,
+  @JsonValue('customer_seats:write')
+  customer_seats_write,
+  @JsonValue('orders:read')
   orders_read,
+  @JsonValue('orders:write')
+  orders_write,
+  @JsonValue('refunds:read')
   refunds_read,
+  @JsonValue('refunds:write')
   refunds_write,
+  @JsonValue('payments:read')
+  payments_read,
+  @JsonValue('metrics:read')
   metrics_read,
+  @JsonValue('webhooks:read')
   webhooks_read,
+  @JsonValue('webhooks:write')
   webhooks_write,
-  external_organizations_read,
+  @JsonValue('license_keys:read')
   license_keys_read,
+  @JsonValue('license_keys:write')
   license_keys_write,
-  repositories_read,
-  repositories_write,
-  issues_read,
-  issues_write,
+  @JsonValue('customer_portal:read')
   customer_portal_read,
+  @JsonValue('customer_portal:write')
   customer_portal_write,
+  @JsonValue('notifications:read')
+  notifications_read,
+  @JsonValue('notifications:write')
+  notifications_write,
+  @JsonValue('notification_recipients:read')
+  notification_recipients_read,
+  @JsonValue('notification_recipients:write')
+  notification_recipients_write,
+  @JsonValue('organization_access_tokens:read')
+  organization_access_tokens_read,
+  @JsonValue('organization_access_tokens:write')
+  organization_access_tokens_write,
 }

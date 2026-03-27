@@ -8,16 +8,18 @@ class OrganizationUpdate with _$OrganizationUpdate {
   const factory OrganizationUpdate({
     String? name,
     String? avatar_url,
-    dynamic? default_upfront_split_to_contributors,
-    bool? pledge_badge_show_amount,
-    String? billing_email,
-    String? default_badge_custom_content,
-    int? pledge_minimum_amount,
-    dynamic? total_monthly_spending_limit,
-    dynamic? per_user_monthly_spending_limit,
-    dynamic? profile_settings,
+    String? email,
+    String? website,
+    dynamic? socials,
+    dynamic? details,
+    String? country,
     dynamic? feature_settings,
     dynamic? subscription_settings,
+    dynamic? notification_settings,
+    dynamic? customer_email_settings,
+    dynamic? customer_portal_settings,
+    dynamic? default_presentment_currency,
+    dynamic? default_tax_behavior,
   }) = _OrganizationUpdate;
 
   factory OrganizationUpdate.fromJson(Map<String, dynamic> json) => _$OrganizationUpdateFromJson(json);

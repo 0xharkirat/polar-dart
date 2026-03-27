@@ -10,10 +10,10 @@ _$ValidatedLicenseKeyImpl _$$ValidatedLicenseKeyImplFromJson(
         Map<String, dynamic> json) =>
     _$ValidatedLicenseKeyImpl(
       id: json['id'] as String,
+      created_at: json['created_at'] as String,
+      modified_at: json['modified_at'] as String?,
       organization_id: json['organization_id'] as String,
-      user_id: json['user_id'] as String,
       customer_id: json['customer_id'] as String,
-      user: LicenseKeyUser.fromJson(json['user'] as Map<String, dynamic>),
       customer:
           LicenseKeyCustomer.fromJson(json['customer'] as Map<String, dynamic>),
       benefit_id: json['benefit_id'] as String,
@@ -33,10 +33,10 @@ Map<String, dynamic> _$$ValidatedLicenseKeyImplToJson(
         _$ValidatedLicenseKeyImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'created_at': instance.created_at,
+      if (instance.modified_at case final value?) 'modified_at': value,
       'organization_id': instance.organization_id,
-      'user_id': instance.user_id,
       'customer_id': instance.customer_id,
-      'user': instance.user,
       'customer': instance.customer,
       'benefit_id': instance.benefit_id,
       'key': instance.key,

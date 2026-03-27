@@ -12,6 +12,7 @@ _$MetricsResponseImpl _$$MetricsResponseImplFromJson(
       periods: (json['periods'] as List<dynamic>)
           .map((e) => MetricPeriod.fromJson(e as Map<String, dynamic>))
           .toList(),
+      totals: MetricsTotals.fromJson(json['totals'] as Map<String, dynamic>),
       metrics: Metrics.fromJson(json['metrics'] as Map<String, dynamic>),
     );
 
@@ -19,5 +20,6 @@ Map<String, dynamic> _$$MetricsResponseImplToJson(
         _$MetricsResponseImpl instance) =>
     <String, dynamic>{
       'periods': instance.periods,
+      'totals': instance.totals,
       'metrics': instance.metrics,
     };

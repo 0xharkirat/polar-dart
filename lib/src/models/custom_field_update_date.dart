@@ -6,7 +6,7 @@ part 'custom_field_update_date.freezed.dart';
 @freezed
 class CustomFieldUpdateDate with _$CustomFieldUpdateDate {
   const factory CustomFieldUpdateDate({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
     String? name,
     String? slug,
     required String type,

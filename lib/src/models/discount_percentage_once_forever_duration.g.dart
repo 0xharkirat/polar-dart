@@ -16,7 +16,8 @@ _$DiscountPercentageOnceForeverDurationImpl
           created_at: json['created_at'] as String,
           modified_at: json['modified_at'] as String?,
           id: json['id'] as String,
-          metadata: json['metadata'] as Map<String, dynamic>,
+          metadata: MetadataOutputType.fromJson(
+              json['metadata'] as Map<String, dynamic>),
           name: json['name'] as String,
           code: json['code'] as String?,
           starts_at: json['starts_at'] as String?,

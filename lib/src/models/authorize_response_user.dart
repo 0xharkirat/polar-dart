@@ -13,6 +13,7 @@ class AuthorizeResponseUser with _$AuthorizeResponseUser {
     required String sub_type,
     required dynamic sub,
     required List<Scope> scopes,
+    Map<String, dynamic>? scope_display_names,
   }) = _AuthorizeResponseUser;
 
   factory AuthorizeResponseUser.fromJson(Map<String, dynamic> json) => _$AuthorizeResponseUserFromJson(json);

@@ -24,8 +24,9 @@ DiscountFixedOnceForeverDurationCreate
 mixin _$DiscountFixedOnceForeverDurationCreate {
   DiscountDuration get duration => throw _privateConstructorUsedError;
   DiscountType get type => throw _privateConstructorUsedError;
-  int get amount => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
+  dynamic? get amount => throw _privateConstructorUsedError;
+  dynamic? get currency => throw _privateConstructorUsedError;
+  dynamic? get amounts => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
@@ -57,8 +58,9 @@ abstract class $DiscountFixedOnceForeverDurationCreateCopyWith<$Res> {
   $Res call(
       {DiscountDuration duration,
       DiscountType type,
-      int amount,
-      String? currency,
+      dynamic? amount,
+      dynamic? currency,
+      dynamic? amounts,
       Map<String, dynamic>? metadata,
       String name,
       String? code,
@@ -87,8 +89,9 @@ class _$DiscountFixedOnceForeverDurationCreateCopyWithImpl<$Res,
   $Res call({
     Object? duration = null,
     Object? type = null,
-    Object? amount = null,
+    Object? amount = freezed,
     Object? currency = freezed,
+    Object? amounts = freezed,
     Object? metadata = freezed,
     Object? name = null,
     Object? code = freezed,
@@ -107,14 +110,18 @@ class _$DiscountFixedOnceForeverDurationCreateCopyWithImpl<$Res,
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as DiscountType,
-      amount: null == amount
+      amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as dynamic?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic?,
+      amounts: freezed == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
@@ -163,8 +170,9 @@ abstract class _$$DiscountFixedOnceForeverDurationCreateImplCopyWith<$Res>
   $Res call(
       {DiscountDuration duration,
       DiscountType type,
-      int amount,
-      String? currency,
+      dynamic? amount,
+      dynamic? currency,
+      dynamic? amounts,
       Map<String, dynamic>? metadata,
       String name,
       String? code,
@@ -192,8 +200,9 @@ class __$$DiscountFixedOnceForeverDurationCreateImplCopyWithImpl<$Res>
   $Res call({
     Object? duration = null,
     Object? type = null,
-    Object? amount = null,
+    Object? amount = freezed,
     Object? currency = freezed,
+    Object? amounts = freezed,
     Object? metadata = freezed,
     Object? name = null,
     Object? code = freezed,
@@ -212,14 +221,18 @@ class __$$DiscountFixedOnceForeverDurationCreateImplCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as DiscountType,
-      amount: null == amount
+      amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as dynamic?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic?,
+      amounts: freezed == amounts
+          ? _value.amounts
+          : amounts // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
@@ -263,8 +276,9 @@ class _$DiscountFixedOnceForeverDurationCreateImpl
   const _$DiscountFixedOnceForeverDurationCreateImpl(
       {required this.duration,
       required this.type,
-      required this.amount,
+      this.amount,
       this.currency,
+      this.amounts,
       final Map<String, dynamic>? metadata,
       required this.name,
       this.code,
@@ -284,9 +298,11 @@ class _$DiscountFixedOnceForeverDurationCreateImpl
   @override
   final DiscountType type;
   @override
-  final int amount;
+  final dynamic? amount;
   @override
-  final String? currency;
+  final dynamic? currency;
+  @override
+  final dynamic? amounts;
   final Map<String, dynamic>? _metadata;
   @override
   Map<String, dynamic>? get metadata {
@@ -314,7 +330,7 @@ class _$DiscountFixedOnceForeverDurationCreateImpl
 
   @override
   String toString() {
-    return 'DiscountFixedOnceForeverDurationCreate(duration: $duration, type: $type, amount: $amount, currency: $currency, metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, products: $products, organization_id: $organization_id)';
+    return 'DiscountFixedOnceForeverDurationCreate(duration: $duration, type: $type, amount: $amount, currency: $currency, amounts: $amounts, metadata: $metadata, name: $name, code: $code, starts_at: $starts_at, ends_at: $ends_at, max_redemptions: $max_redemptions, products: $products, organization_id: $organization_id)';
   }
 
   @override
@@ -325,9 +341,9 @@ class _$DiscountFixedOnceForeverDurationCreateImpl
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.amount, amount) || other.amount == amount) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            const DeepCollectionEquality().equals(other.currency, currency) &&
+            const DeepCollectionEquality().equals(other.amounts, amounts) &&
             const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -347,8 +363,9 @@ class _$DiscountFixedOnceForeverDurationCreateImpl
       runtimeType,
       duration,
       type,
-      amount,
-      currency,
+      const DeepCollectionEquality().hash(amount),
+      const DeepCollectionEquality().hash(currency),
+      const DeepCollectionEquality().hash(amounts),
       const DeepCollectionEquality().hash(_metadata),
       name,
       code,
@@ -382,8 +399,9 @@ abstract class _DiscountFixedOnceForeverDurationCreate
   const factory _DiscountFixedOnceForeverDurationCreate(
           {required final DiscountDuration duration,
           required final DiscountType type,
-          required final int amount,
-          final String? currency,
+          final dynamic? amount,
+          final dynamic? currency,
+          final dynamic? amounts,
           final Map<String, dynamic>? metadata,
           required final String name,
           final String? code,
@@ -403,9 +421,11 @@ abstract class _DiscountFixedOnceForeverDurationCreate
   @override
   DiscountType get type;
   @override
-  int get amount;
+  dynamic? get amount;
   @override
-  String? get currency;
+  dynamic? get currency;
+  @override
+  dynamic? get amounts;
   @override
   Map<String, dynamic>? get metadata;
   @override

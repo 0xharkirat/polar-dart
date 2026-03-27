@@ -1,3 +1,5 @@
+import 'sub_type.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'o_auth2_client_configuration.g.dart';
@@ -16,6 +18,7 @@ class OAuth2ClientConfiguration with _$OAuth2ClientConfiguration {
     String? logo_uri,
     String? tos_uri,
     String? policy_uri,
+    SubType? default_sub_type,
   }) = _OAuth2ClientConfiguration;
 
   factory OAuth2ClientConfiguration.fromJson(Map<String, dynamic> json) => _$OAuth2ClientConfigurationFromJson(json);

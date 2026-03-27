@@ -6,10 +6,15 @@ part 'product_update.freezed.dart';
 @freezed
 class ProductUpdate with _$ProductUpdate {
   const factory ProductUpdate({
-    dynamic? metadata,
+    Map<String, dynamic>? metadata,
+    dynamic? trial_interval,
+    dynamic? trial_interval_count,
     String? name,
     String? description,
+    dynamic? recurring_interval,
+    dynamic? recurring_interval_count,
     dynamic? is_archived,
+    dynamic? visibility,
     dynamic? prices,
     dynamic? medias,
     dynamic? attached_custom_fields,

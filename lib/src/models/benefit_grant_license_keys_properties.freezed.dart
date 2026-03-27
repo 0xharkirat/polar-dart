@@ -21,6 +21,7 @@ BenefitGrantLicenseKeysProperties _$BenefitGrantLicenseKeysPropertiesFromJson(
 
 /// @nodoc
 mixin _$BenefitGrantLicenseKeysProperties {
+  String? get user_provided_key => throw _privateConstructorUsedError;
   String? get license_key_id => throw _privateConstructorUsedError;
   String? get display_key => throw _privateConstructorUsedError;
 
@@ -42,7 +43,8 @@ abstract class $BenefitGrantLicenseKeysPropertiesCopyWith<$Res> {
       _$BenefitGrantLicenseKeysPropertiesCopyWithImpl<$Res,
           BenefitGrantLicenseKeysProperties>;
   @useResult
-  $Res call({String? license_key_id, String? display_key});
+  $Res call(
+      {String? user_provided_key, String? license_key_id, String? display_key});
 }
 
 /// @nodoc
@@ -61,10 +63,15 @@ class _$BenefitGrantLicenseKeysPropertiesCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? user_provided_key = freezed,
     Object? license_key_id = freezed,
     Object? display_key = freezed,
   }) {
     return _then(_value.copyWith(
+      user_provided_key: freezed == user_provided_key
+          ? _value.user_provided_key
+          : user_provided_key // ignore: cast_nullable_to_non_nullable
+              as String?,
       license_key_id: freezed == license_key_id
           ? _value.license_key_id
           : license_key_id // ignore: cast_nullable_to_non_nullable
@@ -86,7 +93,8 @@ abstract class _$$BenefitGrantLicenseKeysPropertiesImplCopyWith<$Res>
       __$$BenefitGrantLicenseKeysPropertiesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? license_key_id, String? display_key});
+  $Res call(
+      {String? user_provided_key, String? license_key_id, String? display_key});
 }
 
 /// @nodoc
@@ -104,10 +112,15 @@ class __$$BenefitGrantLicenseKeysPropertiesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? user_provided_key = freezed,
     Object? license_key_id = freezed,
     Object? display_key = freezed,
   }) {
     return _then(_$BenefitGrantLicenseKeysPropertiesImpl(
+      user_provided_key: freezed == user_provided_key
+          ? _value.user_provided_key
+          : user_provided_key // ignore: cast_nullable_to_non_nullable
+              as String?,
       license_key_id: freezed == license_key_id
           ? _value.license_key_id
           : license_key_id // ignore: cast_nullable_to_non_nullable
@@ -125,12 +138,14 @@ class __$$BenefitGrantLicenseKeysPropertiesImplCopyWithImpl<$Res>
 class _$BenefitGrantLicenseKeysPropertiesImpl
     implements _BenefitGrantLicenseKeysProperties {
   const _$BenefitGrantLicenseKeysPropertiesImpl(
-      {this.license_key_id, this.display_key});
+      {this.user_provided_key, this.license_key_id, this.display_key});
 
   factory _$BenefitGrantLicenseKeysPropertiesImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$BenefitGrantLicenseKeysPropertiesImplFromJson(json);
 
+  @override
+  final String? user_provided_key;
   @override
   final String? license_key_id;
   @override
@@ -138,7 +153,7 @@ class _$BenefitGrantLicenseKeysPropertiesImpl
 
   @override
   String toString() {
-    return 'BenefitGrantLicenseKeysProperties(license_key_id: $license_key_id, display_key: $display_key)';
+    return 'BenefitGrantLicenseKeysProperties(user_provided_key: $user_provided_key, license_key_id: $license_key_id, display_key: $display_key)';
   }
 
   @override
@@ -146,6 +161,8 @@ class _$BenefitGrantLicenseKeysPropertiesImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BenefitGrantLicenseKeysPropertiesImpl &&
+            (identical(other.user_provided_key, user_provided_key) ||
+                other.user_provided_key == user_provided_key) &&
             (identical(other.license_key_id, license_key_id) ||
                 other.license_key_id == license_key_id) &&
             (identical(other.display_key, display_key) ||
@@ -154,7 +171,8 @@ class _$BenefitGrantLicenseKeysPropertiesImpl
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, license_key_id, display_key);
+  int get hashCode =>
+      Object.hash(runtimeType, user_provided_key, license_key_id, display_key);
 
   /// Create a copy of BenefitGrantLicenseKeysProperties
   /// with the given fields replaced by the non-null parameter values.
@@ -177,13 +195,16 @@ class _$BenefitGrantLicenseKeysPropertiesImpl
 abstract class _BenefitGrantLicenseKeysProperties
     implements BenefitGrantLicenseKeysProperties {
   const factory _BenefitGrantLicenseKeysProperties(
-      {final String? license_key_id,
+      {final String? user_provided_key,
+      final String? license_key_id,
       final String? display_key}) = _$BenefitGrantLicenseKeysPropertiesImpl;
 
   factory _BenefitGrantLicenseKeysProperties.fromJson(
           Map<String, dynamic> json) =
       _$BenefitGrantLicenseKeysPropertiesImpl.fromJson;
 
+  @override
+  String? get user_provided_key;
   @override
   String? get license_key_id;
   @override

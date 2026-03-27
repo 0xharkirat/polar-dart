@@ -9,7 +9,7 @@ part of 'custom_field_update_date.dart';
 _$CustomFieldUpdateDateImpl _$$CustomFieldUpdateDateImplFromJson(
         Map<String, dynamic> json) =>
     _$CustomFieldUpdateDateImpl(
-      metadata: json['metadata'],
+      metadata: json['metadata'] as Map<String, dynamic>?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
       type: json['type'] as String,

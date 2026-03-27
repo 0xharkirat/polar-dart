@@ -21,7 +21,7 @@ CustomFieldUpdateCheckbox _$CustomFieldUpdateCheckboxFromJson(
 
 /// @nodoc
 mixin _$CustomFieldUpdateCheckbox {
-  dynamic? get metadata => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $CustomFieldUpdateCheckboxCopyWith<$Res> {
       _$CustomFieldUpdateCheckboxCopyWithImpl<$Res, CustomFieldUpdateCheckbox>;
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -77,7 +77,7 @@ class _$CustomFieldUpdateCheckboxCopyWithImpl<$Res,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ abstract class _$$CustomFieldUpdateCheckboxImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic? metadata,
+      {Map<String, dynamic>? metadata,
       String? name,
       String? slug,
       String type,
@@ -138,9 +138,9 @@ class __$$CustomFieldUpdateCheckboxImplCopyWithImpl<$Res>
   }) {
     return _then(_$CustomFieldUpdateCheckboxImpl(
       metadata: freezed == metadata
-          ? _value.metadata
+          ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as Map<String, dynamic>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -165,17 +165,26 @@ class __$$CustomFieldUpdateCheckboxImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomFieldUpdateCheckboxImpl implements _CustomFieldUpdateCheckbox {
   const _$CustomFieldUpdateCheckboxImpl(
-      {this.metadata,
+      {final Map<String, dynamic>? metadata,
       this.name,
       this.slug,
       required this.type,
-      this.properties});
+      this.properties})
+      : _metadata = metadata;
 
   factory _$CustomFieldUpdateCheckboxImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldUpdateCheckboxImplFromJson(json);
 
+  final Map<String, dynamic>? _metadata;
   @override
-  final dynamic? metadata;
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? name;
   @override
@@ -195,7 +204,7 @@ class _$CustomFieldUpdateCheckboxImpl implements _CustomFieldUpdateCheckbox {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldUpdateCheckboxImpl &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.type, type) || other.type == type) &&
@@ -207,7 +216,7 @@ class _$CustomFieldUpdateCheckboxImpl implements _CustomFieldUpdateCheckbox {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(metadata),
+      const DeepCollectionEquality().hash(_metadata),
       name,
       slug,
       type,
@@ -232,7 +241,7 @@ class _$CustomFieldUpdateCheckboxImpl implements _CustomFieldUpdateCheckbox {
 
 abstract class _CustomFieldUpdateCheckbox implements CustomFieldUpdateCheckbox {
   const factory _CustomFieldUpdateCheckbox(
-      {final dynamic? metadata,
+      {final Map<String, dynamic>? metadata,
       final String? name,
       final String? slug,
       required final String type,
@@ -242,7 +251,7 @@ abstract class _CustomFieldUpdateCheckbox implements CustomFieldUpdateCheckbox {
       _$CustomFieldUpdateCheckboxImpl.fromJson;
 
   @override
-  dynamic? get metadata;
+  Map<String, dynamic>? get metadata;
   @override
   String? get name;
   @override

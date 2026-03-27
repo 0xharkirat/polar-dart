@@ -6,6 +6,7 @@ part 'benefit_license_keys_update.freezed.dart';
 @freezed
 class BenefitLicenseKeysUpdate with _$BenefitLicenseKeysUpdate {
   const factory BenefitLicenseKeysUpdate({
+    Map<String, dynamic>? metadata,
     String? description,
     required String type,
     dynamic? properties,

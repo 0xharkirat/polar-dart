@@ -21,18 +21,23 @@ CustomerSubscriptionProduct _$CustomerSubscriptionProductFromJson(
 
 /// @nodoc
 mixin _$CustomerSubscriptionProduct {
+  String get id => throw _privateConstructorUsedError;
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
+  dynamic get trial_interval => throw _privateConstructorUsedError;
+  dynamic get trial_interval_count => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  ProductVisibility get visibility => throw _privateConstructorUsedError;
+  dynamic get recurring_interval => throw _privateConstructorUsedError;
+  dynamic get recurring_interval_count => throw _privateConstructorUsedError;
   bool get is_recurring => throw _privateConstructorUsedError;
   bool get is_archived => throw _privateConstructorUsedError;
   String get organization_id => throw _privateConstructorUsedError;
-  List<ProductPrice> get prices => throw _privateConstructorUsedError;
-  List<BenefitBase> get benefits => throw _privateConstructorUsedError;
+  List<dynamic> get prices => throw _privateConstructorUsedError;
+  List<BenefitPublic> get benefits => throw _privateConstructorUsedError;
   List<ProductMediaFileRead> get medias => throw _privateConstructorUsedError;
-  Organization get organization => throw _privateConstructorUsedError;
+  CustomerOrganization get organization => throw _privateConstructorUsedError;
 
   /// Serializes this CustomerSubscriptionProduct to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,20 +58,25 @@ abstract class $CustomerSubscriptionProductCopyWith<$Res> {
           CustomerSubscriptionProduct>;
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
+      dynamic trial_interval,
+      dynamic trial_interval_count,
       String name,
       String? description,
+      ProductVisibility visibility,
+      dynamic recurring_interval,
+      dynamic recurring_interval_count,
       bool is_recurring,
       bool is_archived,
       String organization_id,
-      List<ProductPrice> prices,
-      List<BenefitBase> benefits,
+      List<dynamic> prices,
+      List<BenefitPublic> benefits,
       List<ProductMediaFileRead> medias,
-      Organization organization});
+      CustomerOrganization organization});
 
-  $OrganizationCopyWith<$Res> get organization;
+  $CustomerOrganizationCopyWith<$Res> get organization;
 }
 
 /// @nodoc
@@ -85,11 +95,16 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
+    Object? trial_interval = freezed,
+    Object? trial_interval_count = freezed,
     Object? name = null,
     Object? description = freezed,
+    Object? visibility = null,
+    Object? recurring_interval = freezed,
+    Object? recurring_interval_count = freezed,
     Object? is_recurring = null,
     Object? is_archived = null,
     Object? organization_id = null,
@@ -99,6 +114,10 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
     Object? organization = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -107,10 +126,14 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      trial_interval: freezed == trial_interval
+          ? _value.trial_interval
+          : trial_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      trial_interval_count: freezed == trial_interval_count
+          ? _value.trial_interval_count
+          : trial_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -119,6 +142,18 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      visibility: null == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as ProductVisibility,
+      recurring_interval: freezed == recurring_interval
+          ? _value.recurring_interval
+          : recurring_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      recurring_interval_count: freezed == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       is_recurring: null == is_recurring
           ? _value.is_recurring
           : is_recurring // ignore: cast_nullable_to_non_nullable
@@ -134,11 +169,11 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
       prices: null == prices
           ? _value.prices
           : prices // ignore: cast_nullable_to_non_nullable
-              as List<ProductPrice>,
+              as List<dynamic>,
       benefits: null == benefits
           ? _value.benefits
           : benefits // ignore: cast_nullable_to_non_nullable
-              as List<BenefitBase>,
+              as List<BenefitPublic>,
       medias: null == medias
           ? _value.medias
           : medias // ignore: cast_nullable_to_non_nullable
@@ -146,7 +181,7 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
       organization: null == organization
           ? _value.organization
           : organization // ignore: cast_nullable_to_non_nullable
-              as Organization,
+              as CustomerOrganization,
     ) as $Val);
   }
 
@@ -154,8 +189,8 @@ class _$CustomerSubscriptionProductCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $OrganizationCopyWith<$Res> get organization {
-    return $OrganizationCopyWith<$Res>(_value.organization, (value) {
+  $CustomerOrganizationCopyWith<$Res> get organization {
+    return $CustomerOrganizationCopyWith<$Res>(_value.organization, (value) {
       return _then(_value.copyWith(organization: value) as $Val);
     });
   }
@@ -171,21 +206,26 @@ abstract class _$$CustomerSubscriptionProductImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String created_at,
+      {String id,
+      String created_at,
       String? modified_at,
-      String id,
+      dynamic trial_interval,
+      dynamic trial_interval_count,
       String name,
       String? description,
+      ProductVisibility visibility,
+      dynamic recurring_interval,
+      dynamic recurring_interval_count,
       bool is_recurring,
       bool is_archived,
       String organization_id,
-      List<ProductPrice> prices,
-      List<BenefitBase> benefits,
+      List<dynamic> prices,
+      List<BenefitPublic> benefits,
       List<ProductMediaFileRead> medias,
-      Organization organization});
+      CustomerOrganization organization});
 
   @override
-  $OrganizationCopyWith<$Res> get organization;
+  $CustomerOrganizationCopyWith<$Res> get organization;
 }
 
 /// @nodoc
@@ -203,11 +243,16 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? created_at = null,
     Object? modified_at = freezed,
-    Object? id = null,
+    Object? trial_interval = freezed,
+    Object? trial_interval_count = freezed,
     Object? name = null,
     Object? description = freezed,
+    Object? visibility = null,
+    Object? recurring_interval = freezed,
+    Object? recurring_interval_count = freezed,
     Object? is_recurring = null,
     Object? is_archived = null,
     Object? organization_id = null,
@@ -217,6 +262,10 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
     Object? organization = null,
   }) {
     return _then(_$CustomerSubscriptionProductImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       created_at: null == created_at
           ? _value.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
@@ -225,10 +274,14 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
           ? _value.modified_at
           : modified_at // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      trial_interval: freezed == trial_interval
+          ? _value.trial_interval
+          : trial_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      trial_interval_count: freezed == trial_interval_count
+          ? _value.trial_interval_count
+          : trial_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -237,6 +290,18 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      visibility: null == visibility
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as ProductVisibility,
+      recurring_interval: freezed == recurring_interval
+          ? _value.recurring_interval
+          : recurring_interval // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      recurring_interval_count: freezed == recurring_interval_count
+          ? _value.recurring_interval_count
+          : recurring_interval_count // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       is_recurring: null == is_recurring
           ? _value.is_recurring
           : is_recurring // ignore: cast_nullable_to_non_nullable
@@ -252,11 +317,11 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
       prices: null == prices
           ? _value._prices
           : prices // ignore: cast_nullable_to_non_nullable
-              as List<ProductPrice>,
+              as List<dynamic>,
       benefits: null == benefits
           ? _value._benefits
           : benefits // ignore: cast_nullable_to_non_nullable
-              as List<BenefitBase>,
+              as List<BenefitPublic>,
       medias: null == medias
           ? _value._medias
           : medias // ignore: cast_nullable_to_non_nullable
@@ -264,7 +329,7 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
       organization: null == organization
           ? _value.organization
           : organization // ignore: cast_nullable_to_non_nullable
-              as Organization,
+              as CustomerOrganization,
     ));
   }
 }
@@ -274,16 +339,21 @@ class __$$CustomerSubscriptionProductImplCopyWithImpl<$Res>
 class _$CustomerSubscriptionProductImpl
     implements _CustomerSubscriptionProduct {
   const _$CustomerSubscriptionProductImpl(
-      {required this.created_at,
+      {required this.id,
+      required this.created_at,
       required this.modified_at,
-      required this.id,
+      required this.trial_interval,
+      required this.trial_interval_count,
       required this.name,
       required this.description,
+      required this.visibility,
+      required this.recurring_interval,
+      required this.recurring_interval_count,
       required this.is_recurring,
       required this.is_archived,
       required this.organization_id,
-      required final List<ProductPrice> prices,
-      required final List<BenefitBase> benefits,
+      required final List<dynamic> prices,
+      required final List<BenefitPublic> benefits,
       required final List<ProductMediaFileRead> medias,
       required this.organization})
       : _prices = prices,
@@ -295,32 +365,42 @@ class _$CustomerSubscriptionProductImpl
       _$$CustomerSubscriptionProductImplFromJson(json);
 
   @override
+  final String id;
+  @override
   final String created_at;
   @override
   final String? modified_at;
   @override
-  final String id;
+  final dynamic trial_interval;
+  @override
+  final dynamic trial_interval_count;
   @override
   final String name;
   @override
   final String? description;
+  @override
+  final ProductVisibility visibility;
+  @override
+  final dynamic recurring_interval;
+  @override
+  final dynamic recurring_interval_count;
   @override
   final bool is_recurring;
   @override
   final bool is_archived;
   @override
   final String organization_id;
-  final List<ProductPrice> _prices;
+  final List<dynamic> _prices;
   @override
-  List<ProductPrice> get prices {
+  List<dynamic> get prices {
     if (_prices is EqualUnmodifiableListView) return _prices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_prices);
   }
 
-  final List<BenefitBase> _benefits;
+  final List<BenefitPublic> _benefits;
   @override
-  List<BenefitBase> get benefits {
+  List<BenefitPublic> get benefits {
     if (_benefits is EqualUnmodifiableListView) return _benefits;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_benefits);
@@ -335,11 +415,11 @@ class _$CustomerSubscriptionProductImpl
   }
 
   @override
-  final Organization organization;
+  final CustomerOrganization organization;
 
   @override
   String toString() {
-    return 'CustomerSubscriptionProduct(created_at: $created_at, modified_at: $modified_at, id: $id, name: $name, description: $description, is_recurring: $is_recurring, is_archived: $is_archived, organization_id: $organization_id, prices: $prices, benefits: $benefits, medias: $medias, organization: $organization)';
+    return 'CustomerSubscriptionProduct(id: $id, created_at: $created_at, modified_at: $modified_at, trial_interval: $trial_interval, trial_interval_count: $trial_interval_count, name: $name, description: $description, visibility: $visibility, recurring_interval: $recurring_interval, recurring_interval_count: $recurring_interval_count, is_recurring: $is_recurring, is_archived: $is_archived, organization_id: $organization_id, prices: $prices, benefits: $benefits, medias: $medias, organization: $organization)';
   }
 
   @override
@@ -347,14 +427,24 @@ class _$CustomerSubscriptionProductImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomerSubscriptionProductImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
-            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other.trial_interval, trial_interval) &&
+            const DeepCollectionEquality()
+                .equals(other.trial_interval_count, trial_interval_count) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.visibility, visibility) ||
+                other.visibility == visibility) &&
+            const DeepCollectionEquality()
+                .equals(other.recurring_interval, recurring_interval) &&
+            const DeepCollectionEquality().equals(
+                other.recurring_interval_count, recurring_interval_count) &&
             (identical(other.is_recurring, is_recurring) ||
                 other.is_recurring == is_recurring) &&
             (identical(other.is_archived, is_archived) ||
@@ -372,11 +462,16 @@ class _$CustomerSubscriptionProductImpl
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       created_at,
       modified_at,
-      id,
+      const DeepCollectionEquality().hash(trial_interval),
+      const DeepCollectionEquality().hash(trial_interval_count),
       name,
       description,
+      visibility,
+      const DeepCollectionEquality().hash(recurring_interval),
+      const DeepCollectionEquality().hash(recurring_interval_count),
       is_recurring,
       is_archived,
       organization_id,
@@ -405,33 +500,48 @@ class _$CustomerSubscriptionProductImpl
 abstract class _CustomerSubscriptionProduct
     implements CustomerSubscriptionProduct {
   const factory _CustomerSubscriptionProduct(
-          {required final String created_at,
+          {required final String id,
+          required final String created_at,
           required final String? modified_at,
-          required final String id,
+          required final dynamic trial_interval,
+          required final dynamic trial_interval_count,
           required final String name,
           required final String? description,
+          required final ProductVisibility visibility,
+          required final dynamic recurring_interval,
+          required final dynamic recurring_interval_count,
           required final bool is_recurring,
           required final bool is_archived,
           required final String organization_id,
-          required final List<ProductPrice> prices,
-          required final List<BenefitBase> benefits,
+          required final List<dynamic> prices,
+          required final List<BenefitPublic> benefits,
           required final List<ProductMediaFileRead> medias,
-          required final Organization organization}) =
+          required final CustomerOrganization organization}) =
       _$CustomerSubscriptionProductImpl;
 
   factory _CustomerSubscriptionProduct.fromJson(Map<String, dynamic> json) =
       _$CustomerSubscriptionProductImpl.fromJson;
 
   @override
+  String get id;
+  @override
   String get created_at;
   @override
   String? get modified_at;
   @override
-  String get id;
+  dynamic get trial_interval;
+  @override
+  dynamic get trial_interval_count;
   @override
   String get name;
   @override
   String? get description;
+  @override
+  ProductVisibility get visibility;
+  @override
+  dynamic get recurring_interval;
+  @override
+  dynamic get recurring_interval_count;
   @override
   bool get is_recurring;
   @override
@@ -439,13 +549,13 @@ abstract class _CustomerSubscriptionProduct
   @override
   String get organization_id;
   @override
-  List<ProductPrice> get prices;
+  List<dynamic> get prices;
   @override
-  List<BenefitBase> get benefits;
+  List<BenefitPublic> get benefits;
   @override
   List<ProductMediaFileRead> get medias;
   @override
-  Organization get organization;
+  CustomerOrganization get organization;
 
   /// Create a copy of CustomerSubscriptionProduct
   /// with the given fields replaced by the non-null parameter values.

@@ -25,6 +25,8 @@ mixin _$OrganizationSubscriptionSettings {
   bool get allow_customer_updates => throw _privateConstructorUsedError;
   SubscriptionProrationBehavior get proration_behavior =>
       throw _privateConstructorUsedError;
+  int get benefit_revocation_grace_period => throw _privateConstructorUsedError;
+  bool get prevent_trial_abuse => throw _privateConstructorUsedError;
 
   /// Serializes this OrganizationSubscriptionSettings to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,7 +49,9 @@ abstract class $OrganizationSubscriptionSettingsCopyWith<$Res> {
   $Res call(
       {bool allow_multiple_subscriptions,
       bool allow_customer_updates,
-      SubscriptionProrationBehavior proration_behavior});
+      SubscriptionProrationBehavior proration_behavior,
+      int benefit_revocation_grace_period,
+      bool prevent_trial_abuse});
 }
 
 /// @nodoc
@@ -69,6 +73,8 @@ class _$OrganizationSubscriptionSettingsCopyWithImpl<$Res,
     Object? allow_multiple_subscriptions = null,
     Object? allow_customer_updates = null,
     Object? proration_behavior = null,
+    Object? benefit_revocation_grace_period = null,
+    Object? prevent_trial_abuse = null,
   }) {
     return _then(_value.copyWith(
       allow_multiple_subscriptions: null == allow_multiple_subscriptions
@@ -83,6 +89,14 @@ class _$OrganizationSubscriptionSettingsCopyWithImpl<$Res,
           ? _value.proration_behavior
           : proration_behavior // ignore: cast_nullable_to_non_nullable
               as SubscriptionProrationBehavior,
+      benefit_revocation_grace_period: null == benefit_revocation_grace_period
+          ? _value.benefit_revocation_grace_period
+          : benefit_revocation_grace_period // ignore: cast_nullable_to_non_nullable
+              as int,
+      prevent_trial_abuse: null == prevent_trial_abuse
+          ? _value.prevent_trial_abuse
+          : prevent_trial_abuse // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -99,7 +113,9 @@ abstract class _$$OrganizationSubscriptionSettingsImplCopyWith<$Res>
   $Res call(
       {bool allow_multiple_subscriptions,
       bool allow_customer_updates,
-      SubscriptionProrationBehavior proration_behavior});
+      SubscriptionProrationBehavior proration_behavior,
+      int benefit_revocation_grace_period,
+      bool prevent_trial_abuse});
 }
 
 /// @nodoc
@@ -120,6 +136,8 @@ class __$$OrganizationSubscriptionSettingsImplCopyWithImpl<$Res>
     Object? allow_multiple_subscriptions = null,
     Object? allow_customer_updates = null,
     Object? proration_behavior = null,
+    Object? benefit_revocation_grace_period = null,
+    Object? prevent_trial_abuse = null,
   }) {
     return _then(_$OrganizationSubscriptionSettingsImpl(
       allow_multiple_subscriptions: null == allow_multiple_subscriptions
@@ -134,6 +152,14 @@ class __$$OrganizationSubscriptionSettingsImplCopyWithImpl<$Res>
           ? _value.proration_behavior
           : proration_behavior // ignore: cast_nullable_to_non_nullable
               as SubscriptionProrationBehavior,
+      benefit_revocation_grace_period: null == benefit_revocation_grace_period
+          ? _value.benefit_revocation_grace_period
+          : benefit_revocation_grace_period // ignore: cast_nullable_to_non_nullable
+              as int,
+      prevent_trial_abuse: null == prevent_trial_abuse
+          ? _value.prevent_trial_abuse
+          : prevent_trial_abuse // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -145,7 +171,9 @@ class _$OrganizationSubscriptionSettingsImpl
   const _$OrganizationSubscriptionSettingsImpl(
       {required this.allow_multiple_subscriptions,
       required this.allow_customer_updates,
-      required this.proration_behavior});
+      required this.proration_behavior,
+      required this.benefit_revocation_grace_period,
+      required this.prevent_trial_abuse});
 
   factory _$OrganizationSubscriptionSettingsImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -157,10 +185,14 @@ class _$OrganizationSubscriptionSettingsImpl
   final bool allow_customer_updates;
   @override
   final SubscriptionProrationBehavior proration_behavior;
+  @override
+  final int benefit_revocation_grace_period;
+  @override
+  final bool prevent_trial_abuse;
 
   @override
   String toString() {
-    return 'OrganizationSubscriptionSettings(allow_multiple_subscriptions: $allow_multiple_subscriptions, allow_customer_updates: $allow_customer_updates, proration_behavior: $proration_behavior)';
+    return 'OrganizationSubscriptionSettings(allow_multiple_subscriptions: $allow_multiple_subscriptions, allow_customer_updates: $allow_customer_updates, proration_behavior: $proration_behavior, benefit_revocation_grace_period: $benefit_revocation_grace_period, prevent_trial_abuse: $prevent_trial_abuse)';
   }
 
   @override
@@ -175,13 +207,24 @@ class _$OrganizationSubscriptionSettingsImpl
             (identical(other.allow_customer_updates, allow_customer_updates) ||
                 other.allow_customer_updates == allow_customer_updates) &&
             (identical(other.proration_behavior, proration_behavior) ||
-                other.proration_behavior == proration_behavior));
+                other.proration_behavior == proration_behavior) &&
+            (identical(other.benefit_revocation_grace_period,
+                    benefit_revocation_grace_period) ||
+                other.benefit_revocation_grace_period ==
+                    benefit_revocation_grace_period) &&
+            (identical(other.prevent_trial_abuse, prevent_trial_abuse) ||
+                other.prevent_trial_abuse == prevent_trial_abuse));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, allow_multiple_subscriptions,
-      allow_customer_updates, proration_behavior);
+  int get hashCode => Object.hash(
+      runtimeType,
+      allow_multiple_subscriptions,
+      allow_customer_updates,
+      proration_behavior,
+      benefit_revocation_grace_period,
+      prevent_trial_abuse);
 
   /// Create a copy of OrganizationSubscriptionSettings
   /// with the given fields replaced by the non-null parameter values.
@@ -206,7 +249,9 @@ abstract class _OrganizationSubscriptionSettings
   const factory _OrganizationSubscriptionSettings(
           {required final bool allow_multiple_subscriptions,
           required final bool allow_customer_updates,
-          required final SubscriptionProrationBehavior proration_behavior}) =
+          required final SubscriptionProrationBehavior proration_behavior,
+          required final int benefit_revocation_grace_period,
+          required final bool prevent_trial_abuse}) =
       _$OrganizationSubscriptionSettingsImpl;
 
   factory _OrganizationSubscriptionSettings.fromJson(
@@ -219,6 +264,10 @@ abstract class _OrganizationSubscriptionSettings
   bool get allow_customer_updates;
   @override
   SubscriptionProrationBehavior get proration_behavior;
+  @override
+  int get benefit_revocation_grace_period;
+  @override
+  bool get prevent_trial_abuse;
 
   /// Create a copy of OrganizationSubscriptionSettings
   /// with the given fields replaced by the non-null parameter values.

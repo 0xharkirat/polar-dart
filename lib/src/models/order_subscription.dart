@@ -1,3 +1,4 @@
+import 'metadata_output_type.dart';
 import 'subscription_recurring_interval.dart';
 import 'subscription_status.dart';
 
@@ -9,16 +10,19 @@ part 'order_subscription.freezed.dart';
 @freezed
 class OrderSubscription with _$OrderSubscription {
   const factory OrderSubscription({
-    required Map<String, dynamic> metadata,
+    required MetadataOutputType metadata,
     required String created_at,
     required String? modified_at,
     required String id,
-    required dynamic amount,
-    required String? currency,
+    required int amount,
+    required String currency,
     required SubscriptionRecurringInterval recurring_interval,
+    required int recurring_interval_count,
     required SubscriptionStatus status,
     required String current_period_start,
-    required String? current_period_end,
+    required String current_period_end,
+    required String? trial_start,
+    required String? trial_end,
     required bool cancel_at_period_end,
     required String? canceled_at,
     required String? started_at,
@@ -26,12 +30,11 @@ class OrderSubscription with _$OrderSubscription {
     required String? ended_at,
     required String customer_id,
     required String product_id,
-    required String price_id,
     required String? discount_id,
     required String? checkout_id,
+    dynamic? seats,
     required dynamic customer_cancellation_reason,
     required String? customer_cancellation_comment,
-    required String user_id,
   }) = _OrderSubscription;
 
   factory OrderSubscription.fromJson(Map<String, dynamic> json) => _$OrderSubscriptionFromJson(json);

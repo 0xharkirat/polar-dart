@@ -1,3 +1,4 @@
+import 'metadata_output_type.dart';
 import 'refund_status.dart';
 import 'refund_reason.dart';
 
@@ -12,7 +13,7 @@ class Refund with _$Refund {
     required String created_at,
     required String? modified_at,
     required String id,
-    required Map<String, dynamic> metadata,
+    required MetadataOutputType metadata,
     required RefundStatus status,
     required RefundReason reason,
     required int amount,
@@ -23,6 +24,7 @@ class Refund with _$Refund {
     required String? subscription_id,
     required String customer_id,
     required bool revoke_benefits,
+    required dynamic dispute,
   }) = _Refund;
 
   factory Refund.fromJson(Map<String, dynamic> json) => _$RefundFromJson(json);

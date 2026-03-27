@@ -13,7 +13,6 @@ _$BenefitGitHubRepositoryPropertiesImpl
           repository_owner: json['repository_owner'] as String,
           repository_name: json['repository_name'] as String,
           permission: json['permission'] as String,
-          repository_id: json['repository_id'] as String?,
         );
 
 Map<String, dynamic> _$$BenefitGitHubRepositoryPropertiesImplToJson(
@@ -22,5 +21,4 @@ Map<String, dynamic> _$$BenefitGitHubRepositoryPropertiesImplToJson(
       'repository_owner': instance.repository_owner,
       'repository_name': instance.repository_name,
       'permission': instance.permission,
-      if (instance.repository_id case final value?) 'repository_id': value,
     };

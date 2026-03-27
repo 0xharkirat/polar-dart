@@ -22,4 +22,6 @@ Map<String, dynamic> _$$MetricImplToJson(_$MetricImpl instance) =>
 const _$MetricTypeEnumMap = {
   MetricType.scalar: 'scalar',
   MetricType.currency: 'currency',
+  MetricType.currency_sub_cent: 'currency_sub_cent',
+  MetricType.percentage: 'percentage',
 };

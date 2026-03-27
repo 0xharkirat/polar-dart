@@ -10,11 +10,11 @@ class RefundsApi {
   RefundsApi(this._dio);
 
 
-  Future<ListResourceRefund> refundsList({dynamic id, dynamic organization_id, dynamic order_id, dynamic subscription_id, dynamic customer_id, dynamic succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
+  Future<ListResourceRefund> refundsList({dynamic id, dynamic organization_id, dynamic order_id, dynamic subscription_id, dynamic customer_id, dynamic external_customer_id, dynamic succeeded, int page = 1, int limit = 10, dynamic sorting = const ["-created_at"]}) async {
     try {
       final response = await _dio.get(
         '/v1/refunds/',
-        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (customer_id != null) 'customer_id': customer_id, if (succeeded != null) 'succeeded': succeeded, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
+        queryParameters: { if (id != null) 'id': id, if (organization_id != null) 'organization_id': organization_id, if (order_id != null) 'order_id': order_id, if (subscription_id != null) 'subscription_id': subscription_id, if (customer_id != null) 'customer_id': customer_id, if (external_customer_id != null) 'external_customer_id': external_customer_id, if (succeeded != null) 'succeeded': succeeded, if (page != null) 'page': page, if (limit != null) 'limit': limit, if (sorting != null) 'sorting': sorting },
       );
       return ListResourceRefund.fromJson(response.data);
     } catch (e) {

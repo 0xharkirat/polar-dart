@@ -1,4 +1,5 @@
 import 'customer.dart';
+import 'benefit.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -18,9 +19,12 @@ class BenefitGrant with _$BenefitGrant {
     required String? subscription_id,
     required String? order_id,
     required String customer_id,
-    required String user_id,
+    String? member_id,
     required String benefit_id,
+    dynamic? error,
     required Customer customer,
+    dynamic? member,
+    required Benefit benefit,
     required dynamic properties,
   }) = _BenefitGrant;
 

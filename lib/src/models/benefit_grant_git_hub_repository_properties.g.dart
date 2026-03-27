@@ -14,6 +14,7 @@ _$BenefitGrantGitHubRepositoryPropertiesImpl
           repository_owner: json['repository_owner'] as String?,
           repository_name: json['repository_name'] as String?,
           permission: json['permission'] as String?,
+          granted_account_id: json['granted_account_id'] as String?,
         );
 
 Map<String, dynamic> _$$BenefitGrantGitHubRepositoryPropertiesImplToJson(
@@ -24,4 +25,6 @@ Map<String, dynamic> _$$BenefitGrantGitHubRepositoryPropertiesImplToJson(
         'repository_owner': value,
       if (instance.repository_name case final value?) 'repository_name': value,
       if (instance.permission case final value?) 'permission': value,
+      if (instance.granted_account_id case final value?)
+        'granted_account_id': value,
     };

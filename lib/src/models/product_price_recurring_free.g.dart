@@ -35,6 +35,8 @@ Map<String, dynamic> _$$ProductPriceRecurringFreeImplToJson(
     };
 
 const _$SubscriptionRecurringIntervalEnumMap = {
+  SubscriptionRecurringInterval.day: 'day',
+  SubscriptionRecurringInterval.week: 'week',
   SubscriptionRecurringInterval.month: 'month',
   SubscriptionRecurringInterval.year: 'year',
 };

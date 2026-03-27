@@ -20,12 +20,8 @@ CustomerCreate _$CustomerCreateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CustomerCreate {
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  dynamic? get billing_address => throw _privateConstructorUsedError;
-  dynamic? get tax_id => throw _privateConstructorUsedError;
-  String? get organization_id => throw _privateConstructorUsedError;
+  Map<String, dynamic> get additionalProperties =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this CustomerCreate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,13 +39,7 @@ abstract class $CustomerCreateCopyWith<$Res> {
           CustomerCreate value, $Res Function(CustomerCreate) then) =
       _$CustomerCreateCopyWithImpl<$Res, CustomerCreate>;
   @useResult
-  $Res call(
-      {Map<String, dynamic>? metadata,
-      String email,
-      String? name,
-      dynamic? billing_address,
-      dynamic? tax_id,
-      String? organization_id});
+  $Res call({Map<String, dynamic> additionalProperties});
 }
 
 /// @nodoc
@@ -67,38 +57,13 @@ class _$CustomerCreateCopyWithImpl<$Res, $Val extends CustomerCreate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? metadata = freezed,
-    Object? email = null,
-    Object? name = freezed,
-    Object? billing_address = freezed,
-    Object? tax_id = freezed,
-    Object? organization_id = freezed,
+    Object? additionalProperties = null,
   }) {
     return _then(_value.copyWith(
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      billing_address: freezed == billing_address
-          ? _value.billing_address
-          : billing_address // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      tax_id: freezed == tax_id
-          ? _value.tax_id
-          : tax_id // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      organization_id: freezed == organization_id
-          ? _value.organization_id
-          : organization_id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      additionalProperties: null == additionalProperties
+          ? _value.additionalProperties
+          : additionalProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ) as $Val);
   }
 }
@@ -111,13 +76,7 @@ abstract class _$$CustomerCreateImplCopyWith<$Res>
       __$$CustomerCreateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Map<String, dynamic>? metadata,
-      String email,
-      String? name,
-      dynamic? billing_address,
-      dynamic? tax_id,
-      String? organization_id});
+  $Res call({Map<String, dynamic> additionalProperties});
 }
 
 /// @nodoc
@@ -133,38 +92,13 @@ class __$$CustomerCreateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? metadata = freezed,
-    Object? email = null,
-    Object? name = freezed,
-    Object? billing_address = freezed,
-    Object? tax_id = freezed,
-    Object? organization_id = freezed,
+    Object? additionalProperties = null,
   }) {
     return _then(_$CustomerCreateImpl(
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      billing_address: freezed == billing_address
-          ? _value.billing_address
-          : billing_address // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      tax_id: freezed == tax_id
-          ? _value.tax_id
-          : tax_id // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
-      organization_id: freezed == organization_id
-          ? _value.organization_id
-          : organization_id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      additionalProperties: null == additionalProperties
+          ? _value._additionalProperties
+          : additionalProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -173,41 +107,25 @@ class __$$CustomerCreateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerCreateImpl implements _CustomerCreate {
   const _$CustomerCreateImpl(
-      {final Map<String, dynamic>? metadata,
-      required this.email,
-      this.name,
-      this.billing_address,
-      this.tax_id,
-      this.organization_id})
-      : _metadata = metadata;
+      {final Map<String, dynamic> additionalProperties = const {}})
+      : _additionalProperties = additionalProperties;
 
   factory _$CustomerCreateImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomerCreateImplFromJson(json);
 
-  final Map<String, dynamic>? _metadata;
+  final Map<String, dynamic> _additionalProperties;
   @override
-  Map<String, dynamic>? get metadata {
-    final value = _metadata;
-    if (value == null) return null;
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+  @JsonKey()
+  Map<String, dynamic> get additionalProperties {
+    if (_additionalProperties is EqualUnmodifiableMapView)
+      return _additionalProperties;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableMapView(_additionalProperties);
   }
 
   @override
-  final String email;
-  @override
-  final String? name;
-  @override
-  final dynamic? billing_address;
-  @override
-  final dynamic? tax_id;
-  @override
-  final String? organization_id;
-
-  @override
   String toString() {
-    return 'CustomerCreate(metadata: $metadata, email: $email, name: $name, billing_address: $billing_address, tax_id: $tax_id, organization_id: $organization_id)';
+    return 'CustomerCreate(additionalProperties: $additionalProperties)';
   }
 
   @override
@@ -215,26 +133,14 @@ class _$CustomerCreateImpl implements _CustomerCreate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomerCreateImpl &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
-                .equals(other.billing_address, billing_address) &&
-            const DeepCollectionEquality().equals(other.tax_id, tax_id) &&
-            (identical(other.organization_id, organization_id) ||
-                other.organization_id == organization_id));
+                .equals(other._additionalProperties, _additionalProperties));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_metadata),
-      email,
-      name,
-      const DeepCollectionEquality().hash(billing_address),
-      const DeepCollectionEquality().hash(tax_id),
-      organization_id);
+      runtimeType, const DeepCollectionEquality().hash(_additionalProperties));
 
   /// Create a copy of CustomerCreate
   /// with the given fields replaced by the non-null parameter values.
@@ -255,28 +161,13 @@ class _$CustomerCreateImpl implements _CustomerCreate {
 
 abstract class _CustomerCreate implements CustomerCreate {
   const factory _CustomerCreate(
-      {final Map<String, dynamic>? metadata,
-      required final String email,
-      final String? name,
-      final dynamic? billing_address,
-      final dynamic? tax_id,
-      final String? organization_id}) = _$CustomerCreateImpl;
+      {final Map<String, dynamic> additionalProperties}) = _$CustomerCreateImpl;
 
   factory _CustomerCreate.fromJson(Map<String, dynamic> json) =
       _$CustomerCreateImpl.fromJson;
 
   @override
-  Map<String, dynamic>? get metadata;
-  @override
-  String get email;
-  @override
-  String? get name;
-  @override
-  dynamic? get billing_address;
-  @override
-  dynamic? get tax_id;
-  @override
-  String? get organization_id;
+  Map<String, dynamic> get additionalProperties;
 
   /// Create a copy of CustomerCreate
   /// with the given fields replaced by the non-null parameter values.

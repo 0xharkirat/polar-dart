@@ -30,9 +30,12 @@ mixin _$BenefitGrant {
   String? get subscription_id => throw _privateConstructorUsedError;
   String? get order_id => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
-  String get user_id => throw _privateConstructorUsedError;
+  String? get member_id => throw _privateConstructorUsedError;
   String get benefit_id => throw _privateConstructorUsedError;
+  dynamic? get error => throw _privateConstructorUsedError;
   Customer get customer => throw _privateConstructorUsedError;
+  dynamic? get member => throw _privateConstructorUsedError;
+  Benefit get benefit => throw _privateConstructorUsedError;
   dynamic get properties => throw _privateConstructorUsedError;
 
   /// Serializes this BenefitGrant to a JSON map.
@@ -62,12 +65,16 @@ abstract class $BenefitGrantCopyWith<$Res> {
       String? subscription_id,
       String? order_id,
       String customer_id,
-      String user_id,
+      String? member_id,
       String benefit_id,
+      dynamic? error,
       Customer customer,
+      dynamic? member,
+      Benefit benefit,
       dynamic properties});
 
   $CustomerCopyWith<$Res> get customer;
+  $BenefitCopyWith<$Res> get benefit;
 }
 
 /// @nodoc
@@ -95,9 +102,12 @@ class _$BenefitGrantCopyWithImpl<$Res, $Val extends BenefitGrant>
     Object? subscription_id = freezed,
     Object? order_id = freezed,
     Object? customer_id = null,
-    Object? user_id = null,
+    Object? member_id = freezed,
     Object? benefit_id = null,
+    Object? error = freezed,
     Object? customer = null,
+    Object? member = freezed,
+    Object? benefit = null,
     Object? properties = freezed,
   }) {
     return _then(_value.copyWith(
@@ -141,18 +151,30 @@ class _$BenefitGrantCopyWithImpl<$Res, $Val extends BenefitGrant>
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
+      member_id: freezed == member_id
+          ? _value.member_id
+          : member_id // ignore: cast_nullable_to_non_nullable
+              as String?,
       benefit_id: null == benefit_id
           ? _value.benefit_id
           : benefit_id // ignore: cast_nullable_to_non_nullable
               as String,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as Customer,
+      member: freezed == member
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      benefit: null == benefit
+          ? _value.benefit
+          : benefit // ignore: cast_nullable_to_non_nullable
+              as Benefit,
       properties: freezed == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
@@ -167,6 +189,16 @@ class _$BenefitGrantCopyWithImpl<$Res, $Val extends BenefitGrant>
   $CustomerCopyWith<$Res> get customer {
     return $CustomerCopyWith<$Res>(_value.customer, (value) {
       return _then(_value.copyWith(customer: value) as $Val);
+    });
+  }
+
+  /// Create a copy of BenefitGrant
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BenefitCopyWith<$Res> get benefit {
+    return $BenefitCopyWith<$Res>(_value.benefit, (value) {
+      return _then(_value.copyWith(benefit: value) as $Val);
     });
   }
 }
@@ -190,13 +222,18 @@ abstract class _$$BenefitGrantImplCopyWith<$Res>
       String? subscription_id,
       String? order_id,
       String customer_id,
-      String user_id,
+      String? member_id,
       String benefit_id,
+      dynamic? error,
       Customer customer,
+      dynamic? member,
+      Benefit benefit,
       dynamic properties});
 
   @override
   $CustomerCopyWith<$Res> get customer;
+  @override
+  $BenefitCopyWith<$Res> get benefit;
 }
 
 /// @nodoc
@@ -222,9 +259,12 @@ class __$$BenefitGrantImplCopyWithImpl<$Res>
     Object? subscription_id = freezed,
     Object? order_id = freezed,
     Object? customer_id = null,
-    Object? user_id = null,
+    Object? member_id = freezed,
     Object? benefit_id = null,
+    Object? error = freezed,
     Object? customer = null,
+    Object? member = freezed,
+    Object? benefit = null,
     Object? properties = freezed,
   }) {
     return _then(_$BenefitGrantImpl(
@@ -268,18 +308,30 @@ class __$$BenefitGrantImplCopyWithImpl<$Res>
           ? _value.customer_id
           : customer_id // ignore: cast_nullable_to_non_nullable
               as String,
-      user_id: null == user_id
-          ? _value.user_id
-          : user_id // ignore: cast_nullable_to_non_nullable
-              as String,
+      member_id: freezed == member_id
+          ? _value.member_id
+          : member_id // ignore: cast_nullable_to_non_nullable
+              as String?,
       benefit_id: null == benefit_id
           ? _value.benefit_id
           : benefit_id // ignore: cast_nullable_to_non_nullable
               as String,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
       customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as Customer,
+      member: freezed == member
+          ? _value.member
+          : member // ignore: cast_nullable_to_non_nullable
+              as dynamic?,
+      benefit: null == benefit
+          ? _value.benefit
+          : benefit // ignore: cast_nullable_to_non_nullable
+              as Benefit,
       properties: freezed == properties
           ? _value.properties
           : properties // ignore: cast_nullable_to_non_nullable
@@ -302,9 +354,12 @@ class _$BenefitGrantImpl implements _BenefitGrant {
       required this.subscription_id,
       required this.order_id,
       required this.customer_id,
-      required this.user_id,
+      this.member_id,
       required this.benefit_id,
+      this.error,
       required this.customer,
+      this.member,
+      required this.benefit,
       required this.properties});
 
   factory _$BenefitGrantImpl.fromJson(Map<String, dynamic> json) =>
@@ -331,17 +386,23 @@ class _$BenefitGrantImpl implements _BenefitGrant {
   @override
   final String customer_id;
   @override
-  final String user_id;
+  final String? member_id;
   @override
   final String benefit_id;
   @override
+  final dynamic? error;
+  @override
   final Customer customer;
+  @override
+  final dynamic? member;
+  @override
+  final Benefit benefit;
   @override
   final dynamic properties;
 
   @override
   String toString() {
-    return 'BenefitGrant(created_at: $created_at, modified_at: $modified_at, id: $id, granted_at: $granted_at, is_granted: $is_granted, revoked_at: $revoked_at, is_revoked: $is_revoked, subscription_id: $subscription_id, order_id: $order_id, customer_id: $customer_id, user_id: $user_id, benefit_id: $benefit_id, customer: $customer, properties: $properties)';
+    return 'BenefitGrant(created_at: $created_at, modified_at: $modified_at, id: $id, granted_at: $granted_at, is_granted: $is_granted, revoked_at: $revoked_at, is_revoked: $is_revoked, subscription_id: $subscription_id, order_id: $order_id, customer_id: $customer_id, member_id: $member_id, benefit_id: $benefit_id, error: $error, customer: $customer, member: $member, benefit: $benefit, properties: $properties)';
   }
 
   @override
@@ -368,11 +429,15 @@ class _$BenefitGrantImpl implements _BenefitGrant {
                 other.order_id == order_id) &&
             (identical(other.customer_id, customer_id) ||
                 other.customer_id == customer_id) &&
-            (identical(other.user_id, user_id) || other.user_id == user_id) &&
+            (identical(other.member_id, member_id) ||
+                other.member_id == member_id) &&
             (identical(other.benefit_id, benefit_id) ||
                 other.benefit_id == benefit_id) &&
+            const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.customer, customer) ||
                 other.customer == customer) &&
+            const DeepCollectionEquality().equals(other.member, member) &&
+            (identical(other.benefit, benefit) || other.benefit == benefit) &&
             const DeepCollectionEquality()
                 .equals(other.properties, properties));
   }
@@ -391,9 +456,12 @@ class _$BenefitGrantImpl implements _BenefitGrant {
       subscription_id,
       order_id,
       customer_id,
-      user_id,
+      member_id,
       benefit_id,
+      const DeepCollectionEquality().hash(error),
       customer,
+      const DeepCollectionEquality().hash(member),
+      benefit,
       const DeepCollectionEquality().hash(properties));
 
   /// Create a copy of BenefitGrant
@@ -424,9 +492,12 @@ abstract class _BenefitGrant implements BenefitGrant {
       required final String? subscription_id,
       required final String? order_id,
       required final String customer_id,
-      required final String user_id,
+      final String? member_id,
       required final String benefit_id,
+      final dynamic? error,
       required final Customer customer,
+      final dynamic? member,
+      required final Benefit benefit,
       required final dynamic properties}) = _$BenefitGrantImpl;
 
   factory _BenefitGrant.fromJson(Map<String, dynamic> json) =
@@ -453,11 +524,17 @@ abstract class _BenefitGrant implements BenefitGrant {
   @override
   String get customer_id;
   @override
-  String get user_id;
+  String? get member_id;
   @override
   String get benefit_id;
   @override
+  dynamic? get error;
+  @override
   Customer get customer;
+  @override
+  dynamic? get member;
+  @override
+  Benefit get benefit;
   @override
   dynamic get properties;
 

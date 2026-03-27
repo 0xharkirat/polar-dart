@@ -12,7 +12,7 @@ class FilesApi {
   FilesApi(this._dio);
 
 
-  Future<ListResourceFileRead> filesList({String? organization_id, dynamic ids, int page = 1, int limit = 10}) async {
+  Future<ListResourceFileRead> filesList({dynamic organization_id, dynamic ids, int page = 1, int limit = 10}) async {
     try {
       final response = await _dio.get(
         '/v1/files/',

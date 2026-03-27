@@ -25,6 +25,8 @@ _$OAuth2ClientConfigurationImpl _$$OAuth2ClientConfigurationImplFromJson(
       logo_uri: json['logo_uri'] as String?,
       tos_uri: json['tos_uri'] as String?,
       policy_uri: json['policy_uri'] as String?,
+      default_sub_type:
+          $enumDecodeNullable(_$SubTypeEnumMap, json['default_sub_type']),
     );
 
 Map<String, dynamic> _$$OAuth2ClientConfigurationImplToJson(
@@ -41,4 +43,11 @@ Map<String, dynamic> _$$OAuth2ClientConfigurationImplToJson(
       if (instance.logo_uri case final value?) 'logo_uri': value,
       if (instance.tos_uri case final value?) 'tos_uri': value,
       if (instance.policy_uri case final value?) 'policy_uri': value,
+      if (_$SubTypeEnumMap[instance.default_sub_type] case final value?)
+        'default_sub_type': value,
     };
+
+const _$SubTypeEnumMap = {
+  SubType.user: 'user',
+  SubType.organization: 'organization',
+};

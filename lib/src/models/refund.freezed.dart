@@ -23,7 +23,7 @@ mixin _$Refund {
   String get created_at => throw _privateConstructorUsedError;
   String? get modified_at => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  Map<String, dynamic> get metadata => throw _privateConstructorUsedError;
+  MetadataOutputType get metadata => throw _privateConstructorUsedError;
   RefundStatus get status => throw _privateConstructorUsedError;
   RefundReason get reason => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
@@ -34,6 +34,7 @@ mixin _$Refund {
   String? get subscription_id => throw _privateConstructorUsedError;
   String get customer_id => throw _privateConstructorUsedError;
   bool get revoke_benefits => throw _privateConstructorUsedError;
+  dynamic get dispute => throw _privateConstructorUsedError;
 
   /// Serializes this Refund to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,7 +54,7 @@ abstract class $RefundCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       RefundStatus status,
       RefundReason reason,
       int amount,
@@ -63,7 +64,10 @@ abstract class $RefundCopyWith<$Res> {
       String order_id,
       String? subscription_id,
       String customer_id,
-      bool revoke_benefits});
+      bool revoke_benefits,
+      dynamic dispute});
+
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -95,6 +99,7 @@ class _$RefundCopyWithImpl<$Res, $Val extends Refund>
     Object? subscription_id = freezed,
     Object? customer_id = null,
     Object? revoke_benefits = null,
+    Object? dispute = freezed,
   }) {
     return _then(_value.copyWith(
       created_at: null == created_at
@@ -112,7 +117,7 @@ class _$RefundCopyWithImpl<$Res, $Val extends Refund>
       metadata: null == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -153,7 +158,21 @@ class _$RefundCopyWithImpl<$Res, $Val extends Refund>
           ? _value.revoke_benefits
           : revoke_benefits // ignore: cast_nullable_to_non_nullable
               as bool,
+      dispute: freezed == dispute
+          ? _value.dispute
+          : dispute // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
+  }
+
+  /// Create a copy of Refund
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MetadataOutputTypeCopyWith<$Res> get metadata {
+    return $MetadataOutputTypeCopyWith<$Res>(_value.metadata, (value) {
+      return _then(_value.copyWith(metadata: value) as $Val);
+    });
   }
 }
 
@@ -168,7 +187,7 @@ abstract class _$$RefundImplCopyWith<$Res> implements $RefundCopyWith<$Res> {
       {String created_at,
       String? modified_at,
       String id,
-      Map<String, dynamic> metadata,
+      MetadataOutputType metadata,
       RefundStatus status,
       RefundReason reason,
       int amount,
@@ -178,7 +197,11 @@ abstract class _$$RefundImplCopyWith<$Res> implements $RefundCopyWith<$Res> {
       String order_id,
       String? subscription_id,
       String customer_id,
-      bool revoke_benefits});
+      bool revoke_benefits,
+      dynamic dispute});
+
+  @override
+  $MetadataOutputTypeCopyWith<$Res> get metadata;
 }
 
 /// @nodoc
@@ -208,6 +231,7 @@ class __$$RefundImplCopyWithImpl<$Res>
     Object? subscription_id = freezed,
     Object? customer_id = null,
     Object? revoke_benefits = null,
+    Object? dispute = freezed,
   }) {
     return _then(_$RefundImpl(
       created_at: null == created_at
@@ -223,9 +247,9 @@ class __$$RefundImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       metadata: null == metadata
-          ? _value._metadata
+          ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as MetadataOutputType,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -266,6 +290,10 @@ class __$$RefundImplCopyWithImpl<$Res>
           ? _value.revoke_benefits
           : revoke_benefits // ignore: cast_nullable_to_non_nullable
               as bool,
+      dispute: freezed == dispute
+          ? _value.dispute
+          : dispute // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -277,7 +305,7 @@ class _$RefundImpl implements _Refund {
       {required this.created_at,
       required this.modified_at,
       required this.id,
-      required final Map<String, dynamic> metadata,
+      required this.metadata,
       required this.status,
       required this.reason,
       required this.amount,
@@ -287,8 +315,8 @@ class _$RefundImpl implements _Refund {
       required this.order_id,
       required this.subscription_id,
       required this.customer_id,
-      required this.revoke_benefits})
-      : _metadata = metadata;
+      required this.revoke_benefits,
+      required this.dispute});
 
   factory _$RefundImpl.fromJson(Map<String, dynamic> json) =>
       _$$RefundImplFromJson(json);
@@ -299,14 +327,8 @@ class _$RefundImpl implements _Refund {
   final String? modified_at;
   @override
   final String id;
-  final Map<String, dynamic> _metadata;
   @override
-  Map<String, dynamic> get metadata {
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_metadata);
-  }
-
+  final MetadataOutputType metadata;
   @override
   final RefundStatus status;
   @override
@@ -327,10 +349,12 @@ class _$RefundImpl implements _Refund {
   final String customer_id;
   @override
   final bool revoke_benefits;
+  @override
+  final dynamic dispute;
 
   @override
   String toString() {
-    return 'Refund(created_at: $created_at, modified_at: $modified_at, id: $id, metadata: $metadata, status: $status, reason: $reason, amount: $amount, tax_amount: $tax_amount, currency: $currency, organization_id: $organization_id, order_id: $order_id, subscription_id: $subscription_id, customer_id: $customer_id, revoke_benefits: $revoke_benefits)';
+    return 'Refund(created_at: $created_at, modified_at: $modified_at, id: $id, metadata: $metadata, status: $status, reason: $reason, amount: $amount, tax_amount: $tax_amount, currency: $currency, organization_id: $organization_id, order_id: $order_id, subscription_id: $subscription_id, customer_id: $customer_id, revoke_benefits: $revoke_benefits, dispute: $dispute)';
   }
 
   @override
@@ -343,7 +367,8 @@ class _$RefundImpl implements _Refund {
             (identical(other.modified_at, modified_at) ||
                 other.modified_at == modified_at) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.amount, amount) || other.amount == amount) &&
@@ -360,7 +385,8 @@ class _$RefundImpl implements _Refund {
             (identical(other.customer_id, customer_id) ||
                 other.customer_id == customer_id) &&
             (identical(other.revoke_benefits, revoke_benefits) ||
-                other.revoke_benefits == revoke_benefits));
+                other.revoke_benefits == revoke_benefits) &&
+            const DeepCollectionEquality().equals(other.dispute, dispute));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -370,7 +396,7 @@ class _$RefundImpl implements _Refund {
       created_at,
       modified_at,
       id,
-      const DeepCollectionEquality().hash(_metadata),
+      metadata,
       status,
       reason,
       amount,
@@ -380,7 +406,8 @@ class _$RefundImpl implements _Refund {
       order_id,
       subscription_id,
       customer_id,
-      revoke_benefits);
+      revoke_benefits,
+      const DeepCollectionEquality().hash(dispute));
 
   /// Create a copy of Refund
   /// with the given fields replaced by the non-null parameter values.
@@ -403,7 +430,7 @@ abstract class _Refund implements Refund {
       {required final String created_at,
       required final String? modified_at,
       required final String id,
-      required final Map<String, dynamic> metadata,
+      required final MetadataOutputType metadata,
       required final RefundStatus status,
       required final RefundReason reason,
       required final int amount,
@@ -413,7 +440,8 @@ abstract class _Refund implements Refund {
       required final String order_id,
       required final String? subscription_id,
       required final String customer_id,
-      required final bool revoke_benefits}) = _$RefundImpl;
+      required final bool revoke_benefits,
+      required final dynamic dispute}) = _$RefundImpl;
 
   factory _Refund.fromJson(Map<String, dynamic> json) = _$RefundImpl.fromJson;
 
@@ -424,7 +452,7 @@ abstract class _Refund implements Refund {
   @override
   String get id;
   @override
-  Map<String, dynamic> get metadata;
+  MetadataOutputType get metadata;
   @override
   RefundStatus get status;
   @override
@@ -445,6 +473,8 @@ abstract class _Refund implements Refund {
   String get customer_id;
   @override
   bool get revoke_benefits;
+  @override
+  dynamic get dispute;
 
   /// Create a copy of Refund
   /// with the given fields replaced by the non-null parameter values.

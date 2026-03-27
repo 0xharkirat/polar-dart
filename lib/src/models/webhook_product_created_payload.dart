@@ -9,6 +9,7 @@ part 'webhook_product_created_payload.freezed.dart';
 class WebhookProductCreatedPayload with _$WebhookProductCreatedPayload {
   const factory WebhookProductCreatedPayload({
     required String type,
+    required String timestamp,
     required Product data,
   }) = _WebhookProductCreatedPayload;
 
